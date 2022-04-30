@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosIconBadge extends StatefulWidget {
-  /// Create badges of all types, check out [AnterosBadge] for button badges and [AnterosIconBadge] for icon badges.
+  /// Create badges of all types, check out [AnterosAdvancedBadge] for button badges and [AnterosIconBadge] for icon badges.
   const AnterosIconBadge(
       {Key? key,
       this.padding = const EdgeInsets.symmetric(horizontal: 8),
@@ -16,13 +16,13 @@ class AnterosIconBadge extends StatefulWidget {
   final Widget child;
 
   /// widget of type [Widget] is used to show counter to the top right corner of child.
-  /// You can use [AnterosBadge] for compatibility.
+  /// You can use [AnterosAdvancedBadge] for compatibility.
   final Widget counterChild;
 
   /// The internal padding for the badge's [child].
   final EdgeInsetsGeometry padding;
 
-  /// defines the position of [AnterosBadge].
+  /// defines the position of [AnterosAdvancedBadge].
   final AnterosBadgePosition? position;
 
   @override

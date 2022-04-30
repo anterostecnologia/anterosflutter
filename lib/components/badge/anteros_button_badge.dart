@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosButtonBadge extends StatefulWidget {
-  /// Create badges badges of all types. check out [AnterosIconButton] for icon badges, and [AnterosBadge] for badges
+  /// Create badges badges of all types. check out [AnterosIconButton] for icon badges, and [AnterosAdvancedBadge] for badges
   const AnterosButtonBadge({
     Key? key,
     required this.onPressed,

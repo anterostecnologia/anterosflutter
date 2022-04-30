@@ -4,7 +4,7 @@ import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anterosflutter/types/anteros_social_type.dart';
 
 class AnterosSocialButton extends StatelessWidget {
-  /// Create buttons of all types. check out [AnterosIconButton] for icon buttons, and [AnterosBadge] for badges
+  /// Create buttons of all types. check out [AnterosIconButton] for icon buttons, and [AnterosAdvancedBadge] for badges
   const AnterosSocialButton({
     Key? key,
     required this.onPressed,

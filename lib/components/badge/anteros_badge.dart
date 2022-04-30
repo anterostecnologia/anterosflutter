@@ -103,7 +103,7 @@ class _AnterosBadgeState extends State<AnterosBadge> {
         borderRadius: BorderRadius.circular(5),
         side: shapeBorder,
       );
-    } else if (counterShape == AnterosBadgeShape.circle) {
+    } else if (counterShape == AnterosAdvancedBadgeShape.circle) {
       shape = RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
         side: shapeBorder,
@@ -135,7 +135,7 @@ class _AnterosBadgeState extends State<AnterosBadge> {
 
     return Container(
       height: height,
-      width: counterShape == AnterosBadgeShape.circle ? height : width,
+      width: counterShape == AnterosAdvancedBadgeShape.circle ? height : width,
       child: Material(
         textStyle: TextStyle(
           color: textColor,
