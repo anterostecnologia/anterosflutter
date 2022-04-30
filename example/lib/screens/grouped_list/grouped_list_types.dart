@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:gf_app/screens/button/like_buttons.dart';
-import 'package:gf_app/screens/grouped_list/grouped_list.dart';
-import 'package:gf_app/screens/grouped_list/grouped_list_chat.dart';
+import 'package:anteros_flutter_app/screens/button/like_buttons.dart';
+import 'package:anteros_flutter_app/screens/grouped_list/grouped_list.dart';
+import 'package:anteros_flutter_app/screens/grouped_list/grouped_list_chat.dart';
 
 class GroupedListTypes extends StatefulWidget {
   @override

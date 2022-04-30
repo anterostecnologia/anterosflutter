@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gf_app/screens/responsive_builder/views/home/home_view_mobile.dart';
-import 'package:gf_app/screens/responsive_builder/views/home/home_view_tablet.dart';
+import 'package:anteros_flutter_app/screens/responsive_builder/views/home/home_view_mobile.dart';
+import 'package:anteros_flutter_app/screens/responsive_builder/views/home/home_view_tablet.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class ResponsiveHomeView extends StatelessWidget {

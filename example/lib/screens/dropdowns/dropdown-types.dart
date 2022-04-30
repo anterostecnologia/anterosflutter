@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:gf_app/screens/dropdowns/dropdown/types.dart';
-import 'package:gf_app/screens/dropdowns/multiselect/types.dart';
+import 'package:anteros_flutter_app/screens/dropdowns/dropdown/types.dart';
+import 'package:anteros_flutter_app/screens/dropdowns/multiselect/types.dart';
 
 class DropDown extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gf_app/screens/intro-screen/fullwidth.dart';
-import 'package:gf_app/screens/intro-screen/halfwidth.dart';
+import 'package:anteros_flutter_app/screens/intro-screen/fullwidth.dart';
+import 'package:anteros_flutter_app/screens/intro-screen/halfwidth.dart';
 
 class Introscreen extends StatefulWidget {
   @override

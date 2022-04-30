@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gf_app/screens/responsive_builder/widgets/app_drawer/app_drawer.dart';
+import 'package:anteros_flutter_app/screens/responsive_builder/widgets/app_drawer/app_drawer.dart';
 
 class HomeViewTablet extends StatelessWidget {
   const HomeViewTablet({Key? key}) : super(key: key);

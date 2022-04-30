@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:gf_app/screens/button/like_buttons.dart';
+import 'package:anteros_flutter_app/screens/button/like_buttons.dart';
 import 'icon_buttons.dart';
 import 'pill_buttons.dart';
 import 'shadow_buttons.dart';

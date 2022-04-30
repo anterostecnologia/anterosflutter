@@ -1,6 +1,6 @@
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
-import 'package:gf_app/screens/responsive_builder/widgets/drawer_option/drawer_option.dart';
+import 'package:anteros_flutter_app/screens/responsive_builder/widgets/drawer_option/drawer_option.dart';
 
 import 'app_drawer_mobile.dart';
 import 'app_drawer_tablet.dart';

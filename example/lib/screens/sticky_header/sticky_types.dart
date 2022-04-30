@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gf_app/screens/sticky_header/customstickyheader.dart';
-import 'package:gf_app/screens/sticky_header/stickyheader.dart';
+import 'package:anteros_flutter_app/screens/sticky_header/customstickyheader.dart';
+import 'package:anteros_flutter_app/screens/sticky_header/stickyheader.dart';
 
 class StickyTypes extends StatefulWidget {
   @override
