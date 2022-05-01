@@ -4,28 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/position/anteros_toast_position.dart';
 
 class AnterosToast {
-  /// text of type [String] display on toast
+  /// texto do tipo [String] Exibir na torrada
   String? text;
 
-  /// defines the duration of time toast display over screen
+  /// Define a duração da exibição de torradas de tempo sobre a tela
   int? toastDuration;
 
-  /// defines the position of toast over the screen
+  /// define a posição de torrada sobre a tela
   AnterosToastPosition? toastPosition;
 
-  /// defines the background color of the toast
+  /// define a cor de fundo da torrada
   Color? backgroundColor;
 
-  /// defines the test style of the toast text
+  /// define o estilo de teste do texto de torrada
   TextStyle? textStyle;
 
-  /// defines the border radius of the toast
+  /// define o raio da fronteira da torrada
   double? toastBorderRadius;
 
-  /// defines the border of the toast
+  /// define a fronteira da torrada
   Border? border;
 
-  /// defines the trailing widget of the toast
+  /// define o widget à direita da torrada
   late Widget trailing;
 
   // ignore: type_annotate_public_apis, always_declare_return_types

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosRadioListTile<T> extends StatelessWidget {
-  /// [AnterosRadioListTile] is a list title of with [AnterosRadio] in it.
+  /// [AnterosRadioListTile] é um título de lista com [AnterosRadio] nele.
   const AnterosRadioListTile({
     Key? key,
     required this.value,
@@ -44,118 +44,118 @@ class AnterosRadioListTile<T> extends StatelessWidget {
     this.hoverColor,
   }) : super(key: key);
 
-  ///type of [String] used to pass text, alternative to title property and gets higher priority than title
+  ///tipo de [String] usado para passar texto, alternativa à propriedade title e tem prioridade mais alta que title
   final String? titleText;
 
-  ///type of [String] used to pass text, alternative to subTitle property and gets higher priority than subTitle
+  ///tipo de [String] usado para passar texto, alternativa à propriedade subTitle e tem prioridade mais alta que subTitle
   final String? subTitleText;
 
-  /// The AnterosListTile's background color. Can be given [Color] or [AnterosColors]
+  /// A cor de fundo do AnterosListTile. Pode ser dado [Color] ou [AnterosColors]
   final Color? color;
 
-  /// If position is start Checkbox will come instead of avatar, type of [Widget] or [AnterosAvatar] used to create rounded user profile
+  /// Se a posição for start Checkbox virá ao invés de avatar, tipo de [Widget] ou [AnterosAvatar] usado para criar perfil de usuário arredondado
   final Widget? avatar;
 
-  /// The title to display inside the [AnterosListTile]. see [Text]
+  /// O título a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? title;
 
-  /// The subTitle to display inside the [AnterosListTile]. see [Text]
+  /// O subtítulo a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? subTitle;
 
-  /// The description to display inside the [AnterosListTile]. see [Text]
+  /// A descrição a ser exibida dentro do [AnterosListTile]. veja [Texto]
   final Widget? description;
 
-  /// If position is end Checkbox will come instead of icon, The icon to display inside the [AnterosListTile]. see [Icon]
+  /// Se a posição for final A caixa de seleção virá em vez do ícone, O ícone a ser exibido dentro do [AnterosListTile]. veja [ícone]
   final Widget? icon;
 
-  /// defines the margin of AnterosListTile
+  /// define a margem de AnterosListTile
   final EdgeInsets margin;
 
-  /// defines the padding of AnterosListTile
+  /// define o preenchimento de AnterosListTile
   final EdgeInsets padding;
 
-  /// Whether this list tile is interactive.
+  /// Se este bloco de lista é interativo.
   ///
-  /// If false, this list tile is styled with the disabled color from the
-  /// current [Theme] and the [onTap] and [onLongPress] callbacks are
-  /// inoperative.
+  /// Se false, este bloco de lista é estilizado com a cor desabilitada do
+  /// atual [Theme] e os callbacks [onTap] e [onLongPress] são
+  /// inoperante.
   final bool enabled;
 
-  /// Called when the user taps this list tile.
+  /// Chamado quando o usuário toca neste bloco de lista.
   ///
-  /// Inoperative if [enabled] is false.
+  /// Inoperante se [habilitado] for falso.
   final GestureTapCallback? onTap;
 
-  /// Position allows user to set position of [AnterosCheckbox] based on given [AnterosPosition]
+  /// Position permite que o usuário defina a posição de [AnterosCheckbox] com base em [AnterosPosition]
   final AnterosPosition position;
 
-  /// Called when the user long-presses on this list tile.
+  /// Chamado quando o usuário pressiona longamente neste bloco de lista.
   ///
-  /// Inoperative if [enabled] is false.
+  /// Inoperante se [habilitado] for falso.
   final GestureLongPressCallback? onLongPress;
 
-  /// If this tile is also [enabled] then icons and text are rendered with the same color.
+  /// Se este bloco também estiver [habilitado], os ícones e o texto serão renderizados com a mesma cor.
   ///
-  /// By default the selected color is the theme's primary color. The selected color
-  /// can be overridden with a [ListTileTheme].
+  /// Por padrão, a cor selecionada é a cor primária do tema. A cor selecionada
+  /// pode ser substituído por um [ListTileTheme].
   final bool selected;
 
-  /// The color for the tile's [Material] when it has the input focus.
+  /// A cor do [Material] do bloco quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// The color for the tile's [Material] when a pointer is hovering over it.
+  /// A cor do [Material] do bloco quando um ponteiro está pairando sobre ele.
   final Color? hoverColor;
 
-  /// on true state this widget will be selected as the initial focus
-  /// when no other node in its scope is currently focused
+  /// no estado verdadeiro este widget será selecionado como foco inicial
+  /// quando nenhum outro nó em seu escopo está focado no momento
   final bool autofocus;
 
-  /// an optional focus node to use as the focus node for this widget.
+  /// um nó de foco opcional para usar como nó de foco para este widget.
   final FocusNode? focusNode;
 
-  /// type of [AnterosRadioType] which is of four type is basic, sqaure, circular and custom
+  /// tipo de [AnterosRadioType] que é de quatro tipos é básico, quadrado, circular e personalizado
   final AnterosRadioType type;
 
-  /// type of [double] which is AnterosSize ie, small, medium and large and can use any double value
+  /// tipo de [double] que é AnterosSize, ou seja, pequeno, médio e grande e pode usar qualquer valor duplo
   final double size;
 
-  /// type pf [Color] used to change the checkcolor when the checkbox is active
+  /// digite pf [Color] usado para alterar a cor de seleção quando a caixa de seleção está ativa
   final Color radioColor;
 
-  /// type of [Color] used to change the backgroundColor of the active checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção ativa
   final Color activeBgColor;
 
-  /// type of [Color] used to change the backgroundColor of the inactive checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção inativa
   final Color inactiveBgColor;
 
-  /// type of [Color] used to change the border color of the active checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção ativa
   final Color activeBorderColor;
 
-  /// type of [Color] used to change the border color of the inactive checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção inativa
   final Color inactiveBorderColor;
 
-  /// Called when the user checks or unchecks the checkbox.
+  /// Chamado quando o usuário marca ou desmarca a caixa de seleção.
   final ValueChanged<dynamic>? onChanged;
 
-  ///type of Widget used to change the  checkbox's active icon
+  ///tipo de Widget usado para alterar o ícone ativo da caixa de seleção
   final Widget activeIcon;
 
-  ///type of [Widget] used to change the  checkbox's inactive icon
+  /// tipo de [widget] usado para alterar o ícone inativo da caixa de seleção
   final Widget? inactiveIcon;
 
-  /// type of [Color] used to change the background color of the custom active  checkbox only
+  /// tipo de [Color] usado para alterar apenas a cor de fundo da caixa de seleção ativa personalizada
   final Color customBgColor;
 
-  /// The value represented by this radio button.
+  /// o valor representado por este botão de rádio.
   final T value;
 
-  /// The currently selected value for a group of radio buttons. Radio button is considered selected if its [value] matches the [groupValue].
+  /// o valor atualmente selecionado para um grupo de botões de rádio.O botão de rádio é considerado selecionado se o seu [value] corresponde ao [groupValue].
   final T groupValue;
 
-  /// sets the radio value
+  /// define o valor do rádio
   final bool toggleable;
 
-  /// Whether this radio button is checked. To control this value, set [value] and [groupValue] appropriately.
+  /// Se este botão de rádio está verificado.Para controlar este valor, defina [value] e [groupValue] adequadamente.
   bool get checked => value == groupValue;
 
   @override

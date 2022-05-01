@@ -56,118 +56,118 @@ class AnterosIntroScreenBottomNavigationBar extends StatefulWidget {
     this.showPagination = true,
   }) : super(key: key);
 
-  /// default controller for the [AnterosIntroScreen] component
+  /// controlador padrão para o componente [AnterosIntroScreen]
   final PageController pageController;
 
-  /// defines the currentIndex of [AnterosIntroScreen] slides, default value is 0
+  /// define o currentIndex dos slides [AnterosIntroScreen], o valor padrão é 0
   final int currentIndex;
 
-  /// defines the length of [AnterosIntroScreen] slides, default value is 0
+  /// define o comprimento dos slides [AnterosIntroScreen], o valor padrão é 0
   final int pageCount;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar], it takes any widget
+  /// define [AnterosIntroScreenBottomNavigationBar], leva qualquer widget
   final Widget? child;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] height
+  /// define a altura [AnterosIntroScreenBottomNavigationBar]
   final double navigationBarHeight;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] width
+  /// define a largura de [AnterosIntroScreenBottomNavigationBar]
   final double? navigationBarWidth;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] padding
+  /// define o preenchimento [AnterosIntroScreenBottomNavigationBar]
   final EdgeInsets navigationBarPadding;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] margin
+  /// define a margem [AnterosIntroScreenBottomNavigationBar]
   final EdgeInsets navigationBarMargin;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] color
+  /// define a cor [AnterosIntroScreenBottomNavigationBar]
   final Color navigationBarColor;
 
-  /// defines the shape of [AnterosIntroScreenBottomNavigationBar]
+  /// define a forma de [AnterosIntroScreenBottomNavigationBar]
   final ShapeBorder? navigationBarShape;
 
-  /// Called when the [forwardButtonText]  is tapped
+  /// Chamado quando o [forwardButtonText] é tocado
   final VoidCallback? onForwardButtonTap;
 
-  /// Called when the [backButtonText] is tapped
+  /// Chamado quando o [backButtonText] é tocado
   final VoidCallback? onBackButtonTap;
 
-  /// Called when the [doneButtonText] is tapped
+  /// Chamado quando o [doneButtonText] é tocado
   final VoidCallback? onDoneTap;
 
-  /// Called when the [skipButtonText] is tapped
+  /// Chamado quando o [skipButtonText] é tocado
   final VoidCallback? onSkipTap;
 
-  /// defines the backButton widget
+  /// define o widget backButton
   final Widget? backButton;
 
-  /// defines the forwardButton widget
+  /// define o widget forwardButton
   final Widget? forwardButton;
 
-  /// defines the doneButton widget
+  /// define o widget doneButton
   final Widget? doneButton;
 
-  /// defines the skipButton widget
+  /// define o widget skipButton
   final Widget? skipButton;
 
-  /// defines the backButton text
+  /// define o texto backButton
   final String backButtonText;
 
-  /// defines the forwardButton text
+  /// define o texto forwardButton
   final String forwardButtonText;
 
-  /// defines the doneButton text
+  /// define o texto doneButton
   final String doneButtonText;
 
-  /// defines the skipButton text
+  /// define o texto skipButton
   final String skipButtonText;
 
-  /// defines the skipButton textStyle
+  /// define o estilo de texto skipButton
   final TextStyle skipButtonTextStyle;
 
-  /// defines the doneButton textStyle
+  /// define o estilo de texto doneButton
   final TextStyle doneButtonTextStyle;
 
-  /// defines the backButton textStyle
+  /// define o backButton textStyle
   final TextStyle backButtonTextStyle;
 
-  /// defines the forwardButton textStyle
+  /// define o textStyle forwardButton
   final TextStyle forwardButtonTextStyle;
 
-  /// on true state, displays [Divider], defaults to true
+  /// no estado verdadeiro, exibe [Divisor], o padrão é verdadeiro
   final bool showDivider;
 
-  /// on true state, displays buttons, defaults to true
+  /// no estado verdadeiro, exibe botões, o padrão é verdadeiro
   final bool showButton;
 
-  /// on true state, displays pagination, defaults to true
+  /// no estado verdadeiro, exibe a paginação, o padrão é verdadeiro
   final bool showPagination;
 
-  /// defines divider height
+  /// define a altura do divisor
   final double dividerHeight;
 
-  /// defines divider thickness
+  /// define a espessura do divisor
   final double dividerThickness;
 
-  /// defines divider color
+  /// define a cor do divisor
   final Color dividerColor;
 
-  /// defines pagination shape
+  /// define a forma de paginação
   final ShapeBorder? dotShape;
 
-  /// defines pagination inactive color
+  /// define a cor inativa da paginação
   final Color inactiveColor;
 
-  /// defines pagination active color
+  /// define a cor ativa da paginação
   final Color activeColor;
 
-  /// defines pagination height
+  /// define a altura da paginação
   final double dotHeight;
 
-  /// defines pagination width
+  /// define a largura da paginação
   final double dotWidth;
 
-  /// defines pagination in between space
+  /// define a paginação entre o espaço
   final EdgeInsets dotMargin;
 
   @override

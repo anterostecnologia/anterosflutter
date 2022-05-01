@@ -3,11 +3,11 @@ import 'package:flutter/gestures.dart' show DragStartBehavior;
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// A page view that displays the widget which corresponds to the currently selected tab.
-/// This widget is typically used in conjunction with a [AnterosTabBar] or [AnterosSegmentTabs].
+/// Uma visualização de página que exibe o widget que corresponde à guia atualmente selecionada.
+/// este widget é normalmente usado em conjunto com um [AnterosTabBar] ou [AnterosSegmentTabs].
 class AnterosTabBarView extends StatefulWidget {
-  /// Creates a page view with one child per tab.
-  /// The length of [children] must be the same as the [controller]'s length.
+  /// cria uma visualização de página com uma criança por guia.
+  /// O comprimento do [children] deve ser o mesmo que o [controller]'s comprimento.
   const AnterosTabBarView({
     Key? key,
     required this.children,
@@ -18,26 +18,26 @@ class AnterosTabBarView extends StatefulWidget {
     this.tabScrollDuration,
   }) : super(key: key);
 
-  /// This widget's selection and animation state.
+  /// O estado de seleção e animação deste widget.
   final TabController? controller;
 
-  /// One widget per tab.
-  /// Its length must match the length of the [AnterosTabBar.tabs]
-  /// list, as well as the [controller]'s [TabController.length].
+  /// Um widget por guia.
+  /// seu comprimento deve corresponder ao comprimento do [AnterosTabBar.tabs]
+  /// Lista, bem como o [controller]'s [TabController.length].
   final List<Widget> children;
 
-  /// How the page view should respond to user input.
-  /// For example, determines how the page view continues to animate after the
-  /// user stops dragging the page view.
-  /// The physics are modified to snap to page boundaries using
-  /// [PageScrollPhysics] prior to being used.
-  /// Defaults to matching platform conventions.
+  /// Como a visualização da página deve responder à entrada do usuário.
+  /// por exemplo, determina como a visualização da página continua a animar após o
+  /// O usuário para de arrastar a visualização da página.
+  /// A física é modificada para encaixar nos limites da página usando
+  /// [PageScrollPhysics] antes de ser usado.
+  /// Padrões para convenções de plataforma correspondentes.
   final ScrollPhysics? physics;
 
   /// {@macro flutter.widgets.scrollable.dragStartBehavior}
   final DragStartBehavior dragStartBehavior;
 
-  /// [AnterosTabBarView] height can be fixed using [double]
+  /// [AnterosTabBarView] A altura pode ser consertada usando [double]
   final double? height;
 
   final Duration? tabScrollDuration;
@@ -54,9 +54,9 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
   int? _currentIndex;
   int _warpUnderwayCount = 0;
 
-  // If the TabBarView is rebuilt with a new tab controller, the caller should
-  // dispose the old one. In that case the old controller's animation will be
-  // null and should not be accessed.
+  // Se o TabBarview for reconstruído com um novo controlador de guia, o chamador deve
+  // descarte o antigo.Nesse caso, a animação do antigo controlador será
+  // nulo e não deve ser acessado.
   bool get _controllerIsValid => _controller?.animation != null;
 
   void _updateTabController() {
@@ -117,7 +117,7 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
       _controller!.animation!.removeListener(_handleTabControllerAnimationTick);
     }
     _controller = null;
-    // We don't own the _controller Animation, so it's not disposed here.
+    // Não possuímos a animação _Controller, então ela não está descartada aqui.
     super.dispose();
   }
 
@@ -129,7 +129,7 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
   void _handleTabControllerAnimationTick() {
     if (_warpUnderwayCount > 0 || !_controller!.indexIsChanging) {
       return;
-    } // This widget is driving the controller's animation.
+    }// Este widget está impulsionando a animação do controlador.
 
     if (_controller!.index != _currentIndex) {
       _currentIndex = _controller!.index;
@@ -187,7 +187,7 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
     });
   }
 
-  // Called when the PageView scrolls
+  // chamado quando a PageView Scrolls
   bool _handleScrollNotification(ScrollNotification notification) {
     if (_warpUnderwayCount > 0) {
       return false;

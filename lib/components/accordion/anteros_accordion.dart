@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosAccordion extends StatefulWidget {
-  /// An accordion is used to show (and hide) content. Use [showAccordion] to hide & show the accordion content.
+  /// Um ​​acordeão é usado para mostrar (e ocultar) o conteúdo. Use [showAccordion] para ocultar e mostrar o conteúdo do acordeão.
   const AnterosAccordion(
       {Key? key,
       this.title,
@@ -26,61 +26,61 @@ class AnterosAccordion extends StatefulWidget {
       this.contentBorderRadius = const BorderRadius.all(Radius.circular(0))})
       : super(key: key);
 
-  /// controls if the accordion should be collapsed or not making it possible to be controlled from outside
+  /// controla se o acordeão deve ser recolhido ou não permitindo ser controlado de fora
   final bool showAccordion;
 
-  /// child of  type [Widget]is alternative to title key. title will get priority over titleChild
+  /// filho do tipo [Widget]é uma alternativa à chave de título. title terá prioridade sobre titleChild
   final Widget? titleChild;
 
-  /// content of type[String] which shows the messages after the [AnterosAccordion] is expanded
+  /// conteúdo do tipo[String] que mostra as mensagens após o [AnterosAccordion] ser expandido
   final String? content;
 
-  /// contentChild of  type [Widget]is alternative to content key. content will get priority over contentChild
+  /// contentChild do tipo [Widget]é uma alternativa à chave de conteúdo. conteúdo terá prioridade sobre contentChild
   final Widget? contentChild;
 
-  /// type of [Color] or [AnterosColors] which is used to change the background color of the [AnterosAccordion] title when it is collapsed
+  /// tipo de [Color] ou [AnterosColors] que é usado para alterar a cor de fundo do título [AnterosAccordion] quando ele é recolhido
   final Color collapsedTitleBackgroundColor;
 
-  /// type of [Color] or [AnterosColors] which is used to change the background color of the [AnterosAccordion] title when it is expanded
+  /// tipo de [Color] ou [AnterosColors] que é usado para alterar a cor de fundo do título [AnterosAccordion] quando expandido
   final Color expandedTitleBackgroundColor;
 
-  /// collapsedIcon of type [Widget] which is used to show when the [AnterosAccordion] is collapsed
+  ///CollapsedIcon do tipo [Widget] que é usado para mostrar quando o [AnterosAccordion] é recolhido
   final Widget collapsedIcon;
 
-  /// expandedIcon of type[Widget] which is used when the [AnterosAccordion] is expanded
+  /// expandidoIcon do tipo[Widget] que é usado quando o [AnterosAccordion] é expandido
   final Widget expandedIcon;
 
-  /// text of type [String] is alternative to child. text will get priority over titleChild
+  /// o texto do tipo [String] é alternativo ao filho. text terá prioridade sobre titleChild
   final String? title;
 
-  /// textStyle of type [textStyle] will be applicable to text only and not for the child
+  /// textStyle do tipo [textStyle] será aplicável apenas ao texto e não ao filho
   final TextStyle textStyle;
 
-  /// titlePadding of type [EdgeInsets] which is used to set the padding of the [AnterosAccordion] title
+  /// titlePadding do tipo [EdgeInsets] que é usado para definir o preenchimento do título [AnterosAccordion]
   final EdgeInsets titlePadding;
 
-  /// descriptionPadding of type [EdgeInsets] which is used to set the padding of the [AnterosAccordion] description
+  /// descriptionPadding do tipo [EdgeInsets] que é usado para definir o preenchimento da descrição [AnterosAccordion]
   final EdgeInsets contentPadding;
 
-  /// type of [Color] or [AnterosColors] which is used to change the background color of the [AnterosAccordion] description
+  /// tipo de [Color] ou [AnterosColors] que é usado para alterar a cor de fundo da descrição [AnterosAccordion]
   final Color? contentBackgroundColor;
 
-  /// margin of type [EdgeInsets] which is used to set the margin of the [AnterosAccordion]
+  /// margem do tipo [EdgeInsets] que é usada para definir a margem do [AnterosAccordion]
   final EdgeInsets? margin;
 
-  /// titleBorderColor of type  [Color] or [AnterosColors] which is used to change the border color of title
+  /// titleBorderColor do tipo [Color] ou [AnterosColors] que é usado para alterar a cor da borda do título
   final Border titleBorder;
 
-  /// contentBorderColor of type  [Color] or [AnterosColors] which is used to change the border color of content
+  /// contentBorderColor do tipo [Color] ou [AnterosColors] que é usado para alterar a cor da borda do conteúdo
   final Border contentBorder;
 
-  /// titleBorderRadius of type  [Radius]  which is used to change the border radius of title
+  /// titleBorderRadius do tipo [Radius] que é usado para alterar o raio da borda do título
   final BorderRadius titleBorderRadius;
 
-  /// contentBorderRadius of type  [Radius]  which is used to change the border radius of content
+  /// contentBorderRadius do tipo [Radius] que é usado para alterar o raio da borda do conteúdo
   final BorderRadius contentBorderRadius;
 
-  /// function called when the content body collapsed
+  /// função chamada quando o corpo do conteúdo foi recolhido
   final Function(bool)? onToggleCollapsed;
 
   @override

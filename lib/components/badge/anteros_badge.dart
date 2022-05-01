@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosBadge extends StatefulWidget {
-  /// Create badges of all types, check out [AnterosButtonBadge] for button badges and [AnterosIconBadge] for icon type badges
+  /// Crie crachás de todos os tipos, confira [AnterosButtonBadge] para crachás de botão e [AnterosIconBadge] para crachás do tipo ícone
   const AnterosBadge({
     Key? key,
     this.textStyle,
@@ -16,31 +16,31 @@ class AnterosBadge extends StatefulWidget {
     this.child,
   }) : super(key: key);
 
-  /// The border side for the badge's [Material].
+  /// O lado da borda do [Material] do emblema.
   final BorderSide? border;
 
-  /// Typically the counter badge's shape.
+  /// Normalmente a forma do crachá do contador.
   final ShapeBorder? borderShape;
 
-  /// Counter type of [AnterosBadgeShape] i.e, standard, pills, square, circle
+  /// Tipo de contador de [AnterosBadgeShape] ou seja, padrão, pílulas, quadrado, círculo
   final AnterosBadgeShape shape;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color color;
 
-  /// size of [double] or [AnterosSize] i.e, 1.2, small, medium, large etc.
+  /// tamanho de [double] ou [AnterosSize], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// child of type [Widget] is alternative to child. text will get priority over child
+  /// filho do tipo [Widget] é alternativa ao filho. o texto terá prioridade sobre o filho
   final Widget? child;
 
-  /// text of type [String] is alternative to child. text will get priority over child
+  /// o texto do tipo [String] é alternativo ao filho. o texto terá prioridade sobre o filho
   final String? text;
 
-  /// text style of counter text.
+  /// estilo de texto do texto do contador.
   final TextStyle? textStyle;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color textColor;
 
   @override

@@ -1,6 +1,6 @@
-/// [AnterosBadgePosition] is used to position the badges to top start, top bottom,
-/// bottom start or bottom end of the icon button
-/// See GFIconBadge
+/// [AnterosBadgePosition] é usado para posicionar os emblemas para o início, o fundo superior,
+/// Início inferior ou final inferior do botão do ícone
+/// Veja Gficonbadge
 
 class AnterosBadgePosition {
   const AnterosBadgePosition({this.top, this.end, this.bottom, this.start});
@@ -20,15 +20,15 @@ class AnterosBadgePosition {
           {double bottom = -8, double start = -10}) =>
       AnterosBadgePosition(bottom: bottom, start: start);
 
-  /// defines the position of badge
+  /// define a posição do crachá
   final double? top;
 
-  /// defines the position of badge
+  /// define a posição do crachá
   final double? end;
 
-  /// defines the position of badge
+  /// define a posição do crachá
   final double? start;
 
-  /// defines the position of badge
+  /// define a posição do crachá
   final double? bottom;
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class AnterosCarousel extends StatefulWidget {
-  /// Creates slide show of Images and [Widget] with animation for sliding.
+  /// Cria apresentação de slides de Imagens e [Widget] com animação para deslizar.
   const AnterosCarousel({
     Key? key,
     required this.items,
@@ -29,80 +29,80 @@ class AnterosCarousel extends StatefulWidget {
     this.scrollDirection = Axis.horizontal,
   }) : super(key: key);
 
-  /// The pagination dots size can be defined using [double].
+  /// O tamanho dos pontos de paginação pode ser definido usando [double].
   final double? pagerSize;
 
-  /// The slider pagination's active color.
+  /// A cor ativa da paginação do slider.
   final Color? activeIndicator;
 
-  /// The slider pagination's passive color.
+  /// A cor passiva da paginação do slider.
   final Color? passiveIndicator;
 
-  /// The slider pagination's active border.
+  /// A borda ativa da paginação do slider.
   final Border? activeDotBorder;
 
-  /// The slider pagination's passive border.
+  /// A borda passiva da paginação do slider.
   final Border? passiveDotBorder;
 
-  /// The [AnterosCarousel] shows pagination on state true.
+  /// O [AnterosCarousel] mostra a paginação no estado true.
   final bool? hasPagination;
 
-  /// The widgets to be shown as sliders.
+  /// Os widgets a serem mostrados como controles deslizantes.
   final List<Widget> items;
 
-  /// Set slide widget height and overrides any existing [aspectRatio].
+  /// Define a altura do widget do slide e substitui qualquer [aspectRatio] existente.
   final double? height;
 
-  /// Aspect ratio is used if no height have been declared. Defaults to 16:9 aspect ratio.
+  /// A proporção é usada se nenhuma altura foi declarada. O padrão é a proporção de 16:9.
   final double aspectRatio;
 
-  /// The fraction of the viewport that each page should occupy. Defaults to 0.8, which means each page fills 80% of the slide.
+  /// A fração da janela de visualização que cada página deve ocupar. O padrão é 0,8, o que significa que cada página preenche 80% do slide.
   final num viewportFraction;
 
-  /// The initial page to show when first creating the [AnterosCarousel]. Defaults to 0.
+  /// A página inicial a ser exibida ao criar o [AnterosCarousel]. O padrão é 0.
   final int initialPage;
 
-  /// Determines if slides should loop infinitely or be limited to item length. Defaults to true, i.e. infinite loop.
+  /// Determina se os slides devem fazer um loop infinito ou ser limitados ao tamanho do item. O padrão é true, ou seja, loop infinito.
   final bool enableInfiniteScroll;
 
-  /// Reverse the order of items if set to true. Defaults to false.
+  /// Inverte a ordem dos itens se definido como verdadeiro. O padrão é falso.
   final bool reverse;
 
-  /// Enables auto play, sliding one page at a time. Use [autoPlayInterval] to determent the frequency of slides. Defaults to false.
+  /// Ativa a reprodução automática, deslizando uma página por vez. Use [autoPlayInterval] para determinar a frequência dos slides. O padrão é falso.
   final bool autoPlay;
 
-  /// Sets Duration to determent the frequency of slides when [autoPlay] is set to true. Defaults to 4 seconds.
+  /// Define Duration para determinar a frequência dos slides quando [autoPlay] é definido como true. O padrão é 4 segundos.
   final Duration autoPlayInterval;
 
-  /// The animation duration bestuckValue two transitioning pages while in auto playback. Defaults to 800 ms.
+  /// A duração da animação besttuckValue duas páginas de transição durante a reprodução automática. O padrão é 800 ms.
   final Duration autoPlayAnimationDuration;
 
-  /// Determines the animation curve physics. Defaults to [Curves.fastOutSlowIn].
+  /// Determina a física da curva de animação. O padrão é [Curves.fastOutSlowIn].
   final Curve autoPlayCurve;
 
-  /// Sets a timer on touch detected that pause the auto play with the given [Duration]. Touch Detection is only active if [autoPlay] is true.
+  /// Define um temporizador no toque detectado que pausa a reprodução automática com a [Duração] fornecida. A detecção de toque só está ativa se [autoPlay] for verdadeiro.
   final Duration? pauseAutoPlayOnTouch;
 
-  /// Determines if current page should be larger then the side images,
-  /// creating a feeling of depth in the carousel. Defaults to false.
-  /// works only if viewportFraction set to 1.0.
+  /// Determina se a página atual deve ser maior que as imagens laterais,
+  /// criando uma sensação de profundidade no carrossel. O padrão é falso.
+  /// funciona apenas se viewportFraction estiver definido como 1.0.
   final bool enlargeMainPage;
 
-  /// The axis along which the page view scrolls. Defaults to [Axis.horizontal].
+  /// O eixo ao longo do qual a visualização da página rola. O padrão é [Eixo.horizontal].
   final Axis scrollDirection;
 
-  /// Called whenever the page in the center of the viewport changes.
+  /// Chamado sempre que a página no centro da janela de visualização é alterada.
   final Function(int index)? onPageChanged;
 
-  /// How the carousel should respond to user input.
+  /// Como o carrossel deve responder à entrada do usuário.
   ///
-  /// For example, determines how the items continues to animate after the
-  /// user stops dragging the page view.
+  /// Por exemplo, determina como os itens continuam a animar após o
+  /// o usuário para de arrastar a visualização da página.
   ///
-  /// The physics are modified to snap to page boundaries using
-  /// [PageScrollPhysics] prior to being used.
+  /// A física é modificada para encaixar nos limites da página usando
+  /// [PageScrollPhysics] antes de ser usado.
   ///
-  /// Defaults to matching platform conventions.
+  /// Padrões para as convenções de plataforma correspondentes.
   final ScrollPhysics? scrollPhysics;
 
   List<T> map<T>(List list, Function handler) {
@@ -122,17 +122,17 @@ class _AnterosCarouselState extends State<AnterosCarousel>
     with TickerProviderStateMixin {
   Timer? timer;
 
-  /// Size of cell
+  /// tamanho da célula
   double size = 0;
 
-  /// Width of cells container
+  /// Largura do container de células
   double width = 0;
 
-  /// [pageController] is created using the properties passed to the constructor
-  /// and can be used to control the [PageView] it is passed to.
+  /// [pageController] é criado usando as propriedades passadas para o construtor
+  /// e pode ser usado para controlar o [PageView] para o qual é passado.
   late PageController pageController;
 
-  /// The actual index of the [PageView].
+  /// O índice real do [PageView].
   int realPage = 10000;
   int? currentSlide;
 
@@ -326,24 +326,24 @@ class _AnterosCarouselState extends State<AnterosCarousel>
       );
 }
 
-/// Converts an index of a set size to the corresponding index of a collection of another size
-/// as if they were circular.
+/// Converte um índice de um tamanho definido para o índice correspondente de uma coleção de outro tamanho
+/// como se fossem circulares.
 ///
-/// Takes a [position] from collection Foo, a [base] from where Foo's index originated
-/// and the [length] of a second collection Baa, for which the correlating index is sought.
+/// Pega uma [posição] da coleção Foo, uma [base] de onde o índice de Foo se originou
+/// e o [comprimento] de uma segunda coleção Baa, para a qual o índice de correlação é procurado.
 ///
-/// For example; We have a Carousel of 10000(simulating infinity) but only 6 images.
-/// We need to repeat the images to give the illusion of a never ending stream.
-/// By calling _getRealIndex with position and base we get an offset.
-/// This offset modulo our length, 6, will return a number bestuckValue 0 and 5, which represent the image
-/// to be placed in the given position.
+/// Por exemplo; Temos um carrossel de 10.000 (simulando o infinito), mas apenas 6 imagens.
+/// Precisamos repetir as imagens para dar a ilusão de um fluxo sem fim.
+/// Chamando _getRealIndex com position e base obtemos um offset.
+/// Este módulo de deslocamento nosso comprimento, 6, retornará um número bestuckValue 0 e 5, que representam a imagem
+/// para ser colocado na posição dada.
 int _getRealIndex(int position, int base, int length) {
   final int offset = position - base;
   return _remainder(offset, length);
 }
 
-/// Returns the remainder of the modulo operation [input] % [source], and adjust it for
-/// negative values.
+/// Retorna o restante da operação do módulo [input] % [source], e ajusta para
+/// valores negativos.
 int _remainder(int input, int source) {
   final int result = input % source;
   return result < 0 ? source + result : result;

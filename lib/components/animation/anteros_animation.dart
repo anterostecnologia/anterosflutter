@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/types/anteros_animation_type.dart';
 
 class AnterosAnimation extends StatefulWidget {
-  /// Wrap any widget with [AnterosAnimation] to animate your widget. see [AnterosAnimationType] for types of animations.
+  /// Envolva qualquer widget com [AnterosAnimation] para animar seu widget. veja [AnterosAnimationType] para tipos de animações.
   const AnterosAnimation({
     Key? key,
     required this.child,
@@ -35,89 +35,89 @@ class AnterosAnimation extends StatefulWidget {
     this.reverseDuration,
   }) : super(key: key);
 
-  /// The duration for animation to perform
+  /// A duração da animação para executar
   final Duration? duration;
 
-  /// The duration for reverse animation to perform
+  /// A duração da animação reversa para executar
   final Duration? reverseDuration;
 
-  /// Defines how the animated widget is aligned during Animation.
+  /// Define como o widget animado é alinhado durante a Animação.
   final Alignment? alignment;
 
-  /// Defines how the animated widget is aligned(after the onTap) during Animation.
+  /// Define como o widget animado é alinhado (após o onTap) durante a Animação.
   final Alignment? activeAlignment;
 
-  /// The child of type [Widget] to display animation effect.
+  /// O filho do tipo [Widget] para exibir o efeito de animação.
   final Widget child;
 
-  /// Determines the animation curve. Defaults to [Curves.linear].
+  /// Determina a curva de animação. O padrão é [Curves.linear].
   final Curve? curve;
 
-  ///type of [AnterosAnimation] which takes the type ie, align, size, container,
-  /// rotateTransition, scaleTransition, slideTransition, and textStyle for the [AnterosAnimation]
+  ///tipo de [AnterosAnimation] que recebe o tipo ie, align, size, container,
+  /// rotateTransition, scaleTransition, slideTransition e textStyle para o [AnterosAnimation]
   final AnterosAnimationType? type;
 
-  /// defines [AnimatedContainer] initial width
+  /// define a largura inicial do [AnimatedContainer]
   final double? width;
 
-  /// defines the width of [AnimatedContainer] upto which it can expand during animation
+  /// define a largura de [AnimatedContainer] até a qual pode expandir durante a animação
   final double? changedWidth;
 
-  /// defines [AnimatedContainer] initial height
+  /// define a altura inicial do [AnimatedContainer]
   final double? height;
 
-  /// defines the height of [AnimatedContainer] upto which it can expand during animation
+  /// define a altura de [AnimatedContainer] até a qual pode expandir durante a animação
   final double? changedHeight;
 
-  /// defines the color of [AnimatedContainer] when onTap triggers
+  /// define a cor de [AnimatedContainer] quando o onTap é acionado
   final Color? activeColor;
 
-  /// defines the color of [AnimatedContainer]
+  /// define a cor de [AnimatedContainer]
   final Color? color;
 
-  /// defines [child]'s or [AnimatedContainer] padding
+  /// define o preenchimento de [child] ou [AnimatedContainer]
   final EdgeInsetsGeometry? padding;
 
-  /// defines [child]'s or [AnimatedContainer] margin
+  /// define a margem de [child] ou [AnimatedContainer]
   final EdgeInsetsGeometry? margin;
 
-  /// Called when the user taps the [child]
+  /// Chamado quando o usuário toca no [filho]
   final void Function()? onTap;
 
-  /// For AnterosAnimationType.rotateTransition, customized turns animation can be added to [RotationTransition] widget
+  /// Para AnterosAnimationType.rotateTransition, a animação de curvas personalizadas pode ser adicionada ao widget [RotationTransition]
   final Animation<double>? turnsAnimation;
 
-  /// For AnterosAnimationType.scaleTransition, customized scale animation can be added to [ScaleTransition] widget
+  /// Para AnterosAnimationType.scaleTransition, a animação de escala personalizada pode ser adicionada ao widget [ScaleTransition]
   final Animation<double>? scaleAnimation;
 
-  /// Type of [AnimationController], its a controller of an animation.
+  /// Tipo de [AnimationController], é um controlador de uma animação.
   final AnimationController? controller;
 
-  /// Defines direction of the [AnimatedDefaultTextStyle] TextDirection i.e [ltr,rtl]
+  /// Define a direção do [AnimatedDefaultTextStyle] TextDirection, ou seja, [ltr,rtl]
   final TextDirection? textDirection;
 
-  /// For AnterosAnimationType.slideTransition, which animates the position of a widget.
+  /// Para AnterosAnimationType.slideTransition, que anima a posição de um widget.
   final Animation<Offset>? slidePosition;
 
-  /// Defines the [TextStyle] of [AnimatedDefaultTextStyle]
+  /// Define o [TextStyle] de [AnimatedDefaultTextStyle]
   final TextStyle? style;
 
-  /// Defines the [TextAlign] of [AnimatedDefaultTextStyle]
+  /// Define o [TextAlign] de [AnimatedDefaultTextStyle]
   final TextAlign? textAlign;
 
-  /// Defines the [TextOverflow] of [AnimatedDefaultTextStyle]
+  /// Define o [TextOverflow] de [AnimatedDefaultTextStyle]
   final TextOverflow? textOverflow;
 
-  /// Defines the [maxLines] of [AnimatedDefaultTextStyle]
+  /// Define as [maxLines] de [AnimatedDefaultTextStyle]
   final int? maxLines;
 
-  /// Defines the [TextWidthBasis] of [AnimatedDefaultTextStyle]
+  /// Define o [TextWidthBasis] de [AnimatedDefaultTextStyle]
   final TextWidthBasis? textWidthBasis;
 
-  /// Defines the [fontSize] of [AnimatedDefaultTextStyle]
+  /// Define o [fontSize] de [AnimatedDefaultTextStyle]
   final double? fontSize;
 
-  /// Defines the [fontWeight] of [AnimatedDefaultTextStyle]
+  /// Define o [fontWeight] de [AnimatedDefaultTextStyle]
   final FontWeight? fontWeight;
 
   @override

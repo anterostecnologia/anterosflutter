@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosLoader extends StatefulWidget {
-  /// [AnterosLoader] shows differnt type of loaders with different customization options.
+  /// [AnterosLoader] mostra diferentes tipos de carregadores com diferentes opções de personalização.
   const AnterosLoader(
       {Key? key,
       this.loaderColorOne = Colors.redAccent,
@@ -20,41 +20,41 @@ class AnterosLoader extends StatefulWidget {
       this.child})
       : super(key: key);
 
-  /// Type of [Widget] used only in custom type and it is prominent over the loaderIconOne, loaderIconTwo, loaderIconThree in custom type
+  /// Tipo de [Widget] usado apenas no tipo personalizado e é proeminente sobre o loaderIconOne, loaderIconTwo, loaderIconThree no tipo personalizado
   final Widget? child;
 
-  /// Type of AnterosColor or [Color] which defines the color of the first dot in only  circle or square type of loader
+  /// Tipo de AnterosColor ou [Color] que define a cor do primeiro ponto apenas no tipo círculo ou quadrado do carregador
   final Color loaderColorOne;
 
-  /// Type of AnterosColor or [Color] which defines the color of the second dot in only  circle or square type of loader
+  /// Tipo de AnterosColor ou [Color] que define a cor do segundo ponto apenas no tipo círculo ou quadrado do carregador
   final Color loaderColorTwo;
 
-  /// Type of AnterosColor or [Color] which defines the color of the third dot in only  circle or square type of loader
+  /// Tipo de AnterosColor ou [Color] que define a cor do terceiro ponto apenas no tipo círculo ou quadrado do carregador
   final Color loaderColorThree;
 
-  /// Type of duration which defines the animation duration of the loader only in circle and square type of loader
+  /// Tipo de duração que define a duração da animação do carregador apenas no tipo círculo e quadrado do carregador
   final Duration duration;
 
-  /// Type of [AnterosLoaderType] ie, android, ios, circle , square and custom
+  /// Tipo de [AnterosLoaderType] ou seja, android, ios, circle , square e custom
   final AnterosLoaderType type;
 
-  /// Type of [Widget] which takes text, icons or images for first dot only in custom type of loader
+  /// Tipo de [Widget] que leva texto, ícones ou imagens para o primeiro ponto apenas no tipo personalizado de carregador
   final Widget? loaderIconOne;
 
-  /// Type of [Widget] which takes text, icons or images for second dot only in custom type of loader
+  /// Tipo de [Widget] que leva texto, ícones ou imagens para o segundo ponto apenas no tipo personalizado de carregador
   final Widget? loaderIconTwo;
 
-  /// Type of [Widget] which takes text, icons or images for third dot only in custom type of loader
+  /// Tipo de [Widget] que leva texto, ícones ou imagens para o terceiro ponto apenas no tipo personalizado de carregador
   final Widget? loaderIconThree;
 
-  /// type of Animation<Color> used to change the color of the android loader only
+  /// tipo de Animation<Color> usado para alterar apenas a cor do carregador do Android
   final Animation<Color>? androidLoaderColor;
 
-  /// type of [double] used to change the stroke width of the android loader only
+  /// tipo de [double] usado para alterar a largura do traço apenas do carregador do Android
   final double loaderstrokeWidth;
 
-  /// type of [double] or [AnterosSize] ie, small , medium or large which is used
-  /// to change the size of android, ios, circle and square loaders only
+  /// tipo de [double] ou [AnterosSize], ou seja, pequeno, médio ou grande que é usado
+  /// para alterar apenas o tamanho dos carregadores android, ios, circle e square
   final double size;
 
   @override

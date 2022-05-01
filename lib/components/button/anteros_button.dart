@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosButton extends StatefulWidget {
-  /// Create buttons of all types. check out [AnterosIconButton] for icon buttons, and [AnterosAdvancedBadge] for badges
+ /// Cria botões de todos os tipos. confira [AnterosIconButton] para botões de ícone e [AnterosAdvancedBadge] para emblemas
   const AnterosButton({
     Key? key,
     required this.onPressed,
@@ -55,67 +55,67 @@ class AnterosButton extends StatefulWidget {
         assert(disabledElevation >= 0.0),
         super(key: key);
 
-  /// Called when the button is tapped or otherwise activated.
+  /// Chamado quando o botão é tocado ou ativado de outra forma.
   final VoidCallback? onPressed;
 
-  /// Called by the underlying [InkWell] widget's InkWell.onHighlightChanged callback.
+  /// Chamado pelo retorno de chamada InkWell.onHighlightChanged do widget [InkWell] subjacente.
   final ValueChanged<bool>? onHighlightChanged;
 
-  /// Defines the default text style, with [Material.textStyle], for the button's [child].
+  /// Define o estilo de texto padrão, com [Material.textStyle], para o [filho] do botão.
   final TextStyle? textStyle;
 
-  /// The border side for the button's [Material].
+  /// O lado da borda do [Material] do botão.
   final BorderSide? borderSide;
 
-  /// The box shadow for the button's [Material], if AnterosButtonType is solid
+  /// A sombra da caixa para o [Material] do botão, se AnterosButtonType for sólido
   final BoxShadow? boxShadow;
 
-  /// Pass [AnterosColors] or [Color]. The color for the button's [Material] when it has the input focus.
+  /// Passe [AnterosColors] ou [Color]. A cor do [Material] do botão quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// Pass [AnterosColors] or [Color]. The color for the button's [Material] when a pointer is hovering over it.
+  /// Passe [AnterosColors] ou [Color]. A cor do [Material] do botão quando um ponteiro passa sobre ele.
   final Color? hoverColor;
 
-  /// Pass [AnterosColors] or [Color]. The highlight color for the button's [InkWell].
+  /// Passe [AnterosColors] ou [Color]. A cor de realce do botão [InkWell].
   final Color? highlightColor;
 
-  /// Pass [AnterosColors] or [Color]. The splash color for the button's [InkWell].
+  /// Passe [AnterosColors] ou [Color]. A cor inicial do botão [InkWell].
   final Color? splashColor;
 
-  /// The elevation for the button's [Material] when the button is [enabled] but not pressed.
+  /// A elevação do [Material] do botão quando o botão está [habilitado] mas não pressionado.
   final double elevation;
 
-  /// The elevation for the button's [Material] when the button is [enabled] and a pointer is hovering over it.
+  /// A elevação do [Material] do botão quando o botão está [habilitado] e um ponteiro está pairando sobre ele.
   final double hoverElevation;
 
-  /// The elevation for the button's [Material] when the button is [enabled] and has the input focus.
+  /// A elevação do [Material] do botão quando o botão está [habilitado] e tem o foco de entrada.
   final double focusElevation;
 
-  /// The elevation for the button's [Material] when the button is [enabled] and pressed.
+  /// A elevação do [Material] do botão quando o botão está [habilitado] e pressionado.
   final double highlightElevation;
 
-  /// The elevation for the button's [Material] when the button is not [enabled].
+  /// A elevação do [Material] do botão quando o botão não está [habilitado].
   final double disabledElevation;
 
-  /// The internal padding for the button's [child].
+  /// O preenchimento interno para o [filho] do botão.
   final EdgeInsetsGeometry padding;
 
-  /// Defines the button's size.
+  /// Define o tamanho do botão.
   final BoxConstraints? constraints;
 
-  /// The shape of the button's [Material].
+  /// A forma do [Material] do botão.
   final ShapeBorder? borderShape;
 
-  /// Defines the duration of animated changes for [shape] and [elevation].
+  /// Define a duração das alterações animadas para [forma] e [elevação].
   final Duration animationDuration;
 
-  /// Typically the button's label.
+  /// Normalmente o rótulo do botão.
   final Widget? child;
 
-  /// Whether the button is enabled or disabled.
+  /// Se o botão está habilitado ou desabilitado.
   bool get enabled => onPressed != null;
 
-  /// Configures the minimum size of the tap target.
+  /// Configura o tamanho mínimo do alvo de toque.
   final MaterialTapTargetSize materialTapTargetSize;
 
   /// {@macro flutter.widgets.Focus.focusNode}
@@ -127,94 +127,94 @@ class AnterosButton extends StatefulWidget {
   /// {@macro flutter.widgets.Clip}
   final Clip clipBehavior;
 
-  /// Button type of [AnterosButtonType] i.e, solid, outline, outline2x, transparent
+  /// Tipo de botão de [AnterosButtonType] ou seja, sólido, contorno, contorno2x, transparente
   final AnterosButtonType type;
 
-  /// Button type of [AnterosButtonShape] i.e, standard, pills, square, shadow, icons
+  /// Tipo de botão de [AnterosButtonShape] ou seja, padrão, pílulas, quadrado, sombra, ícones
   final AnterosButtonShape shape;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color color;
 
-  /// The fill color of the button when the button is disabled.
+  /// A cor de preenchimento do botão quando o botão está desabilitado.
   ///
-  /// The default value of this color is the theme's disabled color,
+  /// O valor padrão desta cor é a cor desabilitada do tema,
   /// [ThemeData.disabledColor].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [color] - the fill color of the button when the button is [enabled].
+  /// * [color] - a cor de preenchimento do botão quando o botão está [habilitado].
   final Color? disabledColor;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color? textColor;
 
-  /// The color to use for this button's text when the button is disabled.
+  /// A cor a ser usada para o texto deste botão quando o botão está desabilitado.
   ///
-  /// The button's [Material.textStyle] will be the current theme's button
-  /// text style, [ThemeData.textTheme.button], configured with this color.
+  /// O [Material.textStyle] do botão será o botão do tema atual
+  /// estilo de texto, [ThemeData.textTheme.button], configurado com esta cor.
   ///
-  /// The default value is the theme's disabled color,
+  /// O valor padrão é a cor desabilitada do tema,
   /// [ThemeData.disabledColor].
   ///
-  /// If [textColor] is a [MaterialStateProperty<Color>], [disabledTextColor]
-  /// will be ignored.
+  /// Se [textColor] for um [MaterialStateProperty<Color>], [disabledTextColor]
+  /// será ignorado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [textColor] - The color to use for this button's text when the button is [enabled].
+  /// * [textColor] - A cor a ser usada para o texto deste botão quando o botão estiver [habilitado].
   final Color? disabledTextColor;
 
-  /// size of [double] or [AnterosSize] i.e, 1.2, small, medium, large etc.
+  /// tamanho de [double] ou [AnterosSize], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// text of type [String] is alternative to child. text will get priority over child
+  /// o texto do tipo [String] é alternativo ao filho. o texto terá prioridade sobre o filho
   final String? text;
 
-  /// icon of type [Widget]
+  /// ícone do tipo [Widget]
   final Widget? icon;
 
-  /// icon type of [AnterosPosition] i.e, start, end
+  /// tipo de ícone de [AnterosPosition] ou seja, início, fim
   final AnterosPosition position;
 
-  /// on true state blockButton gives block size button
+  /// no estado verdadeiro blockButton fornece o botão de tamanho do bloco
   final bool? blockButton;
 
-  /// on true state full width Button gives full width button
+  /// no estado verdadeiro O botão de largura total fornece o botão de largura total
   final bool? fullWidthButton;
 
-  /// on true state default box shadow appears around button, if AnterosButtonType is solid
+  /// no estado verdadeiro, a sombra da caixa padrão aparece ao redor do botão, se AnterosButtonType for sólido
   final bool? buttonBoxShadow;
 
-  /// A set of thirteen colors that can be used to derive the button theme's
-  /// colors.
+  /// Um ​​conjunto de treze cores que podem ser usadas para derivar o tema do botão
+  /// cores.
   ///
-  /// This property was added much later than the theme's set of highly
-  /// specific colors, like [ThemeData.highlightColor],
+  /// Esta propriedade foi adicionada muito depois do conjunto de itens altamente
+  /// cores específicas, como [ThemeData.highlightColor],
   /// [ThemeData.splashColor] etc.
   ///
-  /// The colors for new button classes can be defined exclusively in terms
-  /// of [colorScheme]. When it's possible, the existing buttons will
-  /// (continue to) gradually migrate to it.
+  /// As cores para novas classes de botões podem ser definidas exclusivamente em termos
+  /// de [colorScheme]. Quando for possível, os botões existentes serão
+  /// (continuar) migrar gradualmente para ele.
   final ColorScheme? colorScheme;
 
-  /// Whether detected gestures should provide acoustic and/or haptic feedback.
+  /// Se os gestos detectados devem fornecer feedback acústico e/ou tátil.
   ///
-  /// For example, on Android a tap will produce a clicking sound and a
-  /// long-press will produce a short vibration, when feedback is enabled.
+  /// Por exemplo, no Android um toque produzirá um som de clique e um
+  /// o pressionamento longo produzirá uma vibração curta, quando o feedback estiver ativado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [Feedback] for providing platform-specific feedback to certain actions.
+  /// * [Feedback] para fornecer feedback específico da plataforma para determinadas ações.
   final bool? enableFeedback;
 
-  /// Called when the button is long-pressed.
+  /// Chamado quando o botão é pressionado longamente.
   ///
-  /// If this callback and [onPressed] are null, then the button will be disabled.
+  /// Se este retorno de chamada e [onPressed] forem nulos, o botão será desabilitado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [enabled], which is true if the button is enabled.
+  /// * [enabled], o que é verdade se o botão estiver habilitado.
   final VoidCallback? onLongPress;
 
   @override
@@ -308,10 +308,10 @@ class _AnterosButtonState extends State<AnterosButton> {
   @override
   void didUpdateWidget(AnterosButton oldWidget) {
     _updateState(MaterialState.disabled, !widget.enabled);
-    // If the button is disabled while a press gesture is currently ongoing,
-    // InkWell makes a call to handleHighlightChanged. This causes an exception
-    // because it calls setState in the middle of a build. To preempt this, we
-    // manually update pressed to false when this situation occurs.
+    // Se o botão estiver desabilitado enquanto um gesto de pressionar estiver em andamento,
+    // InkWell faz uma chamada para handleHighlightChanged. Isso causa uma exceção
+    // porque chama setState no meio de uma compilação. Para antecipar isso, nós
+    // atualiza manualmente pressionado para false quando esta situação ocorre.
     if (_disabled && _pressed) {
       _handleHighlightChanged(false);
     }
@@ -334,8 +334,8 @@ class _AnterosButtonState extends State<AnterosButton> {
   }
 
   double get _effectiveElevation {
-    // These conditionals are in order of precedence, so be careful about
-    // reorganizing them.
+    // Essas condicionais estão em ordem de precedência, então tenha cuidado com
+    // reorganizando-os.
     if (_disabled) {
       return widget.disabledElevation;
     }
@@ -641,11 +641,11 @@ class _AnterosButtonState extends State<AnterosButton> {
   }
 }
 
-/// A widget to pad the area around a [MaterialButton]'s inner [Material].
+/// Um ​​widget para preencher a área ao redor do [Material] interno de um [MaterialButton].
 ///
-/// Redirect taps that occur in the padded area around the child to the center
-/// of the child. This increases the size of the button and the button's
-/// "tap target", but not its material or its ink splashes.
+/// Redireciona os toques que ocorrem na área acolchoada ao redor da criança para o centro
+/// da criança. Isso aumenta o tamanho do botão e o tamanho do botão
+/// "tap target", mas não seu material ou seus respingos de tinta.
 class _InputPadding extends SingleChildRenderObjectWidget {
   const _InputPadding({
     Key? key,

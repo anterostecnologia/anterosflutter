@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosTypography extends StatelessWidget {
-  /// Creates simple title with underline. Style of title can be changed using [AnterosTypographyType]
-  /// showDivider is default true, can be set false.
+  /// Cria título simples com sublinhado.Estilo de título pode ser alterado usando [AnterosTypographyType]
+  /// O ShowDivider é padrão, pode ser definido false.
   const AnterosTypography({
     Key? key,
     this.type = AnterosTypographyType.typo4,
@@ -23,47 +23,47 @@ class AnterosTypography extends StatelessWidget {
   })  : assert(text != null || child != null),
         super(key: key);
 
-  /// child of  type [Widget] is alternative to text key. text will get priority over child
+  /// filho do tipo [Widget] é alternativo à chave de texto.O texto terá prioridade sobre a criança
   final Widget? child;
 
-  /// text of type [String] is alternative to child. text will get priority over child
+  /// texto do tipo [String] é alternativo para a criança.O texto terá prioridade sobre a criança
   final String? text;
 
-  ///icon of type [Widget] used to pass icon or image
+  /// Ícone do tipo [Widget] usado para passar no ícone ou imagem
   final Widget? icon;
 
-  /// Pass [AnterosColors] or [Color] for dividerColor
+  /// Passar [AnterosColors] ou [Color] para divisercolor
   final Color? dividerColor;
 
-  /// Pass [AnterosColors] or [Color] for textColor
+  /// Passar [AnterosColors] ou [Color] para textcolor
   final Color? textColor;
 
-  /// dividerBorderRadius of type [BorderRadius] to alter the radius of the divider
+  /// dividerBorderRadius do tipo [BorderRadius] para alterar o raio do divisor
   final BorderRadius? dividerBorderRadius;
 
-  ///dividerAlignment of type [Alignment] used for aligning the divider to required alignment
+  /// dividerAlignment do tipo [Alignment] usado para alinhar o divisor ao alinhamento necessário
   final Alignment? dividerAlignment;
 
-  ///Pass [bool] value to show or hide the divider
+  /// Passar [bool] valor para mostrar ou ocultar o divisor
   final bool showDivider;
 
-  ///pass [double] type to increase or decrease the width of the divider
+  /// passar [double] digite para aumentar ou diminuir a largura do divisor
   final double? dividerWidth;
 
-  ///pass [double] type to increase or decrease the height of the divider
+  /// passar [double] digite para aumentar ou diminuir a altura do divisor
   final double? dividerHeight;
 
-  ///backgroundImage of type [ImageProvider] to set the background of [AnterosTypography]
+  /// imagem de fundo do tipo [ImageProvider] Para definir o fundo de [AnterosTypography]
   final ImageProvider? backgroundImage;
 
-  ///backgroundImagecolorFilter of type [ColorFilter] to set the
-  ///background color of [AnterosTypography] only when backgroundImage is available
+  /// BackgroundImageColorFilter do tipo [ColorFilter] Para definir o
+  /// cor de fundo de [AnterosTypography] Somente quando o BackgroundImage está disponível
   final ColorFilter? backgroundImagecolorFilter;
 
-  /// header type of [AnterosTypographyType] i.e, typo1, typo2, typo3, typo4, typo5, typo6
+  /// Tipo de cabeçalho de [AnterosTypographyType] isto é, digitação1, digitação2, digitação3, digitação4, digitação5, digitação6
   final AnterosTypographyType type;
 
-  ///pass [FontWeight] for FontWeight
+  /// passar [FontWeight] por Espessura da fonte
   final FontWeight fontWeight;
 
   @override

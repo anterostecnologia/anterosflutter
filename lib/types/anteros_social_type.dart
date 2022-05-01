@@ -13,18 +13,18 @@ enum AnterosSocialType {
 }
 
 enum AnterosSocialButtonType {
-  /// Default type is [AnterosSocialButtonType.solid], used to fill with color for widget
+  /// Tipo padrão é [AnterosSocialButtonType.solid], usado para preencher de cor para o widget
   solid,
 
-  /// Type [AnterosSocialButtonType.outline], used for widget with outline border and fill color with Colors.transparent
+  /// Tipo [AnterosSocialButtonType.outline], Usado para widget com borda contínua e preenche a cor com cores.Transparent
   outline,
 
-  /// Type [AnterosSocialButtonType.outline2x], used for widget with outline2x border and border.width = 2.0 and fill color with Colors.transparent
+  /// Type [AnterosSocialButtonType.outline2x], usado para widget com contorno2x borda e borda.width = 2.0 e preencha a cor com cores.Transparent
   outline2x,
 
-  /// Type [AnterosSocialButtonType.transparent], used for widget with fill color with Colors.transparent
+  /// Type [AnterosSocialButtonType.transparent], usado para widget com cor de preenchimento com cores.
   transparent,
 
-  /// Type [AnterosSocialButtonType.icon], used for widget with just icon filled in square container
+  /// Tipo [AnterosSocialButtonType.icon], usado para widget com apenas ícone preenchido em contêiner quadrado
   icon,
 }

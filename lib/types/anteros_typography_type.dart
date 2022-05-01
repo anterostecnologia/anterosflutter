@@ -1,20 +1,20 @@
-/// [AnterosTypographyType] is used to change the type of AnterosTypography title widget.
+/// [AnterosTypographyType] é usado para alterar o tipo de widget de título de Anterostypografia.
 enum AnterosTypographyType {
-  /// [AnterosTypographyType.typo1] type used for title widget with fontSize = 25.0
+  /// [AnterosTypographyType.typo1] Tipo usado para widget de título com fontsize = 25.0
   typo1,
 
-  /// [AnterosTypographyType.typo2] type used for title widget with fontSize = 22.0
+  /// [AnterosTypographyType.typo2] Tipo usado para widget de título com fontsize = 22.0
   typo2,
 
-  /// [AnterosTypographyType.typo3] type used for title widget with fontSize = 19.0
+  /// [AnterosTypographyType.typo3] Tipo usado para widget de título com fontsize = 19.0
   typo3,
 
-  /// [AnterosTypographyType.typo4] type used for title widget with fontSize = 17.0
+  /// [AnterosTypographyType.typo4] Tipo usado para widget de título com fontsize = 17.0
   typo4,
 
-  /// [AnterosTypographyType.typo5] type used for title widget with fontSize = 15.0
+  /// [AnterosTypographyType.typo5] Tipo usado para widget de título com fontsize = 15.0
   typo5,
 
-  /// [AnterosTypographyType.typo6] type used for title widget with fontSize = 13.0
+  /// [AnterosTypographyType.typo6] Tipo usado para widget de título com fontsize = 13.0
   typo6,
 }

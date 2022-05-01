@@ -8,7 +8,7 @@ typedef QueryBuilder<T> = List<T> Function(
 );
 
 class AnterosSearchBar<T> extends StatefulWidget {
-  /// search bar with various customization option
+  /// Barra de pesquisa com várias opções de personalização
   const AnterosSearchBar({
     required this.searchList,
     required this.overlaySearchListItemBuilder,
@@ -22,31 +22,31 @@ class AnterosSearchBar<T> extends StatefulWidget {
     this.searchBoxInputDecoration,
   }) : super(key: key);
 
-  /// List of text or [Widget] reference for users
+  /// Lista de texto ou [Widget] referência para usuários
   final List<T> searchList;
 
-  /// defines how the [searchList] items look like in overlayContainer
+  /// define como o [searchList] Os itens parecem no sobreconteiro
   final QueryListItemBuilder<T> overlaySearchListItemBuilder;
 
-  /// if true, it will hide the searchBox
+  /// Se for verdade, ele ocultará a caixa de pesquisa
   final bool hideSearchBoxWhenItemSelected;
 
-  /// defines the height of [searchList] overlay container
+  /// define a altura de [searchList] contêiner de sobreposição
   final double? overlaySearchListHeight;
 
-  /// can search and filter the [searchList]
+  /// pode pesquisar e filtrar o [searchList]
   final QueryBuilder<T> searchQueryBuilder;
 
-  /// displays the [Widget] when the search item failed
+  /// exibe o [Widget] Quando o item de pesquisa falhou
   final Widget? noItemsFoundWidget;
 
-  /// defines what to do with onSelect SearchList item
+  /// Define o que fazer com o item OnSelect Searchlist
   final OnItemSelected<T>? onItemSelected;
 
-  /// defines the input decoration of searchBox
+  /// define a decoração de entrada do SearchBox
   final InputDecoration? searchBoxInputDecoration;
 
-  /// defines the input controller of searchBox
+  /// define o controlador de entrada da pesquisa
   final TextEditingController? controller;
 
   @override

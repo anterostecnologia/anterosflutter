@@ -1,11 +1,11 @@
-/// [AnterosAvatarShape] is used to shape the GFAvatar widget.
+/// [AnterosAvatarShape] é usado para moldar o widget gfavatar.
 enum AnterosAvatarShape {
-  /// Default shape is [AnterosAvatarShape.circle], used for rounded avatar
+  /// Predefinição forma é [AnterosAvatarShape.circle], usado para avatar arredondado
   circle,
 
-  /// [AnterosAvatarShape.standard], used for square avatar with rounded corners
+  /// [AnterosAvatarShape.standard], usado para avatar quadrado com cantos arredondados
   standard,
 
-  /// [AnterosAvatarShape.square], used for square avatar
+  /// [AnterosAvatarShape.square], usado para avatar quadrado
   square,
 }

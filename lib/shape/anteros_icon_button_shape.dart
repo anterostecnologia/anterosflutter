@@ -1,14 +1,14 @@
-/// [AnterosIconButtonShape] is used to shape the GFIconButton widget.
+/// [AnterosIconButtonShape] é usado para moldar o widget gficonButton.
 enum AnterosIconButtonShape {
-  /// [AnterosIconButtonShape.circle], used for rounded shape icon button
+  /// [AnterosIconButtonShape.circle], Usado para o botão de ícone de forma arredondada
   circle,
 
-  /// [AnterosIconButtonShape.pills], used for pills shaped icon button with rounded corners
+  /// [AnterosIconButtonShape.pills], Usado para o botão de ícone em forma de pílulas com cantos arredondados
   pills,
 
-  /// Default shape is [AnterosIconButtonShape.standard], used for standard rectangle icon button with rounded corners
+  /// Predefinição forma é [AnterosIconButtonShape.standard], Usado para o botão de ícone retângulo padrão com cantos arredondados
   standard,
 
-  /// [AnterosIconButtonShape.square], used for square icon button
+  /// [AnterosIconButtonShape.square], Usado para o botão de ícone quadrado
   square,
 }

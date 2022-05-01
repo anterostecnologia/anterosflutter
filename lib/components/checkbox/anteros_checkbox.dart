@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosCheckbox extends StatefulWidget {
-  /// [AnterosCheckbox] is a small box (as in a checklist) in which to place a check mark to make a selection with various customization options.
+  /// [AnterosCheckbox] é uma pequena caixa (como em uma lista de verificação) na qual colocar uma marca de seleção para fazer uma seleção com várias opções de personalização.
   const AnterosCheckbox(
       {Key? key,
       this.size = AnterosSize.MEDIUM,
@@ -24,44 +24,44 @@ class AnterosCheckbox extends StatefulWidget {
       this.focusNode})
       : super(key: key);
 
-  /// type of [AnterosCheckboxType] which is of four type is basic, square, circular and custom
+  /// tipo de [AnterosCheckboxType] que é de quatro tipos é básico, quadrado, circular e personalizado
   final AnterosCheckboxType type;
 
-  /// type of [double] which is AnterosSize ie, small, medium and large and can use any double value
+  /// tipo de [double] que é AnterosSize, ou seja, pequeno, médio e grande e pode usar qualquer valor duplo
   final double size;
 
-  /// type of [Color] used to change the backgroundColor of the active checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção ativa
   final Color activeBgColor;
 
-  /// type of [Color] used to change the backgroundColor of the inactive checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção inativa
   final Color inactiveBgColor;
 
-  /// type of [Color] used to change the border color of the active checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção ativa
   final Color activeBorderColor;
 
-  /// type of [Color] used to change the border color of the inactive checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção inativa
   final Color inactiveBorderColor;
 
-  /// Called when the user checks or unchecks the checkbox.
+  /// Chamado quando o usuário marca ou desmarca a caixa de seleção.
   final ValueChanged<bool>? onChanged;
 
-  /// Used to set the current state of the checkbox
+  /// Usado para definir o estado atual da caixa de seleção
   final bool value;
 
-  /// type of [Widget] used to change the  checkbox's active icon
+  /// tipo de [Widget] usado para alterar o ícone ativo da caixa de seleção
   final Widget activeIcon;
 
-  /// type of [Widget] used to change the  checkbox's inactive icon
+  /// tipo de [Widget] usado para alterar o ícone inativo da caixa de seleção
   final Widget? inactiveIcon;
 
-  /// type of [Color] used to change the background color of the custom active checkbox only
+  /// tipo de [Color] usado para alterar apenas a cor de fundo da caixa de seleção ativa personalizada
   final Color customBgColor;
 
-  /// on true state this widget will be selected as the initial focus
-  /// when no other node in its scope is currently focused
+  /// no estado verdadeiro este widget será selecionado como foco inicial
+  /// quando nenhum outro nó em seu escopo está focado no momento
   final bool autofocus;
 
-  /// an optional focus node to use as the focus node for this widget.
+  /// um nó de foco opcional para usar como nó de foco para este widget.
   final FocusNode? focusNode;
 
   @override

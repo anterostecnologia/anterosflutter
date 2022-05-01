@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../anteros_responsive_builder.dart';
 
-/// Returns the [DeviceScreenType] that the application is currently running on
+/// retorna o [DeviceScreenType] que o aplicativo está em execução atualmente
 DeviceScreenType getDeviceType(
   Size size, [
   AnterosScreenBreakpoints? breakpoint,
@@ -13,7 +13,7 @@ DeviceScreenType getDeviceType(
     deviceWidth = size.width;
   }
 
-  // Replaces the defaults with the user defined definitions
+  // Substitui os padrões pelas definições definidas pelo usuário
   if (breakpoint != null) {
     if (deviceWidth > breakpoint.desktop) {
       return DeviceScreenType.desktop;
@@ -27,7 +27,7 @@ DeviceScreenType getDeviceType(
       return DeviceScreenType.watch;
     }
   } else {
-    // If no user defined definitions are passed through use the defaults
+    // Se nenhuma definição definida pelo usuário for passada, use os padrões
     if (deviceWidth >=
         AnterosResponsiveSizingConfig.instance.breakpoints.desktop) {
       return DeviceScreenType.desktop;
@@ -47,7 +47,7 @@ DeviceScreenType getDeviceType(
   return DeviceScreenType.mobile;
 }
 
-/// Returns the [RefindedSize] for each device that the application is currently running on
+/// Retorna o [RefindedSize] Para cada dispositivo em que o aplicativo está em execução atualmente
 RefinedSize getRefinedSize(
   Size size, {
   AnterosRefinedBreakpoints? refinedBreakpoint,
@@ -60,7 +60,7 @@ RefinedSize getRefinedSize(
     deviceWidth = size.width;
   }
 
-  // Replaces the defaults with the user defined definitions
+  // Substitui os padrões pelas definições definidas pelo usuário
   if (refinedBreakpoint != null) {
     if (deviceScreenType == DeviceScreenType.desktop) {
       if (deviceWidth > refinedBreakpoint.desktopExtraLarge) {
@@ -108,9 +108,9 @@ RefinedSize getRefinedSize(
       return RefinedSize.normal;
     }
   } else {
-    // If no user defined definitions are passed through use the defaults
+    // Se nenhuma definição definida pelo usuário for passada, use os padrões
 
-    // Desktop
+    // Área de Trabalho
     if (deviceScreenType == DeviceScreenType.desktop) {
       if (deviceWidth >=
           AnterosResponsiveSizingConfig
@@ -131,7 +131,7 @@ RefinedSize getRefinedSize(
       }
     }
 
-    // Tablet
+    // Tábua
     if (deviceScreenType == DeviceScreenType.tablet) {
       if (deviceWidth >=
           AnterosResponsiveSizingConfig
@@ -152,7 +152,7 @@ RefinedSize getRefinedSize(
       }
     }
 
-    // Mobile
+    // Móvel
     if (deviceScreenType == DeviceScreenType.mobile) {
       if (deviceWidth >=
           AnterosResponsiveSizingConfig
@@ -177,7 +177,7 @@ RefinedSize getRefinedSize(
   return RefinedSize.small;
 }
 
-/// Will return one of the values passed in for the device it's running on
+/// Retornará um dos valores passados para o dispositivo em que está em execução
 T getValueForScreenType<T>({
   required BuildContext context,
   required T mobile,
@@ -186,11 +186,11 @@ T getValueForScreenType<T>({
   T? watch,
 }) {
   var deviceScreenType = getDeviceType(MediaQuery.of(context).size);
-  // If we're at desktop size
+  // Se estamos no tamanho da área de trabalho
   if (deviceScreenType == DeviceScreenType.desktop) {
-    // If we have supplied the desktop layout then display that
+    // Se fornecemos o layout da área de trabalho, exiba isso
     if (desktop != null) return desktop;
-    // If no desktop layout is supplied we want to check if we have the size below it and display that
+    // Se nenhum layout de desktop for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
     if (tablet != null) return tablet;
   }
 
@@ -202,11 +202,11 @@ T getValueForScreenType<T>({
     return watch;
   }
 
-  // If none of the layouts above are supplied or we're on the mobile layout then we show the mobile layout
+  // Se nenhum dos layouts acima for fornecido ou estamos no layout móvel, mostramos o layout móvel
   return mobile;
 }
 
-/// Will return one of the values passed in for the refined size
+/// Retornará um dos valores passados para o tamanho refinado
 T getValueForRefinedSize<T>({
   required BuildContext context,
   required T normal,
@@ -214,27 +214,27 @@ T getValueForRefinedSize<T>({
   T? extraLarge,
 }) {
   var refinedSize = getRefinedSize(MediaQuery.of(context).size);
-  // If we're at extra large size
+  // Se estamos em tamanho extra grande
   if (refinedSize == RefinedSize.extraLarge) {
-    // If we have supplied the extra large layout then display that
+    // Se fornecemos o layout extra grande, exiba isso
     if (extraLarge != null) return extraLarge;
-    // If no extra large layout is supplied we want to check if we have the size below it and display that
+    // Se nenhum layout extra grande for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
     if (large != null) return large;
   }
 
   if (refinedSize == RefinedSize.large) {
-    // If we have supplied the large layout then display that
+    // Se fornecemos o grande layout, exiba isso
     if (large != null) return large;
-    // If no large layout is supplied we want to check if we have the size below it and display that
+    // Se nenhum layout grande for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
     if (normal != null) return normal;
   }
 
   if (refinedSize == RefinedSize.normal) {
-    // If we have supplied the normal layout then display that
+    // Se fornecemos o layout normal, exiba isso
     if (normal != null) return normal;
   }
 
-  // If none of the layouts above are supplied or we're on the normal size layout then we show the normal layout
+  // Se nenhum dos layouts acima for fornecido ou estamos no layout de tamanho normal, mostramos o layout normal
   return normal;
 }
 

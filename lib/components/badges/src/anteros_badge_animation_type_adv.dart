@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-/// This is a set of animations that you can use for your [Badge] widget.
+/// Este é um conjunto de animações que você pode usar para seu widget [Badge].
 enum AnterosAdvancedBadgeAnimationType {
-  /// This value is for using the slide animation
+  /// Este valor é para usar a animação do slide
   ///
-  /// See also:
-  /// * [SlideTransition]
+  /// Veja também:
+  /// * [Transição de slide]
   slide,
 
-  /// This value is for using the scale animation
+  /// Este valor é para usar a animação de escala
   ///
-  /// See also:
+  /// Veja também:
   /// * [ScaleTransition]
   scale,
 
-  /// This value is for using the fade animation
+  /// Este valor é para usar a animação de fade
   ///
-  /// See also:
+  /// Veja também:
   /// * [FadeTransition]
   fade,
 }

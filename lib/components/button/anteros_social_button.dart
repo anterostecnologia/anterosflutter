@@ -4,7 +4,7 @@ import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anterosflutter/types/anteros_social_type.dart';
 
 class AnterosSocialButton extends StatelessWidget {
-  /// Create buttons of all types. check out [AnterosIconButton] for icon buttons, and [AnterosAdvancedBadge] for badges
+  /// Cria botões de todos os tipos. confira [AnterosIconButton] para botões de ícone e [AnterosAdvancedBadge] para emblemas
   const AnterosSocialButton({
     Key? key,
     required this.onPressed,
@@ -18,39 +18,39 @@ class AnterosSocialButton extends StatelessWidget {
     this.onLongPress,
   }) : super(key: key);
 
-  /// Called when the button is tapped or otherwise activated.
+  /// Chamado quando o botão é tocado ou ativado de outra forma.
   final VoidCallback? onPressed;
 
-  /// The elevation for the button's [Material] when the button is [enabled] but not pressed.
+  /// A elevação do [Material] do botão quando o botão está [habilitado] mas não pressionado.
   final double elevation;
 
   bool get enabled => onPressed != null;
 
-  /// Button type of AnterosSocialButtonShape i.e, standard, pills, square, shadow, icons
+  /// Tipo de botão de AnterosSocialButtonShape ou seja, padrão, pílulas, quadrado, sombra, ícones
   final AnterosButtonShape shape;
 
-  /// size of [double] or [AnterosSize] i.e, 1.2, small, medium, large etc.
+  /// tamanho de [double] ou [AnterosSize], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// type signify the social icon type [AnterosSocialType] ie, whatsapp, facebook etc.
+  /// tipo significa o tipo de ícone social [AnterosSocialType] ou seja, whatsapp, facebook etc.
   final AnterosSocialType type;
 
-  /// type signify the type of social button [AnterosSocialButtonType] ie, solid, outlined etc.
+  /// tipo significa o tipo de botão social [AnterosSocialButtonType] ou seja, sólido, delineado etc.
   final AnterosSocialButtonType buttonType;
 
-  /// on true state blockButton gives block size button
+  /// no estado verdadeiro blockButton fornece o botão de tamanho do bloco
   final bool? blockButton;
 
-  /// on true state full width Button gives full width button
+  /// no estado verdadeiro O botão de largura total fornece o botão de largura total
   final bool? fullWidthButton;
 
-  /// Called when the button is long-pressed.
+  /// Chamado quando o botão é pressionado longamente.
   ///
-  /// If this callback and [onPressed] are null, then the button will be disabled.
+  /// Se este retorno de chamada e [onPressed] forem nulos, o botão será desabilitado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [enabled], which is true if the button is enabled.
+  /// * [enabled], o que é verdade se o botão estiver habilitado.
   final VoidCallback? onLongPress;
 
   @override
@@ -263,11 +263,11 @@ class AnterosSocialButton extends StatelessWidget {
       color: color,
       boxShadow: const BoxShadow(
         color: Colors.black,
-        blurRadius: 10.0, // soften the shadow
-        spreadRadius: 7.0, //extend the shadow
+        blurRadius: 10.0, //suaviza a sombra
+        spreadRadius: 7.0, //estende a sombra
         offset: Offset(
-          5.0, // Move to right 10  horizontally
-          5.0, // Move to bottom 5 Vertically
+          5.0, // Move para a direita 10 horizontalmente
+          5.0, // Move para baixo 5 Verticalmente
         ),
       ),
     );
@@ -287,11 +287,11 @@ class AnterosSocialButton extends StatelessWidget {
       color: color,
       boxShadow: const BoxShadow(
         color: Colors.black,
-        blurRadius: 10.0, // soften the shadow
-        spreadRadius: 7.0, //extend the shadow
+        blurRadius: 10.0, //suaviza a sombra
+        spreadRadius: 7.0, //estende a sombra
         offset: Offset(
-          5.0, // Move to right 10  horizontally
-          5.0, // Move to bottom 5 Vertically
+          5.0, // Move para a direita 10 horizontalmente
+          5.0, // Move para baixo 5 Verticalmente
         ),
       ),
     );
@@ -311,11 +311,11 @@ class AnterosSocialButton extends StatelessWidget {
       color: color,
       boxShadow: const BoxShadow(
         color: Colors.black,
-        blurRadius: 10.0, // soften the shadow
-        spreadRadius: 7.0, //extend the shadow
+        blurRadius: 10.0, //suaviza a sombra
+        spreadRadius: 7.0, //estende a sombra
         offset: Offset(
-          5.0, // Move to right 10  horizontally
-          5.0, // Move to bottom 5 Vertically
+          5.0, // Move para a direita 10 horizontalmente
+          5.0, // Move para baixo 5 Verticalmente
         ),
       ),
     );

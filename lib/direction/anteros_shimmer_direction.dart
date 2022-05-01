@@ -1,19 +1,19 @@
-/// [AnterosShimmerDirection] controls the direction of the shimmer effect
+/// [AnterosShimmerDirection] controla a direção do efeito de brilho
 ///
 enum AnterosShimmerDirection {
-  /// Default direction is [AnterosShimmerDirection.leftToRight], which starts the
-  /// shimmer effect animation from left to right side of the child Widget.
+  /// Direção padrão é [AnterosShimmerDirection.leftToRight],que inicia o
+  /// Animação de efeito brilhante do lado esquerdo para o direito do widget infantil.
   leftToRight,
 
-  /// Direction [AnterosShimmerDirection.rightToLeft], which starts the shimmer
-  /// effect animation from right to left side of the child Widget.
+  /// Direção [AnterosShimmerDirection.rightToLeft], que inicia o brilho
+  /// Animação de efeito do lado direito para esquerda do widget infantil.
   rightToLeft,
 
-  /// Direction [AnterosShimmerDirection.topToBottom], which starts the shimmer
-  /// effect animation from top to bottom side of the child Widget.
+  /// Direção [AnterosShimmerDirection.topToBottom], que inicia o brilho
+  /// Animação de efeito de cima para baixo do widget infantil.
   topToBottom,
 
-  /// Direction [AnterosShimmerDirection.bottomToTop], which starts the shimmer
-  /// effect animation from bottom to top side of the child Widget.
+  /// Direção [AnterosShimmerDirection.bottomToTop], que inicia o brilho
+  /// Animação de efeito de baixo para o lado superior do widget infantil.
   bottomToTop
 }

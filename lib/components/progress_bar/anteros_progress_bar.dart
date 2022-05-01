@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosProgressBar extends StatefulWidget {
-  /// Shows progress as a completed and remaining percentage in bar of given state
+  /// Mostra o progresso como uma porcentagem concluída e restante na barra de um determinado estado
   AnterosProgressBar({
     Key? key,
     this.margin = const EdgeInsets.only(left: 10, right: 10),
@@ -40,81 +40,81 @@ class AnterosProgressBar extends StatefulWidget {
     }
   }
 
-  /// width of the  Progress bar
+  /// largura da barra de progresso
   final double? width;
 
-  /// Height of the  Progress Bar
+  /// Altura da Barra de Progresso
   final double lineHeight;
 
-  /// type of [Color] or AnterosColors used to change the backgroundColor of the  progress bar
+  /// tipo de [Color] ou AnterosColors usado para alterar o backgroundColor da barra de progresso
   final Color backgroundColor;
 
-  /// type of Color , used to change the color of the active progress line
+  /// tipo de Color , usado para alterar a cor da linha de progresso ativa
   final Color progressBarColor;
 
-  /// type of bool which allows the progress line to animate when the percentage values are changed
+  /// tipo de bool que permite que a linha de progresso seja animada quando os valores percentuais são alterados
   final bool animation;
 
-  /// duration of the animation in milliseconds, It only applies if animation attribute is true
+  /// duração da animação em milissegundos, só se aplica se o atributo de animação for verdadeiro
   final int animationDuration;
 
-  /// type of Widget which comes before the progress bar
+  /// tipo de Widget que vem antes da barra de progresso
   final Widget? leading;
 
-  /// type of Widget which comes after the progress bar
+  /// tipo de Widget que vem depois da barra de progresso
   final Widget? trailing;
 
-  /// type of Widget which can be text , icon etc which is  generally used to show the percentage of progress complete
+  /// tipo de Widget que pode ser texto, ícone etc, que geralmente é usado para mostrar a porcentagem de progresso concluído
   final Widget? child;
 
-  /// type of MainAxisAlignment used to align the leading, trailing and the progress bar in a fashion
+  /// tipo de MainAxisAlignment usado para alinhar a barra inicial, final e de progresso de uma forma
   final MainAxisAlignment alignment;
 
-  /// type of EdgeInsets which gives padding to the AnterosProgressBar
+  /// tipo de EdgeInsets que dá preenchimento ao AnterosProgressBar
   final EdgeInsets? padding;
 
-  /// type of EdgeInsets which gives margin to the AnterosProgressBar
+  /// tipo de EdgeInsets que dá margem ao AnterosProgressBar
   final EdgeInsets? margin;
 
-  /// set true if you want to animate the progress bar  from the last percentage value you set
+  /// defina true se quiser animar a barra de progresso a partir do último valor percentual que você definiu
   final bool animateFromLastPercentage;
 
-  /// If present, this will make the progress bar colored by this gradient.
-  /// This will override [progressBarColor]. It is an error to provide both.
+  /// Se presente, isso fará com que a barra de progresso seja colorida por este gradiente.
+  /// Isso substituirá [progressBarColor]. É um erro fornecer ambos.
   final LinearGradient? linearGradient;
 
-  /// set false if you don't want to preserve the state of the widget
+  /// definir false se você não quiser preservar o estado do widget
   final bool autoLive;
 
-  /// set true if you want to animate the linear bar from the right to left
+  /// definir true se você quiser animar a barra linear da direita para a esquerda
   final bool fromRightToLeft;
 
-  /// Creates a mask filter that takes the progress shape being drawn and blurs it.
+  /// Cria um filtro de máscara que pega a forma de progresso que está sendo desenhada e a desfoca.
   final MaskFilter? mask;
 
-  /// Set true if you want to display only part of [linearGradient] based on progressPercent value
-  ///  If no [linearGradient] is specified this option is ignored.
+  /// Defina true se você deseja exibir apenas parte de [linearGradient] com base no valor progressPercent
+  /// Se nenhum [linearGradient] for especificado, esta opção será ignorada.
   final bool clipLinearGradient;
 
-  /// type of [AnterosProgressType] which changes the shape of progress bar based on the type ie, circular and linear
+  /// tipo de [AnterosProgressType] que altera a forma da barra de progresso com base no tipo, ou seja, circular e linear
   final AnterosProgressType type;
 
-  /// type of [AnterosProgressHeadType] which changes the shape of progress head based on the type ie, circular and square
+  /// tipo de [AnterosProgressHeadType] que altera a forma da cabeça de progresso com base no tipo, ou seja, circular e quadrado
   final AnterosProgressHeadType? progressHeadType;
 
-  /// type of double which defines the thickness of the circle's arc in Circular Progress bar
+  /// tipo de double que define a espessura do arco do círculo na barra de Progresso Circular
   final double circleWidth;
 
-  /// type of double in which the angle on the circle starts to progress (in degrees, eg: 0.0, 45.0, 90.0)
+  /// tipo de double em que o ângulo no círculo começa a progredir (em graus, por exemplo: 0,0, 45,0, 90,0)
   final double circleStartAngle;
 
-  /// type of bool used  to display the progress in reverse direction
+  /// tipo de bool usado para exibir o progresso na direção reversa
   final bool reverse;
 
-  /// type of double used to show the radius of Circular Progress Bar
+  /// tipo de double usado para mostrar o raio da Barra de Progresso Circular
   final double? radius;
 
-  /// type of double which should be from 0 to 1 to indicate the progress of the ProgressBars
+  /// tipo de double que deve ser de 0 a 1 para indicar o progresso das ProgressBars
   final double percentage;
 
   @override

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// A toggle button allows the user to change a setting between two states.
+/// Um botão de alternância permite que o usuário altere uma configuração entre dois estados.
 ///
-/// The state of each button is controlled by isSelected, which is a list of bools that determine
-/// if a button is in an unselected or selected state. They are both
-/// correlated by their index in the list. The length of isSelected has to
-/// match the length of the children list.
+/// O estado de cada botão é controlado pela ISSELECTECT, que é uma lista de bools que determina
+/// Se um botão estiver em um estado não selecionado ou selecionado.Eles são ambos
+/// correlacionado pelo seu índice na lista.O comprimento de isSelected deve
+/// corresponde ao comprimento da lista de crianças.
 ///
-/// ## Customizing toggle buttons
-/// Each toggle's behavior can be configured by the onPressed callback, which
-/// can update the isSelected list however it wants to.
+/// ## botões de alternância personalizados
+/// O comportamento de cada alternância pode ser configurado pelo retorno de chamada pressionado, que
+/// pode atualizar a lista ISSELECTECT, como desejar.
 class AnterosToggle extends StatefulWidget {
-  /// Creates toggle button to switch between states onChanged.
+  /// Cria o botão alternar para alternar entre os estados ligados.
   const AnterosToggle(
       {Key? key,
       required this.onChanged,
@@ -31,46 +31,46 @@ class AnterosToggle extends StatefulWidget {
       this.duration = const Duration(milliseconds: 400)})
       : super(key: key);
 
-  ///type [String] used to add custom text i.e, ON,ENABLE
+  ///tipo [String] usado para adicionar texto personalizado, isto é, ativar
   final String? enabledText;
 
-  ///type [String] used to add custom text i.e, ON,DISABLE
+  ///tipo [String] usado para adicionar texto personalizado, isto é, desativar
   final String? disabledText;
 
-  ///type of [TextStyle] used to define the style properties of the enabled text
+  ///tipo de [TextStyle] usado para definir as propriedades de estilo do texto ativado
   final TextStyle? enabledTextStyle;
 
-  ///type of [TextStyle] used to define the style peoperties of the disabled text
+  ///tipo de [TextStyle] usado para definir as propriedades de estilo do texto desativado
   final TextStyle? disabledTextStyle;
 
-  ///type of [Color] used for the active thumb color
+  ///tipo de [Color] usado para a cor do polegar ativo
   final Color? enabledThumbColor;
 
-  ///type of [Color] used for the inactive thumb color
+  ///tipo de [Color] usado para a cor do polegar inativo
   final Color? disabledThumbColor;
 
-  ///type of [Color] used for the active track color
+  ///tipo de [Color] usado para a cor da pista ativa
   final Color? enabledTrackColor;
 
-  ///type of [Color] used for the inactive thumb color
+  ///tipo de [Color] usado para a cor do polegar inativo
   final Color? disabledTrackColor;
 
-  ///type of [BoxShape] used to define shapes i.e, Circle , Rectangle
+  ///tipo de [BoxShape] usado para definir formas, isto é, círculo, retângulo
   final BoxShape? boxShape;
 
-  ///type of [BorderRadius] used to define the radius of the Container
+  ///tipo de [BorderRadius] usado para definir o raio do contêiner
   final BorderRadius? borderRadius;
 
-  ///type of animation [Duration] called when the switch animates during the specific duration
+  ///tipo de animação [Duration] chamado quando o interruptor anima durante a duração específica
   final Duration duration;
 
-  /// Button type of [AnterosToggleType] i.e, android, ios, custom, sqaure
+  /// Botão tipo de [AnterosToggleType] ou seja, Android, iOS, personalizado, quadrado
   final AnterosToggleType? type;
 
-  /// This property must not be null. Used to set the current state of toggle
+  /// Esta propriedade não deve ser nula.Usado para definir o estado atual de alternância
   final bool value;
 
-  /// Called when the user toggles the switch on or off.
+  /// Chamado quando o usuário atingir ou desativar o interruptor.
   final ValueChanged<bool?> onChanged;
 
   @override

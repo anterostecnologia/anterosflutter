@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosMultiSelect<T> extends StatefulWidget {
-  /// Anteros Multiselect let user to select multiple items from the number of
-  /// Checkbox ListTile items and display selected items in the TitleTile box.
-  /// It displays list of items in the overlay dropdown fashion.
+  /// Anteros Multiselect permite que o usuário selecione vários itens do número de
+  /// Checkbox ListTile itens e exibe os itens selecionados na caixa TitleTile.
+  /// Exibe a lista de itens no modo suspenso de sobreposição.
   const AnterosMultiSelect({
     required this.items,
     required this.onSelect,
@@ -60,118 +60,118 @@ class AnterosMultiSelect<T> extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  /// defines the list of items the user can select
+  /// define a lista de itens que o usuário pode selecionar
   final List<dynamic> items;
 
-  /// callback when user select item from the dropdown,
-  /// in callback we get list of selected items index
+  /// retorno de chamada quando o usuário seleciona o item no menu suspenso,
+  /// no retorno de chamada obtemos o índice da lista de itens selecionados
   final ValueChanged<List<dynamic>> onSelect;
 
-  /// type of [String] to define the dropdownTitleTile  title
+  /// tipo de [String] para definir o título dropdownTitleTile
   final String dropdownTitleTileText;
 
-  /// type of [TextStyle] to define the textStyle of [dropdownTitleTileText]
+  /// tipo de [TextStyle] para definir o textStyle de [dropdownTitleTileText]
   final TextStyle dropdownTitleTileTextStyle;
 
-  /// type of [String] to define the dropdownTitleTile hint text
+  /// tipo de [String] para definir o texto da dica dropdownTitleTile
   final String? dropdownTitleTileHintText;
 
-  /// type of [TextStyle] to define the textStyle of [dropdownTitleTileHintTextStyle]
+  /// tipo de [TextStyle] para definir o textStyle de [dropdownTitleTileHintTextStyle]
   final TextStyle dropdownTitleTileHintTextStyle;
 
-  /// defines the border radius  of the dropdownTitleTile
+  /// define o raio da borda do dropdownTitleTile
   final BorderRadius dropdownTitleTileBorderRadius;
 
-  /// defines the border of the dropdownTitleTile.
+  /// define a borda do dropdownTitleTile.
   final Border? dropdownTitleTileBorder;
 
-  /// defines the background color of dropdownButton
+  /// define a cor de fundo do dropdownButton
   final dynamic dropdownTitleTileColor;
 
-  /// on true state, it hides the Dropdown Underline border
-  /// defaults value is false
+  /// no estado verdadeiro, oculta a borda do Sublinhado do menu suspenso
+  /// valor padrão é false
   final bool hideDropdownUnderline;
 
-  /// defines the border of the Dropdown Underline border
+  /// define a borda da borda do Dropdown Underline
   final BorderSide dropdownUnderlineBorder;
 
-  /// defines the dropdownTitleTile margin
+  /// define a margem dropdownTitleTile
   final EdgeInsets dropdownTitleTileMargin;
 
-  /// defines the dropdownTitleTile padding
+  /// define o preenchimento dropdownTitleTile
   final EdgeInsets dropdownTitleTilePadding;
 
-  /// defines the dropdownTitleTile's trailing icon when dropdown is visible
+  /// define o ícone à direita do dropdownTitleTile quando o dropdown está visível
   final Widget expandedIcon;
 
-  /// defines the dropdownTitleTile's trailing icon when dropdown is not visible
+  /// define o ícone à direita do dropdownTitleTile quando o dropdown não está visível
   final Widget collapsedIcon;
 
-  /// defines the submit button in the dropdown
+  /// define o botão de envio no menu suspenso
   final Widget? submitButton;
 
-  /// defines the cancel button in the dropdown
+  /// define o botão cancelar no menu suspenso
   final Widget? cancelButton;
 
-  /// defines dropdown checkbox ListTile's background color. Can be given [Color] or [AnterosColors]
+  /// define a cor de fundo do ListTile da caixa de seleção suspensa. Pode ser dado [Color] ou [AnterosColors]
   final dynamic color;
 
-  /// type of [Widget] or [AnterosAvatar] used to defines dropdown checkbox ListTile's leading
+  /// tipo de [Widget] ou [AnterosAvatar] usado para definir a caixa de seleção suspensa ListTile's lead
   final Widget? avatar;
 
-  /// defines the margin of dropdown checkbox ListTile
+  /// define a margem da caixa de seleção suspensa ListTile
   final EdgeInsets margin;
 
-  /// defines the padding of dropdown checkbox ListTile
+  /// define o preenchimento da caixa de seleção suspensa ListTile
   final EdgeInsets padding;
 
-  /// defines dropdown ListTile's checkbox type
-  /// type of [AnterosCheckboxType] which is of four type is basic, sqaure, circular and custom
+  /// define o tipo de caixa de seleção do ListTile suspenso
+  /// tipo de [AnterosCheckboxType] que é de quatro tipos é básico, quadrado, circular e personalizado
   final AnterosCheckboxType type;
 
-  /// defines dropdown ListTile's checkbox size
-  /// type of [double] which is AnterosSize ie, small, medium and large and can use any double value
+  /// define o tamanho da caixa de seleção do ListTile suspenso
+  /// tipo de [double] que é AnterosSize, ou seja, pequeno, médio e grande e pode usar qualquer valor duplo
   final double size;
 
-  /// defines dropdown ListTile's checkbox background color when its active
-  /// type of [Color] used to change the backgroundColor of the active checkbox
+  /// define a cor de fundo da caixa de seleção do ListTile quando está ativo
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção ativa
   final Color activeBgColor;
 
-  /// defines dropdown ListTile's checkbox background color when its inactive
-  /// type of [Color] used to change the backgroundColor of the inactive checkbox
+  /// define a cor de fundo da caixa de seleção do ListTile quando está inativo
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção inativa
   final Color inactiveBgColor;
 
-  /// defines dropdown ListTile's checkbox border color when its active
-  /// type of [Color] used to change the border color of the active checkbox
+  /// define a cor da borda da caixa de seleção do ListTile quando está ativo
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção ativa
   final Color activeBorderColor;
 
-  /// defines dropdown ListTile's checkbox border color when its inactive
-  /// type of [Color] used to change the border color of the inactive checkbox
+  /// define a cor da borda da caixa de seleção do ListTile quando está inativa
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção inativa
   final Color inactiveBorderColor;
 
-  /// defines dropdown ListTile's button background color
-  /// type of [Color] used to change the button background color
+  /// define a cor de fundo do botão do ListTile suspenso
+  /// tipo de [Color] usado para alterar a cor de fundo do botão
   final Color buttonColor;
 
-  /// The color for the color of the list item text.
+  /// A cor para a cor do texto do item da lista.
   final Color? listItemTextColor;
 
-  /// defines dropdown ListTile's checkbox's active icon
-  /// type of [Widget] used to change the  checkbox's active icon
+  /// define o ícone ativo da caixa de seleção do ListTile
+  /// tipo de [Widget] usado para alterar o ícone ativo da caixa de seleção
   final Widget activeIcon;
 
-  /// defines dropdown ListTile's checkbox's inactive icon
-  ///type of [Widget] used to change the  checkbox's inactive icon
+  /// define o ícone inativo da caixa de seleção do ListTile
+  ///tipo de [Widget] usado para alterar o ícone inativo da caixa de seleção
   final Widget? inactiveIcon;
 
-  /// type of [Color] used to change the background color of the custom active  checkbox only
+  /// tipo de [Color] usado para alterar apenas a cor de fundo da caixa de seleção ativa personalizada
   final Color customBgColor;
 
-  /// To have the list tile appear selected when the checkbox is checked, pass the same value to both.
-  /// Normally, this property is left to its default value, false.
+  /// Para que o bloco da lista apareça selecionado quando a caixa de seleção estiver marcada, passe o mesmo valor para ambos.
+  /// Normalmente, esta propriedade é deixada com seu valor padrão, false.
   final bool selected;
 
-  /// defines the background color of the dropdown. Can be given [Color] or [AnterosColors]
+  /// define a cor de fundo do menu suspenso. Pode ser dado [Color] ou [AnterosColors]
   final Color dropdownBgColor;
 
   final Widget? dropdownButton;

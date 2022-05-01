@@ -7,8 +7,8 @@ typedef StickyHeaderWidgetBuilder = Widget Function(
 );
 
 class AnterosStickyHeaderBuilder extends StatefulWidget {
-  /// Place this widget inside a [ListView], [GridView], [CustomScrollView], [SingleChildScrollView] or similar.
-  /// Constructs a new [AnterosStickyHeaderBuilder] widget.
+  /// Coloque este widget dentro de um [ListView], [GridView], [CustomScrollView], [SingleChildScrollView] ou similar.
+  /// Constrói um novo [AnterosStickyHeaderBuilder] ferramenta.
   const AnterosStickyHeaderBuilder({
     Key? key,
     required this.stickyContentBuilder,
@@ -19,25 +19,25 @@ class AnterosStickyHeaderBuilder extends StatefulWidget {
     this.stickyContentPosition = AnterosPosition.start,
   }) : super(key: key);
 
-  /// builder widget can be used to define [stickyContentBuilder].
+  /// O widget do construtor pode ser usado para definir [stickyContentBuilder].
   final StickyHeaderWidgetBuilder stickyContentBuilder;
 
-  /// widget can be used to define [content].
+  /// O widget pode ser usado para definir [content].
   final Widget content;
 
-  /// On state true, the [stickyContentBuilder] will overlap the [content].
-  /// Only works when direction is [Axis.vertical]. Default set to false.
+  /// No estado verdadeiro, o [stickyContentBuilder] Será sobrepor o [content].
+  /// Só funciona quando a direção é [Axis.vertical]. Padrão definido como false.
   final bool enableHeaderOverlap;
 
-  /// [AnterosPosition] allows to [stickyContentPosition] to stick at top in [Axis.vertical] and stick at start in [Axis.horizontal]
+  /// [AnterosPosition] permite [stickyContentPosition] Para ficar no topo [Axis.vertical] e fique no início [Axis.horizontal]
   /// Defaults to [AnterosPosition.start]
   final AnterosPosition stickyContentPosition;
 
-  /// Allows to add custom stickyHeader stuck offset value
+  /// Permite adicionar valor de deslocamento de deslocamento personalizado
   final RenderGFStickyHeaderCallback? callback;
 
-  ///  [direction] allows children to align in vertical / horizontal way
-  ///  Defaults to [Axis.vertical]
+  ///  [direction] permite que as crianças se alinhem de maneira vertical / horizontal
+  ///  Padrão para [Axis.vertical]
   final Axis direction;
 
   @override

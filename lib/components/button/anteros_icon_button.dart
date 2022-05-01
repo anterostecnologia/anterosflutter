@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosIconButton extends StatefulWidget {
-  /// Create icon buttons of all types. check out [AnterosButton] for buttons
+  /// Cria botões de ícones de todos os tipos. confira [AnterosButton] para botões
   const AnterosIconButton({
     Key? key,
     this.iconSize = 0.0,
@@ -29,43 +29,43 @@ class AnterosIconButton extends StatefulWidget {
     this.borderSide,
   }) : super(key: key);
 
-  /// The size of the icon inside the button.
+  /// O tamanho do ícone dentro do botão.
   final double iconSize;
 
-  /// The padding around the button's icon.
+  /// O preenchimento ao redor do ícone do botão.
   final EdgeInsetsGeometry padding;
 
-  /// Defines how the icon is positioned within the IconButton.
+  /// Define como o ícone é posicionado dentro do IconButton.
   final AlignmentGeometry alignment;
 
-  /// The icon to display inside the button.
+  /// O ícone a ser exibido dentro do botão.
   final Widget icon;
 
-  /// The color for the button's icon when it has the input focus.
+  /// A cor do ícone do botão quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// The color for the button's icon when a pointer is hovering over it.
+  /// A cor do ícone do botão quando um ponteiro está sobre ele.
   final Color? hoverColor;
 
-  /// Button type of [AnterosButtonType] i.e, solid, outline, outline2x transparent
+  /// Tipo de botão de [AnterosButtonType] ou seja, sólido, contorno, contorno2x transparente
   final AnterosButtonType type;
 
-  /// Button type of [AnterosIconButtonShape] i.e, standard, pills, square, shadow, icons
+  /// Tipo de botão de [AnterosIconButtonShape] ou seja, padrão, pílulas, quadrado, sombra, ícones
   final AnterosIconButtonShape shape;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color color;
 
-  /// Pass [AnterosColors] or [Color]. The primary color of the button when the button is in the down (pressed) state.
+  /// Passe [AnterosColors] ou [Color]. A cor primária do botão quando o botão está no estado para baixo (pressionado).
   final Color? splashColor;
 
-  /// Pass [AnterosColors] or [Color]. The secondary color of the button when the button is in the down (pressed) state.
+  /// Passe [AnterosColors] ou [Color]. A cor secundária do botão quando o botão está no estado para baixo (pressionado).
   final Color? highlightColor;
 
-  /// Pass [AnterosColors] or [Color]. The color to use for the icon inside the button, if the icon is disabled.
+  /// Passe [AnterosColors] ou [Color]. A cor a ser usada para o ícone dentro do botão, se o ícone estiver desabilitado.
   final Color? disabledColor;
 
-  /// The callback that is called when the button is tapped or otherwise activated.
+  /// O retorno de chamada que é chamado quando o botão é tocado ou ativado de outra forma.
   final VoidCallback? onPressed;
 
   /// {@macro flutter.widgets.Focus.focusNode}
@@ -74,22 +74,22 @@ class AnterosIconButton extends StatefulWidget {
   /// {@macro flutter.widgets.Focus.autofocus}
   final bool autofocus;
 
-  /// Text that describes the action that will occur when the button is pressed.
+  /// Texto que descreve a ação que ocorrerá quando o botão for pressionado.
   final String? tooltip;
 
-  /// The box shadow for the button's [Material], if AnterosButtonType is solid
+  /// A sombra da caixa para o [Material] do botão, se AnterosButtonType for sólido
   final BoxShadow? boxShadow;
 
-  /// The shape and border for the button's [Material].
+  /// A forma e a borda do [Material] do botão.
   final ShapeBorder? borderShape;
 
-  /// size of [double] or [AnterosSize] i.e, 1.2, small, medium, large etc.
+  /// tamanho de [double] ou [AnterosSize], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// on true state default box shadow appears around button, if AnterosButtonType is solid
+  /// no estado verdadeiro, a sombra da caixa padrão aparece ao redor do botão, se AnterosButtonType for sólido
   final bool? buttonBoxShadow;
 
-  /// The border side for the button's [Material].
+  /// O lado da borda do [Material] do botão.
   final BorderSide? borderSide;
 
   @override

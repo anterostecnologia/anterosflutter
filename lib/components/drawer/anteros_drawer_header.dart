@@ -10,16 +10,16 @@ class AnterosDrawerHeaderPictures extends StatelessWidget {
     this.centerAlign = false,
   }) : super(key: key);
 
-  /// A widget placed in the upper-left corner that represents the current
-  /// user's account. Normally a [CircleAvatar].
+  /// Um ​​widget colocado no canto superior esquerdo que representa o atual
+  /// conta do usuário. Normalmente um [CircleAvatar].
   final Widget? currentAccountPicture;
 
-  /// A list of widgets that represent the current user's other accounts.
-  /// Up to three of these widgets will be arranged in a row in the header's
-  /// upper-right corner. Normally a list of [CircleAvatar] widgets.
+  /// Uma lista de widgets que representam as outras contas do usuário atual.
+  /// Até três desses widgets serão organizados em uma linha no cabeçalho
+  /// canto superior direito. Normalmente uma lista de widgets [CircleAvatar].
   final List<Widget>? otherAccountsPictures;
 
-  /// widget onTap drawer get closed
+  /// a gaveta onTap do widget é fechada
   final Widget? closeButton;
 
   final bool centerAlign;
@@ -78,12 +78,12 @@ class AnterosDrawerHeaderPictures extends StatelessWidget {
       );
 }
 
-/// A material design [Drawer] header that identifies the app's user.
-/// Requires one of its ancestors to be a [Material] widget.
+/// Um ​​cabeçalho de design de material [Drawer] que identifica o usuário do aplicativo.
+/// Requer que um de seus ancestrais seja um widget [Material].
 class AnterosDrawerHeader extends StatefulWidget {
-  /// Creates a material design drawer header.
+  /// Cria um cabeçalho de gaveta de design de material.
   ///
-  /// Requires one of its ancestors to be a [Material] widget.
+  /// Requer que um de seus ancestrais seja um widget [Material].
   const AnterosDrawerHeader({
     Key? key,
     this.decoration,
@@ -97,44 +97,44 @@ class AnterosDrawerHeader extends StatefulWidget {
     this.closeButton,
   }) : super(key: key);
 
-  /// The header's background. If decoration is null then a [BoxDecoration]
-  /// with its background color set to the current theme's primaryColor is used.
+  /// O plano de fundo do cabeçalho. Se a decoração for nula, então um [BoxDecoration]
+  /// com sua cor de fundo definida para o primaryColor do tema atual é usado.
   final Decoration? decoration;
 
-  /// The margin around the drawer header.
+  /// A margem ao redor do cabeçalho da gaveta.
   final EdgeInsetsGeometry margin;
 
-  /// A widget placed in the upper-left corner that represents the current
-  /// user's account. Normally a [CircleAvatar].
+  /// Um ​​widget colocado no canto superior esquerdo que representa o atual
+  /// conta do usuário. Normalmente um [CircleAvatar].
   final Widget? currentAccountPicture;
 
-  /// A list of widgets that represent the current user's other accounts.
-  /// Up to three of these widgets will be arranged in a row in the header's
-  /// upper-right corner. Normally a list of [CircleAvatar] widgets.
+  /// Uma lista de widgets que representam as outras contas do usuário atual.
+  /// Até três desses widgets serão organizados em uma linha no cabeçalho
+  /// canto superior direito. Normalmente uma lista de widgets [CircleAvatar].
   final List<Widget>? otherAccountsPictures;
 
-  // ignore: comment_references
-  /// If centerAlign is [enabled] then currentAccountPicture in AnterosDrawerHeader
-  /// will get center aligned.
+  // ignora: comment_references
+  /// Se centerAlign estiver [habilitado] então currentAccountPicture em AnterosDrawerHeader
+  /// ficará alinhado ao centro.
   ///
-  /// By Default centerAlign is false.
+  /// Por padrão centerAlign é falso.
   final bool centerAlign;
 
-  /// A widget to be placed inside the drawer header, inset by the padding.
+  /// Um ​​widget a ser colocado dentro do cabeçalho da gaveta, inserido pelo preenchimento.
   ///
-  /// This widget will be sized to the size of the header. To position the child
-  /// precisely, consider using an [Align] or [Center] widget.
+  /// Este widget será dimensionado para o tamanho do cabeçalho. Para posicionar a criança
+  /// precisamente, considere usar um widget [Align] ou [Center].
   ///
   /// {@macro flutter.widgets.child}
   final Widget? child;
 
-  /// The duration for animations of the [decoration].
+  /// A duração das animações da [decoração].
   final Duration duration;
 
-  /// The curve for animations of the [decoration].
+  /// A curva para animações da [decoração].
   final Curve curve;
 
-  /// widget onTap drawer get closed
+  /// a gaveta onTap do widget é fechada
   final Widget? closeButton;
 
   @override

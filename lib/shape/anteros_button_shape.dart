@@ -1,11 +1,11 @@
-/// [AnterosButtonShape] is used to shape the GFButton widget.
+/// [AnterosButtonShape] é usado para moldar o widget gfbutton.
 enum AnterosButtonShape {
-  /// [AnterosButtonShape.pills], used for pills shaped button with rounded corners
+  /// [AnterosButtonShape.pills], Usado para comprimidos em forma de botão com cantos arredondados
   pills,
 
-  /// Default shape is [AnterosButtonShape.standard], used for standard rectangle button with rounded corners
+  /// Predefinição forma é [AnterosButtonShape.standard], Usado para o botão de retângulo padrão com cantos arredondados
   standard,
 
-  /// [AnterosButtonShape.square], used for square button
+  /// [AnterosButtonShape.square], Usado para o botão quadrado
   square,
 }

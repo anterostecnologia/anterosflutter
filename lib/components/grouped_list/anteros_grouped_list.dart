@@ -9,177 +9,177 @@ import 'src/anteros_groupedlist_order.dart';
 
 export 'src/anteros_groupedlist_order.dart';
 
-/// A groupable list of widgets similar to [ListView], execpt that the
-/// items can be sectioned into groups.
+/// Uma lista agrupável de widgets semelhantes a [ListView], exceto que o
+/// itens podem ser seccionados em grupos.
 ///
-/// See [ListView.builder]
+/// Veja [ListView.builder]
 class AnterosGroupedListView<T, E> extends StatefulWidget {
-  /// Items of which [itemBuilder] or [indexedItemBuilder] produce the list.
+  /// Itens dos quais [itemBuilder] ou [indexedItemBuilder] produzem a lista.
   final List<T> elements;
 
-  /// Defines which elements are grouped together.
+  /// Define quais elementos são agrupados.
   ///
-  /// Function is called for each element in the list, when equal for two
-  /// elements, those two belong to the same group.
+  /// A função é chamada para cada elemento da lista, quando igual para dois
+  /// elementos, esses dois pertencem ao mesmo grupo.
   final E Function(T element) groupBy;
 
-  /// Can be used to define a custom sorting for the groups.
+  /// Pode ser usado para definir uma classificação personalizada para os grupos.
   ///
-  /// If not set groups will be sorted with their natural sorting order or their
-  /// specific [Comparable] implementation.
+  /// Se não for definido, os grupos serão classificados com sua ordem de classificação natural ou sua
+  /// implementação específica [Comparable].
   final int Function(E value1, E value2)? groupComparator;
 
-  /// Can be used to define a custom sorting for the elements inside each group.
+  /// Pode ser usado para definir uma classificação personalizada para os elementos dentro de cada grupo.
   ///
-  /// If not set elements will be sorted with their natural sorting order or
-  /// their specific [Comparable] implementation.
+  /// Se não for definido, os elementos serão classificados com sua ordem de classificação natural ou
+  /// sua implementação específica [Comparable].
   final int Function(T element1, T element2)? itemComparator;
 
-  /// Called to build group separators for each group.
-  /// Value is always the groupBy result from the first element of the group.
+  /// Chamado para construir separadores de grupo para cada grupo.
+  /// O valor é sempre o resultado groupBy do primeiro elemento do grupo.
   ///
-  /// Will be ignored if [groupHeaderBuilder] is used.
+  /// Será ignorado se [groupHeaderBuilder] for usado.
   final Widget Function(E value)? groupSeparatorBuilder;
 
-  /// Same as [groupSeparatorBuilder], will be called to build group separators
-  /// for each group.
-  /// The passed element is always the first element of the group.
+  /// Igual a [groupSeparatorBuilder], será chamado para construir separadores de grupo
+  /// para cada grupo.
+  /// O elemento passado é sempre o primeiro elemento do grupo.
   ///
-  /// If defined [groupSeparatorBuilder] wont be used.
+  /// Se definido [groupSeparatorBuilder] não será usado.
   final Widget Function(T element)? groupHeaderBuilder;
 
-  /// Called to build children for the list with
-  /// 0 <= element < elements.length.
+  /// Chamado para construir filhos para a lista com
+  /// 0 <= elemento < element.length.
   final Widget Function(BuildContext context, T element)? itemBuilder;
 
-  /// Called to build children for the list with
+  /// Chamado para construir filhos para a lista com
   /// 0 <= element, index < elements.length
   final Widget Function(BuildContext context, T element, int index)?
       indexedItemBuilder;
 
-  /// Whether the order of the list is ascending or descending.
+  /// Se a ordem da lista é crescente ou decrescente.
   ///
-  /// Defaults to ASC.
+  /// Padrões para ASC.
   final AnterosGroupedListOrder order;
 
-  /// Whether the elements will be sorted or not. If not it must be done
-  ///  manually.
+  /// Se os elementos serão ordenados ou não. Se não, deve ser feito
+  /// manualmente.
   ///
-  /// Defauts to true.
+  /// Padrão para verdadeiro.
   final bool sort;
 
-  /// When set to true the group header of the current visible group will stick
-  ///  on top.
+  /// Quando definido como verdadeiro, o cabeçalho do grupo visível atual ficará
+  ///  em cima.
   final bool useStickyGroupSeparators;
 
-  /// Called to build separators for between each item in the list.
+  /// Chamado para construir separadores entre cada item na lista.
   final Widget separator;
 
-  /// Whether the group headers float over the list or occupy their own space.
+  /// Se os cabeçalhos do grupo flutuam sobre a lista ou ocupam seu próprio espaço.
   final bool floatingHeader;
 
-  /// Background color of the sticky header.
-  /// Only used if [floatingHeader] is false.
+  /// Cor de fundo do cabeçalho fixo.
+  /// Usado apenas se [floatingHeader] for false.
   final Color stickyHeaderBackgroundColor;
 
-  /// An object that can be used to control the position to which this scroll
-  /// view is scrolled.
+  /// Um ​​objeto que pode ser usado para controlar a posição para a qual esta rolagem
+  /// a visualização é rolada.
   ///
-  /// See [ScrollView.controller]
+  /// Veja [ScrollView.controller]
   final ScrollController? controller;
 
-  /// The axis along which the scroll view scrolls.
+  /// O eixo ao longo do qual a visualização de rolagem rola.
   ///
-  /// Defaults to [Axis.vertical].
+  /// O padrão é [Axis.vertical].
   final Axis scrollDirection;
 
-  /// Whether this is the primary scroll view associated with the parent
+  /// Se esta é a visualização de rolagem primária associada ao pai
   /// [PrimaryScrollController].
   ///
-  /// See [ScrollView.primary]
+  /// Veja [ScrollView.primary]
   final bool? primary;
 
-  /// How the scroll view should respond to user input.
+  /// Como a visualização de rolagem deve responder à entrada do usuário.
   ///
-  /// See [ScrollView.physics].
+  /// Veja [ScrollView.physics].
   final ScrollPhysics? physics;
 
-  /// Whether the extent of the scroll view in the [scrollDirection] should be
-  /// determined by the contents being viewed.
+  /// Se a extensão da visualização de rolagem em [scrollDirection] deve ser
+  /// determinado pelo conteúdo que está sendo visualizado.
   ///
-  /// See [ScrollView.shrinkWrap]
+  /// Veja [ScrollView.shrinkWrap]
   final bool shrinkWrap;
 
-  /// The amount of space by which to inset the children.
+  /// A quantidade de espaço para inserir os filhos.
   final EdgeInsetsGeometry? padding;
 
-  /// Whether the view scrolls in the reading direction.
+  /// Se a visualização rola na direção de leitura.
   ///
-  /// Defaults to false.
+  /// O padrão é falso.
   ///
-  /// See [ScrollView.reverse].
+  /// Veja [ScrollView.reverse].
   final bool reverse;
 
-  /// Whether to wrap each child in an [AutomaticKeepAlive].
+  /// Se cada filho deve ser encapsulado em um [AutomaticKeepAlive].
   ///
-  /// See [SliverChildBuilderDelegate.addAutomaticKeepAlives].
+  /// Consulte [SliverChildBuilderDelegate.addAutomaticKeepAlives].
   final bool addAutomaticKeepAlives;
 
-  /// Whether to wrap each child in a [RepaintBoundary].
+  /// Se cada filho deve ser agrupado em um [RepaintBoundary].
   ///
-  /// See [SliverChildBuilderDelegate.addRepaintBoundaries].
+  /// Veja [SliverChildBuilderDelegate.addRepaintBoundaries].
   final bool addRepaintBoundaries;
 
-  /// Whether to wrap each child in an [IndexedSemantics].
+  /// Se cada filho deve ser encapsulado em um [IndexedSemantics].
   ///
-  /// See [SliverChildBuilderDelegate.addSemanticIndexes].
+  /// Consulte [SliverChildBuilderDelegate.addSemanticIndexes].
   final bool addSemanticIndexes;
 
-  /// Creates a scrollable, linear array of widgets that are created on demand.
+  /// Cria um array rolável e linear de widgets que são criados sob demanda.
   ///
-  /// See [ScrollView.cacheExtent]
+  /// Veja [ScrollView.cacheExtent]
   final double? cacheExtent;
 
   /// {@macro flutter.widgets.Clip}
   ///
-  /// Defaults to [Clip.hardEdge].
+  /// O padrão é [Clip.hardEdge].
   final Clip clipBehavior;
 
   /// {@macro flutter.widgets.scrollable.dragStartBehavior}
   final DragStartBehavior dragStartBehavior;
 
-  /// [ScrollViewKeyboardDismissBehavior] the defines how this [ScrollView] will
-  /// dismiss the keyboard automatically.
+  /// [ScrollViewKeyboardDismissBehavior] define como este [ScrollView] será
+  /// dispensa o teclado automaticamente.
   final ScrollViewKeyboardDismissBehavior keyboardDismissBehavior;
 
   /// {@macro flutter.widgets.scrollable.restorationId}
   final String? restorationId;
 
-  /// The number of children that will contribute semantic information.
+  /// O número de filhos que contribuirão com informações semânticas.
   ///
-  /// Some subtypes of [ScrollView] can infer this value automatically. For
-  /// example [ListView] will use the number of widgets in the child list,
-  /// while the [ListView.separated] constructor will use half that amount.
+  /// Alguns subtipos de [ScrollView] podem inferir este valor automaticamente. Por
+  /// exemplo [ListView] usará o número de widgets na lista filho,
+  /// enquanto o construtor [ListView.separated] usará metade desse valor.
   ///
-  /// For [CustomScrollView] and other types which do not receive a builder
-  /// or list of widgets, the child count must be explicitly provided. If the
-  /// number is unknown or unbounded this should be left unset or set to null.
+  /// Para [CustomScrollView] e outros tipos que não recebem um construtor
+  /// ou lista de widgets, a contagem de filhos deve ser fornecida explicitamente. Se o
+  /// o número é desconhecido ou ilimitado isso deve ser deixado sem definição ou definido como nulo.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [SemanticsConfiguration.scrollChildCount], the corresponding semantics property.
+  /// * [SemanticsConfiguration.scrollChildCount], a propriedade semântica correspondente.
   final int? semanticChildCount;
 
-  /// If non-null, forces the children to have the given extent in the scroll
-  /// direction.
+  /// Se não for nulo, força os filhos a terem a extensão dada no scroll
+  /// direção.
   ///
-  /// Specifying an [itemExtent] is more efficient than letting the children
-  /// determine their own extent because the scrolling machinery can make use of
-  /// the foreknowledge of the children's extent to save work, for example when
-  /// the scroll position changes drastically.
+  /// Especificar um [itemExtent] é mais eficiente do que deixar os filhos
+  /// determinam sua própria extensão porque a máquina de rolagem pode fazer uso de
+  /// o conhecimento prévio da extensão das crianças para economizar trabalho, por exemplo, quando
+  /// a posição de rolagem muda drasticamente.
   final double? itemExtent;
 
-  /// Creates a [AnterosGroupedListView]
+  /// Cria um [AnterosGroupedListView]
   AnterosGroupedListView({
     Key? key,
     required this.elements,
@@ -347,7 +347,7 @@ class _AnterosGroupedListViewState<T, E>
       var key = entry.value;
       if (_isListItemRendered(key)) {
         var itemBox = key.currentContext!.findRenderObject() as RenderBox;
-        // position of the item's top border inside the list view
+        // posição da borda superior do item dentro da lista
         var y = itemBox.localToGlobal(Offset(0, -listPos - headerHeight)).dy;
         if (y <= headerHeight && y > max) {
           topItemKey = entry.key;
@@ -372,7 +372,7 @@ class _AnterosGroupedListViewState<T, E>
     if (widget.sort && elements.isNotEmpty) {
       elements.sort((e1, e2) {
         var compareResult;
-        // compare groups
+        //compara os grupos
         if (widget.groupComparator != null) {
           compareResult =
               widget.groupComparator!(widget.groupBy(e1), widget.groupBy(e2));
@@ -380,7 +380,7 @@ class _AnterosGroupedListViewState<T, E>
           compareResult = (widget.groupBy(e1) as Comparable)
               .compareTo(widget.groupBy(e2) as Comparable);
         }
-        // compare elements inside group
+        // compara elementos dentro do grupo
         if ((compareResult == null || compareResult == 0)) {
           if (widget.itemComparator != null) {
             compareResult = widget.itemComparator!(e1, e2);

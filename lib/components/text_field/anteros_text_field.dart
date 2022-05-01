@@ -231,13 +231,13 @@
 //   }
 
 //   void _handleControllerChanged() {
-//     // Suppress changes that originated from within this class.
-//     //
-//     // In the case where a controller has been passed in to this widget, we
-//     // register this change listener. In these cases, we'll also receive change
-//     // notifications for changes originating from within this class -- for
-//     // example, the reset() method. In such cases, the FormField value will
-//     // already have been set.
+//     // suprime as alterações originadas de dentro desta classe.
+// //
+// // no caso em que um controlador foi passado para este widget, nós
+// // Registre este ouvinte de alteração.Nesses casos, também receberemos mudanças
+// // notificações para mudanças originárias de dentro desta classe - para
+// // Exemplo, o método Reset ().Nesses casos, o valor do formulário será
+// // já foi definido.
 //     if (_effectiveController.text != value)
 //       didChange(_effectiveController.text);
 //   }

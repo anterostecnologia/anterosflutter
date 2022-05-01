@@ -36,66 +36,66 @@ class AnterosLikeButton extends StatefulWidget {
         circleSize = circleSize ?? size * 0.8,
         super(key: key);
 
-  ///size of like widget
+  ///tamanho do widget semelhante
   final double size;
 
-  ///animation duration to change isLiked state
+  ///duração da animação para mudar o estado isLiked
   final Duration animationDuration;
 
-  ///total size of bubbles
+  ///tamanho total das bolhas
   final double bubblesSize;
 
-  ///colors of bubbles
+  ///cores das bolhas
   final AnterosBubblesColor bubblesColor;
 
-  ///size of circle
+  ///tamanho do círculo
   final double circleSize;
 
-  ///colors of circle
+  ///cores do círculo
   final AnterosCircleColor circleColor;
 
-  /// tap call back of like button
+  ///toque na chamada de volta do botão curtir
   final LikeButtonTapCallback? onTap;
 
-  ///whether it is liked
+  ///se gosta
   final bool? isLiked;
 
-  ///like count
-  ///if null, will not show
+  ///conta de likes
+  ///se nulo, não será exibido
   final int? likeCount;
 
-  /// mainAxisAlignment for like button
+  ///mainAxisAlignment para o botão like
   final MainAxisAlignment mainAxisAlignment;
 
-  // crossAxisAlignment for like button
+  ///crossAxisAlignment para o botão curtir
   final CrossAxisAlignment crossAxisAlignment;
 
-  ///builder to create like widget
+  ///construtor para criar um widget semelhante
   final LikeWidgetBuilder? likeBuilder;
 
-  ///builder to create like count widget
+  ///construtor para criar um widget de contagem semelhante
   final LikeCountWidgetBuilder? countBuilder;
 
-  ///animation duration to change like count
+  ///duração da animação para mudar como contagem
   final Duration likeCountAnimationDuration;
 
-  ///animation type to change like count(none,part,all)
+  ///tipo de animação para mudar como count(none,part,all)
   final LikeCountAnimationType likeCountAnimationType;
 
-  ///padding for like count widget
+  ///preenchimento para widget de contagem de curtidas
   final EdgeInsetsGeometry? likeCountPadding;
 
-  ///like count widget postion
-  ///left of like widget
-  ///right of like widget
-  ///top of like widget
-  ///bottom of like widget
+  ///gosto da posição do widget de contagem
+  ///esquerda do widget semelhante
+  ///direita do widget como
+  ///topo do widget como
+  ///parte inferior do widget semelhante
   final CountPostion countPostion;
 
-  /// padding of like button
+  /// preenchimento do botão curtir
   final EdgeInsetsGeometry? padding;
 
-  ///return count widget with decoration
+  ///retorna o widget de contagem com decoração
   final CountDecoration? countDecoration;
   @override
   State<StatefulWidget> createState() => AnterosLikeButtonState();

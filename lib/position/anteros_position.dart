@@ -1,9 +1,9 @@
-/// [AnterosPosition] is used to position the icon, badges to start or end of the button
-/// See AnterosButton and AnterosButtonBadge
+/// [AnterosPosition] é usado para posicionar o ícone, crachás para iniciar ou final do botão
+/// Veja Anterosbutton e Anterosbuttonbadge
 enum AnterosPosition {
-  /// [AnterosPosition.start] is used to place icon, badges to start of the AnterosButton and AnterosButtonBadge
+  /// [AnterosPosition.start] é usado para colocar o ícone, crachás para começar o Anterosbutton e Anterosbuttonbadge
   start,
 
-  /// [AnterosPosition.end] is used to place icon, badges to end of the AnterosButton and AnterosButtonBadge
+  /// [AnterosPosition.end] é usado para colocar o ícone, crachás para o fim do Anterosbutton e Anterosbuttonbadge
   end,
 }

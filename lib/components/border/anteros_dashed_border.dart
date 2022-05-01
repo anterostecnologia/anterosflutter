@@ -14,22 +14,22 @@ class DashedType extends CustomPainter {
     this.customPath,
   }) : assert(dashedLine.isNotEmpty, 'dash line cannot be empty');
 
-  /// storkeWidth of type [double] which is used to define the thickness of the border
+  /// storkeWidth do tipo [double] que é usado para definir a espessura da borda
   final double strokeWidth;
 
-  /// dashedLine of type [List<double>] which is used for the linear and simple dashed line of border
+  /// dashedLine do tipo [List<double>] que é usado para a linha tracejada linear e simples da borda
   final List<double> dashedLine;
 
-  /// color of type [Color] or AnterosColor which is used to change the color of the border type
+  /// cor do tipo [Color] ou AnterosColor que é usado para alterar a cor do tipo de borda
   final Color color;
 
-  /// type of [AnterosBorderType] which is used to define the different types of borders ie, circle, Rect, RRect and oval
+  /// tipo de [AnterosBorderType] que é usado para definir os diferentes tipos de bordas, ou seja, círculo, Rect, RRect e oval
   final AnterosBorderType type;
 
-  /// radius of type [Radius] used to give a curved border only when the border type is RRect, in other cases radius will not work
+  /// raio do tipo [Radius] usado para dar uma borda curva somente quando o tipo de borda é RRect, em outros casos o raio não funcionará
   final Radius radius;
 
-  /// customPath of type [PathBuilder] used for the drawing the paths
+  /// customPath do tipo [PathBuilder] usado para desenhar os caminhos
   final PathBuilder? customPath;
 
   @override
@@ -53,7 +53,7 @@ class DashedType extends CustomPainter {
     }
   }
 
-  /// Returns a [Path] based on the the borderType parameter
+  /// Retorna um [Path] baseado no parâmetro borderType
   Path? _getPath(Size size) {
     Path path;
     switch (type) {
@@ -73,7 +73,7 @@ class DashedType extends CustomPainter {
     return dashPath(path, dashedarray: CircularIntervalList(dashedLine));
   }
 
-  ///  gives a circular path of borderType
+  /// fornece um caminho circular de borderType
   Path _getCirclePath(Size size) {
     final double width = size.width;
     final double height = size.height;
@@ -93,7 +93,7 @@ class DashedType extends CustomPainter {
       );
   }
 
-  ///  gives a Rounded Rectangular Path with [radius] of [size] for borderType
+  /// fornece um caminho retangular arredondado com [raio] de [tamanho] para borderType
   Path _getRRectPath(Size size, Radius radius) => Path()
     ..addRRect(
       RRect.fromRectAndRadius(
@@ -107,7 +107,7 @@ class DashedType extends CustomPainter {
       ),
     );
 
-  /// gives a  Rectangular Path with [size] for borderType
+  /// fornece um caminho retangular com [size] para borderType
   Path _getRectPath(Size size) => Path()
     ..addRect(
       Rect.fromLTWH(
@@ -118,7 +118,7 @@ class DashedType extends CustomPainter {
       ),
     );
 
-  /// gives an oval path of [size] for borderType
+  /// fornece um caminho oval de [size] para borderType
   Path _getOvalPath(Size size) => Path()
     ..addOval(
       Rect.fromLTWH(
@@ -171,16 +171,16 @@ Path? dashPath(Path? source,
   return dest;
 }
 
-/// Specifies the starting position of a dashed array or line  on a path, either as a percentage or absolute
+/// Especifica a posição inicial de uma matriz ou linha tracejada em um caminho, como porcentagem ou absoluta
 enum _DashOffsetType { absolute, percentage }
 
 class DashOffset {
-  ///gives offset of the dashed path that will be measured as a percentage which ranges from 0.0 to 1.0
+  ///dá o deslocamento do caminho tracejado que será medido como uma porcentagem que varia de 0,0 a 1,0
   DashOffset.percentage(double percentage)
       : _value = percentage.clamp(0.0, 1.0),
         _dashOffsetType = _DashOffsetType.percentage;
 
-  ///gives offset of the dashed path that will be measured as a absolute value
+  ///fornece o deslocamento do caminho pontilhado que será medido como um valor absoluto
   const DashOffset.absolute(double start)
       : _value = start,
         _dashOffsetType = _DashOffsetType.absolute;

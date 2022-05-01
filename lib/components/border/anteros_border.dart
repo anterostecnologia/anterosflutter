@@ -3,7 +3,7 @@ import 'package:anterosflutter/components/border/anteros_dashed_border.dart';
 import 'package:anterosflutter/types/anteros_border_type.dart';
 
 class AnterosBorder extends StatelessWidget {
-  /// Create different types of borders around given child widget
+  /// Cria diferentes tipos de bordas em torno de determinado widget filho
   AnterosBorder({
     required this.child,
     this.color = Colors.black,
@@ -15,29 +15,29 @@ class AnterosBorder extends StatelessWidget {
     // this.customPath,
   }) : assert(_isValidDashedLine(dashedLine), 'Invalid dash pattern');
 
-  /// child of type [Widget] which can be any component or text, etc
+  /// filho do tipo [Widget] que pode ser qualquer componente ou texto, etc
   final Widget child;
 
-  /// padding for [child] where in padding is given to the border types
+  /// preenchimento para [filho] onde no preenchimento é dado aos tipos de borda
   final EdgeInsets padding;
 
-  /// storkeWidth of type [double] which is used to define the thickness of the border
+  /// storkeWidth do tipo [double] que é usado para definir a espessura da borda
   final double strokeWidth;
 
-  /// color of type [Color] or AnterosColor which is used to change the color of the border type
+  /// cor do tipo [Color] ou AnterosColor que é usado para alterar a cor do tipo de borda
   final Color color;
 
-  /// dashedLine of type [List<double>] which is used for the linear and simple dashed line of border
+  /// dashedLine do tipo [List<double>] que é usado para a linha tracejada linear e simples da borda
   final List<double> dashedLine;
 
-  /// type of [AnterosBorderType] which is used to define the different types of borders ie, circle, Rect, RRect and oval
+  /// tipo de [AnterosBorderType] que é usado para definir os diferentes tipos de bordas, ou seja, círculo, Rect, RRect e oval
   final AnterosBorderType type;
 
-  /// radius of type [Radius] used to give a curved border only when the border type is RRect,
-  /// in other cases radius will not work
+  /// raio do tipo [Radius] usado para dar uma borda curva somente quando o tipo de borda é RRect,
+  /// em outros casos, o raio não funcionará
   final Radius radius;
 
-  // /// customPath of type [PathBuilder] used for drawing the paths
+  // /// customPath do tipo [PathBuilder] usado para desenhar os caminhos
   // final PathBuilder customPath;
 
   @override
@@ -61,7 +61,7 @@ class AnterosBorder extends StatelessWidget {
       );
 }
 
-/// the value of dashedLine cannot be 0 or null, it should have some definite and proper value
+/// o valor de dashedLine não pode ser 0 ou null, deve ter algum valor definido e próprio
 bool _isValidDashedLine(List<double> dash) {
   final Set<double> _dashSet = dash.toSet();
 

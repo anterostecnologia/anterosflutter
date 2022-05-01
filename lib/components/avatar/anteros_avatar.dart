@@ -2,7 +2,7 @@ import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 
 class AnterosAvatar extends StatelessWidget {
-  /// Create Avatar of all types i,e, square, circle, standard with different sizes.
+  /// Cria Avatar de todos os tipos i,e, quadrado, círculo, padrão com tamanhos diferentes.
   const AnterosAvatar(
       {Key? key,
       this.child,
@@ -18,38 +18,38 @@ class AnterosAvatar extends StatelessWidget {
       : assert(radius == null || (minRadius == null && maxRadius == null)),
         super(key: key);
 
-  /// Typically a [Text] widget. If the [CircleAvatar] is to have an image, use [backgroundImage] instead.
+  /// Normalmente um widget [Texto]. Se o [CircleAvatar] tiver uma imagem, use [backgroundImage].
   final Widget? child;
 
-  /// use [Color] or [AnterosColors]. The color with which to fill the circle.
+  /// use [Color] ou [AnterosColors]. A cor com a qual preencher o círculo.
   final Color? backgroundColor;
 
-  /// use [Color] or [AnterosColors]. The default text color for text in the circle.
+  /// use [Color] ou [AnterosColors]. A cor de texto padrão para o texto no círculo.
   final Color? foregroundColor;
 
-  /// The background image of the circle.
+  /// A imagem de fundo do círculo.
   final ImageProvider? backgroundImage;
 
-  /// The size of the avatar, expressed as the radius (half the diameter).
+  /// O tamanho do avatar, expresso como o raio (metade do diâmetro).
   final double? radius;
 
-  /// The minimum size of the avatar, expressed as the radius (half the diameter).
+  /// O tamanho mínimo do avatar, expresso como o raio (metade do diâmetro).
   final double? minRadius;
 
-  /// The maximum size of the avatar, expressed as the radius (half the diameter).
+  /// O tamanho máximo do avatar, expresso como o raio (metade do diâmetro).
   final double? maxRadius;
 
-  /// size of avatar. use [AnterosSize] or [double] i.e, 1.2, small, medium, large etc.
+  /// tamanho do avatar. use [AnterosSize] ou [double], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// shape of avatar [AnterosAvatarShape] i.e, standard, circle, square
+  /// forma do avatar [AnterosAvatarShape] ou seja, padrão, círculo, quadrado
   final AnterosAvatarShape shape;
 
-  /// border radius to give extra radius for avatar square or standard shape
-  /// Not applicable to circleshape
+  /// raio da borda para dar raio extra para avatar quadrado ou forma padrão
+  /// Não aplicável a circleshape
   final BorderRadius? borderRadius;
 
-  // /// The default max if only the min is specified.
+  // /// O máximo padrão se apenas o mínimo for especificado.
   // static const double _defaultMaxRadius = double.infinity;
 
   double get _minDiameter {

@@ -1,11 +1,11 @@
-/// [AnterosSize] is used to change the size of the widget.
+/// [AnterosSize] é usado para alterar o tamanho do widget.
 class AnterosSize {
-  /// [AnterosSize.SMALL] is used for small size widget
+  /// [AnterosSize.SMALL] é usado para widget de tamanho pequeno
   static const double SMALL = 30;
 
-  /// Default size if [AnterosSize.MEDIUM] is used for medium size widget
+  /// Predefinição Tamanho E se [AnterosSize.MEDIUM] é usado para widget de tamanho médio
   static const double MEDIUM = 35;
 
-  /// [AnterosSize.LARGE] is used for large size widget
+  /// [AnterosSize.LARGE] é usado para widget de tamanho grande
   static const double LARGE = 40;
 }

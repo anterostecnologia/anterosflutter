@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosFloatingWidget extends StatefulWidget {
-  /// Creates a Floating body can be used to display the quick messages, warning and erros.
-  /// Inside floating widget [AnterosToast] can be used as body. See [AnterosToast]
+  /// Cria um corpo flutuante pode ser usado para exibir as mensagens rápidas, avisos e erros.
+  /// Dentro do widget flutuante [AnterosToast] pode ser usado como corpo. Veja [AnterosToast]
   const AnterosFloatingWidget(
       {Key? key,
       this.child,
@@ -14,22 +14,22 @@ class AnterosFloatingWidget extends StatefulWidget {
       this.body})
       : super(key: key);
 
-  ///child of  type [Widget] which floats across the body based on horizontal and vertical position
+  ///filho do tipo [Widget] que flutua pelo corpo com base na posição horizontal e vertical
   final Widget? child;
 
-  ///body of type [Widget] which is same as Scaffold's body
+  ///corpo do tipo [Widget] que é igual ao corpo do Scaffold
   final Widget? body;
 
-  /// horizontalPosition of type [double] which  aligns the child horizontally across the body
+  /// horizontalPosition do tipo [double] que alinha o filho horizontalmente ao longo do corpo
   final double? horizontalPosition;
 
-  /// verticalPosition of type [double] which  aligns the child vertically across the body
+  /// verticalPosition do tipo [double] que alinha o filho verticalmente ao longo do corpo
   final double? verticalPosition;
 
-  ///blurnessColor of tye [Color] or [AnterosColors] which is used to blur the backgroundColor when ever the [child] is used in [AnterosFloatingWidget]
+  ///blurnessColor de tye [Color] ou [AnterosColors] que é usado para desfocar o backgroundColor sempre que o [child] é usado em [AnterosFloatingWidget]
   final Color? blurnessColor;
 
-  ///type of bool which allows to show or hide the blurness of the backgroundColor whenever the [child]  is used in [AnterosFloatingWidget]
+  ///tipo de bool que permite mostrar ou ocultar a desfocagem do backgroundColor sempre que o [filho] for usado em [AnterosFloatingWidget]
   final bool showBlurness;
 
   @override
