@@ -13,6 +13,11 @@ dependencies:
     path: ../
   flutter_webview_plugin: ^0.4.0
   cupertino_icons: ^1.0.3
+  flutter_riverpod: ^1.0.3
+  google_fonts: ^2.3.1
+  hive: ^2.1.0
+  path_provider: ^2.0.9
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
