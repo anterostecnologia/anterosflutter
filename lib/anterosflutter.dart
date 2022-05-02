@@ -77,3 +77,4 @@ export 'package:anterosflutter/components/grouped_list/anteros_sliver_grouped_li
     show AnterosSliverGroupedListView;
 export 'package:anterosflutter/components/grouped_list/src/anteros_groupedlist_order.dart';
 export 'package:anterosflutter/components/responsive_builder/anteros_responsive_builder.dart';
+export 'package:anterosflutter/components/color_picker/anteros_color_picker.dart';

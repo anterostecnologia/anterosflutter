@@ -1,3 +1,4 @@
+import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anteros_flutter_app/screens/animations/animation.dart';
@@ -305,6 +306,14 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'DropDown',
       'route': DropDown()
+    },
+    {
+      'icon': const IconData(
+        0xe900,
+        fontFamily: 'GFIconsneww',
+      ),
+      'title': 'Color picker',
+      'route': ColorPickerPage()
     },
   ];
 
