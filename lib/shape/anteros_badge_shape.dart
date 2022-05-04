@@ -1,14 +1,14 @@
-/// [AnterosBadgeShape] is used to shape the GFBadge widget.
+/// [AnterosBadgeShape] é usado para moldar o widget gfbadge.
 enum AnterosBadgeShape {
-  /// [AnterosBadgeShape.circle], used for rounded shape badge
+  /// [AnterosBadgeShape.circle], Usado para emblema de forma arredondada
   circle,
 
-  /// [AnterosBadgeShape.pills], used for pills shaped badge with rounded corners
+  /// [AnterosBadgeShape.pills], Usado para comprimidos em forma de crachá com cantos arredondados
   pills,
 
-  /// Default shape is [AnterosBadgeShape.standard], used for standard rectangle badge with rounded corners
+  /// Predefinição forma é [AnterosBadgeShape.standard], Usado para crachá de retângulo padrão com cantos arredondados
   standard,
 
-  /// [AnterosBadgeShape.square], used for square badge
+  /// [AnterosBadgeShape.square], usado para crachá quadrado
   square,
 }

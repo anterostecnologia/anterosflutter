@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class AnterosBottomSheet extends StatefulWidget {
-  /// Opens sheet from bottom as a popup on current sheets it has different customization options.
+  /// Abre a planilha de baixo como um pop-up nas planilhas atuais, tem diferentes opções de personalização.
   AnterosBottomSheet({
     Key? key,
     required this.contentBody,
@@ -40,29 +40,29 @@ class AnterosBottomSheet extends StatefulWidget {
   /// O usuário pode interagir deslizando ou tocando no [contentBody]
   final Widget contentBody;
 
-  /// [stickyFooter] is the footer of AnterosBottomSheet.
-  /// User can interact by swiping or tapping the [stickyFooter]
+  /// [stickyFooter] é o rodapé de AnterosBottomSheet.
+  /// O usuário pode interagir deslizando ou tocando no [stickyFooter]
   final Widget? stickyFooter;
 
-  /// [stickyFooterHeight] defines the height of AnterosBottomSheet's [stickyFooter].
+  /// [stickyFooterHeight] define a altura do [stickyFooter] do AnterosBottomSheet.
   final double stickyFooterHeight;
 
-  /// [stickyHeaderHeight] defines the height of AnterosBottomSheet's [stickyHeader].
+  /// [stickyHeaderHeight] define a altura do [stickyHeader] do AnterosBottomSheet.
   final double stickyHeaderHeight;
 
-  /// [elevation] controls shadow below the AnterosBottomSheet material.
-  /// Must be greater or equal to 0. Default value is 0.
+  /// [elevation] controla a sombra abaixo do material AnterosBottomSheet.
+  /// Deve ser maior ou igual a 0. O valor padrão é 0.
   final double elevation;
 
-  /// [enableExpandableContent] allows [contentBody] to expand.
-  /// Default value is false.
+  /// [enableExpandableContent] permite que [contentBody] se expanda.
+  /// O valor padrão é false.
   final bool enableExpandableContent;
 
-  /// [controller] used to control AnterosBottomSheet behavior like hide/show
+  /// [controller] usado para controlar o comportamento do AnterosBottomSheet como hide/show
   final AnterosBottomSheetController controller;
 
-  /// Defines the drag animation duration of the AnterosBottomSheet
-  /// Default value is 300.
+  /// Define a duração da animação de arrastar do AnterosBottomSheet
+  /// O valor padrão é 300.
   final int animationDuration;
 
   @override
@@ -247,16 +247,16 @@ class _AnterosBottomSheetState extends State<AnterosBottomSheet>
 class AnterosBottomSheetController extends ValueNotifier<bool> {
   AnterosBottomSheetController() : super(false);
 
-  /// Defines the height of the AnterosBottomSheet's contentBody
+  /// Define a altura do contentBody do AnterosBottomSheet
   double? _height;
 
-  /// Defines the drag animation duration of the AnterosBottomSheet
+  /// Define a duração da animação de arrastar do AnterosBottomSheet
   late int animationDuration;
 
-  // ignore: unnecessary_getters_setters
+  // ignore: desnecessário_getters_setters
   set height(double? value) => _height = value;
 
-  // ignore: unnecessary_getters_setters
+  // ignore: desnecessário_getters_setters
   double? get height => _height;
   bool get isBottomSheetOpened => value;
   void hideBottomSheet() => value = false;

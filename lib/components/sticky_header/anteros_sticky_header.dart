@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosStickyHeader extends MultiChildRenderObjectWidget {
-  /// Anteros Sticky Header will the stick header at top when content is being scrolled.
-  /// Place this widget inside a [ListView], [GridView], [CustomScrollView], [SingleChildScrollView] or similar.
+  /// Anteros Sticky Header será o cabeçalho do bastão na parte superior quando o conteúdo estiver sendo rolado.
+  /// Coloque este widget dentro de um [ListView], [GridView], [CustomScrollView], [SingleChildScrollView] ou similar.
   AnterosStickyHeader(
       {Key? key,
       required this.stickyContent,
@@ -23,25 +23,25 @@ class AnterosStickyHeader extends MultiChildRenderObjectWidget {
                     ? [content, stickyContent]
                     : [content, stickyContent]);
 
-  /// widget can be used to define [stickyContent].
+  /// O widget pode ser usado para definir [stickyContent].
   final Widget stickyContent;
 
-  /// widget can be used to define [content].
+  ///O widget pode ser usado para definir [content].
   final Widget content;
 
-  /// On state true, the [stickyContent] will overlap the [content].
-  /// Only works when direction is [Axis.vertical]. Default set to false.
+  /// No estado verdadeiro, o [stickyContent]Será sobrepor o [content].
+  /// Só funciona quando a direção é [Axis.vertical]. Padrão definido como false.
   final bool enableHeaderOverlap;
 
-  /// [AnterosPosition] allows to [stickyContentPosition] to stick at top in [Axis.vertical] and stick at start in [Axis.horizontal]
-  /// Defaults to [AnterosPosition.start]
+  /// [AnterosPosition] permite [stickyContentPosition] Para ficar no topo [Axis.vertical] e fique no início [Axis.horizontal]
+  /// Padrão para [AnterosPosition.start]
   final AnterosPosition stickyContentPosition;
 
-  /// Allows to add custom stickyHeader stuck offset value
+  /// Permite adicionar valor de deslocamento de deslocamento personalizado
   final RenderGFStickyHeaderCallback? callback;
 
-  ///  [direction] allows children to align in vertical / horizontal way
-  ///  Defaults to [Axis.vertical]
+  ///  [direction] permite que as crianças se alinhem de maneira vertical / horizontal
+  ///  Padrão para [Axis.vertical]
   final Axis direction;
 
   @override

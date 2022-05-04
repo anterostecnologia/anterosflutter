@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosRadio<T> extends StatefulWidget {
-  /// [AnterosRadio] is one type of selection indicator in a list of options.
+  /// [AnterosRadio] é um tipo de indicador de seleção em uma lista de opções.
   const AnterosRadio(
       {Key? key,
       required this.value,
@@ -27,54 +27,54 @@ class AnterosRadio<T> extends StatefulWidget {
       this.toggleable = false})
       : super(key: key);
 
-  /// type of [AnterosRadioType] which is of four type is basic, sqaure, circular and custom
+  /// tipo de [AnterosRadioType] que é de quatro tipos é básico, quadrado, circular e personalizado
   final AnterosRadioType type;
 
-  /// type of [double] which is AnterosSize ie, small, medium and large and can use any double value
+  /// tipo de [double] que é AnterosSize, ou seja, pequeno, médio e grande e pode usar qualquer valor duplo
   final double size;
 
-  /// type pf [Color] used to change the checkcolor when the radio button is active
+  /// digite pf [Color] usado para alterar a cor de verificação quando o botão de opção está ativo
   final Color radioColor;
 
-  /// type of [Color] used to change the backgroundColor of the active radio button
+  /// tipo de [Color] usado para alterar o backgroundColor do botão de opção ativo
   final Color activeBgColor;
 
-  /// type of [Color] used to change the backgroundColor of the inactive radio button
+  /// tipo de [Color] usado para alterar o backgroundColor do botão de rádio inativo
   final Color inactiveBgColor;
 
-  /// type of [Color] used to change the border color of the active radio button
+  /// tipo de [Color] usado para alterar a cor da borda do botão de opção ativo
   final Color activeBorderColor;
 
-  /// type of [Color] used to change the border color of the inactive radio button
+  /// tipo de [Color] usado para alterar a cor da borda do botão de opção inativo
   final Color inactiveBorderColor;
 
-  /// Called when the user checks or unchecks the radio button
+  /// Chamado quando o usuário marca ou desmarca o botão de rádio
   final ValueChanged<T>? onChanged;
 
-  ///type of Widget used to change the  radio button's active icon
+  ///tipo de Widget usado para alterar o ícone ativo do botão de opção
   final Widget activeIcon;
 
-  ///type of [Widget] used to change the  radio button's inactive icon
+  ///tipo de [Widget] usado para alterar o ícone inativo do botão de opção
   final Widget? inactiveIcon;
 
-  /// type of [Color] used to change the background color of the custom active  radio button only
+  /// tipo de [Color] usado para alterar apenas a cor de fundo do botão de opção ativo personalizado
   final Color customBgColor;
 
-  /// on true state this widget will be selected as the initial focus
-  /// when no other node in its scope is currently focused
+  /// no estado verdadeiro este widget será selecionado como foco inicial
+  /// quando nenhum outro nó em seu escopo está focado no momento
   final bool autofocus;
 
-  /// an optional focus node to use as the focus node for this widget.
+  /// um nó de foco opcional para usar como nó de foco para este widget.
   final FocusNode? focusNode;
 
-  /// The value represented by this radio button.
+  /// O valor representado por este botão de rádio.
   final T value;
 
-  /// The currently selected value for a group of radio buttons. Radio button is considered selected if its [value] matches the
+  /// O valor atualmente selecionado para um grupo de botões de opção. O botão de opção é considerado selecionado se seu [value] corresponder ao
   /// [groupValue].
   final T groupValue;
 
-  /// sets the radio value
+  /// define o valor do rádio
   final bool toggleable;
 
   @override

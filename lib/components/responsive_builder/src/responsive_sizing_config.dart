@@ -1,6 +1,6 @@
 import 'package:anterosflutter/components/responsive_builder/src/sizing_information.dart';
 
-/// Keeps the configuration that will determines the breakpoints for different device sizes
+/// Mantém a configuração que determinará os pontos de interrupção para diferentes tamanhos de dispositivo
 class AnterosResponsiveSizingConfig {
   static AnterosResponsiveSizingConfig? _instance;
   static AnterosResponsiveSizingConfig get instance {
@@ -41,7 +41,7 @@ class AnterosResponsiveSizingConfig {
 
   AnterosRefinedBreakpoints? _customRefinedBreakPoints;
 
-  /// Set the breakPoints which will then be returned through the [breakpoints]
+  /// Defina os pontos de interrupção que serão devolvidos através do [breakpoints]
   void setCustomBreakpoints(
     AnterosScreenBreakpoints? customBreakpoints, {
     AnterosRefinedBreakpoints? customRefinedBreakpoints,

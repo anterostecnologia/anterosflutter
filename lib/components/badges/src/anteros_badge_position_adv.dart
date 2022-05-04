@@ -1,23 +1,23 @@
-/// Utility class. Don't try to use it!
+/// Classe de utilidade. Não tente usá-lo!
 ///
-/// This contain a custom position for the [Badge]
+/// Contém uma posição personalizada para o [Badge]
 class AnterosAdvancedBadgePosition {
-  /// This is the distance to the top side of a parent widget.
+  /// Esta é a distância até o lado superior de um widget pai.
   final double? top;
 
-  /// This is the distance to the end side of a parent widget.
+  /// Esta é a distância até o lado final de um widget pai.
   final double? end;
 
-  /// This is the distance to the start side of a parent widget.
+  /// Esta é a distância até o lado inicial de um widget pai.
   final double? start;
 
-  /// This is the distance to the bottom side of a parent widget.
+  /// Esta é a distância até o lado inferior de um widget pai.
   final double? bottom;
 
-  /// This is indicate that centralise is required
+  /// Isso indica que a centralização é necessária
   final bool isCenter;
 
-  /// This creates a new instance of this widget
+  /// Isso cria uma nova instância deste widget
   const AnterosAdvancedBadgePosition({
     this.top,
     this.end,
@@ -26,35 +26,35 @@ class AnterosAdvancedBadgePosition {
     this.isCenter = false,
   });
 
-  /// Factory method that creates a new instance of this widget
-  /// according to the center
+  /// Método de fábrica que cria uma nova instância deste widget
+  /// de acordo com o centro
   factory AnterosAdvancedBadgePosition.center() {
     return AnterosAdvancedBadgePosition(isCenter: true);
   }
 
-  /// Factory method that creates a new instance of this widget
-  /// according to [top] and [start]
+  /// Método de fábrica que cria uma nova instância deste widget
+  /// de acordo com [top] e [start]
   factory AnterosAdvancedBadgePosition.topStart(
       {double top = -5, double start = -10}) {
     return AnterosAdvancedBadgePosition(top: top, start: start);
   }
 
-  /// Factory method that creates a new instance of this widget
-  /// according to [top] and [end]
+  /// Método de fábrica que cria uma nova instância deste widget
+  /// de acordo com [top] e [end]
   factory AnterosAdvancedBadgePosition.topEnd(
       {double top = -8, double end = -10}) {
     return AnterosAdvancedBadgePosition(top: top, end: end);
   }
 
-  /// Factory method that creates a new instance of this widget
-  /// according to [bottom] and [end]
+  /// Método de fábrica que cria uma nova instância deste widget
+  /// de acordo com [bottom] e [end]
   factory AnterosAdvancedBadgePosition.bottomEnd(
       {double bottom = -8, double end = -10}) {
     return AnterosAdvancedBadgePosition(bottom: bottom, end: end);
   }
 
-  /// Factory method that creates a new instance of this widget
-  /// according to [bottom] and [start]
+  /// Método de fábrica que cria uma nova instância deste widget
+  /// de acordo com [bottom] e [start]
   factory AnterosAdvancedBadgePosition.bottomStart(
       {double bottom = -8, double start = -10}) {
     return AnterosAdvancedBadgePosition(bottom: bottom, start: start);

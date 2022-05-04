@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosButtonBadge extends StatefulWidget {
-  /// Create badges badges of all types. check out [AnterosIconButton] for icon badges, and [AnterosAdvancedBadge] for badges
+  /// Cria crachás crachás de todos os tipos. confira [AnterosIconButton] para emblemas de ícone e [AnterosAdvancedBadge] para emblemas
   const AnterosButtonBadge({
     Key? key,
     required this.onPressed,
@@ -54,64 +54,64 @@ class AnterosButtonBadge extends StatefulWidget {
           key: key,
         );
 
-  /// Called when the button is tapped or otherwise activated.
+  /// Chamado quando o botão é tocado ou ativado de outra forma.
   final VoidCallback? onPressed;
 
-  /// Called by the underlying [InkWell] widget's InkWell.onHighlightChanged callback.
+  /// Chamado pelo retorno de chamada InkWell.onHighlightChanged do widget [InkWell] subjacente.
   final ValueChanged<bool>? onHighlightChanged;
 
-  /// Defines the default text style, with [Material.textStyle], for the button's child.
+  /// Define o estilo de texto padrão, com [Material.textStyle], para o filho do botão.
   final TextStyle? textStyle;
 
-  /// The border side for the badge's [Material].
+  /// O lado da borda do [Material] do emblema.
   final BorderSide? borderSide;
 
-  /// The box shadow for the badge's [Material].
+  /// A sombra da caixa para o [Material] do emblema.
   final BoxShadow? boxShadow;
 
-  /// Pass [AnterosColors] or [Color]. The color for the badge's [Material] when it has the input focus.
+  /// Passe [AnterosColors] ou [Color]. A cor do [Material] do crachá quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// Pass [AnterosColors] or [Color]. The color for the badge's [Material] when a pointer is hovering over it.
+  /// Passe [AnterosColors] ou [Color]. A cor do [Material] do emblema quando um ponteiro passa sobre ele.
   final Color? hoverColor;
 
-  /// Pass [AnterosColors] or [Color]. The highlight color for the badge's [InkWell].
+  /// Passe [AnterosColors] ou [Color]. A cor de destaque para o [InkWell] do emblema.
   final Color? highlightColor;
 
-  /// Pass [AnterosColors] or [Color]. The splash color for the badge's [InkWell].
+  /// Passe [AnterosColors] ou [Color]. A cor inicial do [InkWell] do emblema.
   final Color? splashColor;
 
-  /// The elevation for the badge's [Material] when the badge is [enabled] but not pressed.
+  /// A elevação do [Material] do emblema quando o emblema está [ativado], mas não pressionado.
   final double elevation;
 
-  /// The elevation for the badge's [Material] when the badge is [enabled] and a pointer is hovering over it.
+  /// A elevação do [Material] do emblema quando o emblema está [habilitado] e um ponteiro está sobre ele.
   final double hoverElevation;
 
-  /// The elevation for the badge's [Material] when the badge is [enabled] and has the input focus.
+  /// A elevação do [Material] do emblema quando o emblema está [habilitado] e tem o foco de entrada.
   final double focusElevation;
 
-  /// The elevation for the badge's [Material] when the badge is [enabled] and pressed.
+  /// A elevação do [Material] do crachá quando o crachá está [habilitado] e pressionado.
   final double highlightElevation;
 
-  /// The elevation for the badge's [Material] when the badge is not [enabled].
+  /// A elevação do [Material] do emblema quando o emblema não está [ativado].
   final double disabledElevation;
 
-  /// The internal padding for the badge's child.
+  /// O preenchimento interno para o filho do emblema.
   final EdgeInsetsGeometry padding;
 
-  /// Defines the badge's size.
+  /// Define o tamanho do emblema.
   final BoxConstraints? constraints;
 
-  /// The shape of the badge's [Material].
+  /// A forma do [Material] do emblema.
   final ShapeBorder? borderShape;
 
-  /// Defines the duration of animated changes for [shape] and [elevation].
+  /// Define a duração das alterações animadas para [forma] e [elevação].
   final Duration animationDuration;
 
-  /// Whether the badge is enabled or disabled.
+  /// Se o emblema está ativado ou desativado.
   bool get enabled => onPressed != null;
 
-  /// Configures the minimum size of the tap target.
+  /// Configura o tamanho mínimo do alvo de toque.
   final MaterialTapTargetSize materialTapTargetSize;
 
   /// {@macro flutter.widgets.Focus.focusNode}
@@ -123,94 +123,94 @@ class AnterosButtonBadge extends StatefulWidget {
   /// {@macro flutter.widgets.Clip}
   final Clip clipBehavior;
 
-  /// Button type of [AnterosButtonType] i.e, solid, outline, outline2x, transparent
+  /// Tipo de botão de [AnterosButtonType] ou seja, sólido, contorno, contorno2x, transparente
   final AnterosButtonType type;
 
-  /// Button type of AnterosButtonBadgeShape i.e, standard, pills, square, shadow, icons
+  /// Tipo de botão de AnterosButtonBadgeShape, ou seja, padrão, pílulas, quadrado, sombra, ícones
   final AnterosButtonShape shape;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color color;
 
-  /// The fill color of the badge when the badge is disabled.
+  /// A cor de preenchimento do emblema quando o emblema está desabilitado.
   ///
-  /// The default value of this color is the theme's disabled color,
+  /// O valor padrão desta cor é a cor desabilitada do tema,
   /// [ThemeData.disabledColor].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [color] - the fill color of the badge when the badge is [enabled].
+  /// * [color] - a cor de preenchimento do emblema quando o emblema está [ativado].
   final Color? disabledColor;
 
-  /// Pass [AnterosColors] or [Color]
+  /// Passe [AnterosColors] ou [Color]
   final Color? textColor;
 
-  /// The color to use for this badge's text when the badge is disabled.
+  /// A cor a ser usada para o texto deste selo quando o selo estiver desabilitado.
   ///
-  /// The badge's [Material.textStyle] will be the current theme's badge
-  /// text style, [ThemeData.textTheme.badge], configured with this color.
+  /// O [Material.textStyle] do emblema será o emblema do tema atual
+  /// estilo de texto, [ThemeData.textTheme.badge], configurado com esta cor.
   ///
-  /// The default value is the theme's disabled color,
+  /// O valor padrão é a cor desabilitada do tema,
   /// [ThemeData.disabledColor].
   ///
-  /// If [textColor] is a [MaterialStateProperty<Color>], [disabledTextColor]
-  /// will be ignored.
+  /// Se [textColor] for um [MaterialStateProperty<Color>], [disabledTextColor]
+  /// será ignorado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [textColor] - The color to use for this badge's text when the badge is [enabled].
+  /// * [textColor] - A cor a ser usada para o texto deste emblema quando o emblema estiver [ativado].
   final Color? disabledTextColor;
 
-  /// size of [double] or [AnterosSize] i.e, 1.2, small, medium, large etc.
+  /// tamanho de [double] ou [AnterosSize], ou seja, 1.2, pequeno, médio, grande etc.
   final double size;
 
-  /// text of type [String] is alternative to child. text will get priority over child
+  /// o texto do tipo [String] é alternativo ao filho. o texto terá prioridade sobre o filho
   final String? text;
 
-  /// icon type of [AnterosPosition] i.e, start, end
+  /// tipo de ícone de [AnterosPosition] ou seja, início, fim
   final AnterosPosition position;
 
-  /// on true state blockButton gives block size badge
+  /// no estado verdadeiro, blockButton fornece o emblema do tamanho do bloco
   final bool? blockButton;
 
-  /// on true state full width Button gives full width badge
+  /// no estado verdadeiro O botão de largura total fornece um emblema de largura total
   final bool? fullWidthButton;
 
-  /// on true state default box shadow appears around badge, if AnterosButtonType is solid
+  /// no estado verdadeiro, a sombra da caixa padrão aparece ao redor do emblema, se AnterosButtonType for sólido
   final bool? badgeBoxShadow;
 
-  /// A set of thirteen colors that can be used to derive the badge theme's
-  /// colors.
+  /// Um ​​conjunto de treze cores que podem ser usadas para derivar o tema do emblema
+  /// cores.
   ///
-  /// This property was added much later than the theme's set of highly
-  /// specific colors, like ThemeData.badgeColor, [ThemeData.highlightColor],
+  /// Esta propriedade foi adicionada muito depois do conjunto de itens altamente
+  /// cores específicas, como ThemeData.badgeColor, [ThemeData.highlightColor],
   /// [ThemeData.splashColor] etc.
   ///
-  /// The colors for new badge classes can be defined exclusively in terms
-  /// of [colorScheme]. When it's possible, the existing badges will
-  /// (continue to) gradually migrate to it.
+  /// As cores para novas classes de emblemas podem ser definidas exclusivamente em termos
+  /// de [colorScheme]. Quando for possível, os emblemas existentes serão
+  /// (continuar) migrar gradualmente para ele.
   final ColorScheme? colorScheme;
 
-  /// Whether detected gestures should provide acoustic and/or haptic feedback.
+  /// Se os gestos detectados devem fornecer feedback acústico e/ou tátil.
   ///
-  /// For example, on Android a tap will produce a clicking sound and a
-  /// long-press will produce a short vibration, when feedback is enabled.
+  /// Por exemplo, no Android um toque produzirá um som de clique e um
+  /// o pressionamento longo produzirá uma vibração curta, quando o feedback estiver ativado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [Feedback] for providing platform-specific feedback to certain actions.
+  /// * [Feedback] para fornecer feedback específico da plataforma para determinadas ações.
   final bool? enableFeedback;
 
-  /// Called when the badge is long-pressed.
+  /// Chamado quando o emblema é pressionado por muito tempo.
   ///
-  /// If this callback and [onPressed] are null, then the badge will be disabled.
+  /// Se este retorno de chamada e [onPressed] forem nulos, o emblema será desabilitado.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [enabled], which is true if the badge is enabled.
+  /// * [enabled], o que é verdade se o badge estiver habilitado.
   final VoidCallback? onLongPress;
 
-  /// Can be used to display AnterosBadge, [Icons] inside badge design
+  /// Pode ser usado para exibir AnterosBadge, [Icons] dentro do design do crachá
   final Widget? icon;
 
   @override

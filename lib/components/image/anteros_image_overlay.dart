@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Creates a image widget with shaded overlay.
+/// Cria um widget de imagem com sobreposição sombreada.
 class AnterosImageOverlay extends StatelessWidget {
-  /// Creates a image widget with shaded overlay.
+  /// Cria um widget de imagem com sobreposição sombreada.
   const AnterosImageOverlay({
     Key? key,
     this.height,
@@ -21,54 +21,54 @@ class AnterosImageOverlay extends StatelessWidget {
     this.shape = BoxShape.rectangle,
   }) : super(key: key);
 
-  /// define image's [double] height
+  /// define a altura [double] da imagem
   final double? height;
 
-  /// define image's [double] width
+  /// define a largura [double] da imagem
   final double? width;
 
-  /// The image background color.
+  /// A cor de fundo da imagem.
   final Color? color;
 
-  /// The empty space that surrounds the card. Defines the image's outer [Container.margin].
+  /// O espaço vazio que circunda o cartão. Define o [Container.margin] externo da imagem.
   final EdgeInsetsGeometry? margin;
 
-  /// The empty space that surrounds the card. Defines the image's outer [Container.padding]..
+  /// O espaço vazio que circunda o cartão. Define o [Container.padding] externo da imagem.
   final EdgeInsetsGeometry? padding;
 
-  /// The [Image] widget used to display image
+  /// O widget [Image] usado para exibir a imagem
   final ImageProvider? image;
 
-  /// The [child] contained by the container, used to display text over image
+  /// O [filho] contido pelo contêiner, usado para exibir texto sobre imagem
   final Widget child;
 
-  /// Align the [child] within the container.
+  /// Alinha o [filho] dentro do container.
   final AlignmentGeometry? alignment;
 
-  /// How the image should be inscribed into the box.
-  /// The default is [BoxFit.scaleDown] if centerSlice is null, and
-  /// [BoxFit.fill] if centerSlice is not null.
+  /// Como a imagem deve ser inscrita na caixa.
+  /// O padrão é [BoxFit.scaleDown] se centerSlice for nulo e
+  /// [BoxFit.fill] se centerSlice não for nulo.
   final BoxFit? boxFit;
 
-  /// A color filter to apply to the image before painting it.
+  /// Um ​​filtro de cor para aplicar à imagem antes de pintá-la.
   final ColorFilter? colorFilter;
 
-  /// The corners of this [AnterosImageOverlay] are rounded by this [BorderRadius].
+  /// Os cantos deste [AnterosImageOverlay] são arredondados por este [BorderRadius].
   final BorderRadiusGeometry? borderRadius;
 
-  /// A border to draw above the [AnterosImageOverlay].
+  /// Uma borda para desenhar acima de [AnterosImageOverlay].
   final Border? border;
 
-  /// The shape to fill the background [color], gradient, and [image] into and
-  /// to cast as the boxShadow.
+  /// A forma para preencher o plano de fundo [cor], gradiente e [imagem] em e
+  /// para converter como boxShadow.
   ///
-  /// If this is [BoxShape.circle] then [borderRadius] is ignored.
+  /// Se for [BoxShape.circle] então [borderRadius] é ignorado.
   ///
-  /// The [shape] cannot be interpolated; animating bestuckValue two [BoxDecoration]s
-  /// with different [shape]s will result in a discontinuity in the rendering.
-  /// To interpolate bestuckValue two shapes, consider using [ShapeDecoration] and
-  /// different [ShapeBorder]s; in particular, [CircleBorder] instead of
-  /// [BoxShape.circle] and [RoundedRectangleBorder] instead of
+  /// A [forma] não pode ser interpolada; animando bestuckValue dois [BoxDecoration]s
+  /// com [shape]s diferentes resultará em uma descontinuidade na renderização.
+  /// Para interpolar besttuckValue duas formas, considere usar [ShapeDecoration] e
+  /// diferentes [ShapeBorder]s; em particular, [CircleBorder] em vez de
+  /// [BoxShape.circle] e [RoundedRectangleBorder] em vez de
   /// [BoxShape.rectangle].
   ///
   /// {@macro flutter.painting.boxDecoration.clip}

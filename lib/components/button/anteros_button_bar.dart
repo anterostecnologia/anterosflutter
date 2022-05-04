@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosButtonBar extends StatelessWidget {
-  /// Create buttons bar for all types of buttons.
-  /// check [AnterosButton] and [AnterosIconButton]
+  /// Cria barra de botões para todos os tipos de botões.
+  /// verifica [AnterosButton] e [AnterosIconButton]
   const AnterosButtonBar({
     Key? key,
     this.direction = Axis.horizontal,
@@ -18,143 +18,143 @@ class AnterosButtonBar extends StatelessWidget {
     this.padding = const EdgeInsets.all(0),
   }) : super(key: key);
 
-  /// The empty space that surrounds the buttonBar. Default's to padding.zero
+  /// O espaço vazio que circunda o buttonBar. O padrão é padding.zero
   final EdgeInsetsGeometry padding;
 
-  /// The direction to use as the main axis.
+  /// A direção a ser usada como eixo principal.
   ///
-  /// For example, if [direction] is [Axis.horizontal], the default, the
-  /// children are placed adjacent to one another in a horizontal run until the
-  /// available horizontal space is consumed, at which point a subsequent
-  /// children are placed in a new run vertically adjacent to the previous run.
+  /// Por exemplo, se [direction] for [Axis.horizontal], o padrão, o
+  /// os filhos são colocados adjacentes um ao outro em uma execução horizontal até que o
+  /// o espaço horizontal disponível é consumido, momento em que um subsequente
+  /// as crianças são colocadas em uma nova execução verticalmente adjacente à execução anterior.
   final Axis direction;
 
-  /// How the children within a run should be placed in the main axis.
+  /// Como os filhos dentro de uma execução devem ser colocados no eixo principal.
   ///
-  /// For example, if [alignment] is [WrapAlignment.center], the children in
-  /// each run are grouped together in the center of their run in the main axis.
+  /// Por exemplo, se [alignment] for [WrapAlignment.center], os filhos em
+  /// cada corrida é agrupada no centro de sua corrida no eixo principal.
   ///
-  /// Defaults to [WrapAlignment.start].
+  /// O padrão é [WrapAlignment.start].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [runAlignment], which controls how the runs are placed relative to each
-  ///    other in the cross axis.
-  ///  * [crossAxisAlignment], which controls how the children within each run
-  ///    are placed relative to each other in the cross axis.
+  /// * [runAlignment], que controla como as execuções são colocadas em relação a cada
+  /// outro no eixo cruzado.
+  /// * [crossAxisAlignment], que controla como os filhos em cada execução
+  /// são colocados um em relação ao outro no eixo cruzado.
   final WrapAlignment alignment;
 
-  /// How much space to place bestuckValue children in a run in the main axis.
+  /// Quanto espaço para colocar os filhos besttuckValue em uma execução no eixo principal.
   ///
-  /// For example, if [spacing] is 10.0, the children will be spaced at least
-  /// 10.0 logical pixels apart in the main axis.
+  /// Por exemplo, se [espaçamento] for 10.0, os filhos serão espaçados pelo menos
+  /// 10,0 pixels lógicos separados no eixo principal.
   ///
-  /// If there is additional free space in a run (e.g., because the wrap has a
-  /// minimum size that is not filled or because some runs are longer than
-  /// others), the additional free space will be allocated according to the
-  /// [alignment].
+  /// Se houver espaço livre adicional em uma execução (por exemplo, porque o wrap tem um
+  /// tamanho mínimo que não é preenchido ou porque algumas execuções são maiores que
+  /// outros), o espaço livre adicional será alocado de acordo com o
+  /// [alinhamento].
   ///
-  /// Defaults to 0.0.
+  /// O padrão é 0.0.
   final double spacing;
 
-  /// How the runs themselves should be placed in the cross axis.
+  /// Como as corridas devem ser colocadas no eixo cruzado.
   ///
-  /// For example, if [runAlignment] is [WrapAlignment.center], the runs are
-  /// grouped together in the center of the overall [Wrap] in the cross axis.
+  /// Por exemplo, se [runAlignment] for [WrapAlignment.center], as execuções serão
+  /// agrupados no centro do [Wrap] geral no eixo cruzado.
   ///
-  /// Defaults to [WrapAlignment.start].
+  /// O padrão é [WrapAlignment.start].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [alignment], which controls how the children within each run are placed
-  ///    relative to each other in the main axis.
-  ///  * [crossAxisAlignment], which controls how the children within each run
-  ///    are placed relative to each other in the cross axis.
+  /// * [alignment], que controla como os filhos em cada execução são colocados
+  /// em relação ao outro no eixo principal.
+  /// * [crossAxisAlignment], que controla como os filhos em cada execução
+  /// são colocados um em relação ao outro no eixo cruzado.
   final WrapAlignment runAlignment;
 
-  /// How much space to place bestuckValue the runs themselves in the cross axis.
+  /// Quanto espaço para colocar besttuckValue as próprias corridas no eixo cruzado.
   ///
-  /// For example, if [runSpacing] is 10.0, the runs will be spaced at least
-  /// 10.0 logical pixels apart in the cross axis.
+  /// Por exemplo, se [runSpacing] for 10.0, as execuções serão espaçadas pelo menos
+  /// 10,0 pixels lógicos separados no eixo cruzado.
   ///
-  /// If there is additional free space in the overall [Wrap] (e.g., because
-  /// the wrap has a minimum size that is not filled), the additional free space
-  /// will be allocated according to the [runAlignment].
+  /// Se houver espaço livre adicional no [Wrap] geral (por exemplo, porque
+  /// o wrap tem um tamanho mínimo que não é preenchido), o espaço livre adicional
+  /// será alocado de acordo com o [runAlignment].
   ///
-  /// Defaults to 0.0.
+  /// O padrão é 0.0.
   final double runSpacing;
 
-  /// The buttons to arrange horizontally.
-  /// Typically [AnterosButton] or [AnterosIconButton] widgets.
+  /// Os botões para organizar horizontalmente.
+  /// Normalmente widgets [AnterosButton] ou [AnterosIconButton].
   final List<Widget> children;
 
-  /// How the children within a run should be aligned relative to each other in
-  /// the cross axis.
+  /// Como os filhos em uma execução devem ser alinhados em relação uns aos outros em
+  /// o eixo cruzado.
   ///
-  /// For example, if this is set to [WrapCrossAlignment.end], and the
-  /// [direction] is [Axis.horizontal], then the children within each
-  /// run will have their bottom edges aligned to the bottom edge of the run.
+  /// Por exemplo, se for definido como [WrapCrossAlignment.end], e o
+  /// [direction] é [Axis.horizontal], então os filhos dentro de cada
+  /// run terá suas bordas inferiores alinhadas com a borda inferior do run.
   ///
-  /// Defaults to [WrapCrossAlignment.start].
+  /// O padrão é [WrapCrossAlignment.start].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [alignment], which controls how the children within each run are placed
-  ///    relative to each other in the main axis.
-  ///  * [runAlignment], which controls how the runs are placed relative to each
-  ///    other in the cross axis.
+  /// * [alignment], que controla como os filhos em cada execução são colocados
+  /// em relação ao outro no eixo principal.
+  /// * [runAlignment], que controla como as execuções são colocadas em relação a cada
+  /// outro no eixo cruzado.
   final WrapCrossAlignment crossAxisAlignment;
 
-  /// Determines the order to lay children out horizontally and how to interpret
-  /// `start` and `end` in the horizontal direction.
+  /// Determina a ordem para colocar as crianças horizontalmente e como interpretar
+  /// `start` e `end` na direção horizontal.
   ///
-  /// Defaults to the ambient [Directionality].
+  /// Padrões para o ambiente [Directionality].
   ///
-  /// If the [direction] is [Axis.horizontal], this controls order in which the
-  /// children are positioned (left-to-right or right-to-left), and the meaning
-  /// of the [alignment] property's [WrapAlignment.start] and
-  /// [WrapAlignment.end] values.
+  /// Se a [direção] for [Axis.horizontal], isso controla a ordem na qual o
+  /// os filhos são posicionados (da esquerda para a direita ou da direita para a esquerda), e o significado
+  /// do [WrapAlignment.start] da propriedade [alignment] e
+  /// valores [WrapAlignment.end].
   ///
-  /// If the [direction] is [Axis.horizontal], and either the
-  /// [alignment] is either [WrapAlignment.start] or [WrapAlignment.end], or
-  /// there's more than one child, then the [textDirection] (or the ambient
-  /// [Directionality]) must not be null.
+  /// Se a [direção] for [Axis.horizontal], e o
+  /// [alignment] é [WrapAlignment.start] ou [WrapAlignment.end], ou
+  /// há mais de um filho, então o [textDirection] (ou o ambiente
+  /// [Directionality]) não deve ser nulo.
   ///
-  /// If the [direction] is [Axis.vertical], this controls the order in which
-  /// runs are positioned, the meaning of the [runAlignment] property's
-  /// [WrapAlignment.start] and [WrapAlignment.end] values, as well as the
-  /// [crossAxisAlignment] property's [WrapCrossAlignment.start] and
-  /// [WrapCrossAlignment.end] values.
+  /// Se a [direção] for [Axis.vertical], isso controla a ordem em que
+  /// as corridas são posicionadas, o significado da propriedade [runAlignment]
+  /// valores [WrapAlignment.start] e [WrapAlignment.end], bem como o
+  /// [crossAxisAlignment] da propriedade [WrapCrossAlignment.start] e
+  /// valores [WrapCrossAlignment.end].
   ///
-  /// If the [direction] is [Axis.vertical], and either the
-  /// [runAlignment] is either [WrapAlignment.start] or [WrapAlignment.end], the
-  /// [crossAxisAlignment] is either [WrapCrossAlignment.start] or
-  /// [WrapCrossAlignment.end], or there's more than one child, then the
-  /// [textDirection] (or the ambient [Directionality]) must not be null.
+  /// Se a [direção] for [Axis.vertical], e o
+  /// [runAlignment] é [WrapAlignment.start] ou [WrapAlignment.end], o
+  /// [crossAxisAlignment] é [WrapCrossAlignment.start] ou
+  /// [WrapCrossAlignment.end], ou há mais de um filho, então o
+  /// [textDirection] (ou o ambiente [Directionality]) não deve ser nulo.
   final TextDirection? textDirection;
 
-  /// Determines the order to lay children out vertically and how to interpret
-  /// `start` and `end` in the vertical direction.
+  /// Determina a ordem para colocar as crianças verticalmente e como interpretar
+  /// `start` e `end` na direção vertical.
   ///
-  /// If the [direction] is [Axis.vertical], this controls which order children
-  /// are painted in (down or up), the meaning of the [alignment] property's
-  /// [WrapAlignment.start] and [WrapAlignment.end] values.
+  /// Se a [direção] for [Axis.vertical], isso controla qual ordem os filhos
+  /// são pintados (para baixo ou para cima), o significado da propriedade [alignment]
+  /// valores [WrapAlignment.start] e [WrapAlignment.end].
   ///
-  /// If the [direction] is [Axis.vertical], and either the [alignment]
-  /// is either [WrapAlignment.start] or [WrapAlignment.end], or there's
-  /// more than one child, then the [verticalDirection] must not be null.
+  /// Se a [direção] for [Axis.vertical], e o [alinhamento]
+  /// é [WrapAlignment.start] ou [WrapAlignment.end], ou há
+  /// mais de um filho, então o [verticalDirection] não deve ser nulo.
   ///
-  /// If the [direction] is [Axis.horizontal], this controls the order in which
-  /// runs are positioned, the meaning of the [runAlignment] property's
-  /// [WrapAlignment.start] and [WrapAlignment.end] values, as well as the
-  /// [crossAxisAlignment] property's [WrapCrossAlignment.start] and
-  /// [WrapCrossAlignment.end] values.
+  /// Se a [direção] for [Axis.horizontal], isso controla a ordem em que
+  /// as corridas são posicionadas, o significado da propriedade [runAlignment]
+  /// valores [WrapAlignment.start] e [WrapAlignment.end], bem como o
+  /// [crossAxisAlignment] da propriedade [WrapCrossAlignment.start] e
+  /// valores [WrapCrossAlignment.end].
   ///
-  /// If the [direction] is [Axis.horizontal], and either the
-  /// [runAlignment] is either [WrapAlignment.start] or [WrapAlignment.end], the
-  /// [crossAxisAlignment] is either [WrapCrossAlignment.start] or
-  /// [WrapCrossAlignment.end], or there's more than one child, then the
-  /// [verticalDirection] must not be null.
+  /// Se a [direção] for [Axis.horizontal], e o
+  /// [runAlignment] é [WrapAlignment.start] ou [WrapAlignment.end], o
+  /// [crossAxisAlignment] é [WrapCrossAlignment.start] ou
+  /// [WrapCrossAlignment.end], ou há mais de um filho, então o
+  /// [verticalDirection] não deve ser nulo.
   final VerticalDirection verticalDirection;
 
   @override

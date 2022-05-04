@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// A material design card. A card has slightly rounded corners and a shadow.
+/// Um ​​cartão de design de material. Um cartão tem cantos ligeiramente arredondados e uma sombra.
 ///
-/// A card is a sheet of [Material] used to represent some related information,
-/// for example an album, a geographical location, a meal, contact details, etc.
+/// Um ​​cartão é uma folha de [Material] usada para representar algumas informações relacionadas,
+/// por exemplo um álbum, uma localização geográfica, uma refeição, detalhes de contato, etc.
 class AnterosCard extends StatelessWidget {
-  /// Creates a material design card.
+  /// Cria um cartão de design de material.
   ///
-  /// The [elevation] must be null or non-negative. The [borderOnForeground]
-  /// must not be null.
+  /// A [elevation] deve ser nula ou não negativa. O [borderOnForeground]
+  /// não deve ser nulo.
   const AnterosCard(
       {Key? key,
       this.color,
@@ -41,73 +41,73 @@ class AnterosCard extends StatelessWidget {
             'The color argument is just a shorthand for "decoration: new BoxDecoration(color: color)".'),
         super(key: key);
 
-  /// defines the card's height
+  /// define a altura do cartão
   final double? height;
 
-  /// [AnterosPosition] titlePosition helps to set titlebar at top of card
+  /// [AnterosPosition] titlePosition ajuda a definir a barra de título no topo do cartão
   final AnterosPosition? titlePosition;
 
-  /// The card's background color.
+  /// A cor de fundo do cartão.
   final Color? color;
 
-  /// The z-coordinate at which to place this card. This controls the size of the shadow below the card.
+  /// A coordenada z na qual colocar este cartão. Isso controla o tamanho da sombra abaixo do cartão.
   final double? elevation;
 
-  /// The shape of the card's [Material].
+  /// A forma do [Material] do cartão.
   final ShapeBorder? shape;
 
-  /// Whether to paint the [shape] border in front of the child.
+  /// Se deve pintar a borda [shape] na frente do filho.
   final bool borderOnForeground;
 
-  /// If this property is null then [ThemeData.cardTheme.clipBehavior] is used.
+  /// Se esta propriedade for nula, então [ThemeData.cardTheme.clipBehavior] será usado.
   final Clip? clipBehavior;
 
-  /// The empty space that surrounds the card. Defines the card's outer [Container.margin].
+  /// O espaço vazio que circunda o cartão. Define o [Container.margin] externo do cartão.
   final EdgeInsetsGeometry? margin;
 
-  /// The empty space that surrounds the card. Defines the card's outer [Container.padding]..
+  /// O espaço vazio que circunda o cartão. Define o [Container.padding] externo do cartão.
   final EdgeInsetsGeometry padding;
 
-  /// Whether this widget represents a single semantic container, or if false
-  /// a collection of individual semantic nodes.
+  /// Se este widget representa um único contêiner semântico ou se é falso
+  /// uma coleção de nós semânticos individuais.
   final bool? semanticContainer;
 
-  /// The title to display inside the AnterosTitleBar. see AnterosTitleBar
+  /// O título a ser exibido dentro do AnterosTitleBar. veja AnterosTitleBar
   final AnterosListTile? title;
 
-  /// widget can be used to define content
+  /// widget pode ser usado para definir conteúdo
   final Widget? content;
 
   final bool showImage;
 
   final bool showOverlayImage;
 
-  /// image widget can be used
+  /// widget de imagem pode ser usado
   final Image? image;
 
-  /// overlay image [AnterosImageOverlay] widget can be used
-  /// to display image with shaded overlay
+  /// imagem de sobreposição [AnterosImageOverlay] widget pode ser usado
+  /// para exibir a imagem com sobreposição sombreada
   final ImageProvider? imageOverlay;
 
-  /// widget can be used to define buttons bar, see [AnterosButtonBar]
+  /// widget pode ser usado para definir a barra de botões, veja [AnterosButtonBar]
   final AnterosButtonBar? buttonBar;
 
-  /// How the image should be inscribed into the box.
-  /// The default is [BoxFit.scaleDown] if centerSlice is null, and
-  /// [BoxFit.fill] if centerSlice is not null.
-  /// [boxFit] for only [AnterosImageOverlay]
+  /// Como a imagem deve ser inscrita na caixa.
+  /// O padrão é [BoxFit.scaleDown] se centerSlice for nulo e
+  /// [BoxFit.fill] se centerSlice não for nulo.
+  /// [boxFit] apenas para [AnterosImageOverlay]
   final BoxFit? boxFit;
 
-  /// A color filter to apply to the image before painting it.
+  /// Um ​​filtro de cor para aplicar à imagem antes de pintá-la.
   final ColorFilter? colorFilter;
 
-  /// The corners of this [AnterosCard] are rounded by this [BorderRadius].
+  /// Os cantos deste [AnterosCard] são arredondados por este [BorderRadius].
   final BorderRadiusGeometry? borderRadius;
 
-  /// A border to draw above the [AnterosCard].
+  /// Uma borda para desenhar acima do [AnterosCard].
   final Border? border;
 
-  /// defines the gradient background
+  /// define o fundo gradiente
   final LinearGradient? gradient;
 
   static const double _defaultElevation = 1;

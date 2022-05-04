@@ -6,9 +6,9 @@ import 'device_screen_type.dart';
 
 typedef WidgetBuilder = Widget Function(BuildContext);
 
-/// A widget with a builder that provides you with the sizingInformation
+/// um widget com um construtor que fornece a informação de dimensionamento
 ///
-/// This widget is used by the ScreenTypeLayout to provide different widget builders
+/// Este widget é usado pelo ScreEntyPelayout para fornecer diferentes widgets Builders
 class AnterosResponsiveBuilder extends StatelessWidget {
   final Widget Function(
     BuildContext context,
@@ -50,7 +50,7 @@ enum OrientationLayoutBuilderMode {
   portrait,
 }
 
-/// Provides a builder function for a landscape and portrait widget
+/// Fornece uma função construtora para um widget de paisagem e retrato
 class AnterosOrientationLayoutBuilder extends StatelessWidget {
   final WidgetBuilder? landscape;
   final WidgetBuilder portrait;
@@ -82,14 +82,14 @@ class AnterosOrientationLayoutBuilder extends StatelessWidget {
   }
 }
 
-/// Provides a builder function for different screen types
+/// fornece uma função do construtor para diferentes tipos de tela
 ///
-/// Each builder will get built based on the current device width.
-/// [breakpoints] define your own custom device resolutions
-/// [watch] will be built and shown when width is less than 300
-/// [mobile] will be built when width greater than 300
-/// [tablet] will be built when width is greater than 600
-/// [desktop] will be built if width is greater than 950
+/// Cada construtor será construído com base na largura do dispositivo atual.
+/// [breakpoints] Defina suas próprias resoluções de dispositivo personalizado
+/// [watch] será construído e mostrado quando a largura for menor que 300
+/// [mobile] será construído quando largura maior que 300
+/// [tablet] será construído quando a largura for maior que 600
+/// [desktop] será construído se a largura for maior que 950
 class AnterosScreenTypeLayout extends StatelessWidget {
   final AnterosScreenBreakpoints? breakpoints;
 
@@ -129,11 +129,11 @@ class AnterosScreenTypeLayout extends StatelessWidget {
     return AnterosResponsiveBuilder(
       breakpoints: breakpoints,
       builder: (context, sizingInformation) {
-        // If we're at desktop size
+        // Se estamos no tamanho da área de trabalho
         if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-          // If we have supplied the desktop layout then display that
+          // Se fornecemos o layout da área de trabalho, exiba isso
           if (desktop != null) return desktop!(context);
-          // If no desktop layout is supplied we want to check if we have the size below it and display that
+          // Se nenhum layout de desktop for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
           if (tablet != null) return tablet!(context);
         }
 
@@ -146,21 +146,21 @@ class AnterosScreenTypeLayout extends StatelessWidget {
           return watch!(context);
         }
 
-        // If none of the layouts above are supplied or we're on the mobile layout then we show the mobile layout
+        // Se nenhum dos layouts acima for fornecido ou estamos no layout móvel, mostramos o layout móvel
         return mobile(context);
       },
     );
   }
 }
 
-/// Provides a builder function for refined screen sizes to be used with [AnterosScreenTypeLayout]
+/// Fornece uma função construtora para tamanhos de tela refinados para serem usados com [AnterosScreenTypeLayout]
 ///
-/// Each builder will get built based on the current device width.
-/// [breakpoints] define your own custom device resolutions
-/// [extraLarge] will be built if width is greater than 2160 on Desktops, 1280 on Tablets, and 600 on Mobiles
-/// [large] will be built when width is greater than 1440 on Desktops, 1024 on Tablets, and 414 on Mobiles
-/// [normal] will be built when width is greater than 1080 on Desktops, 768 on Tablets, and 375 on Mobiles
-/// [small] will be built if width is less than 720 on Desktops, 600 on Tablets, and 320 on Mobiles
+/// Cada construtor será construído com base na largura do dispositivo atual.
+/// [breakpoints] Defina suas próprias resoluções de dispositivo personalizado
+/// [extraLarge] será construído se a largura for maior que 2160 em desktops, 1280 em comprimidos e 600 em celulares
+/// [large] será construído quando a largura for maior que 1440 em desktops, 1024 em comprimidos e 414 em celulares
+/// [normal] será construído quando a largura for maior que 1080 em desktops, 768 em tablets e 375 em celulares
+/// [small] será construído se a largura for menor que 720 em desktops, 600 em comprimidos e 320 em celulares
 class AnterosRefinedLayoutBuilder extends StatelessWidget {
   final AnterosRefinedBreakpoints? refinedBreakpoints;
 
@@ -183,27 +183,27 @@ class AnterosRefinedLayoutBuilder extends StatelessWidget {
     return AnterosResponsiveBuilder(
       refinedBreakpoints: refinedBreakpoints,
       builder: (context, sizingInformation) {
-        // If we're at extra large size
+        // Se estamos em tamanho extra grande
         if (sizingInformation.refinedSize == RefinedSize.extraLarge) {
-          // If we have supplied the extra large layout then display that
+          // Se fornecemos o layout extra grande, exiba isso
           if (extraLarge != null) return extraLarge!(context);
-          // If no extra large layout is supplied we want to check if we have the size below it and display that
+          // Se nenhum layout extra grande for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
           if (large != null) return large!(context);
         }
 
         if (sizingInformation.refinedSize == RefinedSize.large) {
-          // If we have supplied the large layout then display that
+          // Se fornecemos o grande layout, exiba isso
           if (large != null) return large!(context);
-          // If no large layout is supplied we want to check if we have the size below it and display that
+          // Se nenhum layout grande for fornecido, queremos verificar se tivermos o tamanho abaixo e exibirá que
           return normal(context);
         }
 
         if (sizingInformation.refinedSize == RefinedSize.small) {
-          // If we have supplied the small layout then display that
+          // Se fornecemos o pequeno layout, exiba isso
           if (small != null) return small!(context);
         }
 
-        // If none of the layouts above are supplied or we're on the small size layout then we show the small layout
+        // Se nenhum dos layouts acima for fornecido ou estamos no layout de tamanho pequeno, mostramos o pequeno layout
         return normal(context);
       },
     );

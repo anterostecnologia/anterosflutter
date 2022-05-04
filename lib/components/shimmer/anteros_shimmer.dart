@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosShimmer extends StatefulWidget {
-  /// [AnterosShimmer] shows shimmer effect.
+  /// [AnterosShimmer] mostra o efeito de brilho.
   const AnterosShimmer({
     Key? key,
     required this.child,
@@ -17,40 +17,40 @@ class AnterosShimmer extends StatefulWidget {
     this.secondaryColor = AnterosColors.LIGHT,
   }) : super(key: key);
 
-  /// The child of type [Widget] to display shimmer effect.
+  /// O filho do tipo [Widget] para exibir efeito de brilho.
   final Widget child;
 
-  /// Controls the speed of the shimmer effect.
-  /// The default value is 1500 milliseconds.
+  /// controla a velocidade do efeito Shimmer.
+  /// O valor padrão é de 1500 milissegundos.
   final Duration duration;
 
-  /// Controls the direction of the shimmer effect.
-  /// The default direction is AnterosShimmerDirection.leftToRight.
+  /// controla a direção do efeito Shimmer.
+  /// A direção padrão é anterossHimmerDirection.lefttoright.
   final AnterosShimmerDirection direction;
 
-  /// Controls the [child]'s shades of color using Linear gradient.
-  /// Child [Widget] only takes gradient color, If [showGradient] is true.
+  /// controla o [child]'S tons de cor usando gradiente linear.
+  /// Child [Widget] Só leva a cor do gradiente, se [showGradient] é verdade.
   final Gradient? gradient;
 
-  /// Controls the animation shimmerEffectCount.
-  /// The default value is '0', that displays child [Widget]'s shimmer effect forever.
+  /// controla a animação ShimmereffectCount.
+  /// O valor padrão é '0', que exibe criança [Widget]'s brilhar e efeito para sempre.
   final int shimmerEffectCount;
 
-  /// Controls animation effect, defaults true state that makes animation active.
+  /// Controla o efeito da animação, o padrão é o verdadeiro estado que torna a animação ativa.
   final bool showShimmerEffect;
 
-  /// If true, takes gradient color [gradient] for the [child]'s shimmer effect.
-  /// Default set to false.
+  /// se for verdade, leva a cor do gradiente [gradient] para o [child]'s efeito de brilho.
+  /// Padrão definido como falso.
   final bool showGradient;
 
-  /// Defines the main color of the [child]'s shimmer effect.
-  /// Child [Widget] takes main color, only if [showGradient] is false.
-  /// Default [showGradient] will be false.
+  /// Defina um diretor do COR [child]'s efeito de brilho.
+  /// Child [Widget] leva a cor principal, apenas se [showGradient] é falso.
+  /// Predefinição [showGradient] será falso.
   final Color mainColor;
 
-  /// defines the secondary color of the [child]'s shimmer effect.
-  /// Child [Widget] takes secondary color, only if [showGradient] is false.
-  /// Default [showGradient] will be false.
+  /// define a cor secundária do [child]'s efeito de brilho.
+  /// Child [Widget] toma cor secundária, apenas se [showGradient] é falso.
+  /// Predefinição [showGradient] será falso.
   final Color secondaryColor;
 
   @override
@@ -141,17 +141,17 @@ class _AnterosShimmer extends SingleChildRenderObjectWidget {
     this.showShimmerEffect,
   }) : super(child: child);
 
-  /// value that controls the animation controller
+  /// valor que controla o controlador de animação
   final double? controllerValue;
 
-  /// Controls the direction of the shimmer effect.
-  /// The default direction is AnterosShimmerDirection.leftToRight.
+  /// Controla a direção do efeito Shimmer.
+  /// A direção padrão é anterossHimmerDirection.lefttoright.
   final AnterosShimmerDirection? direction;
 
-  /// Controls the [child]'s shades of color.
+  /// Controla o [child]'s tons de cor.
   final Gradient? gradient;
 
-  /// Controls animation effect, defaults true state that makes animation active.
+  /// Controla o efeito da animação, o padrão é o verdadeiro estado que torna a animação ativa.
   final bool? showShimmerEffect;
 
   @override
@@ -174,26 +174,26 @@ class AnterosShimmerFilter extends RenderProxyBox {
       {this.value, this.direction, this.gradient, this.showShimmerEffect})
       : gradientPaint = Paint()..blendMode = BlendMode.srcIn;
 
-  /// Constructs an empty [Paint] object with all fields initialized to their defaults.
+  /// Constrói um vazio [Paint] Objeto com todos os campos inicializados com seus padrões.
   final Paint initialPaint = Paint();
 
-  /// Shader that paints a color gradient.
+  /// Shader que pinta um gradiente de cores.
   final Paint gradientPaint;
 
-  /// Controls the [child]'s shades of color.
+  /// Controla o [child]'s tons de cor.
   final Gradient? gradient;
 
-  /// Controls the direction of the shimmer effect.
-  /// The default direction is AnterosShimmerDirection.leftToRight.
+  /// Controla a direção do efeito Shimmer.
+  /// A direção padrão é anterossHimmerDirection.lefttoright.
   final AnterosShimmerDirection? direction;
 
-  /// Controls animation effect, defaults true state that makes animation active.
+  /// Controla o efeito da animação, o padrão é o verdadeiro estado que torna a animação ativa.
   bool? showShimmerEffect;
 
-  /// value that controls the animation controller.
+  /// valor que controla o controlador de animação.
   double? value;
 
-  /// Construct a rectangle from its left, top, right, and bottom edges.
+  /// Construa um retângulo a partir das bordas esquerda, superior, direita e inferior.
   Rect? _rect;
 
   @override

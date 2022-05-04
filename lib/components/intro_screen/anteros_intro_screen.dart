@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosIntroScreen extends StatefulWidget {
-  /// Anteros Intro Screen is virtual unique interactive Slider that helps users get started with an app.
-  /// It has many features that helps to build custom-made introduction screen sliders.
-  /// Presents informative screens to users with various possibilities in customization.
+  /// A tela de introdução do Anteros é um Slider interativo exclusivo virtual que ajuda os usuários a começar a usar um aplicativo.
+  /// Ele tem muitos recursos que ajudam a criar controles deslizantes de tela de introdução personalizados.
+  /// Apresenta telas informativas aos usuários com diversas possibilidades de customização.
   const AnterosIntroScreen({
     Key? key,
     required this.pageController,
@@ -67,142 +67,142 @@ class AnterosIntroScreen extends StatefulWidget {
     this.showPagination = true,
   }) : super(key: key);
 
-  /// defines the list of slides
+  /// define a lista de slides
   final List<Widget> slides;
 
-  /// allows one to control [AnterosIntroScreen] slides
+  /// permite controlar slides [AnterosIntroScreen]
   final PageController pageController;
 
-  /// defines background color of the [AnterosIntroScreen] slides
+  /// define a cor de fundo dos slides [AnterosIntroScreen]
   final Color? color;
 
-  /// defines [AnterosIntroScreen] slides height
+  /// define a altura dos slides [AnterosIntroScreen]
   final double? height;
 
-  /// defines [AnterosIntroScreen] slides width
+  /// define a largura dos slides [AnterosIntroScreen]
   final double? width;
 
-  /// defines [AnterosIntroScreen] border radius to defines slides shape
+  /// define o raio da borda [AnterosIntroScreen] para definir a forma dos slides
   final BorderRadius? borderRadius;
 
-  /// defines [AnterosIntroScreen] slides border
+  /// define a borda dos slides [AnterosIntroScreen]
   final Border? border;
 
-  /// defines [AnterosIntroScreen]'s bottom navigation bar
+  /// define a barra de navegação inferior do [AnterosIntroScreen]
   final AnterosIntroScreenBottomNavigationBar? introScreenBottomNavigationBar;
 
-  /// on true state, displays [AnterosIntroScreenBottomNavigationBar], defaults to false
+  /// no estado verdadeiro, exibe [AnterosIntroScreenBottomNavigationBar], o padrão é falso
   final bool showIntroScreenBottomNavigationBar;
 
-  /// defines the currentIndex of [AnterosIntroScreen] slides, default value is 0
+  /// define o currentIndex dos slides [AnterosIntroScreen], o valor padrão é 0
   final int currentIndex;
 
-  /// defines the length of [AnterosIntroScreen] slides, default value is 0
+  /// define o comprimento dos slides [AnterosIntroScreen], o valor padrão é 0
   final int pageCount;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar]'s child, it takes any widget
+  /// define o filho de [AnterosIntroScreenBottomNavigationBar], leva qualquer widget
   final Widget? child;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] height
+  /// define a altura [AnterosIntroScreenBottomNavigationBar]
   final double navigationBarHeight;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] width
+  /// define a largura de [AnterosIntroScreenBottomNavigationBar]
   final double? navigationBarWidth;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] padding
+  /// define o preenchimento [AnterosIntroScreenBottomNavigationBar]
   final EdgeInsets navigationBarPadding;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] margin
+  /// define a margem [AnterosIntroScreenBottomNavigationBar]
   final EdgeInsets navigationBarMargin;
 
-  /// defines [AnterosIntroScreenBottomNavigationBar] color
+  /// define a cor [AnterosIntroScreenBottomNavigationBar]
   final Color navigationBarColor;
 
-  /// defines the shape of [AnterosIntroScreenBottomNavigationBar]
+  /// define a forma de [AnterosIntroScreenBottomNavigationBar]
   final ShapeBorder? navigationBarShape;
 
-  /// Called when the forward button is tapped
+  /// Chamado quando o botão avançar é tocado
   final VoidCallback? onForwardButtonTap;
 
-  /// Called when the back button is tapped
+  /// Chamado quando o botão voltar é tocado
   final VoidCallback? onBackButtonTap;
 
-  /// Called when the done button is tapped
+  /// Chamado quando o botão concluído é tocado
   final VoidCallback? onDoneTap;
 
-  /// Called when the skip button is tapped
+  /// Chamado quando o botão pular é tocado
   final VoidCallback? onSkipTap;
 
-  /// takes any Widget to define the backButton widget,
+  /// pega qualquer Widget para definir o widget backButton,
   final Widget? backButton;
 
-  /// takes any Widget to define the forwardButton widget
+  /// pega qualquer Widget para definir o widget forwardButton
   final Widget? forwardButton;
 
-  /// takes any Widget to define the doneButton widget
+  /// pega qualquer Widget para definir o widget doneButton
   final Widget? doneButton;
 
-  /// takes any Widget to define the skipButton widget
+  /// pega qualquer Widget para definir o widget skipButton
   final Widget? skipButton;
 
-  /// takes String to define backButton text
+  /// usa String para definir o texto de backButton
   final String backButtonText;
 
-  /// takes String to define forwardButton text
+  /// pega String para definir o texto forwardButton
   final String forwardButtonText;
 
-  /// takes String to define doneButton text
+  /// pega String para definir o texto doneButton
   final String doneButtonText;
 
-  /// takes String to define skipButton text
+  /// pega String para definir o texto skipButton
   final String skipButtonText;
 
-  /// defines the skipButton textStyle
+  /// define o estilo de texto skipButton
   final TextStyle skipButtonTextStyle;
 
-  /// defines the doneButton textStyle
+  /// define o estilo de texto doneButton
   final TextStyle doneButtonTextStyle;
 
-  /// defines the backButton textStyle
+  /// define o backButton textStyle
   final TextStyle backButtonTextStyle;
 
-  /// defines the forwardButton textStyle
+  /// define o textStyle forwardButton
   final TextStyle forwardButtonTextStyle;
 
-  /// on true state, displays [Divider], defaults to true
+  /// no estado verdadeiro, exibe [Divisor], o padrão é verdadeiro
   final bool showDivider;
 
-  /// on true state, displays buttons, defaults to true
+  /// no estado verdadeiro, exibe botões, o padrão é verdadeiro
   final bool showButton;
 
-  /// on true state, displays pagination, defaults to true
+  /// no estado verdadeiro, exibe a paginação, o padrão é verdadeiro
   final bool showPagination;
 
-  /// defines divider height
+  /// define a altura do divisor
   final double dividerHeight;
 
-  /// defines divider thickness
+  /// define a espessura do divisor
   final double dividerThickness;
 
-  /// defines divider color
+  /// define a cor do divisor
   final Color dividerColor;
 
-  /// defines pagination shape
+  /// define a forma de paginação
   final ShapeBorder? dotShape;
 
-  /// defines pagination inactive color
+  /// define a cor inativa da paginação
   final Color inactiveColor;
 
-  /// defines pagination active color
+  /// define a cor ativa da paginação
   final Color activeColor;
 
-  /// defines pagination height
+  /// define a altura da paginação
   final double dotHeight;
 
-  /// defines pagination width
+  /// define a largura da paginação
   final double dotWidth;
 
-  /// defines pagination in between space
+  /// define a paginação entre o espaço
   final EdgeInsets dotMargin;
 
   @override

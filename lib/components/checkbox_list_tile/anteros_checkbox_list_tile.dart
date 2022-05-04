@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosCheckboxListTile extends StatelessWidget {
-  /// [AnterosCheckboxListTile] is a tile with small box at right (as in a checklist)
-  /// in which to place a check mark to make a selection with various customization options.
+  /// [AnterosCheckboxListTile] é um bloco com uma pequena caixa à direita (como em uma lista de verificação)
+  /// no qual colocar uma marca de seleção para fazer uma seleção com várias opções de personalização.
   const AnterosCheckboxListTile({
     Key? key,
     required this.value,
@@ -37,82 +37,82 @@ class AnterosCheckboxListTile extends StatelessWidget {
     this.autofocus = false,
   }) : super(key: key);
 
-  ///type of [String] used to pass text, alternative to title property and gets higher priority than title
+  ///tipo de [String] usado para passar texto, alternativa à propriedade title e tem prioridade mais alta que title
   final String? titleText;
 
-  ///type of [String] used to pass text, alternative to subTitle property and gets higher priority than subTitle
+  ///tipo de [String] usado para passar texto, alternativa à propriedade subTitle e tem prioridade mais alta que subTitle
   final String? subTitleText;
 
-  /// The AnterosListTile's background color. Can be given [Color] or [AnterosColors]
+  /// A cor de fundo do AnterosListTile. Pode ser dado [Color] ou [AnterosColors]
   final Color? color;
 
-  /// If position is start Checkbox will come instead of avatar,
-  /// type of [Widget] or [AnterosAvatar] used to create rounded user profile
+  /// Se a posição for inicial, a caixa de seleção virá em vez do avatar,
+  /// tipo de [Widget] ou [AnterosAvatar] usado para criar perfil de usuário arredondado
   final Widget? avatar;
 
-  /// The title to display inside the [AnterosListTile]. see [Text]
+  /// O título a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? title;
 
-  /// The subTitle to display inside the [AnterosListTile]. see [Text]
+  /// O subtítulo a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? subTitle;
 
-  /// The description to display inside the [AnterosListTile]. see [Text]
+  /// A descrição a ser exibida dentro do [AnterosListTile]. veja [Texto]
   final Widget? description;
 
-  /// defines the margin of AnterosListTile
+  /// define a margem de AnterosListTile
   final EdgeInsets margin;
 
-  /// defines the padding of AnterosListTile
+  /// define o preenchimento de AnterosListTile
   final EdgeInsets padding;
 
-  /// type of [AnterosCheckboxType] which is of four type is basic, sqaure, circular and custom
+  /// tipo de [AnterosCheckboxType] que é de quatro tipos é básico, quadrado, circular e personalizado
   final AnterosCheckboxType type;
 
-  /// type of [double] which is AnterosSize ie, small, medium and large and can use any double value
+  /// tipo de [double] que é AnterosSize, ou seja, pequeno, médio e grande e pode usar qualquer valor duplo
   final double size;
 
-  /// type of [Color] used to change the backgroundColor of the active checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção ativa
   final Color activeBgColor;
 
-  /// type of [Color] used to change the backgroundColor of the inactive checkbox
+  /// tipo de [Color] usado para alterar o backgroundColor da caixa de seleção inativa
   final Color inactiveBgColor;
 
-  /// type of [Color] used to change the border color of the active checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção ativa
   final Color activeBorderColor;
 
-  /// type of [Color] used to change the border color of the inactive checkbox
+  /// tipo de [Color] usado para alterar a cor da borda da caixa de seleção inativa
   final Color inactiveBorderColor;
 
-  /// The color for the color of the list item text.
+  /// A cor para a cor do texto do item da lista.
   final Color? listItemTextColor;
 
-  /// Called when the user checks or unchecks the checkbox.
+  /// Chamado quando o usuário marca ou desmarca a caixa de seleção.
   final ValueChanged<bool>? onChanged;
 
-  /// Used to set the current state of the checkbox
+  /// Usado para definir o estado atual da caixa de seleção
   final bool value;
 
-  /// Position allows user to set position of [AnterosCheckbox] based on given [AnterosPosition]
+  /// Posição permite que o usuário defina a posição de [AnterosCheckbox] com base em [AnterosPosition]
   final AnterosPosition position;
 
-  /// type of Widget used to change the  checkbox's active icon
+  /// tipo de Widget usado para alterar o ícone ativo da caixa de seleção
   final Widget activeIcon;
 
-  /// type of [Widget] used to change the  checkbox's inactive icon
+  /// tipo de [Widget] usado para alterar o ícone inativo da caixa de seleção
   final Widget? inactiveIcon;
 
-  /// type of [Color] used to change the background color of the custom active  checkbox only
+  /// tipo de [Color] usado para alterar apenas a cor de fundo da caixa de seleção ativa personalizada
   final Color customBgColor;
 
-  /// To have the list tile appear selected when the checkbox is checked, pass the same value to both.
-  /// Normally, this property is left to its default value, false.
+  /// Para que o bloco da lista apareça selecionado quando a caixa de seleção estiver marcada, passe o mesmo valor para ambos.
+  /// Normalmente, esta propriedade é deixada com seu valor padrão, false.
   final bool selected;
 
-  /// On true state it should focus itself if nothing else is already focused.
-  /// Defaults to false
+  /// No estado verdadeiro, ele deve se concentrar se nada mais já estiver focado.
+  /// O padrão é falso
   final bool autofocus;
 
-  /// If position is end Checkbox will come instead of icon, The icon to display inside the [AnterosListTile]. see [Icon]
+  /// Se a posição for final A caixa de seleção virá em vez do ícone, O ícone a ser exibido dentro do [AnterosListTile]. veja [ícone]
   final Widget? icon;
 
   @override

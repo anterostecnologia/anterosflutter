@@ -1,32 +1,32 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-/// When a pointer has come to contact with screen and has begun to move.
+/// Quando um ponteiro entra em contato com a tela e começa a se mover.
 ///
-/// The function provides the position of the touch when it first
-/// touched the surface.
+/// A função fornece a posição do toque quando ele
+/// tocou a superfície.
 typedef AnterosItemsCarouselSlideStartCallback = void Function(
     DragStartDetails details);
 
-/// When a pointer that is in contact with the screen and moving
-/// has moved again.
+/// Quando um ponteiro que está em contato com a tela e se movendo
+/// mudou novamente.
 ///
-/// The function provides the position of the touch and the distance it
-/// has travelled since the last update.
+/// A função fornece a posição do toque e a distância que ele
+/// viajou desde a última atualização.
 typedef AnterosItemsCarouselSlideCallback = void Function(
     DragUpdateDetails details);
 
-/// When a pointer that was previously in contact with the screen
-/// and moving is no longer in contact with the screen.
+/// Quando um ponteiro que estava anteriormente em contato com a tela
+/// e o movimento não está mais em contato com a tela.
 ///
-/// The velocity at which the pointer was moving when it stopped contacting
-/// the screen.
+/// A velocidade na qual o ponteiro estava se movendo quando parou de entrar em contato
+/// a tela.
 typedef AnterosItemsCarouselSlideEndCallback = void Function(
     DragEndDetails details);
 
 class AnterosItemsCarousel extends StatefulWidget {
-  /// Creates slide show of Images and [Widget] with animation for sliding.
-  /// Shows multiple items on one slide, items number depends on rowCount.
+  /// Cria apresentação de slides de Imagens e [Widget] com animação para deslizar.
+  /// Mostra vários itens em um slide, o número de itens depende de rowCount.
   const AnterosItemsCarousel({
     Key? key,
     required this.rowCount,
@@ -37,24 +37,24 @@ class AnterosItemsCarousel extends StatefulWidget {
     this.itemHeight = 200,
   }) : super(key: key);
 
-  /// Count of visible cells
+  /// Contagem de células visíveis
   final int rowCount;
 
-  /// The widgets to be shown as sliders.
+  /// Os widgets a serem mostrados como controles deslizantes.
   final List<Widget> children;
 
-  /// When a pointer has contacted the screen and has begun to move.
+  /// Quando um ponteiro entrou em contato com a tela e começou a se mover.
   final AnterosItemsCarouselSlideStartCallback? onSlideStart;
 
-  /// When a pointer that is in contact with the screen and moving
-  /// has moved again.
+  /// Quando um ponteiro que está em contato com a tela e se movendo
+  /// mudou novamente.
   final AnterosItemsCarouselSlideCallback? onSlide;
 
-  /// When a pointer that was previously in contact with the screen
-  /// and moving is no longer in contact with the screen.
+  /// Quando um ponteiro que estava anteriormente em contato com a tela
+  /// e o movimento não está mais em contato com a tela.
   final AnterosItemsCarouselSlideEndCallback? onSlideEnd;
 
-  /// defines the height of items
+  /// define a altura dos itens
   final double itemHeight;
 
   @override
@@ -63,21 +63,21 @@ class AnterosItemsCarousel extends StatefulWidget {
 
 class _AnterosItemsCarouselState extends State<AnterosItemsCarousel>
     with TickerProviderStateMixin {
-  /// In milliseconds
+  /// Em milissegundos
   static const int dragAnimationDuration = 1000;
 
-  /// In milliseconds
+  /// Em milissegundos
   static const int shiftAnimationDuration = 300;
 
-  /// Size of cell
+  /// tamanho da célula
   double size = 0;
 
-  /// Width of cells container
+  /// Largura do container de células
   double width = 0;
 
   late AnimationController animationController;
 
-  /// Shift of cells container
+  /// Deslocamento do contêiner de células
   late double offset;
 
   @override
@@ -100,7 +100,7 @@ class _AnterosItemsCarouselState extends State<AnterosItemsCarousel>
     double localOffset = offset + shift;
     final double rightLimit = size * (widget.children.length - widget.rowCount);
 
-    /// Check cells container limits
+    /// Verifica os limites do container de células
     if (localOffset > 0) {
       localOffset = 0;
     } else if (localOffset < -rightLimit) {

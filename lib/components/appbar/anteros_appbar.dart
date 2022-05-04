@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// Uma barra de aplicativos consiste em uma barra de ferramentas e potencialmente outros widgets, como um
+/// Uma barra de ferramentas e outros componentes consistem em uma barra de ferramentas e outros widgets, como um
 /// [AnterosTabBar][TabBar] e um [FlexibleSpaceBar].
 /// O AnterosAppBar exibe os widgets da barra de ferramentas, [lead], [title] e [actions],
 /// acima do [fundo] (se houver). O [bottom] geralmente é usado para um [TabBar].
@@ -16,7 +16,7 @@ class AnterosAppBar extends StatefulWidget implements PreferredSizeWidget {
   ///
   /// If [backgroundColor], [elevation], [brightness], [iconTheme],
   /// [actionsIconTheme], ou [textTheme] são nulos, então seu AnterosAppBarTheme
-  /// valores serão usados. Se a propriedade AnterosAppBarTheme correspondente for nula,
+  /// valores serão usados. Se uma propriedade AnterosAppBarTheme correspondente para nula,
   /// então o padrão especificado na documentação da propriedade será usado.
   ///
   /// Normalmente usado na propriedade [Scaffold.appBar].
@@ -60,209 +60,209 @@ class AnterosAppBar extends StatefulWidget implements PreferredSizeWidget {
         ),
         super(key: key);
 
-  /// A widget to display before the [title].
+  /// Um ​​widget a ser exibido antes do [título].
   final Widget? leading;
 
-  /// Controls whether we should try to imply the leading widget if null.
+  /// Controla se devemos tentar implicar o widget principal se for nulo.
   ///
-  /// If true and [leading] is null, automatically try to deduce what the leading
-  /// widget should be. If false and [leading] is null, leading space is given to [title].
-  /// If leading widget is not null, this parameter has no effect.
+  /// Se true e [lead] for null, automaticamente tenta deduzir qual o valor principal
+  /// widget deve ser. Se false e [leading] for nulo, o espaço inicial será dado a [title].
+  /// Se o widget principal não for nulo, este parâmetro não terá efeito.
   final bool automaticallyImplyLeading;
 
-  /// The primary widget displayed in the app bar.
+  /// O widget principal exibido na barra de aplicativos.
   ///
-  /// Typically a [Text] widget containing a description of the current contents
-  /// of the app.
+  /// Normalmente um widget [Texto] contendo uma descrição do conteúdo atual
+  /// do aplicativo.
   final Widget? title;
 
-  /// Widgets to display after the [title] widget.
+  /// Widgets a serem exibidos após o widget [title].
   ///
-  /// Typically these widgets are [IconButton]s representing common operations.
-  /// For less common operations, consider using a [PopupMenuButton] as the
-  /// last action.
+  /// Normalmente esses widgets são [IconButton]s que representam operações comuns.
+  /// Para operações menos comuns, considere usar um [PopupMenuButton] como o
+  /// última ação.
   final List<Widget>? actions;
 
-  /// This widget is stacked behind the toolbar and the tab bar. It's height will
-  /// be the same as the app bar's overall height.
+  /// Este widget é empilhado atrás da barra de ferramentas e da barra de guias. É altura vai
+  /// ser igual à altura geral da barra de aplicativos.
   ///
-  /// A flexible space isn't actually flexible unless the [AnterosAppBar]'s container
-  /// changes the [AnterosAppBar]'s size. A SliverGFAppBar in a [CustomScrollView]
-  /// changes the [AnterosAppBar]'s height when scrolled.
+  /// Um ​​espaço flexível não é realmente flexível, a menos que o contêiner do [AnterosAppBar]
+  /// altera o tamanho do [AnterosAppBar]. Um SliverGFAppBar em um [CustomScrollView]
+  /// altera a altura do [AnterosAppBar] quando rolado.
   ///
-  /// Typically a [FlexibleSpaceBar]. See [FlexibleSpaceBar] for details.
+  /// Normalmente um [FlexibleSpaceBar]. Consulte [FlexibleSpaceBar] para obter detalhes.
   final Widget? flexibleSpace;
 
-  /// This widget appears across the bottom of the app bar.
+  /// Este widget aparece na parte inferior da barra de aplicativos.
   ///
-  /// Typically a [TabBar]. Only widgets that implement [PreferredSizeWidget] can
-  /// be used at the bottom of an app bar.
+  /// Normalmente um [TabBar]. Apenas widgets que implementam [PreferredSizeWidget] podem
+  /// ser usado na parte inferior de uma barra de aplicativos.
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [PreferredSize], which can be used to give an arbitrary widget a preferred size.
+  /// * [PreferredSize], que pode ser usado para dar a um widget arbitrário um tamanho preferido.
   final PreferredSizeWidget? bottom;
 
-  /// The z-coordinate at which to place this app bar relative to its parent.
+  /// A coordenada z na qual colocar esta barra de aplicativos em relação ao seu pai.
   ///
-  /// This controls the size of the shadow below the app bar.
+  /// Isso controla o tamanho da sombra abaixo da barra de aplicativos.
   ///
-  /// The value is non-negative.
+  /// O valor não é negativo.
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.elevation] is used,
-  /// if that is also null, the default value is 4, the appropriate elevation
-  /// for app bars.
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.elevation] será usado,
+  /// se também for nulo, o valor padrão é 4, a elevação apropriada
+  /// para barras de aplicativos.
   final double? elevation;
 
-  /// The material's shape as well its shadow.
+  /// A forma do material bem como sua sombra.
   ///
-  /// A shadow is only displayed if the [elevation] is greater than
+  /// Uma sombra só é exibida se a [elevação] for maior que
   /// zero.
   final ShapeBorder? shape;
 
-  /// The color to use for the app bar's material. Typically this should be set
-  /// along with [brightness], [iconTheme], [textTheme].
+  /// A cor a ser usada para o material da barra de aplicativos. Normalmente, isso deve ser definido
+  /// junto com [brightness], [iconTheme], [textTheme].
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.color] is used,
-  /// if that is also null, then [ThemeData.primaryColor] is used.
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.color] será usado,
+  /// se também for nulo, então [ThemeData.primaryColor] será usado.
   final Color? backgroundColor;
 
-  /// The brightness of the app bar's material. Typically this is set along
-  /// with [backgroundColor], [iconTheme], [textTheme].
+  /// O brilho do material da barra de aplicativos. Normalmente, isso é definido junto
+  /// com [backgroundColor], [iconTheme], [textTheme].
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.brightness] is used,
-  /// if that is also null, then the appBarTheme can be used to configure the
-  /// appearance of AppBars. The appearance of Keyboards for TextFields now uses
-  /// the overall theme's ThemeData.brightness and can also be customized with
-  /// TextField.keyboardAppearance. The brightness of any color can be found with
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.brightness] será usado,
+  /// se também for nulo, então o appBarTheme pode ser usado para configurar o
+  /// aparência de AppBars. A aparência de Keyboards for TextFields agora usa
+  /// ThemeData.brightness do tema geral e também pode ser personalizado com
+  /// TextField.keyboardAppearance. O brilho de qualquer cor pode ser encontrado com
   /// ThemeData.estimateBrightnessForColor.
   final Brightness? brightness;
 
-  /// The color, opacity, and size to use for app bar icons. Typically this
-  /// is set along with [backgroundColor], [brightness], [textTheme].
+  /// A cor, a opacidade e o tamanho a serem usados ​​para os ícones da barra de aplicativos. Normalmente isso
+  /// é definido junto com [backgroundColor], [brightness], [textTheme].
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.iconTheme] is used,
-  /// if that is also null, then [ThemeData.primaryIconTheme] is used.
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.iconTheme] será usado,
+  /// se também for nulo, então [ThemeData.primaryIconTheme] será usado.
   final IconThemeData? iconTheme;
 
-  /// The color, opacity, and size to use for the icons that appear in the app
-  /// bar's [actions]. This should only be used when the [actions] should be
-  /// themed differently than the icon that appears in the app bar's [leading]
-  /// widget.
+  /// A cor, opacidade e tamanho a serem usados ​​para os ícones que aparecem no aplicativo
+  /// bar's [ações]. Isso só deve ser usado quando as [ações] devem ser
+  /// tema diferente do ícone que aparece na barra de aplicativos [lead]
+  /// ferramenta.
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.actionsIconTheme] is
-  /// used, if that is also null, then this falls back to [iconTheme].
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.actionsIconTheme] será
+  /// usado, se também for nulo, então retorna para [iconTheme].
   final IconThemeData? actionsIconTheme;
 
-  /// The typographic styles to use for text in the app bar. Typically this is
-  /// set along with [brightness] [backgroundColor], [iconTheme].
+  /// Os estilos tipográficos a serem usados ​​para texto na barra de aplicativos. Normalmente isso é
+  /// definido junto com [brightness] [backgroundColor], [iconTheme].
   ///
-  /// If this property is null, then [ThemeData.appBarTheme.textTheme] is used,
-  /// if that is also null, then [ThemeData.primaryTextTheme] is used.
+  /// Se esta propriedade for nula, então [ThemeData.appBarTheme.textTheme] será usado,
+  /// se também for nulo, então [ThemeData.primaryTextTheme] será usado.
   final TextTheme? textTheme;
 
-  /// Whether this app bar is being displayed at the top of the screen.
+  /// Se esta barra de aplicativos está sendo exibida na parte superior da tela.
   ///
-  /// If true, the app bar's toolbar elements and [bottom] widget will be
-  /// padded on top by the height of the system status bar. The layout
-  /// of the [flexibleSpace] is not affected by the [primary] property.
+  /// Se true, os elementos da barra de ferramentas da barra de aplicativos e o widget [bottom] serão
+  /// preenchido no topo pela altura da barra de status do sistema. O layout
+  /// do [flexibleSpace] não é afetado pela propriedade [primary].
   final bool primary;
 
-  /// Whether the title should be centered.
+  /// Se o título deve ser centralizado.
   ///
-  /// Defaults to being adapted to the current [TargetPlatform].
+  /// Padrão para ser adaptado para a [TargetPlatform] atual.
   final bool? centerTitle;
 
-  /// The spacing around [title] content on the horizontal axis. This spacing is
-  /// applied even if there is no [leading] content or [actions]. If you want
-  /// [title] to take all the space available, set this value to 0.0.
+  /// O espaçamento em torno do conteúdo [title] no eixo horizontal. Este espaçamento é
+  /// aplicado mesmo se não houver conteúdo [principal] ou [ações]. Se você quiser
+  /// [title] para ocupar todo o espaço disponível, defina este valor para 0.0.
   ///
-  /// Defaults to [NavigationToolbar.kMiddleSpacing].
+  /// O padrão é [NavigationToolbar.kMiddleSpacing].
   final double titleSpacing;
 
-  /// How opaque the toolbar part of the app bar is.
+  /// Quão opaca é a parte da barra de ferramentas da barra de aplicativos.
   ///
-  /// A value of 1.0 is fully opaque, and a value of 0.0 is fully transparent.
+  /// Um ​​valor de 1,0 é totalmente opaco e um valor de 0,0 é totalmente transparente.
   ///
-  /// Typically, this value is not changed from its default value (1.0). It is
-  /// used by SliverGFAppBar to animate the opacity of the toolbar when the app
-  /// bar is scrolled.
+  /// Normalmente, esse valor não é alterado de seu valor padrão (1.0). Isso é
+  /// usado por SliverGFAppBar para animar a opacidade da barra de ferramentas quando o aplicativo
+  /// barra é rolada.
   final double toolbarOpacity;
 
-  /// How opaque the bottom part of the app bar is.
+  /// Quão opaca é a parte inferior da barra de aplicativos.
   ///
-  /// A value of 1.0 is fully opaque, and a value of 0.0 is fully transparent.
+  /// Um ​​valor de 1,0 é totalmente opaco e um valor de 0,0 é totalmente transparente.
   ///
-  /// Typically, this value is not changed from its default value (1.0). It is
-  /// used by SliverGFAppBar to animate the opacity of the toolbar when the app
-  /// bar is scrolled.
+  /// Normalmente, esse valor não é alterado de seu valor padrão (1.0). Isso é
+  /// usado por SliverGFAppBar para animar a opacidade da barra de ferramentas quando o aplicativo
+  /// barra é rolada.
   final double bottomOpacity;
 
-  /// A size whose height is the sum of [kToolbarHeight] and the [bottom] widget's
-  /// preferred height.
+  /// Um ​​tamanho cuja altura é a soma de [kToolbarHeight] e do widget [bottom]
+  /// altura preferida.
   ///
-  /// [Scaffold] uses this size to set its app bar's height.
+  /// [Scaffold] usa esse tamanho para definir a altura da barra de aplicativos.
   @override
   final Size preferredSize;
 
-  /// If true, displays search bar in the title space
+  /// Se true, exibe a barra de pesquisa no espaço do título
   final bool searchBar;
 
-  /// It takes text to displays the search bar hint text
+  /// Leva texto para exibir o texto da dica da barra de pesquisa
   final String searchHintText;
 
-  /// It styles the [searchHintText]
+  /// Estiliza o [searchHintText]
   final TextStyle searchHintStyle;
 
-  /// It styles the search text
+  /// Estiliza o texto de pesquisa
   final TextStyle searchTextStyle;
 
-  /// It defines the search bar icons color
+  /// Define a cor dos ícones da barra de pesquisa
   final Color searchBarColorTheme;
 
   /// {@macro flutter.widgets.editableText.onChanged}
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * inputFormatters, which are called before [onChanged]
-  ///    runs and can validate and change ("format") the input value.
-  ///  * onEditingComplete, [onSubmitted], [onSelectionChanged]:
-  ///    which are more specialized input change notifications.
+  /// * inputFormatters, que são chamados antes de [onChanged]
+  /// executa e pode validar e alterar ("formatar") o valor de entrada.
+  /// * onEditingComplete, [onSubmitted], [onSelectionChanged]:
+  /// que são notificações de alteração de entrada mais especializadas.
   final ValueChanged<String>? onChanged;
 
   /// {@macro flutter.widgets.editableText.onSubmitted}
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * [EditableText.onSubmitted] for an example of how to handle moving to
-  ///    the next/previous field when using [TextInputAction.next] and
-  ///    [TextInputAction.previous] for [textInputAction].
+  /// * [EditableText.onSubmitted] para um exemplo de como lidar com a mudança para
+  /// o campo próximo/anterior ao usar [TextInputAction.next] e
+  /// [TextInputAction.previous] para [textInputAction].
   final ValueChanged<String>? onSubmitted;
 
-  /// Controls the text being edited.
+  /// Controla o texto que está sendo editado.
   ///
-  /// If null, this widget will create its own [TextEditingController].
+  /// Se null, este widget criará seu próprio [TextEditingController].
   final TextEditingController? searchController;
 
   /// {@template flutter.material.textfield.onTap}
-  /// Called for each distinct tap except for every second tap of a double tap.
+  /// Chamado para cada toque distinto, exceto para cada segundo toque de um toque duplo.
   ///
-  /// The text field builds a [GestureDetector] to handle input events like tap,
-  /// to trigger focus requests, to move the caret, adjust the selection, etc.
-  /// Handling some of those events by wrapping the text field with a competing
-  /// GestureDetector is problematic.
+  /// O campo de texto cria um [GestureDetector] para lidar com eventos de entrada como tap,
+  /// para acionar solicitações de foco, mover o cursor, ajustar a seleção, etc.
+  /// Manipulando alguns desses eventos envolvendo o campo de texto com um concorrente
+  /// GestureDetector é problemático.
   ///
-  /// To unconditionally handle taps, without interfering with the text field's
-  /// internal gesture detector, provide this callback.
+  /// Para manipular toques incondicionalmente, sem interferir no campo de texto
+  /// detector de gestos interno, forneça este retorno de chamada.
   ///
-  /// If the text field is created with enabled false, taps will not be
-  /// recognized.
+  /// Se o campo de texto for criado com false habilitado, os toques não serão
+  /// reconhecido.
   ///
-  /// To be notified when the text field gains or loses the focus, provide a
-  /// focusNode and add a listener to that.
+  /// Para ser notificado quando o campo de texto ganha ou perde o foco, forneça um
+  /// focusNode e adicione um ouvinte a isso.
   ///
-  /// To listen to arbitrary pointer events without competing with the
-  /// text field's internal gesture detector, use a [Listener].
+  /// Para ouvir eventos de ponteiro arbitrários sem competir com o
+  /// detector de gestos interno do campo de texto, use um [Listener].
   /// {@endtemplate}
   final GestureTapCallback? onTap;
 
@@ -410,7 +410,7 @@ class _AnterosAppBarState extends State<AnterosAppBar> {
       );
     }
 
-    // Allow the actions actions to have their own theme if necessary.
+    // Permitir que as ações das ações tenham seu próprio tema, se necessário.
     if (actions != null) {
       actions = IconTheme.merge(
         data: actionsIconTheme,
@@ -488,8 +488,8 @@ class _AnterosAppBarState extends State<AnterosAppBar> {
       middleSpacing: widget.titleSpacing,
     );
 
-    // If the toolbar is allocated less than kToolbarHeight make it
-    // appear to scroll upwards within its shrinking container.
+    // Se a barra de ferramentas estiver alocada com menos de kToolbarHeight, faça-a
+    // parece rolar para cima dentro de seu contêiner reduzido.
     Widget appBar = ClipRect(
       child: CustomSingleChildLayout(
         delegate: const _ToolbarContainerLayout(),
@@ -524,7 +524,7 @@ class _AnterosAppBarState extends State<AnterosAppBar> {
       );
     }
 
-    // The padding applies to the toolbar and tabBar, not the flexible space.
+    // O preenchimento se aplica à barra de ferramentas e tabBar, não ao espaço flexível.
     if (widget.primary) {
       appBar = SafeArea(
         top: true,
@@ -598,9 +598,9 @@ class _ToolbarContainerLayout extends SingleChildLayoutDelegate {
   bool shouldRelayout(_ToolbarContainerLayout oldDelegate) => false;
 }
 
-// Layout the AnterosAppBar's title with unconstrained height, vertically
-// center it within its (NavigationToolbar) parent, and allow the
-// parent to constrain the title's actual height.
+// Layout do título do AnterosAppBar com altura irrestrita, verticalmente
+// centraliza-o dentro de seu pai (NavigationToolbar) e permite que o
+// pai para restringir a altura real do título.
 class AnterosAppBarTitleBar extends SingleChildRenderObjectWidget {
   const AnterosAppBarTitleBar({Key? key, required Widget child})
       : super(key: key, child: child);

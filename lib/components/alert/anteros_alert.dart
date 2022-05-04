@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosAlert extends StatefulWidget {
-  /// Alert has to be wrap inside the body like [AnterosFloatingWidget]. See [AnterosFloatingWidget]
+  /// Alerta deve ser encapsulado dentro do corpo como [AnterosFloatingWidget]. Veja [AnterosFloatingWidget]
   const AnterosAlert(
       {Key? key,
       this.content,
@@ -22,37 +22,37 @@ class AnterosAlert extends StatefulWidget {
       )})
       : super(key: key);
 
-  /// child of  type [Widget]is alternative to title key. title will get priority over child
+  /// filho do tipo [Widget]é uma alternativa à chave de título. o título terá prioridade sobre o filho
   final Widget? child;
 
-  /// title of type [String] used to describe the title of the [AnterosAlert]
+  /// título do tipo [String] usado para descrever o título do [AnterosAlert]
   final String? title;
 
-  /// child of  type [Widget]is alternative to title key. title will get priority over contentchild
+  /// filho do tipo [Widget]é uma alternativa à chave de título. title terá prioridade sobre contentchild
   final Widget? contentChild;
 
-  /// title of type [String] used to describe the content of the [AnterosAlert]
+  /// título do tipo [String] usado para descrever o conteúdo do [AnterosAlert]
   final String? content;
 
-  ///type of [TextStyle] to change the style of the title not for the child
+  ///tipo de [TextStyle] para alterar o estilo do título não para o filho
   final TextStyle titleTextStyle;
 
-  ///pass color of type [Color] or [AnterosColors] for background of [AnterosAlert]
+  ///passa cor do tipo [Color] ou [AnterosColors] para background de [AnterosAlert]
   final Color? backgroundColor;
 
-  ///type of [TextStyle] to change the style of the content not for the contentchild
+  ///tipo de [TextStyle] para alterar o estilo do conteúdo não para o contentchild
   final TextStyle contentTextStyle;
 
-  /// width of type [double] used to control the width of the [AnterosAlert]
+  /// largura do tipo [double] usado para controlar a largura do [AnterosAlert]
   final double? width;
 
-  ///type of [AnterosAlertType] which takes the type ie, basic, rounded and fullWidth for the [AnterosAlert]
+  ///tipo de [AnterosAlertType] que leva o tipo, ou seja, básico, arredondado e fullWidth para o [AnterosAlert]
   final AnterosAlertType type;
 
-  /// type of [Alignment] used to align the text inside the [AnterosAlert]
+  /// tipo de [Alignment] usado para alinhar o texto dentro do [AnterosAlert]
   final Alignment? alignment;
 
-  ///type of [Widget] used for the buttons ie, OK, Cancel for the action in [AnterosAlert]
+  ///tipo de [Widget] usado para os botões, ou seja, OK, Cancelar para a ação em [AnterosAlert]
   final Widget? bottombar;
 
   @override

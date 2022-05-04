@@ -1,58 +1,58 @@
 import 'package:flutter/material.dart';
 
-/// The possible alignments of a [AnterosDrawer].
+/// Os possíveis alinhamentos de um [AnterosDrawer].
 enum AnterosDrawerAlignment {
-  /// Denotes that the [AnterosDrawer] is at the start side of the [Scaffold].
+  /// Indica que o [AnterosDrawer] está no lado inicial do [Scaffold].
   ///
-  /// This corresponds to the left side when the text direction is left-to-right
-  /// and the right side when the text direction is right-to-left.
+  /// Isso corresponde ao lado esquerdo quando a direção do texto é da esquerda para a direita
+  /// e o lado direito quando a direção do texto é da direita para a esquerda.
   start,
 
-  /// Denotes that the [AnterosDrawer] is at the end side of the [Scaffold].
+  /// Indica que o [AnterosDrawer] está no lado final do [Scaffold].
   ///
-  /// This corresponds to the right side when the text direction is left-to-right
-  /// and the left side when the text direction is right-to-left.
+  /// Isso corresponde ao lado direito quando a direção do texto é da esquerda para a direita
+  /// e o lado esquerdo quando a direção do texto é da direita para a esquerda.
   end,
 }
 
-// Mobile:
-// Width = Screen width − 56 dp
-// Maximum width: 320dp
-// Maximum width applies only when using a left nav. When using a right nav,
-// the panel can cover the full width of the screen.
+// Móvel:
+// Largura = Largura da tela - 56 dp
+// Largura máxima: 320dp
+// A largura máxima se aplica somente ao usar um navegador esquerdo. Ao usar uma navegação direita,
+// o painel pode cobrir toda a largura da tela.
 
-// Desktop/Tablet:
-// Maximum width for a left nav is 400dp.
-// The right nav can vary depending on content.
+// Desktop/tablet:
+// A largura máxima para um navegador esquerdo é 400dp.
+// A navegação direita pode variar dependendo do conteúdo.
 
 const double _kWidth = 304;
 // const double _kEdgeDragWidth = 20.0;
 // const double _kMinFlingVelocity = 365.0;
-// const Duration _kBaseSettleDuration = Duration(milliseconds: 246);
+// const Duration _kBaseSettleDuration = Duration(milissegundos: 246);
 
-/// A material design panel that slides in horizontally from the edge of a
-/// [Scaffold] to show navigation links in an application.
+/// Um ​​painel de design de material que desliza horizontalmente da borda de um
+/// [Scaffold] para mostrar links de navegação em um aplicativo.
 ///
-/// AnterosDrawers are typically used with the [Scaffold.drawer] property. The child of
-/// the drawer is usually a [ListView] whose first child is a AnterosDrawerHeader
-/// that displays status information about the current user. The remaining
-/// drawer children are often constructed with [ListTile]s, often concluding
-/// with an [AboutListTile].
+/// AnterosDrawers são normalmente usados ​​com a propriedade [Scaffold.drawer]. O filho de
+/// a gaveta geralmente é uma [ListView] cujo primeiro filho é um AnterosDrawerHeader
+/// que exibe informações de status sobre o usuário atual. O restante
+/// os filhos da gaveta geralmente são construídos com [ListTile]s, geralmente concluindo
+/// com um [AboutListTile].
 ///
-/// The [AppBar] automatically displays an appropriate [IconButton] to show the
-/// [AnterosDrawer] when a [AnterosDrawer] is available in the [Scaffold]. The [Scaffold]
-/// automatically handles the edge-swipe gesture to show the drawer.
+/// O [AppBar] exibe automaticamente um [IconButton] apropriado para mostrar o
+/// [AnterosDrawer] quando um [AnterosDrawer] está disponível no [Scaffold]. O [Andaime]
+/// manipula automaticamente o gesto de deslizar na borda para mostrar a gaveta.
 ///
-/// This example shows how to create a [Scaffold] that contains an [AppBar] and
-/// a [AnterosDrawer]. A user taps the "menu" icon in the [AppBar] to open the
-/// [AnterosDrawer]. The [AnterosDrawer] displays four items: A header and three menu items.
-/// The [AnterosDrawer] displays the four items using a [ListView], which allows the
-/// user to scroll through the items if need be.
+/// Este exemplo mostra como criar um [Scaffold] que contém um [AppBar] e
+/// a [AnterosDrawer]. Um usuário toca no ícone "menu" no [AppBar] para abrir o
+/// [AnterosDrawer]. O [AnterosDrawer] exibe quatro itens: Um cabeçalho e três itens de menu.
+/// O [AnterosDrawer] exibe os quatro itens usando um [ListView], que permite a
+/// usuário para rolar pelos itens, se necessário.
 ///
 class AnterosDrawer extends StatelessWidget {
-  /// Creates a material design drawer.
-  /// Typically used in the [Scaffold.drawer] property.
-  /// The [elevation] must be non-negative.
+  /// Cria uma gaveta de design de material.
+  /// Normalmente usado na propriedade [Scaffold.drawer].
+  /// A [elevation] deve ser não negativa.
   const AnterosDrawer({
     Key? key,
     this.elevation = 16.0,
@@ -65,44 +65,44 @@ class AnterosDrawer extends StatelessWidget {
   })  : assert(elevation >= 0.0),
         super(key: key);
 
-  /// The z-coordinate at which to place this drawer relative to its parent.
+  /// A coordenada z na qual colocar esta gaveta em relação ao seu pai.
   ///
-  /// This controls the size of the shadow below the drawer.
+  /// Isso controla o tamanho da sombra abaixo da gaveta.
   ///
-  /// Defaults to 16, the appropriate elevation for drawers. The value is
-  /// always non-negative.
+  /// O padrão é 16, a elevação apropriada para gavetas. O valor é
+  /// sempre não negativo.
   final double elevation;
 
-  /// The widget below this widget in the tree.
+  /// O widget abaixo deste widget na árvore.
   ///
-  /// Typically a [SliverList].
+  /// Normalmente um [SliverList].
   ///
   /// {@macro flutter.widgets.child}
   final Widget? child;
 
-  /// The semantic label of the dialog used by accessibility frameworks to
-  /// announce screen transitions when the drawer is opened and closed.
+  /// O rótulo semântico do diálogo usado pelos frameworks de acessibilidade para
+  /// anuncia transições de tela quando a gaveta é aberta e fechada.
   ///
-  /// If this label is not provided, it will default to
+  /// Se este rótulo não for fornecido, o padrão será
   /// [MaterialLocalizations.drawerLabel].
   ///
-  /// See also:
+  /// Veja também:
   ///
-  ///  * SemanticsConfiguration.namesRoute, for a description of how this
-  ///    value is used.
+  /// * SemanticsConfiguration.namesRoute, para uma descrição de como isso
+  /// valor é usado.
   final String? semanticLabel;
 
-  /// Background image can be added to the [AnterosDrawer].
+  /// A imagem de fundo pode ser adicionada ao [AnterosDrawer].
   final ImageProvider? backgroundImage;
 
-  /// A composited layer that applies a color filter to its children.
+  /// Uma camada composta que aplica um filtro de cor a seus filhos.
   final ColorFilter? colorFilter;
 
-  ///  Gradient can be used for transforming gradient shaders without
-  ///  applying the same transform to the entire canvas.
+  /// Gradient pode ser usado para transformar shaders de gradiente sem
+  /// aplicando a mesma transformação em toda a tela.
   final Gradient? gradient;
 
-  /// Defines the background color of the drawer
+  /// Define a cor de fundo da gaveta
   final Color? color;
 
   @override

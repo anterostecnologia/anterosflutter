@@ -6,64 +6,64 @@ import 'src/anteros_groupedlist_order.dart';
 export 'src/anteros_groupedlist_order.dart';
 
 class AnterosSliverGroupedListView<T, E> extends StatefulWidget {
-  /// Items of which [itemBuilder] or [indexedItemBuilder] produce the list.
+  /// Itens dos quais [itemBuilder] ou [indexedItemBuilder] produzem a lista.
   final List<T> elements;
 
-  /// Defines which elements are grouped together.
+  /// Define quais elementos são agrupados.
   ///
-  /// Function is called for each element in the list, when equal for two
-  /// elements, those two belong to the same group.
+  /// A função é chamada para cada elemento da lista, quando igual para dois
+  /// elementos, esses dois pertencem ao mesmo grupo.
   final E Function(T element) groupBy;
 
-  /// Can be used to define a custom sorting for the groups.
+  /// Pode ser usado para definir uma classificação personalizada para os grupos.
   ///
-  /// If not set groups will be sorted with their natural sorting order or their
-  /// specific [Comparable] implementation.
+  /// Se não for definido, os grupos serão classificados com sua ordem de classificação natural ou sua
+  /// implementação específica [Comparable].
   final int Function(E value1, E value2)? groupComparator;
 
-  /// Can be used to define a custom sorting for the elements inside each group.
+  /// Pode ser usado para definir uma classificação personalizada para os elementos dentro de cada grupo.
   ///
-  /// If not set elements will be sorted with their natural sorting order or
-  /// their specific [Comparable] implementation.
+  /// Se não for definido, os elementos serão classificados com sua ordem de classificação natural ou
+  /// sua implementação específica [Comparable].
   final int Function(T element1, T element2)? itemComparator;
 
-  /// Called to build group separators for each group.
-  /// Value is always the groupBy result from the first element of the group.
+  /// Chamado para construir separadores de grupo para cada grupo.
+  /// O valor é sempre o resultado groupBy do primeiro elemento do grupo.
   ///
-  /// Will be ignored if [groupHeaderBuilder] is used.
+  /// Será ignorado se [groupHeaderBuilder] for usado.
   final Widget Function(E value)? groupSeparatorBuilder;
 
-  /// Same as [groupSeparatorBuilder], will be called to build group separators
-  /// for each group.
-  /// The passed element is always the first element of the group.
+  /// Igual a [groupSeparatorBuilder], será chamado para construir separadores de grupo
+  /// para cada grupo.
+  /// O elemento passado é sempre o primeiro elemento do grupo.
   ///
-  /// If defined [groupSeparatorBuilder] wont be used.
+  /// Se definido [groupSeparatorBuilder] não será usado.
   final Widget Function(T element)? groupHeaderBuilder;
 
-  /// Called to build children for the list with
-  /// 0 <= element < elements.length.
+  /// Chamado para construir filhos para a lista com
+  /// 0 <= elemento < element.length.
   final Widget Function(BuildContext context, T element)? itemBuilder;
 
-  /// Called to build children for the list with
+  /// Chamado para construir filhos para a lista com
   /// 0 <= element, index < elements.length
   final Widget Function(BuildContext context, T element, int index)?
       indexedItemBuilder;
 
-  /// Whether the order of the list is ascending or descending.
+  /// Se a ordem da lista é crescente ou decrescente.
   ///
-  /// Defaults to ASC.
+  /// Padrões para ASC.
   final AnterosGroupedListOrder order;
 
-  /// Whether the elements will be sorted or not. If not it must be done
-  ///  manually.
+  /// Se os elementos serão ordenados ou não. Se não, deve ser feito
+  /// manualmente.
   ///
-  /// Defauts to true.
+  /// Padrão para verdadeiro.
   final bool sort;
 
-  /// Called to build separators for between each item in the list.
+  /// Chamado para construir separadores entre cada item na lista.
   final Widget separator;
 
-  /// Creates a [AnterosSliverGroupedListView]
+  /// Cria um [AnterosSliverGroupedListView]
   AnterosSliverGroupedListView({
     Key? key,
     required this.elements,
@@ -134,7 +134,7 @@ class _AnterosSliverGroupedListViewState<T, E>
     if (widget.sort && elements.isNotEmpty) {
       elements.sort((e1, e2) {
         var compareResult;
-        // compare groups
+        //compara os grupos
         if (widget.groupComparator != null) {
           compareResult =
               widget.groupComparator!(widget.groupBy(e1), widget.groupBy(e2));
@@ -142,7 +142,7 @@ class _AnterosSliverGroupedListViewState<T, E>
           compareResult = (widget.groupBy(e1) as Comparable)
               .compareTo(widget.groupBy(e2) as Comparable);
         }
-        // compare elements inside group
+        // compara elementos dentro do grupo
         if ((compareResult == null || compareResult == 0)) {
           if (widget.itemComparator != null) {
             compareResult = widget.itemComparator!(e1, e2);

@@ -4,7 +4,7 @@ import 'package:anterosflutter/anterosflutter.dart';
 typedef RatingChangeCallback = void Function(double rating);
 
 class AnterosRating extends StatefulWidget {
-  /// [AnterosRating] to show ratings with many custimazation options.
+  /// [AnterosRating] para mostrar classificações com muitas opções de personalização.
   const AnterosRating({
     Key? key,
     required this.onChanged,
@@ -26,55 +26,55 @@ class AnterosRating extends StatefulWidget {
     this.padding = const EdgeInsets.symmetric(horizontal: 16),
   }) : super(key: key);
 
-  /// defines total number of rating items
+  /// define o número total de itens de classificação
   final int itemCount;
 
-  /// defines the color of items
+  /// define a cor dos itens
   final Color? color;
 
-  /// defines the border color of [halfFilledIcon]
+  /// define a cor da fronteira de [halfFilledIcon]
   final Color? borderColor;
 
-  /// defines the size of items. AnterosSize can be used for size variations like small. medium. large
+  /// define o tamanho dos itens.Anterossize pode ser usado para variações de tamanho como pequenas.médio.ampla
   final double size;
 
-  /// if true, allow half rating of items on dragging. Default it will be in true state
+  /// Se for verdade, permita a metade da classificação dos itens na arrastação.Padrão será em verdadeiro estado
   final bool allowHalfRating;
 
-  /// defines the items when filled
+  /// define os itens quando preenchido
   final Widget? filledIcon;
 
-  /// defines the items when half-filled
+  /// define os itens quando meio cheio
   final Widget? halfFilledIcon;
 
-  /// defines the default items, when having filledIcon && halfFilledIcon
+  /// Define os itens padrão, ao ter preenchido e Halffilledicon
   final Widget? defaultIcon;
 
-  /// defines the space bestuckValue items
+  /// define os itens do Space BestuckValue
   final double spacing;
 
-  /// defines the rating value
+  /// define o valor de classificação
   final double value;
 
-  /// return current rating whenever rating is updated
+  /// Retorne a classificação atual sempre que a classificação for atualizada
   final RatingChangeCallback onChanged;
 
-  /// if true, shows rating [TextFormField] with the rating bar, that allows the user input to show rating
+  /// Se verdadeiro, mostra a classificação [TextFormField] Com a barra de classificação, isso permite que a entrada do usuário mostre a classificação
   final bool showTextForm;
 
-  /// defines the design and funtion of rating [TextFormField]'s suffix icon
+  /// define o design e a função da classificação [TextFormField]'Ícone do sufixo s
   final Widget? suffixIcon;
 
-  /// controls the [TextField] Controller of rating [TextFormField]
+  /// controla o [TextField] Controlador de classificação [TextFormField]
   final TextEditingController? controller;
 
-  /// defines the [InputDecoration] of rating [TextFormField]
+  /// define o [InputDecoration] de classificação [TextFormField]
   final InputDecoration? inputDecorations;
 
-  /// defines the margin of rating [TextFormField]
+  /// define a margem de classificação [TextFormField]
   final EdgeInsets margin;
 
-  /// defines the padding of rating [TextFormField]
+  /// define o preenchimento da classificação [TextFormField]
   final EdgeInsets padding;
 
   @override

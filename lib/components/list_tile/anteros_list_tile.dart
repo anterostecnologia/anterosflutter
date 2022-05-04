@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosListTile extends StatelessWidget {
-  /// Creates ListTile with leading, title, trailing, image widget for almost every type of ListTile design.
+  /// Cria ListTile com widget de imagem à esquerda, título, à direita para quase todos os tipos de design de ListTile.
   const AnterosListTile({
     Key? key,
     this.titleText,
@@ -26,73 +26,73 @@ class AnterosListTile extends StatelessWidget {
     this.autofocus = false,
   }) : super(key: key);
 
-  /// type of [String] used to pass text, alternative to title property and gets higher priority than title
+  /// tipo de [String] usado para passar texto, alternativa à propriedade title e tem prioridade mais alta que title
   final String? titleText;
 
-  /// type of [String] used to pass text, alternative to subTitle property and gets higher priority than subTitle
+  /// tipo de [String] usado para passar texto, alternativa à propriedade subTitle e tem prioridade maior que subTitle
   final String? subTitleText;
 
-  /// The AnterosListTile's background color. Can be given [Color] or [AnterosColors]
+  /// A cor de fundo do AnterosListTile. Pode ser dado [Color] ou [AnterosColors]
   final Color? color;
 
-  /// type of [Widget] or [AnterosAvatar] used to create rounded user profile
+  /// tipo de [Widget] ou [AnterosAvatar] usado para criar perfil de usuário arredondado
   final Widget? avatar;
 
-  /// The title to display inside the [AnterosListTile]. see [Text]
+  /// O título a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? title;
 
-  /// The subTitle to display inside the [AnterosListTile]. see [Text]
+  /// O subtítulo a ser exibido dentro do [AnterosListTile]. veja [Texto]
   final Widget? subTitle;
 
-  /// The description to display inside the [AnterosListTile]. see [Text]
+  /// A descrição a ser exibida dentro do [AnterosListTile]. veja [Texto]
   final Widget? description;
 
-  /// The icon to display inside the [AnterosListTile]. see [Icon]
+  /// O ícone a ser exibido dentro do [AnterosListTile]. veja [ícone]
   final Widget? icon;
 
-  /// defines the margin of AnterosListTile
+  /// define a margem de AnterosListTile
   final EdgeInsets margin;
 
-  /// defines the padding of AnterosListTile
+  /// define o preenchimento de AnterosListTile
   final EdgeInsets padding;
 
-  /// Whether this list tile is interactive.
+  /// Se este bloco de lista é interativo.
   ///
-  /// If false, this list tile is styled with the disabled color from the
-  /// current [Theme] and the [onTap] and [onLongPress] callbacks are
-  /// inoperative.
+  /// Se false, este bloco de lista é estilizado com a cor desabilitada do
+  /// atual [Theme] e os callbacks [onTap] e [onLongPress] são
+  /// inoperante.
   final bool enabled;
 
-  /// Called when the user taps this list tile.
+  /// Chamado quando o usuário toca neste bloco de lista.
   ///
-  /// Inoperative if [enabled] is false.
+  /// Inoperante se [habilitado] for falso.
   final GestureTapCallback? onTap;
 
-  /// Called when the user long-presses on this list tile.
+  /// Chamado quando o usuário pressiona longamente neste bloco de lista.
   ///
-  /// Inoperative if [enabled] is false.
+  /// Inoperante se [habilitado] for falso.
   final GestureLongPressCallback? onLongPress;
 
-  /// If this tile is also [enabled] then icons and text are rendered with the same color.
+  /// Se este bloco também estiver [habilitado], os ícones e o texto serão renderizados com a mesma cor.
   ///
-  /// By default the selected color is the theme's primary color. The selected color
-  /// can be overridden with a [ListTileTheme].
+  /// Por padrão, a cor selecionada é a cor primária do tema. A cor selecionada
+  /// pode ser substituído por um [ListTileTheme].
   final bool selected;
 
-  /// The color for the tile's [Material] when it has the input focus.
+  /// A cor do [Material] do bloco quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// The color for the color of the list item text.
+  /// A cor para a cor do texto do item da lista.
   final Color? listItemTextColor;
 
-  /// The color for the tile's [Material] when a pointer is hovering over it.
+  /// A cor do [Material] do bloco quando um ponteiro está pairando sobre ele.
   final Color? hoverColor;
 
-  /// Defines the keyboard focus for this widget.
+  /// Define o foco do teclado para este widget.
   final FocusNode? focusNode;
 
-  /// On true state it should focus itself if nothing else is already focused.
-  /// Defaults to false
+  /// No estado verdadeiro, ele deve se concentrar se nada mais já estiver focado.
+  /// O padrão é falso
   final bool autofocus;
 
   @override

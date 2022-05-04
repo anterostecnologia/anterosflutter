@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class AnterosDropdown<T> extends StatefulWidget {
-  /// Anteros Dropdown let user to select from the number of items and display selected
-  /// item in the button. It displays list of items in the overlay dropdown fashion.
+  /// Anteros Dropdown permite que o usuário selecione a partir do número de itens e exiba selecionados
+  /// item no botão. Ele exibe a lista de itens na forma suspensa de sobreposição.
   const AnterosDropdown(
       {Key? key,
       required this.items,
@@ -37,80 +37,80 @@ class AnterosDropdown<T> extends StatefulWidget {
   final DropdownButtonBuilder? selectedItemBuilder;
   final List<DropdownMenuItem<T>>? items;
 
-  /// The widget to use for the drop-down button's icon.
-  /// Defaults to an [Icon] with the [Icons.arrow_drop_down] glyph.
+  /// O widget a ser usado para o ícone do botão suspenso.
+  /// O padrão é um [Icon] com o glifo [Icons.arrow_drop_down].
   final Widget? icon;
 
-  /// The z-coordinate at which to place the menu when open.
+  /// A coordenada z na qual colocar o menu quando aberto.
   final int elevation;
 
-  /// The value of the currently selected [DropdownMenuItem].
+  /// O valor do [DropdownMenuItem] selecionado no momento.
   final T? value;
 
-  /// Defines the border of dropdown button
+  /// Define a borda do botão suspenso
   final BorderSide border;
 
-  /// Defines the padding given inside the dropdown
+  /// Define o preenchimento dado dentro do dropdown
   final EdgeInsets padding;
 
-  /// A placeholder widget that is displayed by the dropdown button.
+  /// Um ​​widget de espaço reservado exibido pelo botão suspenso.
   final Widget? hint;
 
-  /// A message to show when the dropdown is disabled.
+  /// Uma mensagem para mostrar quando a lista suspensa está desabilitada.
   final Widget? disabledHint;
 
-  /// Called when the user selects an item.
-  /// If the [onChanged] callback is null or the list of [DropdownButton.items]
-  /// is null then the dropdown button will be disabled,
+  /// Chamado quando o usuário seleciona um item.
+  /// Se o retorno de chamada [onChanged] for nulo ou a lista de [DropdownButton.items]
+  /// for null então o botão suspenso será desabilitado,
   final ValueChanged<T?>? onChanged;
 
-  /// Called when the dropdown button is tapped.
+  /// Chamado quando o botão suspenso é tocado.
   final VoidCallback? onTap;
 
-  /// Defaults to the [TextTheme.subtitle1] value of the current
-  /// [ThemeData.textTheme] of the current [Theme].
+  /// Padrões para o valor [TextTheme.subtitle1] do atual
+  /// [ThemeData.textTheme] do [Theme] atual.
   final TextStyle? style;
 
-  /// The widget to use for drawing the drop-down button's underline.
+  /// O widget a ser usado para desenhar o sublinhado do botão suspenso.
   final Widget? underline;
 
-  /// The color of any [Icon] descendant of [icon] if this button is disabled,
-  /// i.e. if [onChanged] is null.
+  /// A cor de qualquer [Icon] descendente de [icon] se este botão estiver desabilitado,
+  /// ou seja, se [onChanged] for nulo.
   final Color? iconDisabledColor;
 
-  /// The color of any [Icon] descendant of [icon] if this button is enabled,
-  /// i.e. if [onChanged] is defined.
+  /// A cor de qualquer [Icon] descendente de [icon] se este botão estiver habilitado,
+  /// ou seja, se [onChanged] for definido.
   final Color? iconEnabledColor;
 
-  /// The size to use for the drop-down button's down arrow icon button.
+  /// O tamanho a ser usado para o botão do ícone de seta para baixo do botão suspenso.
   final double iconSize;
 
-  /// Reduce the button's height.
+  /// Reduz a altura do botão.
   final bool isDense;
 
-  /// Set the dropdown's inner contents to horizontally fill its parent.
+  /// Configura o conteúdo interno do dropdown para preencher horizontalmente seu pai.
   final bool isExpanded;
 
-  /// Defines the height of the menu items
+  /// Define a altura dos itens do menu
   final double? itemHeight;
 
-  /// The color for the button's [Material] when it has the input focus.
+  /// A cor do [Material] do botão quando ele tem o foco de entrada.
   final Color? focusColor;
 
-  /// Defines the keyboard focus for this widget.
+  /// Define o foco do teclado para este widget.
   final FocusNode? focusNode;
 
-  /// On true state it should focus itself if nothing else is already focused.
-  /// Defaults to false
+  /// No estado verdadeiro, ele deve se concentrar se nada mais já estiver focado.
+  /// O padrão é falso
   final bool autofocus;
 
-  /// Defines the background color of the dropdown.
+  /// Define a cor de fundo do dropdown.
   final Color? dropdownColor;
 
-  /// Defines the border radius  of the dropdown.
+  /// Define o raio da borda do dropdown.
   final BorderRadius borderRadius;
 
-  /// Defines the background color of the dropdownButton.
+  /// Define a cor de fundo do dropdownButton.
   final dynamic dropdownButtonColor;
 
   @override

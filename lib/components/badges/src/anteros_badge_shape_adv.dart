@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-/// This is a set of shapes that you can use for your [Badge] widget.
+/// Este é um conjunto de formas que você pode usar para seu widget [Badge].
 enum AnterosAdvancedBadgeShape {
-  /// This value is for using a circular badges
+  /// Este valor é para usar crachás circulares
   ///
-  /// See also:
-  /// * [CircleBorder]
+  /// Veja também:
+  /// * [CírculoBorder]
   circle,
 
-  /// This value is for using a square badges
+  /// Este valor é para usar emblemas quadrados
   ///
-  /// See also:
+  /// Veja também:
   /// * [RoundedRectangleBorder]
   square,
 }

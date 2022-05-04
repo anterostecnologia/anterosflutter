@@ -1,16 +1,16 @@
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 
-/// This widget allows you to add badges to any of your [Widget].
+/// Este widget permite que você adicione emblemas a qualquer um de seus [Widget].
 class AnterosAdvancedBadge extends StatefulWidget {
-  /// Creates a [AnterosAdvancedBadge].
+  /// Cria um [AnterosAdvancedBadge].
   ///
-  /// If [child] is null, it doesn't make sense to set [ignorePointer],
-  /// [position] and [alignment]
+  /// Se [filho] for nulo, não faz sentido definir [ignorePointer],
+  /// [posição] e [alinhamento]
   ///
-  /// See also:
+  /// Veja também:
   ///
-  /// * [BadgeShape]
+  /// * [Forma do Emblema]
   /// * [BorderRadius]
   /// * [AnterosAdvancedBadgeAnimationType]
   /// * [BorderSide]
@@ -35,102 +35,102 @@ class AnterosAdvancedBadge extends StatefulWidget {
     this.gradient,
   }) : super(key: key);
 
-  /// It defines the widget that will be wrapped by this [badgeContent].
+  /// Define o widget que será envolvido por este [badgeContent].
   final Widget? child;
 
-  /// This defines alignment for your [child].
+  /// Isso define o alinhamento para seu [filho].
   ///
-  /// The default value is [Alignment.center].
+  /// O valor padrão é [Alignment.center].
   final AlignmentGeometry alignment;
 
-  /// Allows to set custom position of [badgeContent].
-  /// according to [child].
+  /// Permite definir a posição personalizada de [badgeContent].
+  /// de acordo com [filho].
   ///
-  /// If [child] is null, it doesn't make sense to use it.
+  /// Se [child] for null, não faz sentido usá-lo.
   final AnterosAdvancedBadgePosition? position;
 
-  /// Content of this badge widget
+  /// Conteúdo deste widget de crachá
   final Widget? badgeContent;
 
-  /// Can make your [badgeContent] interactive.
+  /// Pode tornar seu [badgeContent] interativo.
   ///
-  /// The default value is false.
+  /// O valor padrão é falso.
   final bool ignorePointer;
 
-  /// Allows you to set the color for this [badgeContent].
+  /// Permite definir a cor para este [badgeContent].
   final Color badgeColor;
 
-  /// Allows you to set the gradient color for this [badgeContent]
+  /// Permite definir a cor do gradiente para este [badgeContent]
   final Gradient? gradient;
 
-  /// This controls the size of the shadow below the material and the opacity.
-  /// of the elevation overlay color if it is applied.
+  /// Isso controla o tamanho da sombra abaixo do material e a opacidade.
+  /// da cor da sobreposição de elevação se for aplicada.
   final double elevation;
 
-  /// This controls animation status.
+  /// Isso controla o status da animação.
   ///
-  /// The default value is true.
-  /// If true, the animation is allowed, if false, the animation is forbidden.
+  /// O valor padrão é verdadeiro.
+  /// Se verdadeiro, a animação é permitida, se falso, a animação é proibida.
   ///
-  /// See also:
+  /// Veja também:
   ///
   /// * [animationDuration]
   /// * [animationType]
   final bool toAnimate;
 
-  /// This controls the duration of the animation.
+  /// Isso controla a duração da animação.
   ///
-  /// The default value is Duration(milliseconds: 500).
+  /// O valor padrão é Duration(milissegundos: 500).
   ///
-  /// See also:
+  /// Veja também:
   ///
   /// * [toAnimate]
   /// * [animationType]
   final Duration animationDuration;
 
-  /// This controls the type of the animation.
+  /// Isso controla o tipo de animação.
   ///
-  /// The default value is [AnterosAdvancedBadgeAnimationType.slide].
+  /// O valor padrão é [AnterosAdvancedBadgeAnimationType.slide].
   ///
-  /// See also:
+  /// Veja também:
   ///
   /// * [toAnimate]
   /// * [animationDuration]
   final AnterosAdvancedBadgeAnimationType animationType;
 
-  /// Allows to set the shape to this [badgeContent].
+  /// Permite definir a forma para este [badgeContent].
   ///
-  /// The default value is [AnterosAdvancedBadgeShape.circle].
+  /// O valor padrão é [AnterosAdvancedBadgeShape.circle].
   final AnterosAdvancedBadgeShape shape;
 
-  /// Allows to set border side to this [badgeContent].
+  /// Permite definir o lado da borda para este [badgeContent].
   ///
-  /// The default value is [BorderSide.none].
+  /// O valor padrão é [BorderSide.none].
   final BorderSide borderSide;
 
-  /// Allows to edit fit parameter to [Stack] widget.
+  /// Permite editar o parâmetro fit para o widget [Stack].
   ///
-  /// The default value is [StackFit.loose].
+  /// O valor padrão é [StackFit.loose].
   final StackFit stackFit;
 
-  /// Allows to set border radius to this [badgeContent].
+  /// Permite definir o raio da borda para este [badgeContent].
   ///
-  /// The default value is [BorderRadius.zero].
+  /// O valor padrão é [BorderRadius.zero].
   ///
-  /// See also:
+  /// Veja também:
   ///
   /// * [borderSide]
   final BorderRadiusGeometry borderRadius;
 
-  /// Specify padding for [badgeContent].
+  /// Especifique o preenchimento para [badgeContent].
   ///
-  /// The default value is EdgeInsets.all(5.0).
+  /// O valor padrão é EdgeInsets.all(5.0).
   final EdgeInsetsGeometry padding;
 
-  /// Allows you to hide or show [badgeContent].
+  /// Permite ocultar ou mostrar [badgeContent].
   ///
-  /// The default value is true.
-  /// If true, the badge will be displayed, if false, it doesn't.
+  /// O valor padrão é verdadeiro.
+  /// Se verdadeiro, o badge será exibido, se falso, não.
   final bool showBadge;
 
   @override

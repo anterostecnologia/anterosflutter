@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// Creates pills like structured tab bar. See [AnterosTabBar]
-/// [AnterosSegmentTabs] are best used as an alternative for [AnterosTabBar].
+/// Cria pílulas como a barra de guia estruturada.Ver [AnterosTabBar]
+/// [AnterosSegmentTabs] são melhor utilizados como alternativa para [AnterosTabBar].
 class AnterosSegmentTabs extends StatefulWidget {
-  /// Creates pills like structured tab bar. See [AnterosTabBar]
-  /// [AnterosSegmentTabs] are best used as an alternative for [AnterosTabBar].
+  /// Cria pílulas como a barra de guia estruturada.Ver [AnterosTabBar]
+  /// [AnterosSegmentTabs] são melhor utilizados como alternativa para [AnterosTabBar].
   const AnterosSegmentTabs({
     Key? key,
     required this.length,
@@ -29,128 +29,127 @@ class AnterosSegmentTabs extends StatefulWidget {
   })  : assert(length != null && length >= 0),
         super(key: key);
 
-  /// The total number of tabs. Typically greater than one. Must match [TabBar.tabs]'s and
-  /// [TabBarView.children]'s length.
+  /// O número total de guias.Normalmente maior que um.Deve combinar [TabBar.tabs]'areia
+  /// [TabBarView.children]'s comprimento.
   final int? length;
 
-  /// Sets [AnterosSegmentTabs] height
+  ///Conjuntas [AnterosSegmentTabs] Altura
   final double? height;
 
-  /// Sets [TabBar] color using material color [Color]
+  ///Conjuntas [TabBar] cor usando a cor do material [Color]
   final Color? tabBarColor;
 
-  /// The color of the line that appears below the selected tab.
+  /// a cor da linha que aparece abaixo da guia selecionada.
   ///
-  /// If this parameter is null, then the value of the Theme's indicatorColor
-  /// property is used.
+  /// Se este parâmetro for nulo, então o valor do indicador do tema
+  /// A propriedade é usada.
   ///
-  /// If [indicator] is specified, this property is ignored.
+  /// Se [indicator] é especificado, esta propriedade é ignorada.
   final Color? indicatorColor;
 
-  /// The thickness of the line that appears below the selected tab.
+  /// A espessura da linha que aparece abaixo da guia selecionada.
   ///
-  /// The value of this parameter must be greater than zero and its default
-  /// value is 2.0.
+  /// o valor deste parâmetro deve ser maior que zero e seu padrão
+  /// O valor é 2.0.
   ///
-  /// If [indicator] is specified, this property is ignored.
+  /// Se [indicator] é especificado, esta propriedade é ignorada.
   final double indicatorWeight;
 
-  /// The horizontal padding for the line that appears below the selected tab.
+  /// O preenchimento horizontal para a linha que aparece abaixo da guia selecionada.
   ///
-  /// For isScrollable tab bars, specifying [kTabLabelPadding] will align
-  /// the indicator with the tab's text for [Tab] widgets and all but the
-  /// shortest [Tab.text] values.
+  /// para barras de guias ISSCrollable, especificando [kTabLabelPadding] vai se alinhar
+  /// o indicador com o texto da guia para [Tab] widgets e todos, exceto o
+  /// mais curto [Tab.text] valores.
   ///
-  /// The [EdgeInsets.top] and [EdgeInsets.bottom] values of the
-  /// [indicatorPadding] are ignored.
+  /// o [EdgeInsets.top] e [EdgeInsets.bottom] valores do
+  /// [indicatorPadding] estão ignorada.
   ///
-  /// The default value of [indicatorPadding] is [EdgeInsets.zero].
+  /// O valor padrão de [indicatorPadding] é [EdgeInsets.zero].
   ///
-  /// If [indicator] is specified, this property is ignored.
+  /// Se [indicator] é especificado, esta propriedade é ignorada.
   final EdgeInsetsGeometry indicatorPadding;
 
-  /// Defines the appearance of the selected tab indicator.
+  /// define a aparência do indicador de guia selecionado.
   ///
-  /// If [indicator] is specified, the [indicatorColor], [indicatorWeight],
-  /// and [indicatorPadding] properties are ignored.
+  /// Se [indicator] é especificado, o [indicatorColor], [indicatorWeight],
+  /// e [indicatorPadding] As propriedades são ignoradas.
   ///
-  /// The default, underline-style, selected tab indicator can be defined with
+  /// O indicador de guia selecionado em estilo padrão, em estilo sublinhado, pode ser definido com
   /// [UnderlineTabIndicator].
   ///
-  /// The indicator's size is based on the tab's bounds. If [indicatorSize]
-  /// is [TabBarIndicatorSize.tab] the tab's bounds are as wide as the space
-  /// occupied by the tab in the tab bar. If [indicatorSize] is
-  /// [TabBarIndicatorSize.label], then the tab's bounds are only as wide as
-  /// the tab widget itself.
+  ///O tamanho do indicador é baseado nos limites da guia.Se [indicatorSize]
+  /// é [TabBarIndicatorSize.tab] Os limites da guia são tão largos quanto o espaço
+  /// Ocupado pela guia na barra da guia.Se [indicatorSize] é
+  /// [TabBarIndicatorSize.label], Então os limites da guia são tão largos quanto
+  /// o próprio widget da guia.
   final Decoration? indicator;
 
-  /// Defines how the selected tab indicator's size is computed.
+  /// define como o tamanho do indicador de guia selecionado é calculado.
   ///
-  /// The size of the selected tab indicator is defined relative to the
-  /// tab's overall bounds if [indicatorSize] is [TabBarIndicatorSize.tab]
-  /// (the default) or relative to the bounds of the tab's widget if
-  /// [indicatorSize] is [TabBarIndicatorSize.label].
+  /// O tamanho do indicador de guia selecionado é definido em relação ao
+ /// os limites gerais da guia se [indicatorSize] é [TabBarIndicatorSize.tab]
+  /// (o padrão) ou em relação aos limites do widget da guia se
+  /// [indicatorSize] é [TabBarIndicatorSize.label].
   ///
-  /// The selected tab's location appearance can be refined further with
-  /// the [indicatorColor], [indicatorWeight], [indicatorPadding], and
-  /// [indicator] properties.
+  /// A aparência de localização da guia selecionada pode ser refinada ainda mais com
+  /// a [indicatorColor], [indicatorWeight], [indicatorPadding], e
+  /// [indicator] propriedades.
   final TabBarIndicatorSize? indicatorSize;
 
-  /// The color of selected tab labels.
+  /// A cor dos rótulos de guias selecionados.
   ///
-  /// Unselected tab labels are rendered with the same color rendered at 70%
-  /// opacity unless [unselectedLabelColor] is non-null.
+  /// rótulos de guias não selecionados são renderizados com a mesma cor renderizada a 70%
+  /// opacidade a menos que [unselectedLabelColor] não é nulo.
   ///
-  /// If this parameter is null, then the color of the [ThemeData.primaryTextTheme]'s
-  /// body2 text color is used.
+  /// Se este parâmetro for nulo, então a cor do [ThemeData.primaryTextTheme]'s
+  /// cor body2 A cor do texto é usada.
   final Color? labelColor;
 
-  /// The color of unselected tab labels.
+  /// a cor dos rótulos de guias não selecionados.
   ///
-  /// If this property is null, unselected tab labels are rendered with the
-  /// [labelColor] with 70% opacity.
+  /// Se esta propriedade for nula, os rótulos de guias não selecionados são renderizados com o
+  /// [labelColor] com 70% de opacidade.
   final Color? unselectedLabelColor;
 
-  /// The text style of the selected tab labels.
+  /// O estilo de texto dos rótulos de guias selecionados.
   ///
-  /// If [unselectedLabelStyle] is null, then this text style will be used for
-  /// both selected and unselected label styles.
+  /// Se [unselectedLabelStyle] é nulo, então este estilo de texto será usado para
+  /// estilos de etiquetas selecionados e não selecionados.
   ///
-  /// If this property is null, then the text style of the
-  /// [ThemeData.primaryTextTheme]'s body2 definition is used.
+  /// Se esta propriedade for nula, o estilo de texto do
+  /// [ThemeData.primaryTextTheme]'s Body2 Definição é usada.
   final TextStyle? labelStyle;
 
-  /// The padding added to each of the tab labels.
+  /// O preenchimento adicionado a cada um dos rótulos da guia.
   ///
-  /// If this property is null, then kTabLabelPadding is used.
+  /// Se essa propriedade for nula, o Ktablabelpadding será usado.
   final EdgeInsetsGeometry? labelPadding;
-
-  /// The text style of the unselected tab labels
+/// o estilo de texto das etiquetas de guias não selecionadas
   ///
-  /// If this property is null, then the [labelStyle] value is used. If [labelStyle]
-  /// is null, then the text style of the [ThemeData.primaryTextTheme]'s
-  /// body2 definition is used.
+  /// Se esta propriedade for nula, então o [labelStyle] o valor é usado.Se [labelStyle]
+  /// é nulo, então o estilo de texto do [ThemeData.primaryTextTheme]'s
+  /// Body2 Definição é usada.
   final TextStyle? unselectedLabelStyle;
 
-  /// Typically a list of two or more [Tab] widgets.
+  /// Normalmente uma lista de dois ou mais [Tab] widgets
   ///
-  /// The length of this list must match the controller's [TabController.length]
-  /// and the length of the [TabBarView.children] list.
+  /// A duração desta lista deve corresponder ao controlador [TabController.length]
+  /// e o comprimento do [TabBarView.children] Lista.
   final List<Widget> tabs;
 
-  /// defines outer border of the tabs
+  /// define a borda externa das guias
   final Border? border;
 
-  /// defines outer border, border radius
+  /// define borda externa, raio de borda
   final BorderRadius? borderRadius;
 
-  /// This widget's selection and animation state.
+  /// O estado de seleção e animação deste widget.
   ///
-  /// If [TabController] is not provided, then the value of [DefaultTabController.of]
-  /// will be used.
+  /// If [TabController] não é fornecido, então o valor de [DefaultTabController.of]
+  /// será usado.
   final TabController? tabController;
 
-  /// defines width of the tab row
+  /// define a largura da linha da guia
   final double? width;
 
   @override

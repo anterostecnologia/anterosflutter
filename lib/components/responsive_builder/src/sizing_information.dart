@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'device_screen_type.dart';
 
-/// Contains sizing information to make responsive choices for the current screen
+/// Contém informações de dimensionamento para fazer escolhas responsivas para a tela atual
 class AnterosSizingInformation {
   final DeviceScreenType deviceScreenType;
   final RefinedSize refinedSize;
@@ -16,7 +16,7 @@ class AnterosSizingInformation {
 
   bool get isWatch => deviceScreenType == DeviceScreenType.watch;
 
-  // Refined
+  // Refinada
 
   bool get isExtraLarge => refinedSize == RefinedSize.extraLarge;
 
@@ -39,9 +39,9 @@ class AnterosSizingInformation {
   }
 }
 
-/// Manually define screen resolution breakpoints
+/// Definir manualmente pontos de interrupção da resolução da tela
 ///
-/// Overrides the defaults
+/// substitui os padrões
 class AnterosScreenBreakpoints {
   final double watch;
   final double tablet;
@@ -59,9 +59,9 @@ class AnterosScreenBreakpoints {
   }
 }
 
-/// Manually define refined breakpoints
+/// Definir manualmente pontos de interrupção refinados
 ///
-/// Overrides the defaults
+/// substitui os padrões
 class AnterosRefinedBreakpoints {
   final double mobileSmall;
   final double mobileNormal;

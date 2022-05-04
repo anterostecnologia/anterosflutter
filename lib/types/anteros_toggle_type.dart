@@ -1,14 +1,14 @@
-/// [AnterosToggleType] is used to change the shape of
+/// [AnterosToggleType] é usado para mudar a forma de
 enum AnterosToggleType {
-  /// [AnterosToggleType.android] is used for basic toggle shape of android mode
+  /// [AnterosToggleType.android] é usado para a forma básica de alternância do modo Android
   android,
 
-  /// [AnterosToggleType.custom] is used to change the shape of AnterosToggle
+  /// [AnterosToggleType.custom] é usado para alterar a forma de Anterostoggle
   custom,
 
-  /// [AnterosToggleType.ios] is used for basic toggle shape of ios mode
+  /// [AnterosToggleType.ios] é usado para a forma básica de alternância do modo iOS
   ios,
 
-  /// [AnterosToggleType.square] is used for square shape of AnterosToggle
+  /// [AnterosToggleType.square] é usado para a forma quadrada de anterostoggle
   square,
 }
