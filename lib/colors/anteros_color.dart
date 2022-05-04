@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnterosColors {
-  static const Color PRIMARY = Color(0xff3880FF);
+  static const Color PRIMARY = Color(0xff8CCC0B);
   static const Color SECONDARY = Color(0xffAA66CC);
   static const Color SUCCESS = Color(0xff10DC60);
   static const Color INFO = Color(0xff33B5E5);

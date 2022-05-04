@@ -45,7 +45,7 @@ export 'package:anterosflutter/components/extensions/extension/context/context.d
 /// export utils
 export 'package:anterosflutter/components/extensions/utils/validator_util.dart';
 export 'package:anterosflutter/components/extensions/utils/transform_util.dart';
-export 'package:anterosflutter/components/extensions//utils/enum_util.dart';
+export 'package:anterosflutter/components/extensions/utils/enum_util.dart';
 
 part 'package:anterosflutter/components/extensions/extension/io/directory.dart';
 part 'package:anterosflutter/components/extensions/extension/io/file_system_entity.dart';

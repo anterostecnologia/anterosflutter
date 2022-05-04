@@ -31,7 +31,8 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 android {
-    compileSdkVersion 29
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion "21.1.6352462"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'

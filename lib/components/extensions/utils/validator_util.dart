@@ -29,12 +29,10 @@ class ValidatorUtil {
 
   /// Checks if string consist only numeric.
   /// Numeric only doesnt accepting "." which double data type have
-  static bool isNumericOnly(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.numericOnly);
+  static bool isNumericOnly(String s) => s.isNumeric();
 
   /// Checks if string consist only Alphabet. (No Whitespace)
-  static bool isAlphabetOnly(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.alphabetOnly);
+  static bool isAlphabetOnly(String s) => s.isAlphabet();
 
   /// Checks if string is boolean.
   static bool isBool(String s) {
@@ -43,98 +41,80 @@ class ValidatorUtil {
   }
 
   /// Checks if string is an vector file.
-  static bool isVector(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.vector);
+  static bool isVector(String s) => s.isVector();
 
   /// Checks if string is an image file.
-  static bool isImage(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.image);
+  static bool isImage(String s) => s.isImage();
 
   /// Checks if string is an audio file.
-  static bool isAudio(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.audio);
+  static bool isAudio(String s) => s.isAudio();
 
   /// Checks if string is an video file.
-  static bool isVideo(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.video);
+  static bool isVideo(String s) => s.isVideo();
 
   /// Checks if string is an txt file.
-  static bool isTxt(String s) => RegexValidation.hasMatch(s, RegexPattern.txt);
+  static bool isTxt(String s) => s.isTxt();
 
   /// Checks if string is an Doc file.
-  static bool isDocument(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.doc);
+  static bool isDocument(String s) => s.isDoc();
 
   /// Checks if string is an Excel file.
-  static bool isExcel(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.excel);
+  static bool isExcel(String s) => s.isExcel();
 
   /// Checks if string is an PPT file.
-  static bool isPPT(String s) => RegexValidation.hasMatch(s, RegexPattern.ppt);
+  static bool isPPT(String s) => s.isPPT();
 
   /// Checks if string is an APK file.
-  static bool isAPK(String s) => RegexValidation.hasMatch(s, RegexPattern.apk);
+  static bool isAPK(String s) => s.isApk();
 
   /// Checks if string is an video file.
-  static bool isPDF(String s) => RegexValidation.hasMatch(s, RegexPattern.pdf);
+  static bool isPDF(String s) => s.isPdf();
 
   /// Checks if string is an HTML file.
-  static bool isHTML(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.html);
+  static bool isHTML(String s) => s.isHtml();
 
   /// Checks if string is URL.
-  static bool isURL(String s) => RegexValidation.hasMatch(s, RegexPattern.url);
+  static bool isURL(String s) => s.isUrl();
 
   /// Checks if string is email.
-  static bool isEmail(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.txt);
+  static bool isEmail(String s) => s.isEmail();
 
   /// Checks if string is phone number.
-  static bool isPhoneNumber(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.phone);
+  static bool isPhoneNumber(String s) => s.isPhone();
 
   /// Checks if string is DateTime (UTC or Iso8601).
-  static bool isDateTime(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.basicDateTime);
+  static bool isDateTime(String s) => s.isDateTimeUTC();
 
   /// Checks if string is MD5 hash.
-  static bool isMD5(String s) => RegexValidation.hasMatch(s, RegexPattern.md5);
+  static bool isMD5(String s) => s.isMD5();
 
   /// Checks if string is SHA1 hash.
-  static bool isSHA1(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.sha1);
+  static bool isSHA1(String s) => s.isSHA1();
 
   /// Checks if string is SHA256 hash.
-  static bool isSHA256(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.sha256);
+  static bool isSHA256(String s) => s.isSHA256();
 
   /// Checks if string is ISBN 10 or 13.
-  static bool isISBN(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.isbn);
+  static bool isISBN(String s) => s.isISBN();
 
   /// Checks if string is Github Repository.
-  static bool isGithubRepo(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.github);
+  static bool isGithubRepo(String s) => s.isGithub();
 
   /// Checks if string is SSN (Social Security Number).
-  static bool isSSN(String s) => RegexValidation.hasMatch(s, RegexPattern.ssn);
+  static bool isSSN(String s) => s.isSSN();
 
   /// Checks if string is binary.
-  static bool isBinary(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.binary);
+  static bool isBinary(String s) => s.isBinary();
 
   /// Checks if string is IPv4.
-  static bool isIPv4(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.ipv4);
+  static bool isIPv4(String s) => s.isIPV4();
 
   /// Checks if string is IPv6.
-  static bool isIPv6(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.ipv6);
+  static bool isIPv6(String s) => s.isIPV6();
 
   /// Checks if string is hexadecimal.
   /// Example: HexColor => #12F
-  static bool isHexadecimal(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.hexadecimal);
+  static bool isHexadecimal(String s) => s.isHex();
 
   /// Checks if string is Palindrom.
   static bool isPalindrom(String s) {
@@ -169,12 +149,10 @@ class ValidatorUtil {
   }
 
   /// Checks if string is Passport No.
-  static bool isPassport(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.passport);
+  static bool isPassport(String s) => s.isPassport();
 
   /// Checks if string is Currency.
-  static bool isCurrency(String s) =>
-      RegexValidation.hasMatch(s, RegexPattern.currency);
+  static bool isCurrency(String s) => s.isCurrency();
 
   /// Checks if length of data is LOWER than maxLength.
   static bool isLengthLowerThan(dynamic s, int maxLength) {
