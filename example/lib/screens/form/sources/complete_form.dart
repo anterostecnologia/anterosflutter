@@ -25,7 +25,12 @@ class CompleteFormState extends State<CompleteForm> {
   bool _cnpjHasError = false;
   bool _plateHasError = false;
   bool _genderHasError = false;
-  bool _horaHasError = false;
+  bool _timeHasError = false;
+  bool _languageHasError = false;
+  bool _classificacaoHasError = false;
+  bool _languagesHasError = false;
+  bool _aceiteHasError = false;
+  bool _aceite1HasError = false;
 
   var genderOptions = ['Masculino', 'Feminino', 'Outro'];
 
@@ -116,7 +121,7 @@ class CompleteFormState extends State<CompleteForm> {
           getSpace(),
           getCheckboxField(),
           getSpace(),
-          getTextField(),
+          getAgeField(),
           getSpace(),
           getCpfField(),
           getSpace(),
@@ -140,24 +145,31 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormSwitch getSwitchField() {
     return AnterosFormSwitch(
+      context: context,
       title: const Text('Eu aceito os termos e condições'),
       name: 'aceite',
-      decoration: InputDecoration(
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),),),
+      labelText : "Aceite",
       initialValue: true,
-      onChanged: _onChanged,
+      hasError: _aceiteHasError,
+      validator: AnterosFormValidators.compose([
+        AnterosFormValidators.required(),
+      ]),
+      onChanged: (val) {
+        setState(() {
+          _aceiteHasError =
+              !(_formKey.currentState?.fields['aceite']?.validate() ??
+                  false);
+        });
+      },
     );
   }
 
   AnterosFormCheckboxGroup<String> getCheckboxGroup() {
     return AnterosFormCheckboxGroup<String>(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      decoration: InputDecoration(labelText: 'A linguagem do meu povo',
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),),),
+      context: context,
+      labelText: 'A linguagem do meu povo',
       name: 'linguagens',
-      // initialValue: const ['Dart'],
+      hasError: _languagesHasError,
       options: const [
         AnterosFormFieldOption(value: 'Dart'),
         AnterosFormFieldOption(value: 'Kotlin'),
@@ -165,7 +177,13 @@ class CompleteFormState extends State<CompleteForm> {
         AnterosFormFieldOption(value: 'Swift'),
         AnterosFormFieldOption(value: 'Objective-C'),
       ],
-      onChanged: _onChanged,
+      onChanged: (val) {
+        setState(() {
+          _classificacaoHasError =
+              !(_formKey.currentState?.fields['linguagens']?.validate() ??
+                  false);
+        });
+      },
       separator: const VerticalDivider(
         width: 10,
         thickness: 5,
@@ -180,14 +198,10 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormSegmentedControl<int> getSegmentedControlField() {
     return AnterosFormSegmentedControl(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),),
-        labelText: 'Classificação de filme (Vikings)',
-      ),
+      context: context,
+      labelText: 'Classificação de filme (Vikings)',
       name: 'classificacao',
-      // initialValue: 1,
-      // textStyle: TextStyle(fontWeight: FontWeight.bold),
+      hasError: _classificacaoHasError,
       options: List.generate(5, (i) => i + 1)
           .map((number) => AnterosFormFieldOption(
                 value: number,
@@ -197,24 +211,32 @@ class CompleteFormState extends State<CompleteForm> {
                 ),
               ))
           .toList(),
-      onChanged: _onChanged,
+      onChanged: (val) {
+        setState(() {
+          _classificacaoHasError =
+              !(_formKey.currentState?.fields['classificacao']?.validate() ??
+                  false);
+        });
+      },
     );
   }
 
   AnterosFormRadioGroup<String> getRadioGroupField() {
     return AnterosFormRadioGroup<String>(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),
-                ),
-        labelText: 'Minha linguagem escolhida',
-      ),
+      context: context,
+      labelText: 'Minha linguagem escolhida',
       initialValue: null,
       name: 'linguagem',
-      onChanged: _onChanged,
+      hasError: _languageHasError,
       validator:
           AnterosFormValidators.compose([AnterosFormValidators.required()]),
+      onChanged: (val) {
+        setState(() {
+          _languageHasError =
+              !(_formKey.currentState?.fields['linguagem']?.validate() ??
+                  false);
+        });
+      },
       options: ['Dart', 'Kotlin', 'Java', 'Swift', 'Objective-C']
           .map((lang) => AnterosFormFieldOption(
                 value: lang,
@@ -227,13 +249,10 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormDropdown<String> getDropdownField() {
     return AnterosFormDropdown<String>(
+      context: context,
       name: 'sexo',
       hasError: _genderHasError,
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),
-                ),
         labelText: 'Sexo',
       ),
       allowClear: true,
@@ -257,7 +276,7 @@ class CompleteFormState extends State<CompleteForm> {
     );
   }
 
-  AnterosFormAgeField getTextField() {    
+  AnterosFormAgeField getAgeField() {
     return AnterosFormAgeField(
       context: context,
       name: 'idade',
@@ -320,15 +339,23 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormCheckbox getCheckboxField() {
     return AnterosFormCheckbox(
-      name: 'aceite',
+      context: context,
+      name: 'aceite1',
       initialValue: false,
-      onChanged: _onChanged,
+      labelText: "Aceite",
+      hasError: _aceite1HasError, 
+      onChanged: (val) {
+        setState(() {
+          _timeHasError =
+              !(_formKey.currentState?.fields['aceite1']?.validate() ?? false);
+        });
+      },
       title: RichText(
         text: const TextSpan(
           children: [
             TextSpan(
+              style: TextStyle(color: Theme.of(context).textTheme.bodyText1!.color),
               text: 'Eu li e concordo com o ',
-              style: TextStyle(color: Colors.black),
             ),
             TextSpan(
               text: 'Termos e condições',
@@ -355,8 +382,11 @@ class CompleteFormState extends State<CompleteForm> {
       divisions: 20,
       activeColor: Colors.red,
       inactiveColor: Colors.pink[100],
-      decoration: InputDecoration(labelText: 'Intervalo preço', border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0))),
+      decoration: InputDecoration(
+          labelText: 'Intervalo preço',
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.0),
+              borderSide: BorderSide(style: BorderStyle.none, width: 0))),
     );
   }
 
@@ -375,32 +405,29 @@ class CompleteFormState extends State<CompleteForm> {
       inactiveColor: Colors.pink[100],
       decoration: InputDecoration(
         labelText: 'Total de itens',
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.0),
+          borderSide: BorderSide(style: BorderStyle.none, width: 0),
+        ),
       ),
     );
   }
 
   AnterosFormDateRangePicker getDateRangeField() {
     return AnterosFormDateRangePicker(
-      name: 'periodo',
-      firstDate: DateTime(1970),
-      lastDate: DateTime(2030),
-      format: DateFormat('dd/MM/yyyy'),
-      onChanged: _onChanged,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),),
+        context: context,
+        name: 'periodo',
+        firstDate: DateTime(1970),
+        lastDate: DateTime(2030),
+        format: DateFormat('dd/MM/yyyy'),
+        onChanged: _onChanged,
+        hasError: false,
+        onClearValue: () {
+          _formKey.currentState!.fields['periodo']?.didChange(null);
+        },
         labelText: 'Período',
         helperText: 'Período',
-        hintText: 'Informe o período',
-        suffixIcon: IconButton(
-            icon: const Icon(Icons.close),
-            onPressed: () {
-              _formKey.currentState!.fields['periodo']?.didChange(null);
-            }),
-      ),
-    );
+        hintText: 'Informe o período');
   }
 
   AnterosFormDateTimePicker getDatetimeField() {
@@ -413,10 +440,10 @@ class CompleteFormState extends State<CompleteForm> {
       onClearValue: () {
         _formKey.currentState!.fields['hora']?.didChange(null);
       },
-      hasError: _horaHasError,
+      hasError: _timeHasError,
       onChanged: (val) {
         setState(() {
-          _horaHasError =
+          _timeHasError =
               !(_formKey.currentState?.fields['hora']?.validate() ?? false);
         });
       },

@@ -73,20 +73,19 @@ class AnterosFormCheckbox extends AnterosFormField<bool> {
     required String name,
     FormFieldValidator<bool>? validator,
     bool? initialValue,
-    InputDecoration decoration = const InputDecoration(
-      border: InputBorder.none,
-      focusedBorder: InputBorder.none,
-      enabledBorder: InputBorder.none,
-      errorBorder: InputBorder.none,
-      disabledBorder: InputBorder.none,
-    ),
+    InputDecoration decoration = const InputDecoration(),
     ValueChanged<bool?>? onChanged,
     ValueTransformer<bool?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<bool?>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
+    VoidCallback? onClearValue,
     FocusNode? focusNode,
+    required BuildContext context,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     required this.title,
     this.activeColor,
     this.autofocus = false,
@@ -114,6 +113,116 @@ class AnterosFormCheckbox extends AnterosFormField<bool> {
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderCheckboxState;
 
+            var _suffixIcon = null;
+            if (hasError != null) {
+              var _icon = hasError
+                  ? const Icon(Icons.error,
+                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
+                  : const Icon(Icons.check, color: Colors.green, size: 18);
+              var children = <Widget>[];
+              if (onClearValue != null) {
+                children.add(new SizedBox(
+                    height: 22.0,
+                    width: 22.0,
+                    child: IconButton(
+                        padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                        icon: Icon(
+                          Icons.clear,
+                          size: 18,
+                        ),
+                        onPressed: onClearValue)));
+              }
+              children.add(new SizedBox(
+                  height: 22.0,
+                  width: 22.0,
+                  child: IconButton(
+                      padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                      icon: _icon,
+                      onPressed: () => {})));
+              children.add(new SizedBox(
+                height: 22.0,
+                width: 4.0,
+              ));
+              
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: children,
+              );
+            } else {
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            }
+
+            var inputDecoration = InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                fillColor: Theme.of(context).cardColor,
+                filled: true,
+                labelText: labelText,
+                hintText: hintText,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                suffixIcon: _suffixIcon);
+            if (identical(decoration, const InputDecoration())) {
+              return InputDecorator(
+                decoration: inputDecoration,
+                child: CheckboxListTile(
+                  dense: true,
+                  isThreeLine: false,
+                  title: title,
+                  subtitle: subtitle,
+                  value: tristate ? state.value : (state.value ?? false),
+                  onChanged: state.enabled
+                      ? (value) {
+                          if (shouldRequestFocus) {
+                            state.requestFocus();
+                          }
+                          state.didChange(value);
+                        }
+                      : null,
+                  checkColor: checkColor,
+                  activeColor: activeColor,
+                  secondary: secondary,
+                  controlAffinity: controlAffinity,
+                  autofocus: autofocus,
+                  tristate: tristate,
+                  contentPadding: contentPadding,
+                  selected: selected,
+                ),
+              );
+            }
             return InputDecorator(
               decoration: state.decoration,
               child: CheckboxListTile(

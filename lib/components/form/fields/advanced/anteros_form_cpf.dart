@@ -8,7 +8,6 @@ import 'package:anterosflutter/anterosflutter.dart';
 
 /// [AnterosFormCpfField] é usado para mudar a entrada de dados do CPF field.
 
-
 /// Uma entrada de campo de CPF de design de material.
 class AnterosFormCpfField extends AnterosFormField<String> {
   /// Controls the text being edited.
@@ -27,7 +26,6 @@ class AnterosFormCpfField extends AnterosFormField<String> {
 
   /// Formato de entrada de dados [AnterosInputFormatType].
   final AnterosInputFormatType inputFormatType = AnterosInputFormatType.cpf;
-
 
   /// The style to use for the text being edited.
   ///
@@ -299,7 +297,7 @@ class AnterosFormCpfField extends AnterosFormField<String> {
     ValueTransformer<String?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<String>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.always,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
     BuildContext? context,
@@ -363,9 +361,9 @@ class AnterosFormCpfField extends AnterosFormField<String> {
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
           validator: AnterosFormValidators.compose([
-              AnterosFormValidators.required(),
-              AnterosFormValidators.cpf(),
-            ]),      
+            AnterosFormValidators.required(),
+            AnterosFormValidators.cpf(),
+          ]),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
@@ -393,17 +391,28 @@ class AnterosFormCpfField extends AnterosFormField<String> {
                     : const Icon(Icons.check, color: Colors.green);
               }
               var inputDecoration = InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),
-                ),
-                isDense: true,
-                labelText: 'Cpf',
-                errorMaxLines: 2,
-                errorText: state.errorText,
-                fillColor: Theme.of(context).cardColor,
-                filled: true,
-                suffixIcon: Row(
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x4437474F),
+                    ),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x4437474F),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  isDense: true,
+                  labelText: 'Cpf',
+                  errorMaxLines: 2,
+                  errorText: state.errorText,
+                  fillColor: Theme.of(context).cardColor,
+                  filled: true,
+                  suffixIcon: Row(
                     mainAxisAlignment: MainAxisAlignment.start, // added line
                     mainAxisSize: MainAxisSize.min, // added line
                     children: <Widget>[
@@ -415,15 +424,19 @@ class AnterosFormCpfField extends AnterosFormField<String> {
                               icon: Icon(Icons.clear),
                               onPressed: onClearValue)),
                       new SizedBox(
-                          height: 22.0,
-                          width: 22.0,
-                          child: IconButton(
-                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                              icon: _suffixIcon,
-                              onPressed: () => {}))
+                        height: 22.0,
+                        width: 22.0,
+                        child: IconButton(
+                            padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                            icon: _suffixIcon,
+                            onPressed: () => {}),
+                      ),
+                      new SizedBox(
+                        height: 22.0,
+                        width: 4.0,
+                      )
                     ],
-                  )
-              );
+                  ));
 
               return TextField(
                 controller: state._effectiveController,

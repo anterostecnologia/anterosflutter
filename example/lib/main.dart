@@ -36,7 +36,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'AnterosFlutter Demo App | Open source UI library for flutter app',
       debugShowCheckedModeBanner: false,
-      theme: light,
+      theme: dark,
       localizationsDelegates: const [
         AnterosFormLocalizations.delegate,
         ...GlobalMaterialLocalizations.delegates,

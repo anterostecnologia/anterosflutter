@@ -93,9 +93,15 @@ class AnterosFormSwitch extends AnterosFormField<bool> {
     ValueTransformer<bool?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<bool>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    String? labelText,
+    String? helperText,
+    String? hintText,
+    bool? hasError,
+    VoidCallback? onClearValue,
+    required BuildContext context,
     required this.title,
     this.activeColor,
     this.activeTrackColor,
@@ -126,6 +132,116 @@ class AnterosFormSwitch extends AnterosFormField<bool> {
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderSwitchState;
 
+            var _suffixIcon = null;
+            if (hasError != null) {
+              var _icon = hasError
+                  ? const Icon(Icons.error,
+                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
+                  : const Icon(Icons.check, color: Colors.green, size: 18);
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: _icon,
+                          onPressed: () => {})),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            } else {
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            }
+
+            var inputDecoration = InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                fillColor: Theme.of(context).cardColor,
+                filled: true,
+                labelText: labelText,
+                hintText: hintText,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                suffixIcon: _suffixIcon);
+            if (identical(decoration, const InputDecoration())) {
+              return InputDecorator(
+                decoration: inputDecoration,
+                child: SwitchListTile(
+                  dense: true,
+                  isThreeLine: false,
+                  contentPadding: contentPadding,
+                  title: title,
+                  value: state.value ?? false,
+                  onChanged: state.enabled
+                      ? (value) {
+                          if (shouldRequestFocus) {
+                            state.requestFocus();
+                          }
+                          field.didChange(value);
+                        }
+                      : null,
+                  activeColor: activeColor,
+                  activeThumbImage: activeThumbImage,
+                  activeTrackColor: activeTrackColor,
+                  inactiveThumbColor: inactiveThumbColor,
+                  inactiveThumbImage: activeThumbImage,
+                  inactiveTrackColor: inactiveTrackColor,
+                  secondary: secondary,
+                  subtitle: subtitle,
+                  autofocus: autofocus,
+                  selected: selected,
+                  controlAffinity: controlAffinity,
+                ),
+              );
+            }
             return InputDecorator(
               decoration: state.decoration,
               child: SwitchListTile(

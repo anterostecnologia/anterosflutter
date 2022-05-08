@@ -140,10 +140,10 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
     ValueTransformer<DateTime?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<DateTime>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
-    BuildContext? context,
+    required BuildContext context,
     bool? hasError,
     VoidCallback? onClearValue,
     this.inputType = InputType.both,
@@ -212,45 +212,81 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
           focusNode: focusNode,
           builder: (FormFieldState<DateTime?> field) {
             final state = field as _FormBuilderDateTimePickerState;
-            if (identical(decoration, const InputDecoration()) &&
-                context != null) {
-              var _suffixIcon = null;
-              if (hasError != null) {
-                _suffixIcon = hasError
-                    ? const Icon(Icons.error,
-                        color: Color.fromARGB(255, 224, 43, 79))
-                    : const Icon(Icons.check, color: Colors.green);
-              }
-              var inputDecoration = InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                    borderSide: BorderSide(style: BorderStyle.none, width: 0),
-                  ),
-                  isDense: true,
-                  labelText: labelText,
-                  fillColor: Theme.of(context).cardColor,
-                  filled: true,
-                  suffixIcon: Row(
-                    mainAxisAlignment: MainAxisAlignment.start, // added line
-                    mainAxisSize: MainAxisSize.min, // added line
-                    children: <Widget>[
-                      new SizedBox(
-                          height: 22.0,
-                          width: 22.0,
-                          child: IconButton(
-                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                              icon: Icon(Icons.clear),
-                              onPressed: onClearValue)),
-                      new SizedBox(
-                          height: 22.0,
-                          width: 22.0,
-                          child: IconButton(
-                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                              icon: _suffixIcon,
-                              onPressed: () => {}))
-                    ],
-                  ));
+            var _suffixIcon = null;
+            if (hasError != null) {
+              var _icon = hasError
+                  ? const Icon(Icons.error,
+                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
+                  : const Icon(Icons.check, color: Colors.green, size: 18);
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(Icons.clear, size: 18,),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: _icon,
+                          onPressed: () => {})),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            } else {
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            }
 
+            var inputDecoration = InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                fillColor: Theme.of(context).cardColor,
+                filled: true,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                suffixIcon: _suffixIcon);
+            if (identical(decoration, const InputDecoration())) {
               return TextField(
                 textDirection: textDirection,
                 textAlign: textAlign,

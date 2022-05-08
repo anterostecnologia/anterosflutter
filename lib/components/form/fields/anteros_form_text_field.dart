@@ -480,9 +480,16 @@ class AnterosFormTextField extends AnterosFormField<String> {
                     : const Icon(Icons.check, color: Colors.green);
               }
               var inputDecoration = InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0), 
+                border: InputBorder.none,
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
                 ),
                 isDense: true,
                 labelText: labelText,

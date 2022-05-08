@@ -71,9 +71,15 @@ class AnterosFormDateRangePicker extends AnterosFormField<DateTimeRange> {
     ValueTransformer<DateTimeRange?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<DateTimeRange>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? helperText,
+    String? hintText,
+    bool? hasError,
+    required BuildContext context,
     required this.firstDate,
     required this.lastDate,
     this.format,
@@ -138,12 +144,120 @@ class AnterosFormDateRangePicker extends AnterosFormField<DateTimeRange> {
           builder: (FormFieldState<DateTimeRange?> field) {
             final state = field as FormBuilderDateRangePickerState;
 
+            var _suffixIcon = null;
+            if (hasError != null) {
+              var _icon = hasError
+                  ? const Icon(Icons.error,
+                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
+                  : const Icon(Icons.check, color: Colors.green, size: 18);
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(Icons.clear, size: 18,),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: _icon,
+                          onPressed: () => {})),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            } else {
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            }
+
+            var inputDecoration = InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+                fillColor: Theme.of(context).cardColor,
+                filled: true,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                suffixIcon: _suffixIcon);
+            if (identical(decoration, const InputDecoration())) {
+              return TextField(
+                enabled: state.enabled,
+                style: style,
+                focusNode: state.effectiveFocusNode,
+                decoration: inputDecoration,
+                maxLines: maxLines,
+                keyboardType: keyboardType,
+                obscureText: obscureText,
+                onEditingComplete: onEditingComplete,
+                controller: state._effectiveController,
+                autocorrect: autocorrect,
+                autofocus: autofocus,
+                buildCounter: buildCounter,
+                cursorColor: cursorColor,
+                cursorRadius: cursorRadius,
+                cursorWidth: cursorWidth,
+                enableInteractiveSelection: enableInteractiveSelection,
+                maxLength: maxLength,
+                inputFormatters: inputFormatters,
+                keyboardAppearance: keyboardAppearance,
+                maxLengthEnforcement: maxLengthEnforcement,
+                scrollPadding: scrollPadding,
+                textAlign: textAlign,
+                textCapitalization: textCapitalization,
+                textDirection: textDirection,
+                textInputAction: textInputAction,
+                strutStyle: strutStyle,
+                readOnly: true,
+                expands: expands,
+                minLines: minLines,
+                showCursor: showCursor,
+              );
+            }
+
             return TextField(
               enabled: state.enabled,
               style: style,
               focusNode: state.effectiveFocusNode,
               decoration: state.decoration,
-              // initialValue: "${_initialValue ?? ''}",
               maxLines: maxLines,
               keyboardType: keyboardType,
               obscureText: obscureText,
@@ -213,12 +327,6 @@ class FormBuilderDateRangePickerState
   Future<void> _handleFocus() async {
     if (effectiveFocusNode.hasFocus && enabled) {
       effectiveFocusNode.unfocus();
-      /*final initialFirstDate = value?.isEmpty ?? true
-          ? (widget.initialFirstDate ?? DateTime.now())
-          : value[0];
-      final initialLastDate = value?.isEmpty ?? true
-          ? (widget.initialLastDate ?? initialFirstDate)
-          : (value.length < 2 ? initialFirstDate : value[1]);*/
       final picked = await showDateRangePicker(
         context: context,
         firstDate: widget.firstDate,

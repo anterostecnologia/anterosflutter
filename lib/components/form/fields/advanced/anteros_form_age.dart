@@ -8,7 +8,6 @@ import 'package:anterosflutter/anterosflutter.dart';
 
 /// [AnterosFormAgeField] é usado para mudar a entrada de dados da idade field.
 
-
 /// Uma entrada de campo de Idade de design de material.
 class AnterosFormAgeField extends AnterosFormField<String> {
   /// Controls the text being edited.
@@ -299,7 +298,7 @@ class AnterosFormAgeField extends AnterosFormField<String> {
     bool enabled = true,
     String? labelText,
     FormFieldSetter<String>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.always,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
     BuildContext? context,
@@ -326,7 +325,7 @@ class AnterosFormAgeField extends AnterosFormField<String> {
     this.cursorRadius,
     this.cursorColor,
     this.keyboardAppearance,
-    this.keyboardType =TextInputType.number,
+    this.keyboardType = TextInputType.number,
     this.buildCounter,
     this.expands = false,
     this.minLines,
@@ -364,9 +363,9 @@ class AnterosFormAgeField extends AnterosFormField<String> {
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
           validator: AnterosFormValidators.compose([
-              AnterosFormValidators.required(),
-              AnterosFormValidators.maxLength(3),
-            ]),      
+            AnterosFormValidators.required(),
+            AnterosFormValidators.maxLength(3),
+          ]),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
@@ -394,17 +393,28 @@ class AnterosFormAgeField extends AnterosFormField<String> {
                     : const Icon(Icons.check, color: Colors.green);
               }
               var inputDecoration = InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  borderSide: BorderSide(style: BorderStyle.none, width: 0),
-                ),
-                isDense: true,
-                labelText: labelText??"Placa",
-                errorMaxLines: 2,
-                errorText: state.errorText,
-                fillColor: Theme.of(context).cardColor,
-                filled: true,
-                suffixIcon: Row(
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x4437474F),
+                    ),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color(0x4437474F),
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                  isDense: true,
+                  labelText: labelText ?? "Placa",
+                  errorMaxLines: 2,
+                  errorText: state.errorText,
+                  fillColor: Theme.of(context).cardColor,
+                  filled: true,
+                  suffixIcon: Row(
                     mainAxisAlignment: MainAxisAlignment.start, // added line
                     mainAxisSize: MainAxisSize.min, // added line
                     children: <Widget>[
@@ -421,10 +431,13 @@ class AnterosFormAgeField extends AnterosFormField<String> {
                           child: IconButton(
                               padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
                               icon: _suffixIcon,
-                              onPressed: () => {}))
+                              onPressed: () => {})),
+                      new SizedBox(
+                        height: 22.0,
+                        width: 4.0,
+                      )
                     ],
-                  )
-              );
+                  ));
 
               return TextField(
                 controller: state._effectiveController,
