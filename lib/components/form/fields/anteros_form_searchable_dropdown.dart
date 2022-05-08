@@ -34,7 +34,8 @@ class AnterosFormSearchableDropdown<T> extends AnterosFormField<T> {
   final AnterosDropdownSearchBuilder<T>? dropdownBuilder;
 
   ///to customize list of items UI in MultiSelection mode
-  final AnterosDropdownSearchBuilderMultiSelection<T>? dropdownBuilderMultiSelection;
+  final AnterosDropdownSearchBuilderMultiSelection<T>?
+      dropdownBuilderMultiSelection;
 
   ///to customize selected item
   final AnterosDropdownSearchPopupItemBuilder<T>? popupItemBuilder;
@@ -206,6 +207,11 @@ class AnterosFormSearchableDropdown<T> extends AnterosFormField<T> {
     ValueChanged<T?>? onChanged,
     ValueTransformer<T?>? valueTransformer,
     VoidCallback? onReset,
+    required BuildContext context,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.autoValidateMode,
     this.clearButton,
     this.clearButtonProps,
@@ -282,6 +288,72 @@ class AnterosFormSearchableDropdown<T> extends AnterosFormField<T> {
           focusNode: focusNode,
           builder: (FormFieldState<T?> field) {
             final state = field as _FormBuilderSearchableDropdownState<T>;
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+
+            if (identical(decoration, const InputDecoration())) {
+              return dropdown_search.AnterosDropdownSearch<T>(
+                // Hack to rebuild when didChange is called
+                key: UniqueKey(),
+                items: items,
+                maxHeight: maxHeight,
+                onFind: onFind,
+                onChanged: (value) {
+                  if (shouldRequestFocus) {
+                    state.requestFocus();
+                  }
+                  state.didChange(value);
+                },
+                selectionListViewProps: selectionListViewProps,
+                showSearchBox: showSearchBox,
+                enabled: state.enabled,
+                autoValidateMode: autovalidateMode,
+                clearButtonProps: clearButtonProps,
+                compareFn: compareFn,
+                dialogMaxWidth: dialogMaxWidth,
+                dropdownBuilder: dropdownBuilder,
+                dropdownBuilderSupportsNullItem:
+                    dropdownBuilderSupportsNullItem,
+                dropdownButtonProps: dropdownButtonProps,
+                dropdownSearchDecoration: inputDecoration,
+                emptyBuilder: emptyBuilder,
+                errorBuilder: errorBuilder,
+                filterFn: filterFn,
+                isFilteredOnline: isFilteredOnline,
+                itemAsString: itemAsString,
+                loadingBuilder: loadingBuilder,
+                popupBackgroundColor: popupBackgroundColor,
+                mode: mode,
+                popupBarrierColor: popupBarrierColor,
+                popupItemBuilder: popupItemBuilder,
+                popupItemDisabled: popupItemDisabled,
+                popupShape: popupShape,
+                popupTitle: popupTitle,
+                selectedItem: state.value,
+                showClearButton: showClearButton,
+                favoriteItemBuilder: favoriteItemBuilder,
+                favoriteItems: favoriteItems,
+                onBeforeChange: onBeforeChange,
+                favoriteItemsAlignment: favoriteItemsAlignment,
+                onPopupDismissed: onPopupDismissed,
+                searchDelay: searchDelay,
+                showFavoriteItems: showFavoriteItems,
+                dropdownSearchBaseStyle: dropdownSearchBaseStyle,
+                dropdownSearchTextAlign: dropdownSearchTextAlign,
+                dropdownSearchTextAlignVertical:
+                    dropdownSearchTextAlignVertical,
+                // onSaved: onSaved,
+                popupBarrierDismissible: popupBarrierDismissible,
+                popupElevation: popupElevation,
+                popupSafeArea: popupSafeArea,
+                scrollbarProps: scrollbarProps,
+                searchFieldProps: searchFieldProps,
+                showSelectedItems: showSelectedItems,
+                positionCallback: positionCallback,
+              );
+            }
             return dropdown_search.AnterosDropdownSearch<T>(
               // Hack to rebuild when didChange is called
               key: UniqueKey(),

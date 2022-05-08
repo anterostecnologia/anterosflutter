@@ -225,6 +225,8 @@ class AnterosFormFieldState<F extends AnterosFormField<T>, T>
     return super.validate() && !hasError;
   }
 
+  
+
   void requestFocus() {
     FocusScope.of(context).requestFocus(effectiveFocusNode);
     Scrollable.ensureVisible(context);

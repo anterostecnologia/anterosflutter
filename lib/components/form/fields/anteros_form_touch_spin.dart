@@ -1,4 +1,5 @@
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:anterosflutter/components/form/anteros_form_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -58,6 +59,10 @@ class AnterosFormTouchSpin extends AnterosFormField<num> {
     ValueChanged<num?>? onChanged,
     ValueTransformer<num?>? valueTransformer,
     VoidCallback? onReset,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.addIcon = const Icon(Icons.add),
     this.displayFormat,
     this.iconActiveColor,
@@ -87,6 +92,37 @@ class AnterosFormTouchSpin extends AnterosFormField<num> {
             final state = field as _FormBuilderTouchSpinState;
             final theme = Theme.of(state.context);
 
+            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+
+            if (identical(decoration, const InputDecoration())) {
+              return InputDecorator(
+                decoration: inputDecoration,
+                child: AnterosTouchSpin(
+                  key: ObjectKey(state.value),
+                  min: min,
+                  max: max,
+                  step: step,
+                  value: field.value ?? 0,
+                  iconSize: iconSize,
+                  onChanged: state.enabled
+                      ? (value) {
+                          if (shouldRequestFocus) {
+                            state.requestFocus();
+                          }
+                          state.didChange(value);
+                        }
+                      : null,
+                  displayFormat: displayFormat,
+                  textStyle: textStyle,
+                  addIcon: addIcon,
+                  subtractIcon: subtractIcon,
+                  iconActiveColor: iconActiveColor ?? theme.primaryColor,
+                  iconDisabledColor: iconDisabledColor ?? theme.disabledColor,
+                  iconPadding: iconPadding,
+                  enabled: state.enabled,
+                ),
+              );
+            }
             return InputDecorator(
               decoration: state.decoration,
               child: AnterosTouchSpin(

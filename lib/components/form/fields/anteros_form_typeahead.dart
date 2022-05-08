@@ -1,4 +1,5 @@
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:anterosflutter/components/form/anteros_form_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart' as wdg;
 
@@ -276,6 +277,11 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
     ValueChanged<T?>? onChanged,
     ValueTransformer<T?>? valueTransformer,
     VoidCallback? onReset,
+    required BuildContext context,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.animationDuration = const Duration(milliseconds: 500),
     this.animationStart = 0.25,
     this.autoFlipDirection = false,
@@ -319,6 +325,53 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
             final state = field as _FormBuilderTypeAheadState<T>;
             final theme = Theme.of(state.context);
 
+            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+
+            if (identical(decoration, const InputDecoration())) {
+              return AnterosTypeAheadField<T>(
+                textFieldConfiguration: textFieldConfiguration.copyWith(
+                  enabled: state.enabled,
+                  controller: state._typeAheadController,
+                  style: state.enabled
+                      ? textFieldConfiguration.style
+                      : theme.textTheme.subtitle1!.copyWith(
+                          color: theme.disabledColor,
+                        ),
+                  focusNode: state.effectiveFocusNode,
+                  decoration: inputDecoration,
+                ),
+                // TODO HACK to satisfy strictness
+                suggestionsCallback: suggestionsCallback,
+                itemBuilder: itemBuilder,
+                transitionBuilder: (context, suggestionsBox, controller) =>
+                    suggestionsBox,
+                onSuggestionSelected: (T suggestion) {
+                  state.didChange(suggestion);
+                  onSuggestionSelected?.call(suggestion);
+                },
+                getImmediateSuggestions: getImmediateSuggestions,
+                errorBuilder: errorBuilder,
+                noItemsFoundBuilder: noItemsFoundBuilder,
+                loadingBuilder: loadingBuilder,
+                debounceDuration: debounceDuration,
+                suggestionsBoxDecoration: suggestionsBoxDecoration,
+                suggestionsBoxVerticalOffset: suggestionsBoxVerticalOffset,
+                animationDuration: animationDuration,
+                animationStart: animationStart,
+                direction: direction,
+                hideOnLoading: hideOnLoading,
+                hideOnEmpty: hideOnEmpty,
+                hideOnError: hideOnError,
+                hideSuggestionsOnKeyboardHide: hideSuggestionsOnKeyboardHide,
+                keepSuggestionsOnLoading: keepSuggestionsOnLoading,
+                autoFlipDirection: autoFlipDirection,
+                suggestionsBoxController: suggestionsBoxController,
+                keepSuggestionsOnSuggestionSelected:
+                    keepSuggestionsOnSuggestionSelected,
+                hideKeyboard: hideKeyboard,
+                scrollController: scrollController,
+              );
+            }
             return AnterosTypeAheadField<T>(
               textFieldConfiguration: textFieldConfiguration.copyWith(
                 enabled: state.enabled,
@@ -364,6 +417,8 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
             );
           },
         );
+
+  
 
   @override
   _FormBuilderTypeAheadState<T> createState() =>

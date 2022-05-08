@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 
 enum CupertinoDateTimePickerInputType { date, time, both }
 
-class FormBuilderCupertinoDateTimePicker extends AnterosFormField<DateTime> {
+class AnterosFormCupertinoDateTimePicker extends AnterosFormField<DateTime> {
   /// Called when an enclosing form is submitted. The value passed will be
   /// `null` if [format] fails to parse the text.
   final ValueChanged<DateTime>? onFieldSubmitted;
@@ -65,7 +65,7 @@ class FormBuilderCupertinoDateTimePicker extends AnterosFormField<DateTime> {
   final DateTime? lastDate;
   final Locale? locale;
 
-  FormBuilderCupertinoDateTimePicker({
+  AnterosFormCupertinoDateTimePicker({
     Key? key,
     //From Super
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
@@ -79,6 +79,10 @@ class FormBuilderCupertinoDateTimePicker extends AnterosFormField<DateTime> {
     ValueChanged<DateTime?>? onChanged,
     ValueTransformer<DateTime?>? valueTransformer,
     VoidCallback? onReset,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     //
     this.alwaysUse24HourFormat = false,
     this.firstDate,
@@ -133,8 +137,45 @@ class FormBuilderCupertinoDateTimePicker extends AnterosFormField<DateTime> {
           validator: validator,
           valueTransformer: valueTransformer,
           builder: (FormFieldState<DateTime?> field) {
-            final state = field as _FormBuilderCupertinoDateTimePickerState;
+            final state = field as _AnterosFormCupertinoDateTimePickerState;
+            final theme = Theme.of(state.context);
 
+            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+
+            if (identical(decoration, const InputDecoration())) {
+              return TextField(
+                autocorrect: autocorrect,
+                autofocus: autofocus,
+                buildCounter: buildCounter,
+                controller: state._textFieldController,
+                cursorColor: cursorColor,
+                cursorRadius: cursorRadius,
+                cursorWidth: cursorWidth,
+                decoration: inputDecoration,
+                enabled: state.enabled,
+                enableInteractiveSelection: enableInteractiveSelection,
+                expands: expands,
+                focusNode: state.effectiveFocusNode,
+                inputFormatters: inputFormatters,
+                keyboardAppearance: keyboardAppearance,
+                keyboardType: keyboardType,
+                maxLength: maxLength,
+                maxLengthEnforcement: maxLengthEnforcement,
+                maxLines: maxLines,
+                minLines: minLines,
+                obscureText: obscureText,
+                onEditingComplete: onEditingComplete,
+                readOnly: true,
+                scrollPadding: scrollPadding,
+                showCursor: showCursor,
+                strutStyle: strutStyle,
+                style: style,
+                textAlign: textAlign,
+                textCapitalization: textCapitalization,
+                textDirection: textDirection,
+                textInputAction: textInputAction,
+              );
+            }
             return TextField(
               autocorrect: autocorrect,
               autofocus: autofocus,
@@ -171,12 +212,12 @@ class FormBuilderCupertinoDateTimePicker extends AnterosFormField<DateTime> {
         );
 
   @override
-  _FormBuilderCupertinoDateTimePickerState createState() =>
-      _FormBuilderCupertinoDateTimePickerState();
+  _AnterosFormCupertinoDateTimePickerState createState() =>
+      _AnterosFormCupertinoDateTimePickerState();
 }
 
-class _FormBuilderCupertinoDateTimePickerState extends AnterosFormFieldState<
-    FormBuilderCupertinoDateTimePicker, DateTime> {
+class _AnterosFormCupertinoDateTimePickerState extends AnterosFormFieldState<
+    AnterosFormCupertinoDateTimePicker, DateTime> {
   late TextEditingController _textFieldController;
 
   late DateFormat _dateFormat;

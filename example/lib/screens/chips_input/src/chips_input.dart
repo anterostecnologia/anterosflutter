@@ -8,9 +8,9 @@ import 'package:flutter/services.dart';
 import 'suggestions_box_controller.dart';
 import 'text_cursor.dart';
 
-typedef AnterosChipsInputSuggestions<T> = FutureOr<List<T>> Function(String query);
-typedef AnterosChipSelected<T> = void Function(T data, bool selected);
-typedef AnterosChipsBuilder<T> = Widget Function(
+typedef ChipsInputSuggestions<T> = FutureOr<List<T>> Function(String query);
+typedef ChipSelected<T> = void Function(T data, bool selected);
+typedef ChipsBuilder<T> = Widget Function(
     BuildContext context, AnterosChipsInputState<T> state, T data);
 
 const kObjectReplacementChar = 0xFFFD;
@@ -59,12 +59,12 @@ class AnterosChipsInput<T> extends StatefulWidget {
   final InputDecoration decoration;
   final TextStyle? textStyle;
   final bool enabled;
-  final AnterosChipsInputSuggestions<T> findSuggestions;
+  final ChipsInputSuggestions<T> findSuggestions;
   final ValueChanged<List<T>> onChanged;
   @Deprecated('Will be removed in the next major version')
   final ValueChanged<T>? onChipTapped;
-  final AnterosChipsBuilder<T> chipBuilder;
-  final AnterosChipsBuilder<T> suggestionBuilder;
+  final ChipsBuilder<T> chipBuilder;
+  final ChipsBuilder<T> suggestionBuilder;
   final List<T> initialValue;
   final int? maxChips;
   final double? suggestionsBoxMaxHeight;
@@ -96,7 +96,7 @@ class AnterosChipsInputState<T> extends State<AnterosChipsInput<T>>
   int _searchId = 0;
   TextEditingValue _value = TextEditingValue();
   TextInputConnection? _textInputConnection;
-  late SuggestionsBoxController _suggestionsBoxController;
+  late AnterosSuggestionsBoxController _suggestionsBoxController;
   final _layerLink = LayerLink();
   final _enteredTexts = <T, String>{};
 
@@ -127,7 +127,7 @@ class AnterosChipsInputState<T> extends State<AnterosChipsInput<T>>
     _suggestions = widget.initialSuggestions
         ?.where((r) => !_chips.contains(r))
         .toList(growable: false);
-    _suggestionsBoxController = SuggestionsBoxController(context);
+    _suggestionsBoxController = AnterosSuggestionsBoxController(context);
 
     _focusNode = widget.focusNode ?? FocusNode();
     _focusNode.addListener(_handleFocusChanged);
@@ -354,7 +354,7 @@ class AnterosChipsInputState<T> extends State<AnterosChipsInput<T>>
       _value = _value.copyWith(
         text: updatedText,
         selection: TextSelection.collapsed(offset: textLength),
-        composing: (replacedLength == textLength)
+        composing: (Platform.isIOS || replacedLength == textLength)
             ? TextRange.empty
             : TextRange(
                 start: replacedLength,

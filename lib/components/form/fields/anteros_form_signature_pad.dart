@@ -4,7 +4,6 @@ import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
-
 /// Field with drawing pad on which user can doodle
 class AnterosFormSignaturePad extends AnterosFormField<Uint8List> {
   /// Controls the value of the signature pad.
@@ -42,6 +41,10 @@ class AnterosFormSignaturePad extends AnterosFormField<Uint8List> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.backgroundColor = Colors.transparent,
     this.clearButtonText,
     this.width,
@@ -67,7 +70,61 @@ class AnterosFormSignaturePad extends AnterosFormField<Uint8List> {
             final localizations = MaterialLocalizations.of(state.context);
             final cancelButtonColor =
                 state.enabled ? theme.errorColor : theme.disabledColor;
-
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+            if (identical(decoration, const InputDecoration())) {
+              return InputDecorator(
+                decoration: inputDecoration,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: height,
+                      width: width,
+                      decoration: BoxDecoration(
+                        border: border,
+                        image: (null != initialValue &&
+                                initialValue == state.value)
+                            ? DecorationImage(
+                                image: MemoryImage(state.value!),
+                              )
+                            : null,
+                      ),
+                      child: state.enabled
+                          ? GestureDetector(
+                              onHorizontalDragUpdate: (_) {},
+                              onVerticalDragUpdate: (_) {},
+                              child: AnterosSignature(
+                                controller: state.effectiveController,
+                                width: width,
+                                height: height,
+                                backgroundColor: backgroundColor,
+                              ),
+                            )
+                          : null,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        const Expanded(child: SizedBox()),
+                        TextButton.icon(
+                          onPressed: state.enabled
+                              ? () {
+                                  state.effectiveController.clear();
+                                  field.didChange(null);
+                                }
+                              : null,
+                          label: Text(
+                            clearButtonText ?? localizations.cancelButtonLabel,
+                            style: TextStyle(color: cancelButtonColor),
+                          ),
+                          icon: Icon(Icons.clear, color: cancelButtonColor),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            }
             return InputDecorator(
               decoration: state.decoration,
               child: Column(

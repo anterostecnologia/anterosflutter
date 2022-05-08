@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 /// A field that takes a list of `Chip`s as input and suggests more options
 /// while typing
-class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
+class AnterosFormChipsInput<T> extends AnterosFormField<List<T>> {
   //TODO: Add documentation
   final AnterosChipsInputSuggestions<T> findSuggestions;
 
@@ -25,7 +25,7 @@ class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
 
   /// Creates a field that takes a list of `Chip`s as input and suggests more options
   /// while typing
-  AnterosChipsInput({
+  AnterosFormChipsInput({
     Key? key,
     //From Super
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
@@ -42,6 +42,10 @@ class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
     ValueChanged<List<T>?>? onChanged,
     ValueTransformer<List<T>?>? valueTransformer,
     VoidCallback? onReset,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.actionLabel,
     this.allowChipEditing = false,
     this.autocorrect = false,
@@ -69,8 +73,40 @@ class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
           validator: validator,
           valueTransformer: valueTransformer,
           builder: (FormFieldState<List<T>?> field) {
-            final state = field as _FormBuilderChipsInputState<T>;
+            final state = field as _AnterosFormChipsInputState<T>;
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
+            if (identical(decoration, const InputDecoration())) {
+              return AnterosChipsInput<T>(
+                key: UniqueKey(),
+                initialValue: field.value!,
+                enabled: state.enabled,
+                decoration: inputDecoration,
+                findSuggestions: findSuggestions,
+                onChanged: (data) {
+                  field.didChange(data);
+                },
+                maxChips: maxChips,
+                chipBuilder: chipBuilder,
+                suggestionBuilder: suggestionBuilder,
+                textStyle: textStyle,
+                actionLabel: actionLabel,
+                autocorrect: autocorrect,
+                inputAction: inputAction,
+                inputType: inputType,
+                keyboardAppearance: keyboardAppearance,
+                obscureText: obscureText,
+                suggestionsBoxMaxHeight: suggestionsBoxMaxHeight,
+                textCapitalization: textCapitalization,
+                allowChipEditing: allowChipEditing,
+                autofocus: autofocus,
+                focusNode: state.effectiveFocusNode,
+                textOverflow: textOverflow,
+              );
+            }
             return AnterosChipsInput<T>(
               key: UniqueKey(),
               initialValue: field.value!,
@@ -80,7 +116,6 @@ class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
               onChanged: (data) {
                 field.didChange(data);
               },
-              name: name,
               maxChips: maxChips,
               chipBuilder: chipBuilder,
               suggestionBuilder: suggestionBuilder,
@@ -102,9 +137,9 @@ class AnterosChipsInput<T> extends AnterosFormField<List<T>> {
         );
 
   @override
-  _FormBuilderChipsInputState<T> createState() =>
-      _FormBuilderChipsInputState<T>();
+  _AnterosFormChipsInputState<T> createState() =>
+      _AnterosFormChipsInputState<T>();
 }
 
-class _FormBuilderChipsInputState<T>
-    extends AnterosFormFieldState<AnterosChipsInput<T>, List<T>> {}
+class _AnterosFormChipsInputState<T>
+    extends AnterosFormFieldState<AnterosFormChipsInput<T>, List<T>> {}

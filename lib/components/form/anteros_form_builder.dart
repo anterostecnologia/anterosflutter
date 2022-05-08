@@ -7,9 +7,12 @@ export 'fields/advanced/anteros_form_plate.dart';
 export 'fields/advanced/anteros_form_age.dart'; 
 export 'fields/anteros_form_checkbox.dart';
 export 'fields/anteros_form_checkbox_group.dart';
+export 'fields/anteros_form_chips_input.dart';
 export 'fields/anteros_form_choice_chips.dart';
+export 'fields/anteros_form_color_picker.dart';
 export 'fields/anteros_form_date_range_picker.dart';
 export 'fields/anteros_form_date_time_picker.dart';
+export 'fields/anteros_form_cupertino_date_time_picker.dart';
 export 'fields/anteros_form_dropdown.dart';
 export 'fields/anteros_form_filter_chips.dart';
 export 'fields/anteros_form_radio_group.dart';
@@ -27,5 +30,6 @@ export 'widgets/anteros_grouped_checkbox.dart';
 export 'widgets/anteros_grouped_radio.dart';
 export 'validators/localization/l10n.dart';
 export 'validators/anteros_form_validators.dart';
+export 'anteros_form_helper.dart';
 
 

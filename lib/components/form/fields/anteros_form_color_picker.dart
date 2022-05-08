@@ -3,17 +3,16 @@ import 'dart:async';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-
+import 'package:flutter_colorpicker/flutter_colorpicker.dart' as cp;
 
 extension on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
-  /*static Color fromHex(String hexString) {
+  static Color fromHex(String hexString) {
     final buffer = StringBuffer();
     if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
     buffer.write(hexString.replaceFirst('#', ''));
     return Color(int.parse(buffer.toString(), radix: 16));
-  }*/
+  }
 
   /// Prefixes a hash sign if [leadingHashSign] is set to `true` (default is `true`).
   String toHex({bool leadingHashSign = true}) {
@@ -28,13 +27,13 @@ extension on Color {
   }
 }
 
-enum ColorPickerType { colorPicker, materialPicker, blockPicker }
+enum AnterosColorPickerType { colorPicker, materialPicker, blockPicker }
 
 /// Creates a field for `Color` input selection
-class FormBuilderColorPickerField extends AnterosFormField<Color> {
+class AnterosFormColorPickerField extends AnterosFormField<Color> {
   //TODO: Add documentation
   final TextEditingController? controller;
-  final ColorPickerType colorPickerType;
+  final AnterosColorPickerType colorPickerType;
   final TextCapitalization textCapitalization;
 
   final TextAlign textAlign;
@@ -67,7 +66,7 @@ class FormBuilderColorPickerField extends AnterosFormField<Color> {
   final bool enableInteractiveSelection;
   final InputCounterWidgetBuilder? buildCounter;
 
-  FormBuilderColorPickerField({
+  AnterosFormColorPickerField({
     Key? key,
     //From Super
     required String name,
@@ -82,7 +81,11 @@ class FormBuilderColorPickerField extends AnterosFormField<Color> {
     VoidCallback? onReset,
     FocusNode? focusNode,
     bool readOnly = false,
-    this.colorPickerType = ColorPickerType.colorPicker,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
+    this.colorPickerType = AnterosColorPickerType.colorPicker,
     this.textCapitalization = TextCapitalization.none,
     this.textAlign = TextAlign.start,
     this.keyboardType,
@@ -124,10 +127,68 @@ class FormBuilderColorPickerField extends AnterosFormField<Color> {
           decoration: decoration,
           focusNode: focusNode,
           builder: (FormFieldState<Color?> field) {
-            final state = field as _FormBuilderColorPickerFieldState;
+            final state = field as _AnterosFormColorPickerFieldState;
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+
+            if (identical(decoration, const InputDecoration())) {
+              return TextField(
+                style: style,
+                decoration: inputDecoration.copyWith(
+                  suffixIcon: LayoutBuilder(
+                    key: ObjectKey(state.value),
+                    builder: (context, constraints) {
+                      return Container(
+                        margin: EdgeInsets.only(right: 10),
+                        key: ObjectKey(state.value),
+                        height: constraints.minHeight,
+                        width: constraints.minHeight,
+                        decoration: BoxDecoration(
+                          color: state.value,
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.black,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                enabled: state.enabled,
+                readOnly: readOnly,
+                controller: state._effectiveController,
+                focusNode: state.effectiveFocusNode,
+                textAlign: textAlign,
+                autofocus: autofocus,
+                expands: expands,
+                scrollPadding: scrollPadding,
+                autocorrect: autocorrect,
+                textCapitalization: textCapitalization,
+                keyboardType: keyboardType,
+                obscureText: obscureText,
+                buildCounter: buildCounter,
+                cursorColor: cursorColor,
+                cursorRadius: cursorRadius,
+                cursorWidth: cursorWidth,
+                enableInteractiveSelection: enableInteractiveSelection,
+                inputFormatters: inputFormatters,
+                keyboardAppearance: keyboardAppearance,
+                maxLength: maxLength,
+                maxLengthEnforcement: maxLengthEnforcement,
+                maxLines: maxLines,
+                minLines: minLines,
+                onEditingComplete: onEditingComplete,
+                showCursor: showCursor,
+                strutStyle: strutStyle,
+                textDirection: textDirection,
+                textInputAction: textInputAction,
+              );
+            }
             return TextField(
               style: style,
-              decoration: state.decoration.copyWith(
+              decoration: inputDecoration.copyWith(
                 suffixIcon: LayoutBuilder(
                   key: ObjectKey(state.value),
                   builder: (context, constraints) {
@@ -179,12 +240,12 @@ class FormBuilderColorPickerField extends AnterosFormField<Color> {
         );
 
   @override
-  _FormBuilderColorPickerFieldState createState() =>
-      _FormBuilderColorPickerFieldState();
+  _AnterosFormColorPickerFieldState createState() =>
+      _AnterosFormColorPickerFieldState();
 }
 
-class _FormBuilderColorPickerFieldState
-    extends AnterosFormFieldState<FormBuilderColorPickerField, Color> {
+class _AnterosFormColorPickerFieldState
+    extends AnterosFormFieldState<AnterosFormColorPickerField, Color> {
   late TextEditingController _effectiveController;
 
   String? get valueString => value?.toHex();
@@ -243,24 +304,24 @@ class _FormBuilderColorPickerFieldState
 
   Widget _buildColorPicker() {
     switch (widget.colorPickerType) {
-      case ColorPickerType.colorPicker:
-        return ColorPicker(
+      case AnterosColorPickerType.colorPicker:
+        return cp.ColorPicker(
           pickerColor: value ?? Colors.transparent,
           onColorChanged: _colorChanged,
           colorPickerWidth: 300,
           displayThumbColor: true,
           enableAlpha: true,
-          paletteType: PaletteType.hsl,
+          paletteType: cp.PaletteType.hsl,
           pickerAreaHeightPercent: 1.0,
         );
-      case ColorPickerType.materialPicker:
-        return MaterialPicker(
+      case AnterosColorPickerType.materialPicker:
+        return cp.MaterialPicker(
           pickerColor: value ?? Colors.transparent,
           onColorChanged: _colorChanged,
           enableLabel: true, // only on portrait mode
         );
-      case ColorPickerType.blockPicker:
-        return BlockPicker(
+      case AnterosColorPickerType.blockPicker:
+        return cp.BlockPicker(
           pickerColor: value ?? Colors.transparent,
           onColorChanged: _colorChanged,
         );
