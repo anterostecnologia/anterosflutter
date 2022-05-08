@@ -42,7 +42,7 @@ class _GroupedListState extends State<GroupedList>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(

@@ -34,7 +34,7 @@ class _ShimmerPageState extends State<ShimmerPage> {
             text: 'Basic Shimmer Effect',
             type: AnterosTypographyType.typo5,
             dividerWidth: 25,
-            dividerColor: Color(0xFF19CA4B),
+            dividerColor: AnterosColors.PRIMARY,
           ),
         ),
         AnterosShimmer(
@@ -90,7 +90,7 @@ class _ShimmerPageState extends State<ShimmerPage> {
             text: 'Shimmer Effect on Text',
             type: AnterosTypographyType.typo5,
             dividerWidth: 25,
-            dividerColor: Color(0xFF19CA4B),
+            dividerColor: AnterosColors.PRIMARY,
           ),
         ),
         AnterosShimmer(

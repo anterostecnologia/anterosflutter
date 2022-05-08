@@ -22,7 +22,7 @@ class _GroupedListTypesState extends State<GroupedListTypes> {
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
               ),
             ),
           ),
@@ -64,7 +64,7 @@ class _GroupedListTypesState extends State<GroupedListTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                       )),
                 )),
             GestureDetector(
@@ -95,7 +95,7 @@ class _GroupedListTypesState extends State<GroupedListTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                       )),
                 ))
           ],

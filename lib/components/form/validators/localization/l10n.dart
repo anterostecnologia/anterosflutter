@@ -19,7 +19,7 @@ class AnterosFormLocalizations {
 
   static AnterosFormLocalizations get current {
     assert(_current != null,
-        'No instance of FormBuilderLocalizations was loaded. Try to initialize the FormBuilderLocalizations delegate before accessing FormBuilderLocalizations.current.');
+        'No instance of AnterosFormLocalizations was loaded. Try to initialize the AnterosFormLocalizations delegate before accessing FormBuilderLocalizations.current.');
     return _current!;
   }
 
@@ -42,7 +42,7 @@ class AnterosFormLocalizations {
   static AnterosFormLocalizations of(BuildContext context) {
     final instance = AnterosFormLocalizations.maybeOf(context);
     assert(instance != null,
-        'No instance of FormBuilderLocalizations present in the widget tree. Did you add FormBuilderLocalizations.delegate in localizationsDelegates?');
+        'No instance of AnterosFormLocalizations present in the widget tree. Did you add AnterosFormLocalizations.delegate in localizationsDelegates?');
     return instance!;
   }
 

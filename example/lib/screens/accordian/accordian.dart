@@ -19,7 +19,7 @@ class _AccordionState extends State<Accordion> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -36,7 +36,7 @@ class _AccordionState extends State<Accordion> {
                 text: 'Basic Accordion',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAccordion(
@@ -70,7 +70,7 @@ class _AccordionState extends State<Accordion> {
                 text: 'Accordion with Text',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAccordion(
@@ -109,7 +109,7 @@ class _AccordionState extends State<Accordion> {
                 text: 'Accordion with Icon',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAccordion(

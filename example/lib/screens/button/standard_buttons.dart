@@ -33,7 +33,7 @@ class _StandardButtonsState extends State<StandardButtons>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -69,7 +69,7 @@ class _StandardButtonsState extends State<StandardButtons>
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),
@@ -94,7 +94,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -198,7 +198,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -302,7 +302,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Transparent Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -393,7 +393,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -446,7 +446,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -502,7 +502,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Full Width Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Column(
@@ -562,7 +562,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -661,7 +661,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -760,7 +760,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -810,7 +810,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -869,7 +869,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -968,7 +968,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1067,7 +1067,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1117,7 +1117,7 @@ class _StandardButtonsState extends State<StandardButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(

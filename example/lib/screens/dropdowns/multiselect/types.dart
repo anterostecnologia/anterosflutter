@@ -46,7 +46,7 @@ class _MultiselectTypesState extends State<MultiselectTypes>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(

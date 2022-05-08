@@ -27,7 +27,7 @@ class _IntroscreenState extends State<Introscreen>
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
               ),
             )),
         title: const Text(

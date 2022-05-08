@@ -1,12 +1,97 @@
 import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:anterosflutter/anterosflutter.dart';
 
-/// A Material Design text field input.
+/// [AnterosFormTextField] é usado para mudar a entrada de dados do text field.
+enum AnterosInputFormatType {
+  /// Predefinição forma é [AnterosInputFormatType.date], usado para entrada de data.
+  date,
+
+  /// [AnterosInputFormatType.time], usado para entrada de hora.
+  time,
+
+  /// [AnterosInputFormatType.currency], usado para entrada de valores.
+  currency,
+
+  /// [AnterosInputFormatType.cep], usado para entrada de cep.
+  cep,
+
+  /// [AnterosInputFormatType.cnpj], usado para entrada cnpj.
+  cnpj,
+
+  /// [AnterosInputFormatType.cpf], usado para entrada cpf.
+  cpf,
+
+  /// [AnterosInputFormatType.km], usado para entrada km.
+  km,
+
+  /// [AnterosInputFormatType.phone], usado para entrada telefone.
+  phone,
+
+  /// [AnterosInputFormatType.weight], usado para entrada de peso.
+  weight,
+
+  /// [AnterosInputFormatType.plate], usado para entrada de placa de veículo.
+  plate,
+
+  /// [AnterosInputFormatType.cardValidate], usado para entrada de validade de cartão.
+  cardValidate,
+
+  /// Predefinição forma é [AnterosInputFormatType.standard], usado para entrada padrão sem formatação.
+  standard,
+}
+
+extension AnterosInputFormatTypeExtension on AnterosInputFormatType {
+  String get name => describeEnum(this);
+  List<TextInputFormatter> get inputFormatters {
+    switch (this) {
+      case AnterosInputFormatType.cardValidate:
+        return [
+          FilteringTextInputFormatter.digitsOnly,
+          CartaoBancarioInputFormatter()
+        ];
+      case AnterosInputFormatType.cep:
+        return [FilteringTextInputFormatter.digitsOnly, CepInputFormatter()];
+      case AnterosInputFormatType.cnpj:
+        return [FilteringTextInputFormatter.digitsOnly, CnpjInputFormatter()];
+      case AnterosInputFormatType.cpf:
+        return [FilteringTextInputFormatter.digitsOnly, CpfInputFormatter()];
+      case AnterosInputFormatType.currency:
+        return [FilteringTextInputFormatter.digitsOnly, RealInputFormatter()];
+      case AnterosInputFormatType.date:
+        return [FilteringTextInputFormatter.digitsOnly, DataInputFormatter()];
+      case AnterosInputFormatType.km:
+        return [FilteringTextInputFormatter.digitsOnly, KmInputFormatter()];
+      case AnterosInputFormatType.phone:
+        return [
+          FilteringTextInputFormatter.digitsOnly,
+          TelefoneInputFormatter()
+        ];
+      case AnterosInputFormatType.plate:
+        return [PlacaVeiculoInputFormatter()];
+      case AnterosInputFormatType.time:
+        return [FilteringTextInputFormatter.digitsOnly, HoraInputFormatter()];
+      case AnterosInputFormatType.weight:
+        return [FilteringTextInputFormatter.digitsOnly, PesoInputFormatter()];
+      default:
+        return [];
+    }
+  }
+
+  String describeEnum(Object enumEntry) {
+    final String description = enumEntry.toString();
+    final int indexOfDot = description.indexOf('.');
+    assert(indexOfDot != -1 && indexOfDot < description.length - 1);
+    return description.substring(indexOfDot + 1);
+  }
+}
+
+/// Uma entrada de campo de texto de design de material.
 class AnterosFormTextField extends AnterosFormField<String> {
   /// Controls the text being edited.
   ///
@@ -24,6 +109,9 @@ class AnterosFormTextField extends AnterosFormField<String> {
 
   /// {@macro flutter.widgets.editableText.textCapitalization}
   final TextCapitalization textCapitalization;
+
+  /// Formato de entrada de dados [AnterosInputFormatType].
+  final AnterosInputFormatType inputFormatType;
 
   /// The style to use for the text being edited.
   ///
@@ -282,7 +370,7 @@ class AnterosFormTextField extends AnterosFormField<String> {
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
 
-  /// Creates a Material Design text field input.
+  /// Cria uma entrada de campo de texto de design de material.
   AnterosFormTextField({
     Key? key,
     //From Super
@@ -290,14 +378,19 @@ class AnterosFormTextField extends AnterosFormField<String> {
     FormFieldValidator<String>? validator,
     String? initialValue,
     bool readOnly = false,
+    VoidCallback? onClearValue,
     InputDecoration decoration = const InputDecoration(),
     ValueChanged<String?>? onChanged,
     ValueTransformer<String?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<String>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
+    AutovalidateMode autovalidateMode = AutovalidateMode.always,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    BuildContext? context,
+    String? labelText,
+    bool? hasError,
+    this.inputFormatType = AnterosInputFormatType.standard,
     this.maxLines = 1,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
@@ -344,14 +437,14 @@ class AnterosFormTextField extends AnterosFormField<String> {
         assert(maxLines == null || maxLines > 0),
         assert(
           (minLines == null) || (maxLines == null) || (maxLines >= minLines),
-          'minLines can\'t be greater than maxLines',
+          'minLines não pode ser maior que maxlines',
         ),
         assert(
           !expands || (minLines == null && maxLines == null),
-          'minLines and maxLines must be null when expands is true.',
+          'minLines e maxLines deve ser nulo quando expandir é verdadeiro.',
         ),
         assert(!obscureText || maxLines == 1,
-            'Obscured fields cannot be multiline.'),
+            'Campos obscurecidos não podem ser multilinas.'),
         assert(maxLength == null || maxLength > 0),
         super(
           key: key,
@@ -370,6 +463,103 @@ class AnterosFormTextField extends AnterosFormField<String> {
             final state = field as _FormBuilderTextFieldState;
             /*final effectiveDecoration = (decoration ?? const InputDecoration())
                 .applyDefaults(Theme.of(field.context).inputDecorationTheme);*/
+
+            List<TextInputFormatter> formatters =
+                inputFormatType.inputFormatters;
+            if (inputFormatters != null) {
+              formatters.addAll(inputFormatters);
+            }
+
+            if (identical(decoration, const InputDecoration()) &&
+                context != null) {
+              var _suffixIcon = null;
+              if (hasError != null) {
+                _suffixIcon = hasError
+                    ? const Icon(Icons.error,
+                        color: Color.fromARGB(255, 224, 43, 79))
+                    : const Icon(Icons.check, color: Colors.green);
+              }
+              var inputDecoration = InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0),
+                  borderSide: BorderSide(style: BorderStyle.none, width: 0), 
+                ),
+                isDense: true,
+                labelText: labelText,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                fillColor: Theme.of(context).cardColor,
+                filled: true,
+                suffixIcon: Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // added line
+                    mainAxisSize: MainAxisSize.min, // added line
+                    children: <Widget>[
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: Icon(Icons.clear),
+                              onPressed: onClearValue)),
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: _suffixIcon,
+                              onPressed: () => {}))
+                    ],
+                  )
+              );
+
+              return TextField(
+                controller: state._effectiveController,
+                focusNode: state.effectiveFocusNode,
+                decoration: inputDecoration,
+                keyboardType: keyboardType,
+                textInputAction: textInputAction,
+                style: style,
+                strutStyle: strutStyle,
+                textAlign: textAlign,
+                textAlignVertical: textAlignVertical,
+                textDirection: textDirection,
+                textCapitalization: textCapitalization,
+                autofocus: autofocus,
+                readOnly: readOnly,
+                showCursor: showCursor,
+                obscureText: obscureText,
+                autocorrect: autocorrect,
+                enableSuggestions: enableSuggestions,
+                maxLengthEnforcement: maxLengthEnforcement,
+                maxLines: maxLines,
+                minLines: minLines,
+                expands: expands,
+                maxLength: maxLength,
+                onTap: onTap,
+                onEditingComplete: onEditingComplete,
+                onSubmitted: onSubmitted,
+                inputFormatters: formatters,
+                enabled: state.enabled,
+                cursorWidth: cursorWidth,
+                cursorRadius: cursorRadius,
+                cursorColor: cursorColor,
+                scrollPadding: scrollPadding,
+                keyboardAppearance: keyboardAppearance,
+                enableInteractiveSelection: enableInteractiveSelection,
+                buildCounter: buildCounter,
+                dragStartBehavior: dragStartBehavior,
+                scrollController: scrollController,
+                scrollPhysics: scrollPhysics,
+                selectionHeightStyle: selectionHeightStyle,
+                selectionWidthStyle: selectionWidthStyle,
+                smartDashesType: smartDashesType,
+                smartQuotesType: smartQuotesType,
+                toolbarOptions: toolbarOptions,
+                mouseCursor: mouseCursor,
+                obscuringCharacter: obscuringCharacter,
+                autofillHints: autofillHints,
+              );
+            }
 
             return TextField(
               controller: state._effectiveController,
@@ -397,7 +587,7 @@ class AnterosFormTextField extends AnterosFormField<String> {
               onTap: onTap,
               onEditingComplete: onEditingComplete,
               onSubmitted: onSubmitted,
-              inputFormatters: inputFormatters,
+              inputFormatters: formatters,
               enabled: state.enabled,
               cursorWidth: cursorWidth,
               cursorRadius: cursorRadius,
@@ -435,14 +625,14 @@ class _FormBuilderTextFieldState
   @override
   void initState() {
     super.initState();
-    //setting this to value instead of initialValue here is OK since we handle initial value in the parent class
+    // Definindo isso como valor em vez de inicial aqui está ok, já que lidamos com o valor inicial na classe pai
     _controller = widget.controller ?? TextEditingController(text: value);
     _controller!.addListener(_handleControllerChanged);
   }
 
   @override
   void dispose() {
-    // Dispose the _controller when initState created it
+    // Descarte o _controller que o initState criou
     _controller!.removeListener(_handleControllerChanged);
     if (null == widget.controller) {
       _controller!.dispose();
@@ -468,13 +658,13 @@ class _FormBuilderTextFieldState
   }
 
   void _handleControllerChanged() {
-    // Suppress changes that originated from within this class.
+    // Suprime as alterações originadas de dentro desta classe.
     //
-    // In the case where a controller has been passed in to this widget, we
-    // register this change listener. In these cases, we'll also receive change
-    // notifications for changes originating from within this class -- for
-    // example, the reset() method. In such cases, the FormField value will
-    // already have been set.
+    // no caso em que um controlador foi passado para este widget, nós
+    // registramos este ouvinte de alteração. Nesses casos, também receberemos
+    // notificações para mudanças originárias de dentro desta classe - Por
+    // Exemplo, o método reset(). Nesses casos, o valor do formulário
+    // já foi definido.
     if (_effectiveController!.text != value) {
       didChange(_effectiveController!.text);
     }

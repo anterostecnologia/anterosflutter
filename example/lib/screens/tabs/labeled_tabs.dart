@@ -34,7 +34,7 @@ class _LabeledTabsState extends State<LabeledTabs>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(

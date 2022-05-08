@@ -18,7 +18,7 @@ class _LoadersState extends State<Loaders> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -35,7 +35,7 @@ class _LoadersState extends State<Loaders> {
                 text: 'Basic Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -103,7 +103,7 @@ class _LoadersState extends State<Loaders> {
                 text: 'IOS Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -143,7 +143,7 @@ class _LoadersState extends State<Loaders> {
                 text: 'Circular Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -184,7 +184,7 @@ class _LoadersState extends State<Loaders> {
                 text: 'Square Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -225,7 +225,7 @@ class _LoadersState extends State<Loaders> {
                 text: 'Custom Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

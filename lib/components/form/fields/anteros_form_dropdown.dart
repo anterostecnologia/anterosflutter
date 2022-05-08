@@ -240,6 +240,7 @@ class AnterosFormDropdown<T> extends AnterosFormField<T> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    bool? hasError,
     required this.items,
     this.isExpanded = true,
     this.isDense = true,
@@ -289,12 +290,40 @@ class AnterosFormDropdown<T> extends AnterosFormField<T> {
               state.didChange(value);
             }
 
+            var _suffixIcon = null;
+              if (hasError != null) {
+                _suffixIcon = hasError
+                    ? const Icon(Icons.error,size: 18,
+                        color: Color.fromARGB(255, 224, 43, 79))
+                    : const Icon(Icons.check, color: Colors.green, size: 18,);
+              }
+
             return InputDecorator(
               decoration: state.decoration.copyWith(
+                suffixIcon: Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // added line
+                    mainAxisSize: MainAxisSize.min, // added line
+                    children: <Widget>[
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: Icon(Icons.clear, size: 18,),
+                              onPressed: () => changeValue(null))),
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: _suffixIcon,
+                              onPressed: () => {}))
+                    ],
+                  ),
                 floatingLabelBehavior: hint == null
                     ? decoration.floatingLabelBehavior
                     : FloatingLabelBehavior.always,
-              ),
+              ),              
               isEmpty: state.value == null,
               child: Row(
                 children: <Widget>[
@@ -336,13 +365,11 @@ class AnterosFormDropdown<T> extends AnterosFormField<T> {
                       ),
                     ),
                   ),
-                  if (allowClear && state.enabled && field.value != null) ...[
-                    const VerticalDivider(),
-                    InkWell(
-                      onTap: () => changeValue(null),
-                      child: clearIcon,
-                    ),
-                  ]
+                  // if (allowClear && state.enabled && field.value != null) ...[
+                  //   const VerticalDivider(),
+                    
+                  //   ,
+                  // ]
                 ],
               ),
             );

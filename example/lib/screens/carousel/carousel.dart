@@ -58,7 +58,7 @@ class _CarouselState extends State<Carousel>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -90,7 +90,7 @@ class _CarouselState extends State<Carousel>
                   color: Colors.black,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),
@@ -116,7 +116,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Full Width',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosCarousel(
@@ -178,7 +178,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Multiple Items',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosItemsCarousel(
@@ -231,7 +231,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Full Size',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosCarousel(
@@ -301,7 +301,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Full Width',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosCarousel(
@@ -361,7 +361,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Multiple Items',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosItemsCarousel(
@@ -412,7 +412,7 @@ class _CarouselState extends State<Carousel>
                             text: 'Full Size',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: Color(0xFF19CA4B),
+                            dividerColor: AnterosColors.PRIMARY,
                           ),
                         ),
                         AnterosCarousel(

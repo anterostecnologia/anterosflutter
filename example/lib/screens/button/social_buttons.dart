@@ -18,7 +18,7 @@ class _SocialButtonsState extends State<SocialButtons> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -35,7 +35,7 @@ class _SocialButtonsState extends State<SocialButtons> {
                 text: 'Social Buttons Full',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -221,7 +221,7 @@ class _SocialButtonsState extends State<SocialButtons> {
                 text: 'Social Buttons Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -329,7 +329,7 @@ class _SocialButtonsState extends State<SocialButtons> {
                 text: 'Floating Social Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

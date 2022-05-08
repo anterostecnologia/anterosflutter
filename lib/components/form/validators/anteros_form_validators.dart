@@ -1,13 +1,13 @@
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anterosflutter/components/form/validators/utils/validators.dart';
+import 'package:anterosflutter/helpers/validation/src/validator/allValidations.dart';
 import 'package:flutter/material.dart';
 
-
-/// For creation of [FormFieldValidator]s.
+/// Para criação de [FormFieldValidator]s.
 class AnterosFormValidators {
-  /// [FormFieldValidator] that is composed of other [FormFieldValidator]s.
-  /// Each validator is run against the [FormField] value and if any returns a
-  /// non-null result validation fails, otherwise, validation passes
+  /// [FormFieldValidator] que é composto por outros [FormFieldValidator]s.
+  /// Cada validador é executado no [FormField] valor e, se houver, retorna uma
+  /// falha na validação de resultado não nulo, caso contrário, a validação passa.
   static FormFieldValidator<T> compose<T>(
       List<FormFieldValidator<T>> validators) {
     return (valueCandidate) {
@@ -21,7 +21,7 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the field have a non-empty value.
+  /// [FormFieldValidator] que requer que o campo tenha um valor não vazio.
   static FormFieldValidator<T> required<T>({
     String? errorText,
   }) {
@@ -36,8 +36,8 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the field's value be equal to the
-  /// provided value.
+  /// [FormFieldValidator] que exige que o valor do campo seja igual ao
+  /// valor fornecido.
   static FormFieldValidator<T> equal<T>(
     Object value, {
     String? errorText,
@@ -46,8 +46,8 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.equalErrorText(value)
           : null;
 
-  /// [FormFieldValidator] that requires the field's value be not equal to
-  /// the provided value.
+  /// [FormFieldValidator] que exige que o valor do campo não seja igual a
+  /// o valor fornecido.
   static FormFieldValidator<T> notEqual<T>(
     Object value, {
     String? errorText,
@@ -57,8 +57,8 @@ class AnterosFormValidators {
               AnterosFormLocalizations.current.notEqualErrorText(value)
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to be greater than
-  /// (or equal) to the provided number.
+  /// [FormFieldValidator] que exige que o valor do campo seja maior que
+  /// (ou igual) ao número fornecido.
   static FormFieldValidator<T> min<T>(
     num min, {
     bool inclusive = true,
@@ -80,8 +80,8 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the field's value to be less than
-  /// (or equal) to the provided number.
+  /// [FormFieldValidator] que exige que o valor do campo seja menor que
+  /// (ou igual) ao número fornecido.
   static FormFieldValidator<T> max<T>(
     num max, {
     bool inclusive = true,
@@ -103,8 +103,8 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the length of the field's value to be
-  /// greater than or equal to the provided minimum length.
+  /// [FormFieldValidator] que requer que o comprimento do valor do campo seja
+  /// maior ou igual ao comprimento mínimo fornecido.
   static FormFieldValidator<T> minLength<T>(
     int minLength, {
     bool allowEmpty = false,
@@ -125,8 +125,8 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the length of the field's value to be
-  /// less than or equal to the provided maximum length.
+  /// [FormFieldValidator] que requer que o comprimento do valor do campo seja
+  /// menor ou igual ao comprimento máximo fornecido.
   static FormFieldValidator<T> maxLength<T>(
     int maxLength, {
     String? errorText,
@@ -146,7 +146,7 @@ class AnterosFormValidators {
     };
   }
 
-  /// [FormFieldValidator] that requires the field's value to be a valid email address.
+  /// [FormFieldValidator] que exige que o valor do campo seja um endereço de e-mail válido.
   static FormFieldValidator<String> email({
     String? errorText,
   }) =>
@@ -155,7 +155,7 @@ class AnterosFormValidators {
               ? errorText ?? AnterosFormLocalizations.current.emailErrorText
               : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid url.
+  /// [FormFieldValidator] que requer que o valor do campo seja um URL válido.
   static FormFieldValidator<String> url({
     String? errorText,
     List<String> protocols = const ['http', 'https', 'ftp'],
@@ -176,7 +176,7 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.urlErrorText
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to match the provided regex pattern.
+  /// [FormFieldValidator] que requer que o valor do campo corresponda ao padrão regex fornecido.
   static FormFieldValidator<String> match(
     String pattern, {
     String? errorText,
@@ -186,7 +186,7 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.matchErrorText
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid number.
+  /// [FormFieldValidator] que requer que o valor do campo seja um número válido.
   static FormFieldValidator<String> numeric({
     String? errorText,
   }) =>
@@ -195,7 +195,7 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.numericErrorText
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid integer.
+  /// [FormFieldValidator] que requer que o valor do campo seja um inteiro válido.
   static FormFieldValidator<String> integer({
     String? errorText,
     int? radix,
@@ -205,7 +205,7 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.integerErrorText
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid credit card number.
+  /// [FormFieldValidator] que exige que o valor do campo seja um número de cartão de crédito válido.
   static FormFieldValidator<String> creditCard({
     String? errorText,
   }) =>
@@ -214,8 +214,8 @@ class AnterosFormValidators {
           ? errorText ?? AnterosFormLocalizations.current.creditCardErrorText
           : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid IP address.
-  /// * [version] is a `String` or an `int`.
+  /// [FormFieldValidator] que requer que o valor do campo seja um endereço IP válido.
+  /// * [version] é uma `String` ou um `int`.
   static FormFieldValidator<String> ip({
     int? version,
     String? errorText,
@@ -225,7 +225,7 @@ class AnterosFormValidators {
               ? errorText ?? AnterosFormLocalizations.current.ipErrorText
               : null;
 
-  /// [FormFieldValidator] that requires the field's value to be a valid date string.
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de data válida.
   static FormFieldValidator<String> dateString({
     String? errorText,
   }) =>
@@ -233,4 +233,41 @@ class AnterosFormValidators {
               !isDate(valueCandidate!)
           ? errorText ?? AnterosFormLocalizations.current.dateStringErrorText
           : null;
+
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de CPF válido.
+  static FormFieldValidator<String> cpf({
+    String? errorText,
+  }) =>
+      (valueCandidate) => true == valueCandidate?.isNotEmpty &&
+              !AnterosValidationHelper.isCpf(valueCandidate!)
+          ? errorText ?? "Cpf inválido."
+          : null;
+
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de CNPJ válido.
+  static FormFieldValidator<String> cnpj({
+    String? errorText,
+  }) =>
+      (valueCandidate) => true == valueCandidate?.isNotEmpty &&
+              !AnterosValidationHelper.isCnpj(valueCandidate!)
+          ? errorText ?? "Cnpj inválido."
+          : null;
+
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de PLACA válida.
+  static FormFieldValidator<String> placaVeiculo({
+    String? errorText,
+  }) =>
+      (valueCandidate) => true == valueCandidate?.isNotEmpty &&
+              !AnterosValidationHelper.isPlacaVeiculo(valueCandidate!)
+          ? errorText ?? "Placa inválida."
+          : null;  
+
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de hora válida.
+  static FormFieldValidator<String> time({
+    String? errorText,
+  }) =>
+      (valueCandidate) => true == valueCandidate?.isNotEmpty &&
+              !AnterosValidationHelper.isTime(valueCandidate!)
+          ? errorText ?? "Hora inválida."
+          : null;                
+
 }

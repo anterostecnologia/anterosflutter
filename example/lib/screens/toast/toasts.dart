@@ -20,7 +20,7 @@ class _ToastsState extends State<Toasts> {
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
               ),
             )),
         title: const Text(

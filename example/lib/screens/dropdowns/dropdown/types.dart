@@ -46,7 +46,7 @@ class _DropDownTypesState extends State<DropDownTypes>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(

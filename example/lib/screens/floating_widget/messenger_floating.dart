@@ -42,7 +42,7 @@ class _MessengerFloatingWidgetState extends State<MessengerFloatingWidget> {
                     text: 'Avatar as a Floating Widget',
                     type: AnterosTypographyType.typo5,
                     dividerWidth: 25,
-                    dividerColor: Color(0xFF19CA4B),
+                    dividerColor: AnterosColors.PRIMARY,
                   ),
                 ),
                 AnterosButton(

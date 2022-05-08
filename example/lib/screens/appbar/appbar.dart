@@ -30,8 +30,8 @@ class _AppbarState extends State<Appbar> {
               color: AnterosColors.WHITE,
             ),
           ),
-          backgroundColor: AnterosColors.DARK,
-          title: const Text('UI Kit'),
+          backgroundColor: Colors.green,
+          title: const Text('UI Kit', style: TextStyle(color:Colors.white)),
           actions: <Widget>[
             AnterosIconButton(
               icon: Icon(

@@ -134,6 +134,7 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
     required String name,
     FormFieldValidator<DateTime>? validator,
     DateTime? initialValue,
+    String? labelText,
     InputDecoration decoration = const InputDecoration(),
     ValueChanged<DateTime?>? onChanged,
     ValueTransformer<DateTime?>? valueTransformer,
@@ -142,6 +143,9 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    BuildContext? context,
+    bool? hasError,
+    VoidCallback? onClearValue,
     this.inputType = InputType.both,
     this.scrollPadding = const EdgeInsets.all(20.0),
     this.cursorWidth = 2.0,
@@ -208,7 +212,78 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
           focusNode: focusNode,
           builder: (FormFieldState<DateTime?> field) {
             final state = field as _FormBuilderDateTimePickerState;
+            if (identical(decoration, const InputDecoration()) &&
+                context != null) {
+              var _suffixIcon = null;
+              if (hasError != null) {
+                _suffixIcon = hasError
+                    ? const Icon(Icons.error,
+                        color: Color.fromARGB(255, 224, 43, 79))
+                    : const Icon(Icons.check, color: Colors.green);
+              }
+              var inputDecoration = InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                    borderSide: BorderSide(style: BorderStyle.none, width: 0),
+                  ),
+                  isDense: true,
+                  labelText: labelText,
+                  fillColor: Theme.of(context).cardColor,
+                  filled: true,
+                  suffixIcon: Row(
+                    mainAxisAlignment: MainAxisAlignment.start, // added line
+                    mainAxisSize: MainAxisSize.min, // added line
+                    children: <Widget>[
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: Icon(Icons.clear),
+                              onPressed: onClearValue)),
+                      new SizedBox(
+                          height: 22.0,
+                          width: 22.0,
+                          child: IconButton(
+                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                              icon: _suffixIcon,
+                              onPressed: () => {}))
+                    ],
+                  ));
 
+              return TextField(
+                textDirection: textDirection,
+                textAlign: textAlign,
+                maxLength: maxLength,
+                autofocus: autofocus,
+                decoration: inputDecoration,
+                readOnly: true,
+                enabled: state.enabled,
+                autocorrect: autocorrect,
+                controller: state._textFieldController,
+                focusNode: state.effectiveFocusNode,
+                inputFormatters: inputFormatters,
+                keyboardType: keyboardType,
+                maxLines: maxLines,
+                obscureText: obscureText,
+                showCursor: showCursor,
+                minLines: minLines,
+                expands: expands,
+                style: style,
+                onEditingComplete: onEditingComplete,
+                buildCounter: buildCounter,
+                cursorColor: cursorColor,
+                cursorRadius: cursorRadius,
+                cursorWidth: cursorWidth,
+                enableInteractiveSelection: enableInteractiveSelection,
+                keyboardAppearance: keyboardAppearance,
+                scrollPadding: scrollPadding,
+                strutStyle: strutStyle,
+                textCapitalization: textCapitalization,
+                textInputAction: textInputAction,
+                maxLengthEnforcement: maxLengthEnforcement,
+              );
+            }
             return TextField(
               textDirection: textDirection,
               textAlign: textAlign,
@@ -260,7 +335,7 @@ class _FormBuilderDateTimePickerState
     super.initState();
     _textFieldController = widget.controller ?? TextEditingController();
     _dateFormat = widget.format ?? _getDefaultDateTimeFormat();
-    //setting this to value instead of initialValue here is OK since we handle initial value in the parent class
+    //definindo isso para value ao invés de initialValue aqui está ok, já que lidamos com o valor inicial na classe pai
     final initVal = value;
     _textFieldController.text =
         initVal == null ? '' : _dateFormat.format(initVal);
@@ -270,7 +345,7 @@ class _FormBuilderDateTimePickerState
   @override
   void dispose() {
     effectiveFocusNode.removeListener(_handleFocus);
-    // Dispose the _textFieldController when initState created it
+    // Descarte o _textFieldController quando initState criou isso
     if (null == widget.controller) {
       _textFieldController.dispose();
     }
@@ -317,7 +392,7 @@ class _FormBuilderDateTimePickerState
         }
         break;
       default:
-        throw 'Unexpected input type ${widget.inputType}';
+        throw 'Tipo de entrada inesperado ${widget.inputType}';
     }
     final finalValue = newValue ?? currentValue;
     didChange(finalValue);
@@ -369,7 +444,7 @@ class _FormBuilderDateTimePickerState
         (currentValue != null ? TimeOfDay.fromDateTime(currentValue) : null);
   }
 
-  /// Sets the hour and minute of a [DateTime] from a [TimeOfDay].
+  /// Define a hora e o minuto de um [DateTime] a partir de um [TimeOfDay].
   DateTime combine(DateTime date, TimeOfDay? time) => DateTime(
       date.year, date.month, date.day, time?.hour ?? 0, time?.minute ?? 0);
 

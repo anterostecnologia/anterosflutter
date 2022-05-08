@@ -33,7 +33,7 @@ class _PillsButtonsState extends State<PillsButtons>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -74,7 +74,7 @@ class _PillsButtonsState extends State<PillsButtons>
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),
@@ -99,7 +99,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -205,7 +205,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -310,7 +310,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -366,7 +366,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -431,7 +431,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -545,7 +545,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -659,7 +659,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -718,7 +718,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -786,7 +786,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -900,7 +900,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1014,7 +1014,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1073,7 +1073,7 @@ class _PillsButtonsState extends State<PillsButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(

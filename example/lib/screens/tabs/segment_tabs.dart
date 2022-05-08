@@ -34,7 +34,7 @@ class _SegmentTabsPageState extends State<SegmentTabsPage>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(

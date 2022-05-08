@@ -83,6 +83,8 @@ class AnterosTypography extends StatelessWidget {
     } else if (type == AnterosTypographyType.typo6) {
       fontSize = 13.0;
     }
+    
+    var defaultTextColor = Theme.of(context).textTheme.bodyText2!.color;
 
     return Container(
       padding: EdgeInsets.all(backgroundImage != null ? 10 : 0),
@@ -113,7 +115,7 @@ class AnterosTypography extends StatelessWidget {
                           color: textColor ??
                               (backgroundImage != null
                                   ? Colors.white
-                                  : Colors.black),
+                                  : defaultTextColor),
                           fontSize: fontSize,
                           letterSpacing: 0.3,
                           fontWeight: fontWeight,

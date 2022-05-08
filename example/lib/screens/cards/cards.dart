@@ -36,7 +36,7 @@ class _CardPageState extends State<CardPage>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -71,7 +71,7 @@ class _CardPageState extends State<CardPage>
                   color: Colors.black,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),

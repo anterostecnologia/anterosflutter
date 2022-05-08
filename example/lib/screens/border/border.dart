@@ -36,7 +36,7 @@ class _BorderPageState extends State<BorderPage>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -97,7 +97,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Solid Border',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -133,7 +133,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Solid Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -195,7 +195,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Row(
@@ -280,7 +280,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Dashed Borders',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -316,7 +316,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Dashed Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -390,7 +390,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Row(
@@ -471,7 +471,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Dotted Borders',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -507,7 +507,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Dotted Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Container(
@@ -579,7 +579,7 @@ class _BorderPageState extends State<BorderPage>
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           Row(

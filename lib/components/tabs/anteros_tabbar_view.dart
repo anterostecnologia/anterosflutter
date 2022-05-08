@@ -64,11 +64,11 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
         widget.controller ?? DefaultTabController.of(context);
     assert(() {
       if (newController == null) {
-        throw FlutterError('No TabController for ${widget.runtimeType}.\n'
-            'When creating a ${widget.runtimeType}, you must either provide an explicit '
-            'TabController using the "controller" property, or you must ensure that there '
-            'is a DefaultTabController above the ${widget.runtimeType}.\n'
-            'In this case, there was neither an explicit controller nor a default controller.');
+        throw FlutterError('Sem TabController para ${widget.runtimeType}.\n'
+            'Ao criar um ${widget.runtimeType}, você deve fornecer uma declaração explícita '
+            'TabController usando o "controller" propriedade, ou você deve garantir que haja '
+            'é um DefaultTabController acima de ${widget.runtimeType}.\n'
+            'Nesse caso, não havia um controlador explícito nem um controlador padrão.');
       }
       return true;
     }());
@@ -224,8 +224,8 @@ class _AnterosTabBarViewState extends State<AnterosTabBarView> {
     assert(() {
       if (_controller?.length != widget.children.length) {
         throw FlutterError(
-            'Controller\'s length property (${_controller?.length}) does not match the \n'
-            'number of tabs (${widget.children.length}) present in TabBar\'s tabs property.');
+            'Controller\'s propriedade de comprimento (${_controller?.length}) não corresponde ao \n'
+            'número de abas (${widget.children.length}) presente em TabBar\'s propriedade tabs.');
       }
       return true;
     }());

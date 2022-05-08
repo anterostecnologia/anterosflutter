@@ -1,9 +1,13 @@
 import 'package:anteros_flutter_app/screens/color_picker/pods/pods_observer.dart';
 import 'package:anteros_flutter_app/screens/color_picker/store/hive_store.dart';
+import 'package:anteros_flutter_app/theme/dark_theme.dart';
+import 'package:anteros_flutter_app/theme/light_theme.dart';
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'screens/home.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:anteros_flutter_app/screens/color_picker/conditionals/dart_io_conditional.dart'
     as folder;
 
@@ -32,9 +36,15 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'AnterosFlutter Demo App | Open source UI library for flutter app',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: light,
+      localizationsDelegates: const [
+        AnterosFormLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+      ], 
       home: HomePage(),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
+import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anteros_flutter_app/screens/animations/animation.dart';
@@ -90,6 +91,14 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Cards',
       'route': CardPage()
+    },
+    {
+      'icon': const IconData(
+        0xe905,
+        fontFamily: 'GFFontIcons',
+      ),
+      'title': 'Forms',
+      'route': FormPage()
     },
     {
       'icon': const IconData(
@@ -342,9 +351,9 @@ class _HomePageState extends State<HomePage> {
                   physics: const ScrollPhysics(),
                   itemCount: AnterosComponents.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20),
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10),
                   itemBuilder: (BuildContext context, int index) =>
                       GestureDetector(
                           onTap: () {},
@@ -352,18 +361,7 @@ class _HomePageState extends State<HomePage> {
                               AnterosComponents[index]['title'],
                               AnterosComponents[index]['icon'],
                               AnterosComponents[index]['route']))),
-            ),
-            // Container(
-            //   height: 160,
-            //   margin: const EdgeInsets.only(left: 15, bottom: 20, right: 15),
-            //   child: buildSquareTile(
-            //       'RadioButton',
-            //       const IconData(
-            //         0xe900,
-            //         fontFamily: 'GFIcons',
-            //       ),
-            //       RadioButtonPage()),
-            // )
+            )
           ],
         ),
       );
@@ -392,14 +390,13 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Icon(
                 icon,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
                 size: 30,
               ),
-//            Icon((icon),),
               Text(
                 title,
                 style:
-                    const TextStyle(color: AnterosColors.WHITE, fontSize: 20),
+                    const TextStyle(color: AnterosColors.WHITE, fontSize: 16),
               )
             ],
           ),

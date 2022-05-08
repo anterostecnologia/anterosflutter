@@ -33,7 +33,7 @@ class _SquareButtonsState extends State<SquareButtons>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -74,7 +74,7 @@ class _SquareButtonsState extends State<SquareButtons>
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),
@@ -99,7 +99,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -205,7 +205,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -311,7 +311,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -367,7 +367,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -441,7 +441,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -555,7 +555,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -669,7 +669,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -728,7 +728,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -799,7 +799,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -913,7 +913,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1021,7 +1021,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(
@@ -1076,7 +1076,7 @@ class _SquareButtonsState extends State<SquareButtons>
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: Color(0xFF19CA4B),
+                              dividerColor: AnterosColors.PRIMARY,
                             ),
                           ),
                           AnterosCard(

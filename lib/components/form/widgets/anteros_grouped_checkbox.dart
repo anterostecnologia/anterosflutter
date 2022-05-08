@@ -3,53 +3,54 @@ import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class GroupedCheckbox<T> extends StatelessWidget {
-  /// A list of string that describes each checkbox. Each item must be distinct.
+  /// Uma lista de string que descreve cada caixa de seleção.Cada item deve ser distinto.
   final List<AnterosFormFieldOption<T>> options;
 
-  /// A list of string which specifies automatically checked checkboxes.
-  /// Every element must match an item from itemList.
+  /// Uma lista de strings que especifica caixas de seleção marcadas automaticamente.
+  /// Cada elemento deve corresponder a um item de itemList.
   final List<T>? value;
 
-  /// Specifies which checkbox option values should be disabled.
-  /// If this is null, then no checkbox options will be disabled.
+  /// Especifica quais valores de opção de caixa de seleção devem ser desabilitados.
+  /// Se for nulo, nenhuma opção de caixa de seleção será desabilitada.
   final List<T>? disabled;
 
-  /// Specifies the orientation of the elements in itemList.
+  /// Especifica a orientação dos elementos em itemList.
   final OptionsOrientation orientation;
 
-  /// Called when the value of the checkbox group changes.
+  /// Chamado quando o valor do grupo de caixas de seleção é alterado.
   final ValueChanged<List<T>> onChanged;
 
-  /// The color to use when this checkbox is checked.
+  /// A cor a ser usada quando esta caixa de seleção está marcada.
   ///
-  /// Defaults to [ThemeData.toggleableActiveColor].
+  /// Padrões para [ThemeData.toggleableActiveColor].
   final Color? activeColor;
 
-  /// The color to use for the check icon when this checkbox is checked.
+  /// A cor a ser usada para o ícone de seleção quando esta caixa de seleção está marcada.
   ///
-  /// Defaults to Color(0xFFFFFFFF)
+  /// Padrões para Color(0xFFFFFFFF)
   final Color? checkColor;
 
-  /// If true the checkbox's value can be true, false, or null.
+  /// Se true, o valor da caixa de seleção pode ser true, false ou null.
   final bool tristate;
 
-  /// Configures the minimum size of the tap target.
+  /// Configura o tamanho mínimo do alvo de toque.
   final MaterialTapTargetSize? materialTapTargetSize;
 
-  /// The color for the checkbox's Material when it has the input focus.
+  /// A cor do Material da caixa de seleção quando tem o foco de entrada.
   final Color? focusColor;
 
-  /// The color for the checkbox's Material when a pointer is hovering over it.
+  /// A cor do Material da caixa de seleção quando um ponteiro está sobre ele.
   final Color? hoverColor;
 
   //.......................WRAP ORIENTATION.....................................
 
-  /// The direction to use as the main axis.
+  /// A direção a ser usada como eixo principal.
   ///
-  /// For example, if [wrapDirection] is [Axis.horizontal], the default, the
-  /// children are placed adjacent to one another in a horizontal run until the
-  /// available horizontal space is consumed, at which point a subsequent
-  /// children are placed in a new run vertically adjacent to the previous run.
+  /// Por exemplo, se [wrapDirection] é [Axis.horizontal], o padrão, o
+  /// os filhos são colocados adjacentes um ao outro em uma execução horizontal 
+  /// até que o espaço horizontal disponível é consumido, momento em que um subsequente
+  /// as crianças são colocadas em uma nova execução verticalmente adjacente 
+  /// à execução anterior.
   final Axis wrapDirection;
 
   /// How the children within a run should be placed in the main axis.
@@ -261,6 +262,7 @@ class GroupedCheckbox<T> extends StatelessWidget {
           ? value?.contains(optionValue)
           : true == value?.contains(optionValue),
       tristate: tristate,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       onChanged: isOptionDisabled
           ? null
           : (selected) {

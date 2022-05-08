@@ -18,7 +18,7 @@ class _TypographyPageState extends State<TypographyPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -35,7 +35,7 @@ class _TypographyPageState extends State<TypographyPage> {
                 text: 'Headings Regular',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -103,7 +103,7 @@ class _TypographyPageState extends State<TypographyPage> {
                 text: 'Opacity',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -173,7 +173,7 @@ class _TypographyPageState extends State<TypographyPage> {
                 text: 'Custom Heading',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

@@ -29,7 +29,7 @@ class _SearchbarPageState extends State<SearchbarPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(
@@ -47,7 +47,7 @@ class _SearchbarPageState extends State<SearchbarPage> {
                 text: 'Basic SearchBar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosSearchBar(
@@ -76,7 +76,7 @@ class _SearchbarPageState extends State<SearchbarPage> {
                 text: 'Customised SearchBar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosSearchBar(

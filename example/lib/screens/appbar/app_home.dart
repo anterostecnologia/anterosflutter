@@ -12,7 +12,8 @@ class AppHome extends StatefulWidget {
 
 class _AppHomeState extends State<AppHome> {
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: AnterosColors.DARK,
           leading: InkWell(
@@ -21,7 +22,7 @@ class _AppHomeState extends State<AppHome> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -38,7 +39,7 @@ class _AppHomeState extends State<AppHome> {
                 text: 'Basic Appbar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             Container(
@@ -51,7 +52,7 @@ class _AppHomeState extends State<AppHome> {
                 text: 'Appbar with SearchBox',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             Container(
@@ -64,7 +65,7 @@ class _AppHomeState extends State<AppHome> {
                 text: 'Segmented Tabs Appbar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             Container(
@@ -74,4 +75,5 @@ class _AppHomeState extends State<AppHome> {
           ],
         ),
       );
+  }
 }

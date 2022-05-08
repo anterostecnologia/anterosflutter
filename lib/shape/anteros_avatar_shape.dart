@@ -1,4 +1,4 @@
-/// [AnterosAvatarShape] é usado para moldar o widget gfavatar.
+/// [AnterosAvatarShape] é usado para moldar o widget AnterosAvatar.
 enum AnterosAvatarShape {
   /// Predefinição forma é [AnterosAvatarShape.circle], usado para avatar arredondado
   circle,

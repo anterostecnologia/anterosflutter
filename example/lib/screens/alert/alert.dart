@@ -20,7 +20,7 @@ class _AlertPageState extends State<AlertPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -41,7 +41,7 @@ class _AlertPageState extends State<AlertPage> {
                   text: 'Basic Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               Container(
@@ -112,7 +112,7 @@ class _AlertPageState extends State<AlertPage> {
                   text: 'Rounded Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               Container(
@@ -178,7 +178,7 @@ class _AlertPageState extends State<AlertPage> {
                   text: 'Full Width Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               Container(
@@ -245,7 +245,7 @@ class _AlertPageState extends State<AlertPage> {
                   text: 'Custom Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               Container(

@@ -20,7 +20,7 @@ class _RadioButtonPageState extends State<RadioButtonPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -40,7 +40,7 @@ class _RadioButtonPageState extends State<RadioButtonPage> {
                 text: 'Basic Radio Button',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -113,7 +113,7 @@ class _RadioButtonPageState extends State<RadioButtonPage> {
                 text: 'Sqaure Radio Button',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -191,7 +191,7 @@ class _RadioButtonPageState extends State<RadioButtonPage> {
                 text: 'Custom type 1 Radio Button',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -266,7 +266,7 @@ class _RadioButtonPageState extends State<RadioButtonPage> {
                 text: 'Custom Type 2 Radio Button',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

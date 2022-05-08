@@ -19,7 +19,7 @@ class _TogglesState extends State<Toggles> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(
@@ -37,7 +37,7 @@ class _TogglesState extends State<Toggles> {
                   text: 'Basic',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               AnterosCard(
@@ -87,7 +87,7 @@ class _TogglesState extends State<Toggles> {
                   text: 'IOS',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               AnterosCard(
@@ -141,7 +141,7 @@ class _TogglesState extends State<Toggles> {
                   text: 'Square',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               AnterosCard(
@@ -195,7 +195,7 @@ class _TogglesState extends State<Toggles> {
                   text: 'Custom',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: Color(0xFF19CA4B),
+                  dividerColor: AnterosColors.PRIMARY,
                 ),
               ),
               AnterosCard(

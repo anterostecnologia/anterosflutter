@@ -17,7 +17,7 @@ class _BadgesPageState extends State<BadgesPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           backgroundColor: AnterosColors.DARK,
@@ -35,7 +35,7 @@ class _BadgesPageState extends State<BadgesPage> {
                 text: 'With Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -200,7 +200,7 @@ class _BadgesPageState extends State<BadgesPage> {
                 text: 'Icon with Badges',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

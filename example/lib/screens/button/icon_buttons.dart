@@ -18,7 +18,7 @@ class _IconButtonsState extends State<IconButtons> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -35,7 +35,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Solid Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -233,7 +233,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Outline Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -434,7 +434,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Outline 2x Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -636,7 +636,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Square Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -840,7 +840,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Pills Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -1047,7 +1047,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Shadow Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -1256,7 +1256,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Button Sizes',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -1326,7 +1326,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Block Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -1394,7 +1394,7 @@ class _IconButtonsState extends State<IconButtons> {
                 text: 'Icons Only',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(

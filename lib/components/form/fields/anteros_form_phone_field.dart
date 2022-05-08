@@ -389,11 +389,11 @@ class _FormBuilderPhoneFieldState
             searchCursorColor:
                 widget.cursorColor ?? Theme.of(context).primaryColor,
             searchInputDecoration:
-                InputDecoration(hintText: widget.searchText ?? 'Search...'),
+                InputDecoration(hintText: widget.searchText ?? 'Localizar...'),
             isSearchable: widget.isSearchable ?? true,
             title: widget.dialogTitle ??
                 Text(
-                  'Select Your Phone Code',
+                  'Selecione seu código de telefone',
                   style: widget.dialogTextStyle ?? widget.style,
                 ),
             onValuePicked: (Country country) {

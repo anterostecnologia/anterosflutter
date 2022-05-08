@@ -54,7 +54,7 @@ class _AnimationPageState extends State<AnimationPage>
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
               ),
             )),
         title: const Text(
@@ -72,7 +72,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Rotation',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             GestureDetector(
@@ -99,7 +99,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Scaling',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             GestureDetector(
@@ -125,7 +125,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Allignment',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAnimation(
@@ -146,7 +146,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Slide Transition',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             Container(
@@ -170,7 +170,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Size',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAnimation(
@@ -197,7 +197,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'TextStyle',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAnimation(
@@ -221,7 +221,7 @@ class _AnimationPageState extends State<AnimationPage>
                 text: 'Container',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosAnimation(

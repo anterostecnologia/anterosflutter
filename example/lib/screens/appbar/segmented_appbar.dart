@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
@@ -24,12 +25,21 @@ class _SegmentedAppbarState extends State<SegmentedAppbar>
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AnterosAppBar(
-          backgroundColor: AnterosColors.DARK,
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              CupertinoIcons.back,
+              color: AnterosColors.WHITE,
+            ),
+          ),
+          backgroundColor: Colors.green,
           title: AnterosSegmentTabs(
             tabController: tabController,
             tabBarColor: AnterosColors.LIGHT,
             labelColor: AnterosColors.WHITE,
-            unselectedLabelColor: AnterosColors.DARK,
+            unselectedLabelColor: Colors.green,
             indicator: const BoxDecoration(
               color: AnterosColors.DARK,
             ),

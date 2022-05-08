@@ -41,7 +41,7 @@ class _RatingPageState extends State<RatingPage> {
               text: 'Basic Rating',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: Color(0xFF19CA4B),
+              dividerColor: AnterosColors.PRIMARY,
             ),
           ),
           AnterosRating(
@@ -60,7 +60,7 @@ class _RatingPageState extends State<RatingPage> {
               text: 'Rating with Icons',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: Color(0xFF19CA4B),
+              dividerColor: AnterosColors.PRIMARY,
             ),
           ),
           AnterosRating(
@@ -84,7 +84,7 @@ class _RatingPageState extends State<RatingPage> {
               text: 'Rating using Text Field',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: Color(0xFF19CA4B),
+              dividerColor: AnterosColors.PRIMARY,
             ),
           ),
           AnterosRating(
@@ -122,7 +122,7 @@ class _RatingPageState extends State<RatingPage> {
               text: 'Custom Rating',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: Color(0xFF19CA4B),
+              dividerColor: AnterosColors.PRIMARY,
             ),
           ),
           AnterosRating(

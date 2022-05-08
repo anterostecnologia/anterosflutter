@@ -32,7 +32,7 @@ class _ImagesState extends State<Images> with SingleTickerProviderStateMixin {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
@@ -67,7 +67,7 @@ class _ImagesState extends State<Images> with SingleTickerProviderStateMixin {
                   color: Colors.black,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),

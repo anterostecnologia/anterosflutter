@@ -24,7 +24,7 @@ class _TabTypesState extends State<TabTypes> {
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.SUCCESS,
+                color: AnterosColors.PRIMARY,
               ),
             ),
           ),
@@ -66,7 +66,7 @@ class _TabTypesState extends State<TabTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                       )),
                 )),
             GestureDetector(
@@ -95,7 +95,7 @@ class _TabTypesState extends State<TabTypes> {
                   ),
                   icon: Icon(
                     CupertinoIcons.forward,
-                    color: AnterosColors.SUCCESS,
+                    color: AnterosColors.PRIMARY,
                   ),
                 ),
               ),
@@ -127,7 +127,7 @@ class _TabTypesState extends State<TabTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                       )),
                 )),
             GestureDetector(
@@ -157,7 +157,7 @@ class _TabTypesState extends State<TabTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                       )),
                 )),
             GestureDetector(
@@ -188,7 +188,7 @@ class _TabTypesState extends State<TabTypes> {
                   ),
                   icon: Icon(
                     CupertinoIcons.forward,
-                    color: AnterosColors.SUCCESS,
+                    color: AnterosColors.PRIMARY,
                   ),
                 ),
               ),

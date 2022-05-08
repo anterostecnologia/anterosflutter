@@ -19,7 +19,7 @@ class _TilesPageState extends State<TilesPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.SUCCESS,
+                  color: AnterosColors.PRIMARY,
                 ),
               )),
           title: const Text(
@@ -36,7 +36,7 @@ class _TilesPageState extends State<TilesPage> {
                 text: 'With Label',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             AnterosCard(
@@ -59,7 +59,7 @@ class _TilesPageState extends State<TilesPage> {
                 text: 'With Avatar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: Color(0xFF19CA4B),
+                dividerColor: AnterosColors.PRIMARY,
               ),
             ),
             const AnterosCard(

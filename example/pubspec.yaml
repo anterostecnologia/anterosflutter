@@ -18,6 +18,9 @@ dependencies:
   hive: ^2.1.0
   path_provider: ^2.0.9
   url_launcher: ^6.0.20
+  widget_with_codeview: ^2.0.1+2
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +83,16 @@ flutter:
     - lib/assets/icons/gflogo.png
 
   fonts:
+    - family: Roboto
+      fonts:
+        - asset: lib/assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: lib/assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: lib/assets/fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: lib/assets/fonts/Roboto-Black.ttf
+          weight: 900
     - family: GFFontIcons
       fonts:
         - asset: lib/assets/fonts/gfFontIcon.ttf

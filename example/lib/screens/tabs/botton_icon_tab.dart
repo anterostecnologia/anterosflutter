@@ -33,7 +33,7 @@ class _BottomIconTabState extends State<BottomIconTab>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(

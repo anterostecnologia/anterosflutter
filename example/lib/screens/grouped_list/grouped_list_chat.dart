@@ -70,7 +70,7 @@ class _GroupedListChatState extends State<GroupedListChat>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.SUCCESS,
+              color: AnterosColors.PRIMARY,
             ),
           ),
           title: const Text(
