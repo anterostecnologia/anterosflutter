@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:anterosflutter/components/dropdown/anteros_dropdown.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class DropDownTypes extends StatefulWidget {
@@ -82,7 +81,7 @@ class _DropDownTypesState extends State<DropDownTypes>
                     color: Colors.black,
                     border: Border(
                       bottom: BorderSide(
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                         width: 3,
                       ),
                     ),
@@ -109,8 +108,6 @@ class _DropDownTypesState extends State<DropDownTypes>
                                 child: AnterosDropdown(
                                   padding: const EdgeInsets.all(15),
                                   borderRadius: BorderRadius.circular(5),
-//                                  border: const BorderSide(
-//                                      color: Colors.black12, width: 1),
                                   dropdownColor: Colors.white,
                                   value: dropdownValue,
                                   onChanged: (dynamic newValue) {

@@ -43,7 +43,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List AnterosComponents = [
+  List anterosComponents = [
     {
       'icon': const IconData(
         0xe904,
@@ -249,7 +249,7 @@ class _HomePageState extends State<HomePage> {
         0xe905,
         fontFamily: 'GFIconsnew',
       ),
-      'title': 'CheckboxListTile',
+      'title': 'Checkbox List Tile',
       'route': CheckBoxListTilePage()
     },
     {
@@ -327,44 +327,51 @@ class _HomePageState extends State<HomePage> {
   ];
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        drawer: DrawerPage(),
-        appBar: AppBar(
-          backgroundColor: AnterosColors.DARK,
-          title: Image.asset(
-            'lib/assets/icons/gflogo.png',
-            width: 150,
-          ),
-          centerTitle: true,
+  Widget build(BuildContext context) {
+    anterosComponents.sort(
+      (a, b) {
+        return a['title'].compareTo(b['title']);
+      },
+    );
+    return Scaffold(
+      drawer: DrawerPage(),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        title: Image.asset(
+          'lib/assets/icons/gflogo.png',
+          width: 150,
         ),
-        body: ListView(
-          physics: const ScrollPhysics(),
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(
-                  left: 15, bottom: 20, top: 20, right: 15),
-              child: GridView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemCount: AnterosComponents.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  itemBuilder: (BuildContext context, int index) =>
-                      GestureDetector(
-                          onTap: () {},
-                          child: buildSquareTile(
-                              AnterosComponents[index]['title'],
-                              AnterosComponents[index]['icon'],
-                              AnterosComponents[index]['route']))),
-            )
-          ],
-        ),
-      );
+        centerTitle: true,
+      ),
+      body: ListView(
+        physics: const ScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        children: <Widget>[
+          Container(
+            margin:
+                const EdgeInsets.only(left: 15, bottom: 20, top: 20, right: 15),
+            child: GridView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const ScrollPhysics(),
+                itemCount: anterosComponents.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10),
+                itemBuilder: (BuildContext context, int index) =>
+                    GestureDetector(
+                        onTap: () {},
+                        child: buildSquareTile(
+                            anterosComponents[index]['title'],
+                            anterosComponents[index]['icon'],
+                            anterosComponents[index]['route']))),
+          )
+        ],
+      ),
+    );
+  }
 
   Widget buildSquareTile(String title, IconData? icon, Widget? route) =>
       InkWell(
@@ -387,6 +394,7 @@ class _HomePageState extends State<HomePage> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Icon(
                 icon,
@@ -395,8 +403,9 @@ class _HomePageState extends State<HomePage> {
               ),
               Text(
                 title,
+                textAlign: TextAlign.center,
                 style:
-                    const TextStyle(color: AnterosColors.WHITE, fontSize: 16),
+                    const TextStyle(color: AnterosColors.WHITE, fontSize: 14),
               )
             ],
           ),

@@ -15,7 +15,7 @@ class TabTypes extends StatefulWidget {
 class _TabTypesState extends State<TabTypes> {
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AnterosAppBar(
+        appBar: AppBar(
           backgroundColor: AnterosColors.DARK,
           leading: InkWell(
             onTap: () {

@@ -54,7 +54,7 @@ class _ToastsState extends State<Toasts> {
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
           GestureDetector(
@@ -82,7 +82,7 @@ class _ToastsState extends State<Toasts> {
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
           GestureDetector(
@@ -109,7 +109,7 @@ class _ToastsState extends State<Toasts> {
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
           GestureDetector(
@@ -119,7 +119,7 @@ class _ToastsState extends State<Toasts> {
                   textStyle: TextStyle(fontSize: 16, color: Colors.black54),
                   backgroundColor: AnterosColors.LIGHT,
                   toastBorderRadius: 5.0,
-                  border: Border.all(color: AnterosColors.SUCCESS),
+                  border: Border.all(color: AnterosColors.PRIMARY),
                   toastDuration: 5,
                   toastPosition: AnterosToastPosition.BOTTOM),
               child: Container(
@@ -140,7 +140,7 @@ class _ToastsState extends State<Toasts> {
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
           GestureDetector(
@@ -152,7 +152,7 @@ class _ToastsState extends State<Toasts> {
                   backgroundColor: AnterosColors.LIGHT,
                   trailing: Icon(
                     Icons.notifications,
-                    color: AnterosColors.SUCCESS,
+                    color: AnterosColors.PRIMARY,
                   )),
               child: Container(
                 margin: const EdgeInsets.only(left: 15, right: 15, top: 20),
@@ -172,7 +172,7 @@ class _ToastsState extends State<Toasts> {
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
         ],

@@ -107,7 +107,7 @@ class _AnterosCheckboxState extends State<AnterosCheckbox> {
                         : widget.inactiveBgColor
                     : Colors.grey,
                 borderRadius: widget.type == AnterosCheckboxType.basic
-                    ? BorderRadius.circular(3)
+                    ? BorderRadius.circular(8)
                     : widget.type == AnterosCheckboxType.circle
                         ? BorderRadius.circular(50)
                         : BorderRadius.zero,

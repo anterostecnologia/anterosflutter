@@ -14,7 +14,7 @@ class FormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AnterosAppBar(
+      appBar: AppBar(
         backgroundColor: AnterosColors.DARK,
         leading: InkWell(
           onTap: () {
@@ -52,8 +52,8 @@ class FormPage extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) =>  SignupForm(),
-                    ),
+              builder: (BuildContext context) => SignupForm(),
+            ),
           );
         },
         child: Container(
@@ -84,8 +84,8 @@ class FormPage extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (BuildContext context) => CustomFields(),
-                  ),
+            builder: (BuildContext context) => CustomFields(),
+          ),
         );
       },
       child: Container(

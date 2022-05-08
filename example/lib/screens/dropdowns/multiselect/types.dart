@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:anterosflutter/components/dropdown/anteros_multiselect.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 
 class MultiselectTypes extends StatefulWidget {
@@ -82,7 +81,7 @@ class _MultiselectTypesState extends State<MultiselectTypes>
                     color: Colors.black,
                     border: Border(
                       bottom: BorderSide(
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                         width: 3,
                       ),
                     ),

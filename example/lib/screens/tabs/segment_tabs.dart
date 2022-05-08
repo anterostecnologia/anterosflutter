@@ -25,7 +25,7 @@ class _SegmentTabsPageState extends State<SegmentTabsPage>
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AnterosAppBar(
+        appBar: AppBar(
           backgroundColor: AnterosColors.DARK,
           leading: InkWell(
               onTap: () {
@@ -75,7 +75,7 @@ class _SegmentTabsPageState extends State<SegmentTabsPage>
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                       width: 3,
                     ),
                   ),

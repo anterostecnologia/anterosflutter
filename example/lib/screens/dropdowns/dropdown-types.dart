@@ -74,7 +74,7 @@ class _DropDownState extends State<DropDown> {
                         ),
                         icon: Icon(
                           CupertinoIcons.forward,
-                          color: AnterosColors.SUCCESS,
+                          color: AnterosColors.PRIMARY,
                         )),
                   )),
               GestureDetector(
@@ -106,7 +106,7 @@ class _DropDownState extends State<DropDown> {
                         ),
                         icon: Icon(
                           CupertinoIcons.forward,
-                          color: AnterosColors.SUCCESS,
+                          color: AnterosColors.PRIMARY,
                         )),
                   )),
             ],

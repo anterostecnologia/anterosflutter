@@ -25,7 +25,7 @@ class _IconTabsState extends State<IconTabs>
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AnterosAppBar(
+        appBar: AppBar(
           backgroundColor: AnterosColors.DARK,
           leading: InkWell(
               onTap: () {

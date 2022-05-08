@@ -26,7 +26,7 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
                 ),
               )),
           title: const Text(
-            'CheckboxListTile',
+            'Checkbox List Tile',
             style: TextStyle(fontSize: 17),
           ),
           centerTitle: true,
@@ -35,7 +35,7 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
           children: <Widget>[
             AnterosCheckboxListTile(
               titleText: 'hi',
-              subTitleText: 'Happy Ugadi',
+              subTitleText: 'Murilo Bandeira',
               position: AnterosPosition.start,
               icon: AnterosAvatar(
                 backgroundImage: AssetImage('lib/assets/images/img.png'),
@@ -56,30 +56,30 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
               },
               value: check,
             ),
-            // AnterosCheckboxListTile(
-            //   titleText: 'hi',
-            //   subtitleText: 'Happy Ugadi',
-            //   avatar: AnterosAvatar(
-            //     backgroundImage: AssetImage('lib/assets/images/img1.png'),
-            //   ),
-            //   size: 25,
-            //   activebgColor: Colors.green,
-            //   activeIcon: Icon(
-            //     Icons.check,
-            //     size: 15,
-            //     color: Colors.white,
-            //   ),
-            //   type: AnterosCheckboxType.circle,
-            //   onChanged: (val) {
-            //     setState(() {
-            //       check1 = val;
-            //     });
-            //   },
-            //   value: check1,
-            // ),
             AnterosCheckboxListTile(
               titleText: 'hi',
-              subTitleText: 'Happy Ugadi',
+              subTitleText: 'Murilovisk',
+              avatar: AnterosAvatar(
+                backgroundImage: AssetImage('lib/assets/images/img1.png'),
+              ),
+              size: 25,
+              activeBgColor: Colors.green,
+              activeIcon: Icon(
+                Icons.check,
+                size: 15,
+                color: Colors.white,
+              ),
+              type: AnterosCheckboxType.circle,
+              onChanged: (val) {
+                setState(() {
+                  check1 = val;
+                });
+              },
+              value: check1,
+            ),
+            AnterosCheckboxListTile(
+              titleText: 'hi',
+              subTitleText: 'Bandeira II',
               avatar: AnterosAvatar(
                 backgroundImage: AssetImage('lib/assets/images/img1.png'),
               ),
