@@ -27,7 +27,7 @@ class _CustomFieldsState extends State<CustomFields> {
             ),
           ),
           title: const Text(
-            'Custom fields',
+            'Campos customizados',
             style: TextStyle(fontSize: 17),
           ),
           centerTitle: true,
@@ -52,7 +52,7 @@ class _CustomFieldsState extends State<CustomFields> {
                     name: 'terms',
                     builder: (FormFieldState field) {
                       return CheckboxListTile(
-                        title: const Text('I Accept the terms and conditions'),
+                        title: const Text('Eu aceito os termos e condições'),
                         value: false,
                         controlAffinity: ListTileControlAffinity.leading,
                         onChanged: (value) => field.didChange(value),
@@ -64,7 +64,7 @@ class _CustomFieldsState extends State<CustomFields> {
                     name: 'name',
                     builder: (FormFieldState field) {
                       return CupertinoFormRow(
-                        prefix: const Text('Name: '),
+                        prefix: const Text('Nome: '),
                         error: field.errorText != null
                             ? Text(field.errorText!)
                             : null,
@@ -76,7 +76,7 @@ class _CustomFieldsState extends State<CustomFields> {
                     autovalidateMode: AutovalidateMode.always,
                     validator: (valueCandidate) {
                       if (valueCandidate?.isEmpty ?? true) {
-                        return 'This field is required.';
+                        return 'Este campo é obrigatório.';
                       }
                       return null;
                     },
@@ -87,12 +87,12 @@ class _CustomFieldsState extends State<CustomFields> {
                     builder: (FormFieldState field) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          labelText: 'Terms',
+                          labelText: 'Termos',
                           errorText: field.errorText,
                         ),
                         child: CheckboxListTile(
                           title:
-                              const Text('I Accept the terms and conditions'),
+                              const Text('Eu aceito os termos e condições'),
                           controlAffinity: ListTileControlAffinity.leading,
                           value: false,
                           onChanged: (value) => field.didChange(value),
@@ -101,7 +101,7 @@ class _CustomFieldsState extends State<CustomFields> {
                     },
                     validator: (valueCandidate) {
                       if (valueCandidate != true) {
-                        return 'Accept terms and conditions to continue.';
+                        return 'Aceitar termos e condições para continuar.';
                       }
                       return null;
                     },
@@ -121,7 +121,7 @@ class _CustomFieldsState extends State<CustomFields> {
                             }
                           },
                           shape: AnterosButtonShape.standard,
-                          child: const Text('Submit',
+                          child: const Text('Enviar',
                               style: TextStyle(color: AnterosColors.WHITE)),
                           color: AnterosColors.PRIMARY,
                         ),
@@ -133,7 +133,7 @@ class _CustomFieldsState extends State<CustomFields> {
                             _formKey.currentState!.reset();
                           },
                           shape: AnterosButtonShape.standard,
-                          child: const Text('Reset',
+                          child: const Text('Limpar',
                               style: TextStyle(color: AnterosColors.WHITE)),
                           color: AnterosColors.DANGER,
                         ),

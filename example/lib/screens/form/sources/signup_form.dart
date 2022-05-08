@@ -37,25 +37,24 @@ class _SignupFormState extends State<SignupForm> {
 
   SingleChildScrollView getBody() {
     return SingleChildScrollView(
-        child: Padding(
-            padding:
-                EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 15),
-            child: Column(
-              children: [
-                getFullNameField(),
-                getSpace(),
-                getEmailField(),
-                getSpace(),
-                getPasswordField(),
-                getSpace(),
-                getConfirmPasswordField(),
-                getSpace(),
-                getTermsField(),
-                getSpace(),
-                getSignupButton(),
-              ],
-            )),
-      );
+      child: Padding(
+          padding: EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 15),
+          child: Column(
+            children: [
+              getFullNameField(),
+              getSpace(),
+              getEmailField(),
+              getSpace(),
+              getPasswordField(),
+              getSpace(),
+              getConfirmPasswordField(),
+              getSpace(),
+              getTermsField(),
+              getSpace(),
+              getSignupButton(),
+            ],
+          )),
+    );
   }
 
   SizedBox getSpace() => const SizedBox(height: 10);
@@ -65,13 +64,9 @@ class _SignupFormState extends State<SignupForm> {
       onPressed: () {
         if (_formKey.currentState?.saveAndValidate() ?? false) {
           if (true) {
-            // Either invalidate using Form Key
             _formKey.currentState?.invalidateField(
-                name: 'email', errorText: 'Email already taken.');
-            // OR invalidate using Field Key
-            // _emailFieldKey.currentState?.invalidate('Email already taken.');
+                name: 'email', errorText: 'E-mail já registrado.');
           }
-
           debugPrint('Valid');
         } else {
           debugPrint('Invalid');
@@ -79,7 +74,7 @@ class _SignupFormState extends State<SignupForm> {
         debugPrint(_formKey.currentState?.value.toString());
       },
       shape: AnterosButtonShape.standard,
-      child: const Text('Signup', style: TextStyle(color: AnterosColors.WHITE)),
+      child: const Text('Registrar', style: TextStyle(color: AnterosColors.WHITE)),
       color: AnterosColors.PRIMARY,
     );
   }
@@ -91,15 +86,29 @@ class _SignupFormState extends State<SignupForm> {
         AnterosFormValidators.required(),
         AnterosFormValidators.equal(true),
       ]),
-      // initialValue: true,
-      decoration: const InputDecoration(labelText: 'Accept Terms?'),
+      decoration: const InputDecoration(labelText: 'Aceitar os termos?'),
       builder: (FormFieldState<bool?> field) {
         return InputDecorator(
           decoration: InputDecoration(
+            border: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0x4437474F),
+              ),
+            ),
+            enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Color(0x4437474F),
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
             errorText: field.errorText,
           ),
           child: SwitchListTile(
-            title: const Text('I have read and accept the terms of service.'),
+            title: const Text('Eu li e aceito os termos de serviço.'),
             onChanged: (bool value) {
               field.didChange(value);
             },
@@ -112,17 +121,10 @@ class _SignupFormState extends State<SignupForm> {
 
   AnterosFormTextField getConfirmPasswordField() {
     return AnterosFormTextField(
+      context: context,
       name: 'confirm_password',
+      labelText: 'Confirm Password',
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      decoration: InputDecoration(
-        labelText: 'Confirm Password',
-        border: OutlineInputBorder(),
-        suffixIcon:
-            ((_formKey.currentState?.fields['confirm_password']?.hasError ??
-                    false))
-                ? const Icon(Icons.error, color: Colors.red)
-                : const Icon(Icons.check, color: Colors.green),
-      ),
       obscureText: true,
       validator: AnterosFormValidators.compose([]),
     );
@@ -130,9 +132,9 @@ class _SignupFormState extends State<SignupForm> {
 
   AnterosFormTextField getPasswordField() {
     return AnterosFormTextField(
+      context: context,
       name: 'password',
-      decoration: const InputDecoration(
-          labelText: 'Password', border: OutlineInputBorder()),
+      labelText: "Password",
       obscureText: true,
       validator: AnterosFormValidators.compose([
         AnterosFormValidators.required(),
@@ -143,10 +145,10 @@ class _SignupFormState extends State<SignupForm> {
 
   AnterosFormTextField getEmailField() {
     return AnterosFormTextField(
+      context: context,
       key: _emailFieldKey,
       name: 'email',
-      decoration: const InputDecoration(
-          labelText: 'Email', border: OutlineInputBorder()),
+      labelText: 'Email',
       validator: AnterosFormValidators.compose([
         AnterosFormValidators.required(),
         AnterosFormValidators.email(),
@@ -156,13 +158,12 @@ class _SignupFormState extends State<SignupForm> {
 
   AnterosFormTextField getFullNameField() {
     return AnterosFormTextField(
+      context: context,
       name: 'full_name',
-      decoration: const InputDecoration(
-          labelText: 'Full Name', border: OutlineInputBorder()),
+      labelText: 'Full Name',
       validator: AnterosFormValidators.compose([
         AnterosFormValidators.required(),
       ]),
     );
   }
-
 }

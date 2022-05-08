@@ -384,11 +384,12 @@ class AnterosFormTextField extends AnterosFormField<String> {
     ValueTransformer<String?>? valueTransformer,
     bool enabled = true,
     FormFieldSetter<String>? onSaved,
-    AutovalidateMode autovalidateMode = AutovalidateMode.always,
+    AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction,
     VoidCallback? onReset,
     FocusNode? focusNode,
-    BuildContext? context,
+    required BuildContext context,
     String? labelText,
+    String? hintText,
     bool? hasError,
     this.inputFormatType = AnterosInputFormatType.standard,
     this.maxLines = 1,
@@ -470,17 +471,71 @@ class AnterosFormTextField extends AnterosFormField<String> {
               formatters.addAll(inputFormatters);
             }
 
-            if (identical(decoration, const InputDecoration()) &&
-                context != null) {
-              var _suffixIcon = null;
-              if (hasError != null) {
-                _suffixIcon = hasError
-                    ? const Icon(Icons.error,
-                        color: Color.fromARGB(255, 224, 43, 79))
-                    : const Icon(Icons.check, color: Colors.green);
+            var _suffixIcon = null;
+            if (hasError != null) {
+              var _icon = hasError
+                  ? const Icon(Icons.error,
+                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
+                  : const Icon(Icons.check, color: Colors.green, size: 18);
+              var children = <Widget>[];
+              if (onClearValue != null) {
+                children.add(new SizedBox(
+                    height: 22.0,
+                    width: 22.0,
+                    child: IconButton(
+                        padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                        icon: Icon(
+                          Icons.clear,
+                          size: 18,
+                        ),
+                        onPressed: onClearValue)));
               }
-              var inputDecoration = InputDecoration(
-                border: InputBorder.none,
+              children.add(new SizedBox(
+                  height: 22.0,
+                  width: 22.0,
+                  child: IconButton(
+                      padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                      icon: _icon,
+                      onPressed: () => {})));
+              children.add(new SizedBox(
+                height: 22.0,
+                width: 4.0,
+              ));
+              
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: children,
+              );
+            } else {
+              _suffixIcon = Row(
+                mainAxisAlignment: MainAxisAlignment.start, // added line
+                mainAxisSize: MainAxisSize.min, // added line
+                children: <Widget>[
+                  new SizedBox(
+                      height: 22.0,
+                      width: 22.0,
+                      child: IconButton(
+                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                          icon: Icon(
+                            Icons.clear,
+                            size: 18,
+                          ),
+                          onPressed: onClearValue)),
+                  new SizedBox(
+                    height: 22.0,
+                    width: 4.0,
+                  )
+                ],
+              );
+            }
+
+            var inputDecoration = InputDecoration(
+                border: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0x4437474F),
+                  ),
+                ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x4437474F),
@@ -491,34 +546,15 @@ class AnterosFormTextField extends AnterosFormField<String> {
                     color: Theme.of(context).primaryColor,
                   ),
                 ),
-                isDense: true,
-                labelText: labelText,
-                errorMaxLines: 2,
-                errorText: state.errorText,
                 fillColor: Theme.of(context).cardColor,
                 filled: true,
-                suffixIcon: Row(
-                    mainAxisAlignment: MainAxisAlignment.start, // added line
-                    mainAxisSize: MainAxisSize.min, // added line
-                    children: <Widget>[
-                      new SizedBox(
-                          height: 22.0,
-                          width: 22.0,
-                          child: IconButton(
-                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                              icon: Icon(Icons.clear),
-                              onPressed: onClearValue)),
-                      new SizedBox(
-                          height: 22.0,
-                          width: 22.0,
-                          child: IconButton(
-                              padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                              icon: _suffixIcon,
-                              onPressed: () => {}))
-                    ],
-                  )
-              );
+                labelText: labelText,
+                hintText: hintText,
+                errorMaxLines: 2,
+                errorText: state.errorText,
+                suffixIcon: _suffixIcon);
 
+            if (identical(decoration, const InputDecoration())) {
               return TextField(
                 controller: state._effectiveController,
                 focusNode: state.effectiveFocusNode,

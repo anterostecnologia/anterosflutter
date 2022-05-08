@@ -31,6 +31,8 @@ class CompleteFormState extends State<CompleteForm> {
   bool _languagesHasError = false;
   bool _aceiteHasError = false;
   bool _aceite1HasError = false;
+  bool _itensSliderHasError = false;
+  bool _intervaloPrecoHasError = false;
 
   var genderOptions = ['Masculino', 'Feminino', 'Outro'];
 
@@ -338,6 +340,7 @@ class CompleteFormState extends State<CompleteForm> {
   }
 
   AnterosFormCheckbox getCheckboxField() {
+    final TextStyle textStyle = Theme.of(context).textTheme.bodyText1!;
     return AnterosFormCheckbox(
       context: context,
       name: 'aceite1',
@@ -351,10 +354,10 @@ class CompleteFormState extends State<CompleteForm> {
         });
       },
       title: RichText(
-        text: const TextSpan(
+        text: TextSpan(
           children: [
             TextSpan(
-              style: TextStyle(color: Theme.of(context).textTheme.bodyText1!.color),
+              style: textStyle,
               text: 'Eu li e concordo com o ',
             ),
             TextSpan(
@@ -373,43 +376,47 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormRangeSlider getRangeSliderField() {
     return AnterosFormRangeSlider(
+      context: context,
       name: 'intervalo_preco',
+      labelText: 'Intervalo preço',
       validator: AnterosFormValidators.compose([AnterosFormValidators.min(6)]),
-      onChanged: _onChanged,
+      hasError: _intervaloPrecoHasError,
+      onChanged: (val) {
+        setState(() {
+          _itensSliderHasError =
+              !(_formKey.currentState?.fields['intervalo_preco']?.validate() ?? false);
+        });
+      },
       min: 0.0,
       max: 100.0,
       initialValue: const RangeValues(4, 7),
       divisions: 20,
       activeColor: Colors.red,
       inactiveColor: Colors.pink[100],
-      decoration: InputDecoration(
-          labelText: 'Intervalo preço',
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(style: BorderStyle.none, width: 0))),
     );
   }
 
   AnterosFormSlider getSliderField() {
-    return AnterosFormSlider(
+    return AnterosFormSlider( 
+      context: context,
       name: 'itensSlider',
+      labelText: 'Total de itens',
       validator: AnterosFormValidators.compose([
         AnterosFormValidators.min(6),
       ]),
-      onChanged: _onChanged,
+      hasError: _itensSliderHasError,
+      onChanged: (val) {
+        setState(() {
+          _itensSliderHasError =
+              !(_formKey.currentState?.fields['itensSlider']?.validate() ?? false);
+        });
+      },
       min: 0.0,
       max: 10.0,
       initialValue: 7.0,
       divisions: 20,
       activeColor: Colors.red,
       inactiveColor: Colors.pink[100],
-      decoration: InputDecoration(
-        labelText: 'Total de itens',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(5.0),
-          borderSide: BorderSide(style: BorderStyle.none, width: 0),
-        ),
-      ),
     );
   }
 
