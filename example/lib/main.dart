@@ -44,7 +44,7 @@ class MyApp extends ConsumerWidget {
       ],
       supportedLocales: const [
         Locale('en', ''),
-      ], 
+      ],
       home: HomePage(),
     );
   }

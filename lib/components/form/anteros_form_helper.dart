@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 class AnterosFormHelper {
   AnterosFormHelper._();
 
-  static InputDecoration getAnterosDecorationPattern(bool? hasError, VoidCallback? onClearValue, ThemeData theme, String? labelText, String? hintText, AnterosFormFieldState state) {
+  static InputDecoration getAnterosDecorationPattern(
+      bool? hasError,
+      VoidCallback? onClearValue,
+      ThemeData theme,
+      String? labelText,
+      String? hintText,
+      AnterosFormFieldState state) {
     var _suffixIcon = null;
     if (hasError != null) {
       var _icon = hasError
@@ -35,7 +41,7 @@ class AnterosFormHelper {
         height: 22.0,
         width: 4.0,
       ));
-    
+
       _suffixIcon = Row(
         mainAxisAlignment: MainAxisAlignment.start, // added line
         mainAxisSize: MainAxisSize.min, // added line
@@ -63,16 +69,16 @@ class AnterosFormHelper {
         ],
       );
     }
-    
+
     var inputDecoration = InputDecoration(
-        border: const OutlineInputBorder(
+        border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0x4437474F),
+            color: theme.cardColor,
           ),
         ),
-        enabledBorder: const OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0x4437474F),
+            color: theme.cardColor,
           ),
         ),
         focusedBorder: OutlineInputBorder(

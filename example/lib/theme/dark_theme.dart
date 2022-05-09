@@ -10,14 +10,13 @@ ThemeData dark = ThemeData(
   brightness: Brightness.dark,
   hintColor: Color(0xFFbebebe),
   cardColor: Colors.black,
-  textTheme:
-        TextTheme(
-      bodyText1: TextStyle(),
-      bodyText2: TextStyle(),
-    ).apply(
-      bodyColor: Colors.white, 
-      displayColor: Colors.white, 
-    ),
+  textTheme: TextTheme(
+    bodyText1: TextStyle(),
+    bodyText2: TextStyle(),
+  ).apply(
+    bodyColor: Colors.white,
+    displayColor: Colors.white,
+  ),
   colorScheme: ColorScheme.dark(
     primary: Color(0xFF8CCC0B),
     secondary: Color(0xFF8CCC0B),

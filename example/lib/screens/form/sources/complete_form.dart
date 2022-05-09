@@ -150,7 +150,7 @@ class CompleteFormState extends State<CompleteForm> {
       context: context,
       title: const Text('Eu aceito os termos e condições'),
       name: 'aceite',
-      labelText : "Aceite",
+      labelText: "Aceite",
       initialValue: true,
       hasError: _aceiteHasError,
       validator: AnterosFormValidators.compose([
@@ -159,8 +159,7 @@ class CompleteFormState extends State<CompleteForm> {
       onChanged: (val) {
         setState(() {
           _aceiteHasError =
-              !(_formKey.currentState?.fields['aceite']?.validate() ??
-                  false);
+              !(_formKey.currentState?.fields['aceite']?.validate() ?? false);
         });
       },
     );
@@ -179,9 +178,12 @@ class CompleteFormState extends State<CompleteForm> {
         AnterosFormFieldOption(value: 'Swift'),
         AnterosFormFieldOption(value: 'Objective-C'),
       ],
+      onClearValue: () {
+        _formKey.currentState!.fields['linguagens']?.didChange(null);
+      },
       onChanged: (val) {
         setState(() {
-          _classificacaoHasError =
+          _languagesHasError =
               !(_formKey.currentState?.fields['linguagens']?.validate() ??
                   false);
         });
@@ -346,7 +348,7 @@ class CompleteFormState extends State<CompleteForm> {
       name: 'aceite1',
       initialValue: false,
       labelText: "Aceite",
-      hasError: _aceite1HasError, 
+      hasError: _aceite1HasError,
       onChanged: (val) {
         setState(() {
           _timeHasError =
@@ -384,7 +386,8 @@ class CompleteFormState extends State<CompleteForm> {
       onChanged: (val) {
         setState(() {
           _itensSliderHasError =
-              !(_formKey.currentState?.fields['intervalo_preco']?.validate() ?? false);
+              !(_formKey.currentState?.fields['intervalo_preco']?.validate() ??
+                  false);
         });
       },
       min: 0.0,
@@ -397,7 +400,7 @@ class CompleteFormState extends State<CompleteForm> {
   }
 
   AnterosFormSlider getSliderField() {
-    return AnterosFormSlider( 
+    return AnterosFormSlider(
       context: context,
       name: 'itensSlider',
       labelText: 'Total de itens',
@@ -408,7 +411,8 @@ class CompleteFormState extends State<CompleteForm> {
       onChanged: (val) {
         setState(() {
           _itensSliderHasError =
-              !(_formKey.currentState?.fields['itensSlider']?.validate() ?? false);
+              !(_formKey.currentState?.fields['itensSlider']?.validate() ??
+                  false);
         });
       },
       min: 0.0,

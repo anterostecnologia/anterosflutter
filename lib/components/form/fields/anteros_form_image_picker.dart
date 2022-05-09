@@ -1,7 +1,6 @@
 import 'dart:typed_data';
-
-import 'package:anterosflutter/anterosflutter.dart';
 import 'package:async/async.dart';
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/src/widgets/framework.dart' as wdg;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,7 +16,7 @@ import 'anteros_image_source_sheet.dart';
 ///
 /// if you want to use a different object (e.g. a class from the backend that has imageId and imageUrl)
 /// you need to implement [displayCustomType]
-class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
+class AnterosFormImagePicker extends AnterosFormField<List<dynamic>> {
   //TODO: Add documentation
   final double previewWidth;
   final double previewHeight;
@@ -62,7 +61,7 @@ class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
   /// fit for each image
   final BoxFit fit;
 
-  FormBuilderImagePicker({
+  AnterosFormImagePicker({
     Key? key,
     //From Super
     required String name,
@@ -111,7 +110,7 @@ class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
           decoration: decoration,
           focusNode: focusNode,
           builder: (FormFieldState<List<dynamic>?> field) {
-            final state = field as _FormBuilderImagePickerState;
+            final state = field as _AnterosFormImagePickerState;
             final theme = Theme.of(state.context);
             final disabledColor = theme.disabledColor;
             final primaryColor = theme.primaryColor;
@@ -141,8 +140,8 @@ class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
                       }
                       assert(
                         !checkIfItemIsCustomType(displayItem),
-                        'Display item must be of type [Uint8List], [XFile], [String] (url), [ImageProvider] or [Widget]. '
-                        'Consider using displayCustomType to handle the type: ${displayItem.runtimeType}',
+                        'O item de exibição deve ser do tipo [Uint8List], [XFile], [String] (url), [ImageProvider] ou [Widget]. '
+                        'Considere usar o DisplayCustomType para lidar com o tipo: ${displayItem.runtimeType}',
                       );
                       return Stack(
                         key: ObjectKey(item),
@@ -244,22 +243,6 @@ class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
                               );
                             },
                           );
-                          // if (remainingImages == 1) {
-                          // } else {
-                          //   final imagePicker = ImagePicker();
-                          //   final picked = await imagePicker.pickMultiImage(
-                          //     maxHeight: maxHeight,
-                          //     maxWidth: maxWidth,
-                          //     imageQuality: imageQuality,
-                          //   );
-                          //   if (picked != null) {
-                          //     state.requestFocus();
-                          //     final actualPicked = remainingImages == null
-                          //         ? picked
-                          //         : picked.take(remainingImages);
-                          //     field.didChange([...value, ...actualPicked]);
-                          //   }
-                          // }
                         },
                       );
                     }
@@ -271,11 +254,11 @@ class FormBuilderImagePicker extends AnterosFormField<List<dynamic>> {
         );
 
   @override
-  _FormBuilderImagePickerState createState() => _FormBuilderImagePickerState();
+  _AnterosFormImagePickerState createState() => _AnterosFormImagePickerState();
 }
 
-class _FormBuilderImagePickerState
-    extends AnterosFormFieldState<FormBuilderImagePicker, List<dynamic>> {
+class _AnterosFormImagePickerState
+    extends AnterosFormFieldState<AnterosFormImagePicker, List<dynamic>> {
   List<dynamic> get effectiveValue =>
       value?.where((element) => element != null).toList() ?? [];
 

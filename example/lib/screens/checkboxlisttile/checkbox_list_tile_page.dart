@@ -35,7 +35,7 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
           children: <Widget>[
             AnterosCheckboxListTile(
               titleText: 'hi',
-              subTitleText: 'Murilo Bandeira',
+              subTitleText: 'Palpitão',
               position: AnterosPosition.start,
               icon: AnterosAvatar(
                 backgroundImage: AssetImage('lib/assets/images/img.png'),
@@ -58,7 +58,7 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
             ),
             AnterosCheckboxListTile(
               titleText: 'hi',
-              subTitleText: 'Murilovisk',
+              subTitleText: 'Palpitão',
               avatar: AnterosAvatar(
                 backgroundImage: AssetImage('lib/assets/images/img1.png'),
               ),
@@ -79,7 +79,7 @@ class _CheckBoxListTilePageState extends State<CheckBoxListTilePage> {
             ),
             AnterosCheckboxListTile(
               titleText: 'hi',
-              subTitleText: 'Bandeira II',
+              subTitleText: 'Algum Palpite',
               avatar: AnterosAvatar(
                 backgroundImage: AssetImage('lib/assets/images/img1.png'),
               ),

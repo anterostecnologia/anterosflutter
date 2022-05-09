@@ -8,7 +8,7 @@ import 'package:phone_number/phone_number.dart';
 
 //TODO: Switch country_pickers for country_code_picker
 /// Field for international phone number input.
-class FormBuilderPhoneField extends AnterosFormField<String> {
+class AnterosFormPhoneField extends AnterosFormField<String> {
   //TODO: Add documentation
   final TextInputType keyboardType;
   final bool obscureText;
@@ -108,7 +108,7 @@ class FormBuilderPhoneField extends AnterosFormField<String> {
   final CountryItemBuilder? itemBuilder;
 
   /// Creates field for international phone number input.
-  FormBuilderPhoneField({
+  AnterosFormPhoneField({
     Key? key,
     //From Super
     required String name,
@@ -190,7 +190,7 @@ class FormBuilderPhoneField extends AnterosFormField<String> {
           decoration: decoration,
           focusNode: focusNode,
           builder: (FormFieldState<String?> field) {
-            final state = field as _FormBuilderPhoneFieldState;
+            final state = field as _AnterosFormPhoneFieldState;
 
             return InputDecorator(
               decoration: state.decoration,
@@ -277,11 +277,11 @@ class FormBuilderPhoneField extends AnterosFormField<String> {
         );
 
   @override
-  _FormBuilderPhoneFieldState createState() => _FormBuilderPhoneFieldState();
+  _AnterosFormPhoneFieldState createState() => _AnterosFormPhoneFieldState();
 }
 
-class _FormBuilderPhoneFieldState
-    extends AnterosFormFieldState<FormBuilderPhoneField, String> {
+class _AnterosFormPhoneFieldState
+    extends AnterosFormFieldState<AnterosFormPhoneField, String> {
   late TextEditingController _effectiveController;
   late Country _selectedDialogCountry;
 

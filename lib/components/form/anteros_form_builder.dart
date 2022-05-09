@@ -4,7 +4,7 @@ export 'anteros_form_field_option.dart';
 export 'fields/advanced/anteros_form_cpf.dart';
 export 'fields/advanced/anteros_form_cnpj.dart';
 export 'fields/advanced/anteros_form_plate.dart';
-export 'fields/advanced/anteros_form_age.dart'; 
+export 'fields/advanced/anteros_form_age.dart';
 export 'fields/anteros_form_checkbox.dart';
 export 'fields/anteros_form_checkbox_group.dart';
 export 'fields/anteros_form_chips_input.dart';
@@ -31,5 +31,3 @@ export 'widgets/anteros_grouped_radio.dart';
 export 'validators/localization/l10n.dart';
 export 'validators/anteros_form_validators.dart';
 export 'anteros_form_helper.dart';
-
-
