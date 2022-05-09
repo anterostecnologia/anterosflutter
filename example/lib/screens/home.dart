@@ -342,6 +342,16 @@ class _HomePageState extends State<HomePage> {
           width: 150,
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.swap_calls_rounded),
+            tooltip: 'Alterar tema',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a snackbar')));
+            },
+          ),
+        ],
       ),
       body: ListView(
         physics: const ScrollPhysics(),

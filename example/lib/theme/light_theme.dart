@@ -1,8 +1,9 @@
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 
 ThemeData light = ThemeData(
   fontFamily: 'Roboto',
-  primaryColor: Color(0xFF8CCC0B),
+  primaryColor: AnterosColors.PRIMARY,
   secondaryHeaderColor: Color(0xFF1ED7AA),
   disabledColor: Color(0xFFBABFC4),
   backgroundColor: Color(0xFFF3F3F3),
@@ -10,14 +11,13 @@ ThemeData light = ThemeData(
   brightness: Brightness.light,
   hintColor: Color(0xFF9F9F9F),
   cardColor: Colors.white,
-  textTheme:
-        TextTheme(
-      bodyText1: TextStyle(),
-      bodyText2: TextStyle(),
-    ).apply(
-      bodyColor: Colors.black, 
-      displayColor: Colors.black, 
-    ),
+  textTheme: TextTheme(
+    bodyText1: TextStyle(),
+    bodyText2: TextStyle(),
+  ).apply(
+    bodyColor: Colors.black,
+    displayColor: Colors.black,
+  ),
   colorScheme: ColorScheme.light(
       primary: Color(0xFF8CCC0B), secondary: Color(0xFF8CCC0B)),
   textButtonTheme: TextButtonThemeData(

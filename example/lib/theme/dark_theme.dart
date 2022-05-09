@@ -1,8 +1,9 @@
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 
 ThemeData dark = ThemeData(
   fontFamily: 'Roboto',
-  primaryColor: Color(0xFF8CCC0B),
+  primaryColor: AnterosColors.PRIMARY,
   secondaryHeaderColor: Color(0xFF009f67),
   disabledColor: Color(0xffa2a7ad),
   backgroundColor: Color(0xFF343636),
