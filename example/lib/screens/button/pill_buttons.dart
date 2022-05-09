@@ -33,7 +33,7 @@ class _PillsButtonsState extends State<PillsButtons>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -70,11 +70,11 @@ class _PillsButtonsState extends State<PillsButtons>
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: AnterosColors.WHITE,
                 unselectedLabelColor: AnterosColors.DARK,
-                indicator: const BoxDecoration(
+                indicator: BoxDecoration(
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       width: 3,
                     ),
                   ),
@@ -93,13 +93,13 @@ class _PillsButtonsState extends State<PillsButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -120,7 +120,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Primary',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
@@ -199,13 +199,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -219,14 +219,14 @@ class _PillsButtonsState extends State<PillsButtons>
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     AnterosButton(
                                       onPressed: null,
                                       shape: AnterosButtonShape.pills,
                                       child: Text(
                                         'Primary',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: null,
@@ -304,13 +304,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -330,7 +330,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text('Large',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                       shape: AnterosButtonShape.pills,
                                     ),
@@ -339,7 +339,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text('Normal',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                       shape: AnterosButtonShape.pills,
                                     ),
@@ -348,7 +348,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text('Small',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                       shape: AnterosButtonShape.pills,
                                     ),
@@ -360,13 +360,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -383,7 +383,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text('Large',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                   shape: AnterosButtonShape.pills,
                                 ),
@@ -396,7 +396,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text('Normal',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                   shape: AnterosButtonShape.pills,
                                 ),
@@ -409,7 +409,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text('Small',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                   shape: AnterosButtonShape.pills,
                                 ),
@@ -425,13 +425,13 @@ class _PillsButtonsState extends State<PillsButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -453,7 +453,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                         'Primary',
                                       ),
                                       type: AnterosButtonType.outline,
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
@@ -539,13 +539,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -559,7 +559,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     AnterosButton(
                                       onPressed: null,
                                       shape: AnterosButtonShape.pills,
@@ -567,7 +567,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                         'Primary',
                                       ),
                                       type: AnterosButtonType.outline,
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: null,
@@ -653,13 +653,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -679,7 +679,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Large',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                       type: AnterosButtonType.outline,
                                       shape: AnterosButtonShape.pills,
@@ -689,7 +689,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Normal',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                       type: AnterosButtonType.outline,
                                       shape: AnterosButtonShape.pills,
@@ -699,7 +699,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Small',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                       type: AnterosButtonType.outline,
                                       shape: AnterosButtonShape.pills,
@@ -712,13 +712,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -735,7 +735,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Large',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                   type: AnterosButtonType.outline,
                                   shape: AnterosButtonShape.pills,
@@ -749,7 +749,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Normal',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                   type: AnterosButtonType.outline,
                                   shape: AnterosButtonShape.pills,
@@ -763,7 +763,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Small',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                   type: AnterosButtonType.outline,
                                   shape: AnterosButtonShape.pills,
@@ -780,13 +780,13 @@ class _PillsButtonsState extends State<PillsButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -808,7 +808,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                         'Primary',
                                       ),
                                       type: AnterosButtonType.outline2x,
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
@@ -894,13 +894,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -914,7 +914,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     AnterosButton(
                                       onPressed: null,
                                       shape: AnterosButtonShape.pills,
@@ -922,7 +922,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                         'Primary',
                                       ),
                                       type: AnterosButtonType.outline2x,
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: null,
@@ -1008,13 +1008,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -1034,7 +1034,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Large',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                       type: AnterosButtonType.outline2x,
                                       shape: AnterosButtonShape.pills,
@@ -1044,7 +1044,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Normal',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                       type: AnterosButtonType.outline2x,
                                       shape: AnterosButtonShape.pills,
@@ -1054,7 +1054,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                       child: const Text(
                                         'Small',
                                       ),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                       type: AnterosButtonType.outline2x,
                                       shape: AnterosButtonShape.pills,
@@ -1067,13 +1067,13 @@ class _PillsButtonsState extends State<PillsButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -1090,7 +1090,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Large',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                   type: AnterosButtonType.outline2x,
                                   shape: AnterosButtonShape.pills,
@@ -1104,7 +1104,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Normal',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                   type: AnterosButtonType.outline2x,
                                   shape: AnterosButtonShape.pills,
@@ -1118,7 +1118,7 @@ class _PillsButtonsState extends State<PillsButtons>
                                   child: const Text(
                                     'Small',
                                   ),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                   type: AnterosButtonType.outline2x,
                                   shape: AnterosButtonShape.pills,

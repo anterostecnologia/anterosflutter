@@ -145,7 +145,7 @@ class _DrawerPageState extends State<DrawerPage> {
                                 color: AnterosColors.DARK,
                                 size: 17,
                               ),
-                              const Padding(
+                              Padding(
                                 padding: EdgeInsets.only(left: 9),
                                 child: Text(
                                   'Buttons',
@@ -1037,7 +1037,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         ),
                       );
                     },
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.only(left: 2),
                       child: AnterosListTile(
                         title: Text('Documents',
@@ -1056,7 +1056,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         ),
                       );
                     },
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.only(left: 2),
                       child: AnterosListTile(
                         title: Text('Features',

@@ -18,7 +18,7 @@ class _IconButtonsState extends State<IconButtons> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -29,13 +29,13 @@ class _IconButtonsState extends State<IconButtons> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Solid Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -227,13 +227,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Outline Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -428,13 +428,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Outline 2x Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -630,13 +630,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Square Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -834,13 +834,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Pills Icons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -1041,13 +1041,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Shadow Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -1250,13 +1250,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Button Sizes',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -1274,7 +1274,7 @@ class _IconButtonsState extends State<IconButtons> {
                         onPressed: () {},
                         child: const Text('Large',
                             style: TextStyle(color: AnterosColors.WHITE)),
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                         size: AnterosSize.LARGE,
                         icon: const Icon(
                           IconData(
@@ -1288,7 +1288,7 @@ class _IconButtonsState extends State<IconButtons> {
                         onPressed: () {},
                         child: const Text('Normal',
                             style: TextStyle(color: AnterosColors.WHITE)),
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                         size: AnterosSize.MEDIUM,
                         icon: const Icon(
                           IconData(
@@ -1302,7 +1302,7 @@ class _IconButtonsState extends State<IconButtons> {
                         onPressed: () {},
                         child: const Text('Small',
                             style: TextStyle(color: AnterosColors.WHITE)),
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                         size: AnterosSize.SMALL,
                         icon: const Icon(
                           IconData(
@@ -1320,13 +1320,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 10),
               child: AnterosTypography(
                 text: 'Block Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -1388,13 +1388,13 @@ class _IconButtonsState extends State<IconButtons> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 20),
               child: AnterosTypography(
                 text: 'Icons Only',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(

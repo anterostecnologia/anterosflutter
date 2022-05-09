@@ -19,7 +19,7 @@ class _TilesPageState extends State<TilesPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -30,13 +30,13 @@ class _TilesPageState extends State<TilesPage> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'With Label',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -53,13 +53,13 @@ class _TilesPageState extends State<TilesPage> {
                 icon: const Text('Caption'),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 5),
               child: AnterosTypography(
                 text: 'With Avatar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             const AnterosCard(

@@ -275,6 +275,10 @@ class AnterosFormChoiceChip<T> extends AnterosFormField<T> {
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.visualDensity,
+    VoidCallback? onClearValue,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     ValueChanged<T?>? onChanged,
     ValueTransformer<T?>? valueTransformer,
     VoidCallback? onReset,
@@ -293,9 +297,15 @@ class AnterosFormChoiceChip<T> extends AnterosFormField<T> {
             focusNode: focusNode,
             builder: (FormFieldState<T?> field) {
               final state = field as _FormBuilderChoiceChipState<T>;
+              final theme = Theme.of(state.context);
+              InputDecoration inputDecoration =
+                  AnterosFormHelper.getAnterosDecorationPattern(hasError,
+                      onClearValue, theme, labelText, hintText, field);
 
               return InputDecorator(
-                decoration: state.decoration,
+                decoration: identical(decoration, const InputDecoration())
+                    ? inputDecoration
+                    : state.decoration,
                 child: Wrap(
                   direction: direction,
                   alignment: alignment,

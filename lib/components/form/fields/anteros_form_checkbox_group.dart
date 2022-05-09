@@ -163,7 +163,9 @@ class AnterosFormCheckboxGroup<T> extends AnterosFormField<List<T>> {
                 suffixIcon: _suffixIcon);
             if (identical(decoration, const InputDecoration())) {
               return InputDecorator(
-                decoration: inputDecoration,
+                decoration: identical(decoration, const InputDecoration())
+                    ? inputDecoration
+                    : state.decoration,
                 child: GroupedCheckbox<T>(
                   orientation: orientation,
                   value: state.value,

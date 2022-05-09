@@ -33,7 +33,7 @@ class _DropDownState extends State<DropDown> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -74,7 +74,7 @@ class _DropDownState extends State<DropDown> {
                         ),
                         icon: Icon(
                           CupertinoIcons.forward,
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                         )),
                   )),
               GestureDetector(
@@ -106,7 +106,7 @@ class _DropDownState extends State<DropDown> {
                         ),
                         icon: Icon(
                           CupertinoIcons.forward,
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                         )),
                   )),
             ],

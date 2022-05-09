@@ -122,6 +122,10 @@ class AnterosFormPhoneField extends AnterosFormField<String> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    bool? hasError,
+    String? labelText,
+    String? hintText,
+    VoidCallback? onClearValue,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
     this.scrollPadding = const EdgeInsets.all(20.0),
@@ -191,9 +195,15 @@ class AnterosFormPhoneField extends AnterosFormField<String> {
           focusNode: focusNode,
           builder: (FormFieldState<String?> field) {
             final state = field as _AnterosFormPhoneFieldState;
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: Row(
                 children: <Widget>[
                   GestureDetector(

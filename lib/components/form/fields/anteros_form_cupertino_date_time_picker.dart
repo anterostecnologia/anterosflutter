@@ -140,42 +140,10 @@ class AnterosFormCupertinoDateTimePicker extends AnterosFormField<DateTime> {
             final state = field as _AnterosFormCupertinoDateTimePickerState;
             final theme = Theme.of(state.context);
 
-            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            if (identical(decoration, const InputDecoration())) {
-              return TextField(
-                autocorrect: autocorrect,
-                autofocus: autofocus,
-                buildCounter: buildCounter,
-                controller: state._textFieldController,
-                cursorColor: cursorColor,
-                cursorRadius: cursorRadius,
-                cursorWidth: cursorWidth,
-                decoration: inputDecoration,
-                enabled: state.enabled,
-                enableInteractiveSelection: enableInteractiveSelection,
-                expands: expands,
-                focusNode: state.effectiveFocusNode,
-                inputFormatters: inputFormatters,
-                keyboardAppearance: keyboardAppearance,
-                keyboardType: keyboardType,
-                maxLength: maxLength,
-                maxLengthEnforcement: maxLengthEnforcement,
-                maxLines: maxLines,
-                minLines: minLines,
-                obscureText: obscureText,
-                onEditingComplete: onEditingComplete,
-                readOnly: true,
-                scrollPadding: scrollPadding,
-                showCursor: showCursor,
-                strutStyle: strutStyle,
-                style: style,
-                textAlign: textAlign,
-                textCapitalization: textCapitalization,
-                textDirection: textDirection,
-                textInputAction: textInputAction,
-              );
-            }
             return TextField(
               autocorrect: autocorrect,
               autofocus: autofocus,
@@ -184,7 +152,9 @@ class AnterosFormCupertinoDateTimePicker extends AnterosFormField<DateTime> {
               cursorColor: cursorColor,
               cursorRadius: cursorRadius,
               cursorWidth: cursorWidth,
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               enabled: state.enabled,
               enableInteractiveSelection: enableInteractiveSelection,
               expands: expands,

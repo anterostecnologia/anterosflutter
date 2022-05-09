@@ -58,7 +58,7 @@ class _CarouselState extends State<Carousel>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -86,11 +86,11 @@ class _CarouselState extends State<Carousel>
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: AnterosColors.WHITE,
                 unselectedLabelColor: AnterosColors.DARK,
-                indicator: const BoxDecoration(
+                indicator: BoxDecoration(
                   color: Colors.black,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       width: 3,
                     ),
                   ),
@@ -109,14 +109,14 @@ class _CarouselState extends State<Carousel>
                   Container(
                     child: ListView(
                       children: <Widget>[
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Full Width',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosCarousel(
@@ -171,14 +171,14 @@ class _CarouselState extends State<Carousel>
                               )
                               .toList(),
                         ),
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Multiple Items',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosItemsCarousel(
@@ -224,14 +224,14 @@ class _CarouselState extends State<Carousel>
                               )
                               .toList(),
                         ),
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Full Size',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosCarousel(
@@ -294,14 +294,14 @@ class _CarouselState extends State<Carousel>
                   Container(
                     child: ListView(
                       children: <Widget>[
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Full Width',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosCarousel(
@@ -354,14 +354,14 @@ class _CarouselState extends State<Carousel>
                             setState(() {});
                           },
                         ),
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Multiple Items',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosItemsCarousel(
@@ -405,14 +405,14 @@ class _CarouselState extends State<Carousel>
                               )
                               .toList(),
                         ),
-                        const Padding(
+                        Padding(
                           padding:
                               EdgeInsets.only(left: 15, top: 30, bottom: 10),
                           child: AnterosTypography(
                             text: 'Full Size',
                             type: AnterosTypographyType.typo5,
                             dividerWidth: 25,
-                            dividerColor: AnterosColors.PRIMARY,
+                            dividerColor: Theme.of(context).primaryColor,
                           ),
                         ),
                         AnterosCarousel(

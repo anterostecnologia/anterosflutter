@@ -33,7 +33,7 @@ class _BottomLabelTabState extends State<BottomLabelTab>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(

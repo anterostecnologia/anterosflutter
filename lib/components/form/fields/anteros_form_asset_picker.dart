@@ -50,6 +50,10 @@ class AnterosFormAssetPicker extends AnterosFormField<List<PlatformFile>> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    bool? hasError,
+    String? labelText,
+    String? hintText,
+    VoidCallback? onClearValue,
     this.maxFiles,
     this.allowMultiple = false,
     this.type = FileType.any,
@@ -76,8 +80,15 @@ class AnterosFormAssetPicker extends AnterosFormField<List<PlatformFile>> {
             builder: (FormFieldState<List<PlatformFile>?> field) {
               final state = field as _FormBuilderAssetPickerState;
 
+              final theme = Theme.of(state.context);
+              InputDecoration inputDecoration =
+                  AnterosFormHelper.getAnterosDecorationPattern(hasError,
+                      onClearValue, theme, labelText, hintText, field);
+
               return InputDecorator(
-                  decoration: state.decoration,
+                  decoration: identical(decoration, const InputDecoration())
+                      ? inputDecoration
+                      : state.decoration,
 
                   /// To place the 'button' at the beginning, and to size it
                   child: Column(children: [

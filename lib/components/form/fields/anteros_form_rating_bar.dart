@@ -149,47 +149,13 @@ class AnterosFormRatingBar extends AnterosFormField<double> {
             final state = field as _FormBuilderRatingBarState;
             final widget = state.widget;
             final theme = Theme.of(state.context);
-            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
-            if (identical(decoration, const InputDecoration())) {
-              return InputDecorator(
-                decoration: inputDecoration,
-                child: AnterosRatingBar(
-                  initialRating: field.value ?? widget.minRating,
-                  minRating: widget.minRating,
-                  direction: widget.direction,
-                  allowHalfRating: widget.allowHalfRating,
-                  itemCount: widget.itemCount,
-                  itemPadding: widget.itemPadding,
-                  // itemBuilder: widget.itemBuilder
-                  onRatingUpdate: (rating) {
-                    if (shouldRequestFocus) {
-                      state.requestFocus();
-                    }
-
-                    field.didChange(rating);
-                  },
-                  ratingWidget: widget.ratingWidget ??
-                      AnterosRatingWidget(
-                        full: const Icon(Icons.star),
-                        half: const Icon(Icons.star_half_outlined),
-                        empty: const Icon(Icons.star_outline),
-                      ),
-                  glow: widget.glow,
-                  glowColor: widget.glowColor,
-                  glowRadius: widget.glowRadius,
-                  ignoreGestures: !state.enabled,
-                  itemSize: widget.itemSize,
-                  maxRating: widget.maxRating,
-                  tapOnlyMode: widget.tapOnlyMode,
-                  textDirection: widget.textDirection,
-                  unratedColor: widget.unratedColor,
-                  updateOnDrag: widget.updateOnDrag,
-                  wrapAlignment: widget.wrapAlignment,
-                ),
-              );
-            }
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: AnterosRatingBar(
                 initialRating: field.value ?? widget.minRating,
                 minRating: widget.minRating,

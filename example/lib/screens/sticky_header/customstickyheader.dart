@@ -37,7 +37,7 @@ class _CustomStickyHeaderState extends State<CustomStickyHeader>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(

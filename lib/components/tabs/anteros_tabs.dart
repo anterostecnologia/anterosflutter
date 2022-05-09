@@ -192,7 +192,8 @@ class _AnterosTabsState extends State<AnterosTabs> {
                   length: widget.length,
 //                  initialIndex: widget.initialIndex,
                   tabBarHeight: widget.tabBarHeight,
-                  tabBarColor: widget.tabBarColor ?? AnterosColors.PRIMARY,
+                  tabBarColor:
+                      widget.tabBarColor ?? Theme.of(context).primaryColor,
                   controller: widget.controller,
                   labelColor: widget.labelColor,
                   unselectedLabelColor: widget.unselectedLabelColor,

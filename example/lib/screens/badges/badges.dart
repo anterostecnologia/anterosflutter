@@ -17,7 +17,7 @@ class _BadgesPageState extends State<BadgesPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           backgroundColor: AnterosColors.DARK,
@@ -29,13 +29,13 @@ class _BadgesPageState extends State<BadgesPage> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 20),
               child: AnterosTypography(
                 text: 'With Buttons',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -194,13 +194,13 @@ class _BadgesPageState extends State<BadgesPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 20),
               child: AnterosTypography(
                 text: 'Icon with Badges',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -216,12 +216,12 @@ class _BadgesPageState extends State<BadgesPage> {
                           child: AnterosIconButton(
                             type: AnterosButtonType.transparent,
                             onPressed: () {},
-                            icon: const Icon(
+                            icon: Icon(
                               IconData(
                                 0xe917,
                                 fontFamily: 'GFIconFonts',
                               ),
-                              color: AnterosColors.PRIMARY,
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                           counterChild: const AnterosBadge(

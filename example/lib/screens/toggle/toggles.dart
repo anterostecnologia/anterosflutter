@@ -19,7 +19,7 @@ class _TogglesState extends State<Toggles> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -31,13 +31,13 @@ class _TogglesState extends State<Toggles> {
         body: Container(
           child: Column(
             children: <Widget>[
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
                 child: AnterosTypography(
                   text: 'Basic',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -81,13 +81,13 @@ class _TogglesState extends State<Toggles> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: AnterosTypography(
                   text: 'IOS',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -135,13 +135,13 @@ class _TogglesState extends State<Toggles> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: AnterosTypography(
                   text: 'Square',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -189,13 +189,13 @@ class _TogglesState extends State<Toggles> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: AnterosTypography(
                   text: 'Custom',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(

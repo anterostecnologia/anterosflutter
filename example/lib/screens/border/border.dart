@@ -36,7 +36,7 @@ class _BorderPageState extends State<BorderPage>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -91,13 +91,13 @@ class _BorderPageState extends State<BorderPage>
                     SingleChildScrollView(
                       child: Column(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Solid Border',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -127,13 +127,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Solid Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -189,13 +189,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Row(
@@ -274,13 +274,13 @@ class _BorderPageState extends State<BorderPage>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Dashed Borders',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -310,13 +310,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Dashed Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -384,13 +384,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Row(
@@ -465,13 +465,13 @@ class _BorderPageState extends State<BorderPage>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Dotted Borders',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -501,13 +501,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 20),
                             child: AnterosTypography(
                               text: 'Dotted Border with radius',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Container(
@@ -573,13 +573,13 @@ class _BorderPageState extends State<BorderPage>
                               ),
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Rounded Corners',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Row(

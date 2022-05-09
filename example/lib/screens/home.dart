@@ -398,7 +398,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Icon(
                 icon,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
                 size: 30,
               ),
               Text(

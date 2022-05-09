@@ -94,7 +94,7 @@ class CompleteFormState extends State<CompleteForm> {
       },
       shape: AnterosButtonShape.standard,
       child: const Text('Enviar', style: TextStyle(color: AnterosColors.WHITE)),
-      color: AnterosColors.PRIMARY,
+      color: Theme.of(context).primaryColor,
     );
   }
 
@@ -328,7 +328,6 @@ class CompleteFormState extends State<CompleteForm> {
 
   AnterosFormPlateField getPlateField() {
     return AnterosFormPlateField(
-      context: context,
       name: 'placa',
       labelText: 'Placa',
       hasError: _plateHasError,
@@ -475,7 +474,7 @@ class CompleteFormState extends State<CompleteForm> {
           },
           child: Icon(
             CupertinoIcons.back,
-            color: AnterosColors.PRIMARY,
+            color: Theme.of(context).primaryColor,
           ),
         ),
         title: const Text(

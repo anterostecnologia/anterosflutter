@@ -33,7 +33,7 @@ class _StandardButtonsState extends State<StandardButtons>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -65,11 +65,11 @@ class _StandardButtonsState extends State<StandardButtons>
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: AnterosColors.WHITE,
                 unselectedLabelColor: AnterosColors.DARK,
-                indicator: const BoxDecoration(
+                indicator: BoxDecoration(
                   color: AnterosColors.DARK,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       width: 3,
                     ),
                   ),
@@ -88,13 +88,13 @@ class _StandardButtonsState extends State<StandardButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -115,7 +115,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                       child: const Text('Primary',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
@@ -192,13 +192,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -212,14 +212,14 @@ class _StandardButtonsState extends State<StandardButtons>
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     AnterosButton(
                                       onPressed: null,
                                       shape: AnterosButtonShape.standard,
                                       child: Text('Primary',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: null,
@@ -296,13 +296,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Transparent Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -318,7 +318,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                       onPressed: () {},
                                       child: const Text('Primary'),
                                       type: AnterosButtonType.transparent,
-                                      textColor: AnterosColors.PRIMARY,
+                                      textColor: Theme.of(context).primaryColor,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
@@ -387,13 +387,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -413,7 +413,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                       child: const Text('Large',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                     ),
                                     AnterosButton(
@@ -421,7 +421,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                       child: const Text('Normal',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                     ),
                                     AnterosButton(
@@ -429,7 +429,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                       child: const Text('Small',
                                           style: TextStyle(
                                               color: AnterosColors.WHITE)),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                     ),
                                     const SizedBox(
@@ -440,13 +440,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -463,7 +463,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   child: const Text('Large',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                 ),
                                 const SizedBox(
@@ -475,7 +475,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   child: const Text('Normal',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                 ),
                                 const SizedBox(
@@ -487,7 +487,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   child: const Text('Small',
                                       style: TextStyle(
                                           color: AnterosColors.WHITE)),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                 ),
                                 const SizedBox(
@@ -496,13 +496,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Full Width Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           Column(
@@ -517,7 +517,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                 child: const Text('Large',
                                     style:
                                         TextStyle(color: AnterosColors.WHITE)),
-                                color: AnterosColors.PRIMARY,
+                                color: Theme.of(context).primaryColor,
                                 size: AnterosSize.LARGE,
                                 fullWidthButton: true,
                               ),
@@ -529,7 +529,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                 child: const Text('Normal',
                                     style:
                                         TextStyle(color: AnterosColors.WHITE)),
-                                color: AnterosColors.PRIMARY,
+                                color: Theme.of(context).primaryColor,
                                 size: AnterosSize.MEDIUM,
                                 fullWidthButton: true,
                               ),
@@ -541,7 +541,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                 child: const Text('Small',
                                     style:
                                         TextStyle(color: AnterosColors.WHITE)),
-                                color: AnterosColors.PRIMARY,
+                                color: Theme.of(context).primaryColor,
                                 size: AnterosSize.SMALL,
                                 fullWidthButton: true,
                               ),
@@ -556,13 +556,13 @@ class _StandardButtonsState extends State<StandardButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -655,13 +655,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -754,13 +754,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -778,21 +778,21 @@ class _StandardButtonsState extends State<StandardButtons>
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Large'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                       type: AnterosButtonType.outline,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Normal'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                       type: AnterosButtonType.outline,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Small'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                       type: AnterosButtonType.outline,
                                     ),
@@ -804,13 +804,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -825,7 +825,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Large'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                   type: AnterosButtonType.outline,
                                 ),
@@ -836,7 +836,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Normal'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                   type: AnterosButtonType.outline,
                                 ),
@@ -847,7 +847,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Small'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                   type: AnterosButtonType.outline,
                                 ),
@@ -863,13 +863,13 @@ class _StandardButtonsState extends State<StandardButtons>
                     Container(
                       child: ListView(
                         children: <Widget>[
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 30),
                             child: AnterosTypography(
                               text: 'Default',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -962,13 +962,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Disabled State',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -1061,13 +1061,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Button Sizes',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -1085,21 +1085,21 @@ class _StandardButtonsState extends State<StandardButtons>
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Large'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.LARGE,
                                       type: AnterosButtonType.outline2x,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Normal'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.MEDIUM,
                                       type: AnterosButtonType.outline2x,
                                     ),
                                     AnterosButton(
                                       onPressed: () {},
                                       child: const Text('Small'),
-                                      color: AnterosColors.PRIMARY,
+                                      color: Theme.of(context).primaryColor,
                                       size: AnterosSize.SMALL,
                                       type: AnterosButtonType.outline2x,
                                     ),
@@ -1111,13 +1111,13 @@ class _StandardButtonsState extends State<StandardButtons>
                               ],
                             ),
                           ),
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 15, top: 10),
                             child: AnterosTypography(
                               text: 'Block Buttons',
                               type: AnterosTypographyType.typo5,
                               dividerWidth: 25,
-                              dividerColor: AnterosColors.PRIMARY,
+                              dividerColor: Theme.of(context).primaryColor,
                             ),
                           ),
                           AnterosCard(
@@ -1132,7 +1132,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Large'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.LARGE,
                                   type: AnterosButtonType.outline2x,
                                 ),
@@ -1143,7 +1143,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Normal'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.MEDIUM,
                                   type: AnterosButtonType.outline2x,
                                 ),
@@ -1154,7 +1154,7 @@ class _StandardButtonsState extends State<StandardButtons>
                                   onPressed: () {},
                                   blockButton: true,
                                   child: const Text('Small'),
-                                  color: AnterosColors.PRIMARY,
+                                  color: Theme.of(context).primaryColor,
                                   size: AnterosSize.SMALL,
                                   type: AnterosButtonType.outline2x,
                                 ),

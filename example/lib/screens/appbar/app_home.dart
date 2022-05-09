@@ -14,66 +14,66 @@ class _AppHomeState extends State<AppHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AnterosColors.DARK,
-          leading: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            CupertinoIcons.back,
+            color: Theme.of(context).primaryColor,
+          ),
+        ),
+        title: const Text(
+          'Appbar',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Basic Appbar',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
             ),
           ),
-          title: const Text(
-            'Appbar',
-            style: TextStyle(fontSize: 17),
+          Container(
+            height: 70,
+            child: Appbar(),
           ),
-          centerTitle: true,
-        ),
-        body: ListView(
-          children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
-              child: AnterosTypography(
-                text: 'Basic Appbar',
-                type: AnterosTypographyType.typo5,
-                dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
-              ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Appbar with SearchBox',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
             ),
-            Container(
-              height: 70,
-              child: Appbar(),
+          ),
+          Container(
+            height: 70,
+            child: Searchbar(),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Segmented Tabs Appbar',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
-              child: AnterosTypography(
-                text: 'Appbar with SearchBox',
-                type: AnterosTypographyType.typo5,
-                dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
-              ),
-            ),
-            Container(
-              height: 70,
-              child: Searchbar(),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
-              child: AnterosTypography(
-                text: 'Segmented Tabs Appbar',
-                type: AnterosTypographyType.typo5,
-                dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
-              ),
-            ),
-            Container(
-              height: 200,
-              child: SegmentedAppbar(),
-            )
-          ],
-        ),
-      );
+          ),
+          Container(
+            height: 200,
+            child: SegmentedAppbar(),
+          )
+        ],
+      ),
+    );
   }
 }

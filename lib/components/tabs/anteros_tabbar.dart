@@ -142,7 +142,7 @@ class AnterosTabBar extends StatefulWidget {
   /// e o comprimento do [TabBarView.children] Lista.
   final List<Widget> tabs;
 
- /// Se esta barra de guia pode ser rolada horizontalmente.
+  /// Se esta barra de guia pode ser rolada horizontalmente.
   ///
   /// Se [isScrollable] é verdadeiro, então cada guia é tão larga quanto necessária para o seu rótulo
   /// e todo [TabBar] é rolável.Caso contrário, cada guia recebe igual
@@ -182,7 +182,7 @@ class _AnterosTabBarState extends State<AnterosTabBar> {
           child: Material(
             shape: widget.shape,
             type: MaterialType.button,
-            color: widget.tabBarColor ?? AnterosColors.PRIMARY,
+            color: widget.tabBarColor ?? Theme.of(context).primaryColor,
             child: TabBar(
               isScrollable: widget.isScrollable,
               controller: widget.controller,

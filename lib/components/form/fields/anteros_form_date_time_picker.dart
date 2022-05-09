@@ -213,129 +213,19 @@ class AnterosFormDateTimePicker extends AnterosFormField<DateTime> {
           focusNode: focusNode,
           builder: (FormFieldState<DateTime?> field) {
             final state = field as _FormBuilderDateTimePickerState;
-            var _suffixIcon = null;
-            if (hasError != null) {
-              var _icon = hasError
-                  ? const Icon(Icons.error,
-                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
-                  : const Icon(Icons.check, color: Colors.green, size: 18);
-              var children = <Widget>[];
-              if (onClearValue != null) {
-                children.add(new SizedBox(
-                    height: 22.0,
-                    width: 22.0,
-                    child: IconButton(
-                        padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                        icon: Icon(
-                          Icons.clear,
-                          size: 18,
-                        ),
-                        onPressed: onClearValue)));
-              }
-              children.add(new SizedBox(
-                  height: 22.0,
-                  width: 22.0,
-                  child: IconButton(
-                      padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                      icon: _icon,
-                      onPressed: () => {})));
-              children.add(new SizedBox(
-                height: 22.0,
-                width: 4.0,
-              ));
-              
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: children,
-              );
-            } else {
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: <Widget>[
-                  new SizedBox(
-                      height: 22.0,
-                      width: 22.0,
-                      child: IconButton(
-                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                          icon: Icon(
-                            Icons.clear,
-                            size: 18,
-                          ),
-                          onPressed: onClearValue)),
-                  new SizedBox(
-                    height: 22.0,
-                    width: 4.0,
-                  )
-                ],
-              );
-            }
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            var inputDecoration = InputDecoration(
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                fillColor: Theme.of(context).cardColor,
-                filled: true,
-                labelText: labelText,
-                hintText: hintText,
-                errorMaxLines: 2,
-                errorText: state.errorText,
-                suffixIcon: _suffixIcon);
-                
-            if (identical(decoration, const InputDecoration())) {
-              return TextField(
-                textDirection: textDirection,
-                textAlign: textAlign,
-                maxLength: maxLength,
-                autofocus: autofocus,
-                decoration: inputDecoration,
-                readOnly: true,
-                enabled: state.enabled,
-                autocorrect: autocorrect,
-                controller: state._textFieldController,
-                focusNode: state.effectiveFocusNode,
-                inputFormatters: inputFormatters,
-                keyboardType: keyboardType,
-                maxLines: maxLines,
-                obscureText: obscureText,
-                showCursor: showCursor,
-                minLines: minLines,
-                expands: expands,
-                style: style,
-                onEditingComplete: onEditingComplete,
-                buildCounter: buildCounter,
-                cursorColor: cursorColor,
-                cursorRadius: cursorRadius,
-                cursorWidth: cursorWidth,
-                enableInteractiveSelection: enableInteractiveSelection,
-                keyboardAppearance: keyboardAppearance,
-                scrollPadding: scrollPadding,
-                strutStyle: strutStyle,
-                textCapitalization: textCapitalization,
-                textInputAction: textInputAction,
-                maxLengthEnforcement: maxLengthEnforcement,
-              );
-            }
             return TextField(
               textDirection: textDirection,
               textAlign: textAlign,
               maxLength: maxLength,
               autofocus: autofocus,
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               readOnly: true,
               enabled: state.enabled,
               autocorrect: autocorrect,

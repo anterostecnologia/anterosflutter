@@ -73,60 +73,10 @@ class AnterosFormSignaturePad extends AnterosFormField<Uint8List> {
             InputDecoration inputDecoration =
                 AnterosFormHelper.getAnterosDecorationPattern(
                     hasError, onClearValue, theme, labelText, hintText, field);
-            if (identical(decoration, const InputDecoration())) {
-              return InputDecorator(
-                decoration: inputDecoration,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      height: height,
-                      width: width,
-                      decoration: BoxDecoration(
-                        border: border,
-                        image: (null != initialValue &&
-                                initialValue == state.value)
-                            ? DecorationImage(
-                                image: MemoryImage(state.value!),
-                              )
-                            : null,
-                      ),
-                      child: state.enabled
-                          ? GestureDetector(
-                              onHorizontalDragUpdate: (_) {},
-                              onVerticalDragUpdate: (_) {},
-                              child: AnterosSignature(
-                                controller: state.effectiveController,
-                                width: width,
-                                height: height,
-                                backgroundColor: backgroundColor,
-                              ),
-                            )
-                          : null,
-                    ),
-                    Row(
-                      children: <Widget>[
-                        const Expanded(child: SizedBox()),
-                        TextButton.icon(
-                          onPressed: state.enabled
-                              ? () {
-                                  state.effectiveController.clear();
-                                  field.didChange(null);
-                                }
-                              : null,
-                          label: Text(
-                            clearButtonText ?? localizations.cancelButtonLabel,
-                            style: TextStyle(color: cancelButtonColor),
-                          ),
-                          icon: Icon(Icons.clear, color: cancelButtonColor),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              );
-            }
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: Column(
                 children: <Widget>[
                   Container(

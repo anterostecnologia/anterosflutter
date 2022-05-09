@@ -23,7 +23,7 @@ class FormPage extends StatelessWidget {
           child: Container(
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -74,7 +74,7 @@ class FormPage extends StatelessWidget {
               ),
               icon: Icon(
                 CupertinoIcons.forward,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
               )),
         ));
   }
@@ -106,7 +106,7 @@ class FormPage extends StatelessWidget {
               ),
               icon: Icon(
                 CupertinoIcons.forward,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
               )),
         ));
   }
@@ -138,7 +138,7 @@ class FormPage extends StatelessWidget {
           ),
           icon: Icon(
             CupertinoIcons.forward,
-            color: AnterosColors.PRIMARY,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       ),
@@ -172,7 +172,7 @@ class FormPage extends StatelessWidget {
               ),
               icon: Icon(
                 CupertinoIcons.forward,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
               )),
         ));
   }

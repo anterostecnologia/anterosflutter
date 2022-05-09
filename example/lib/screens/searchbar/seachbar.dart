@@ -29,7 +29,7 @@ class _SearchbarPageState extends State<SearchbarPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -41,13 +41,13 @@ class _SearchbarPageState extends State<SearchbarPage> {
         body: ListView(
           physics: const ScrollPhysics(),
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
               child: AnterosTypography(
                 text: 'Basic SearchBar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosSearchBar(
@@ -70,13 +70,13 @@ class _SearchbarPageState extends State<SearchbarPage> {
                     print('$item');
                   });
                 }),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
               child: AnterosTypography(
                 text: 'Customised SearchBar',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosSearchBar(

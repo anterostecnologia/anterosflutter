@@ -23,7 +23,7 @@ class _SignupFormState extends State<SignupForm> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -74,8 +74,9 @@ class _SignupFormState extends State<SignupForm> {
         debugPrint(_formKey.currentState?.value.toString());
       },
       shape: AnterosButtonShape.standard,
-      child: const Text('Registrar', style: TextStyle(color: AnterosColors.WHITE)),
-      color: AnterosColors.PRIMARY,
+      child:
+          const Text('Registrar', style: TextStyle(color: AnterosColors.WHITE)),
+      color: Theme.of(context).primaryColor,
     );
   }
 

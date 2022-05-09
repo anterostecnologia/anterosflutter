@@ -18,7 +18,7 @@ class _TypographyPageState extends State<TypographyPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -29,13 +29,13 @@ class _TypographyPageState extends State<TypographyPage> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Headings Regular',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -95,7 +95,7 @@ class _TypographyPageState extends State<TypographyPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(
                 left: 15,
               ),
@@ -103,7 +103,7 @@ class _TypographyPageState extends State<TypographyPage> {
                 text: 'Opacity',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -167,13 +167,13 @@ class _TypographyPageState extends State<TypographyPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15),
               child: AnterosTypography(
                 text: 'Custom Heading',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(

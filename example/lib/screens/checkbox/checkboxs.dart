@@ -31,7 +31,7 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -43,13 +43,13 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
 
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Basic Checkbox',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -91,13 +91,13 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Square Checkbox',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -142,13 +142,13 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Circular Checkbox',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -192,13 +192,13 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Custom Checkbox',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(

@@ -22,7 +22,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -124,7 +124,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
                               height: 30,
                               child: AnterosButton(
                                 onPressed: () {},
-                                color: AnterosColors.PRIMARY,
+                                color: Theme.of(context).primaryColor,
                                 child: Center(
                                     child: Text(
                                   'Send',
@@ -225,7 +225,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
 //                             height: 30,
 //                             child: AnterosButton(
 //                               onPressed: () {},
-//                               color: AnterosColors.PRIMARY,
+//                               color: Theme.of(context).primaryColor,
 //                               child: Center(
 //                                   child: Text(
 //                                 'Send',

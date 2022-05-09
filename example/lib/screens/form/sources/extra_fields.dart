@@ -8,6 +8,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'data.dart';
 
+class ApiImage {
+  final String imageUrl;
+  final String id;
+  ApiImage({
+    required this.imageUrl,
+    required this.id,
+  });
+}
+
 class ExtraFields extends StatefulWidget {
   const ExtraFields({Key? key}) : super(key: key);
 
@@ -17,6 +26,7 @@ class ExtraFields extends StatefulWidget {
 
 class _ExtraFieldsState extends State<ExtraFields> {
   final _formKey = GlobalKey<AnterosFormState>();
+  final List<String>? _allowedExtensions = ['pdf'];
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
@@ -26,22 +36,22 @@ class _ExtraFieldsState extends State<ExtraFields> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: AnterosColors.DARK,
-          leading: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
-            ),
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            CupertinoIcons.back,
+            color: Theme.of(context).primaryColor,
           ),
-          title: const Text(
-            'Campos extras',
-            style: TextStyle(fontSize: 17),
-          ),
-          centerTitle: true,
         ),
+        title: const Text(
+          'Campos extras',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -89,13 +99,58 @@ class _ExtraFieldsState extends State<ExtraFields> {
                 getSpace(),
                 getSignaturePad(),
                 getSpace(),
+                AnterosFormImagePicker(
+                  name: 'photos',
+                  displayCustomType: (obj) =>
+                      obj is ApiImage ? obj.imageUrl : obj,
+                  decoration: const InputDecoration(labelText: 'Pick Photos'),
+                  maxImages: 5,
+                  initialValue: [
+                    'https://images.pexels.com/photos/7078045/pexels-photo-7078045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                    const Text('this is an image\nas a widget !'),
+                    ApiImage(
+                      id: 'whatever',
+                      imageUrl:
+                          'https://images.pexels.com/photos/8311418/pexels-photo-8311418.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+                    ),
+                  ],
+                ),
+                AnterosFormAssetPicker(
+                    name: 'pick-file',
+                    allowedExtensions: _allowedExtensions,
+                    allowMultiple: true,
+                    maxFiles: 5,
+                    type: FileType.custom,
+                    decoration: const InputDecoration(border: InputBorder.none),
+                    selector: Row(children: const [
+                      Icon(Icons.file_upload),
+                      Text('Upload')
+                    ]),
+                    validator: (val) {
+                      if (val == null || val.isEmpty) {
+                        return 'Field required';
+                      }
+
+                      bool _checkExt = val.every((element) {
+                        if (!_allowedExtensions!.contains(element.extension)) {
+                          return false;
+                        } else {
+                          return true;
+                        }
+                      });
+
+                      if (_checkExt == false) {
+                        return 'File extension not allowed';
+                      }
+                    }),
                 Row(
                   children: <Widget>[
                     Expanded(
                       child: AnterosButton(
                         shape: AnterosButtonShape.standard,
-                        child: const Text('Enviar', style: TextStyle(color: AnterosColors.WHITE)),
-                        color: AnterosColors.PRIMARY,
+                        child: const Text('Enviar',
+                            style: TextStyle(color: AnterosColors.WHITE)),
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {
                           if (_formKey.currentState?.saveAndValidate() ??
                               false) {
@@ -111,7 +166,8 @@ class _ExtraFieldsState extends State<ExtraFields> {
                     Expanded(
                       child: AnterosButton(
                         shape: AnterosButtonShape.standard,
-                        child: const Text('Limpar', style: TextStyle(color: AnterosColors.WHITE)),
+                        child: const Text('Limpar',
+                            style: TextStyle(color: AnterosColors.WHITE)),
                         color: AnterosColors.DANGER,
                         onPressed: () {
                           _formKey.currentState?.reset();

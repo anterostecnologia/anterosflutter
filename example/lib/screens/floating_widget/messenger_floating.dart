@@ -36,13 +36,13 @@ class _MessengerFloatingWidgetState extends State<MessengerFloatingWidget> {
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: <Widget>[
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 15, top: 20, bottom: 40),
                   child: AnterosTypography(
                     text: 'Avatar as a Floating Widget',
                     type: AnterosTypographyType.typo5,
                     dividerWidth: 25,
-                    dividerColor: AnterosColors.PRIMARY,
+                    dividerColor: Theme.of(context).primaryColor,
                   ),
                 ),
                 AnterosButton(

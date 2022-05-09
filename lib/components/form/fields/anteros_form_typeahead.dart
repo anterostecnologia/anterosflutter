@@ -325,53 +325,10 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
             final state = field as _FormBuilderTypeAheadState<T>;
             final theme = Theme.of(state.context);
 
-            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            if (identical(decoration, const InputDecoration())) {
-              return AnterosTypeAheadField<T>(
-                textFieldConfiguration: textFieldConfiguration.copyWith(
-                  enabled: state.enabled,
-                  controller: state._typeAheadController,
-                  style: state.enabled
-                      ? textFieldConfiguration.style
-                      : theme.textTheme.subtitle1!.copyWith(
-                          color: theme.disabledColor,
-                        ),
-                  focusNode: state.effectiveFocusNode,
-                  decoration: inputDecoration,
-                ),
-                // TODO HACK to satisfy strictness
-                suggestionsCallback: suggestionsCallback,
-                itemBuilder: itemBuilder,
-                transitionBuilder: (context, suggestionsBox, controller) =>
-                    suggestionsBox,
-                onSuggestionSelected: (T suggestion) {
-                  state.didChange(suggestion);
-                  onSuggestionSelected?.call(suggestion);
-                },
-                getImmediateSuggestions: getImmediateSuggestions,
-                errorBuilder: errorBuilder,
-                noItemsFoundBuilder: noItemsFoundBuilder,
-                loadingBuilder: loadingBuilder,
-                debounceDuration: debounceDuration,
-                suggestionsBoxDecoration: suggestionsBoxDecoration,
-                suggestionsBoxVerticalOffset: suggestionsBoxVerticalOffset,
-                animationDuration: animationDuration,
-                animationStart: animationStart,
-                direction: direction,
-                hideOnLoading: hideOnLoading,
-                hideOnEmpty: hideOnEmpty,
-                hideOnError: hideOnError,
-                hideSuggestionsOnKeyboardHide: hideSuggestionsOnKeyboardHide,
-                keepSuggestionsOnLoading: keepSuggestionsOnLoading,
-                autoFlipDirection: autoFlipDirection,
-                suggestionsBoxController: suggestionsBoxController,
-                keepSuggestionsOnSuggestionSelected:
-                    keepSuggestionsOnSuggestionSelected,
-                hideKeyboard: hideKeyboard,
-                scrollController: scrollController,
-              );
-            }
             return AnterosTypeAheadField<T>(
               textFieldConfiguration: textFieldConfiguration.copyWith(
                 enabled: state.enabled,
@@ -382,7 +339,9 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
                         color: theme.disabledColor,
                       ),
                 focusNode: state.effectiveFocusNode,
-                decoration: state.decoration,
+                decoration: identical(decoration, const InputDecoration())
+                    ? inputDecoration
+                    : state.decoration,
               ),
               // TODO HACK to satisfy strictness
               suggestionsCallback: suggestionsCallback,
@@ -417,8 +376,6 @@ class AnterosFormTypeAhead<T> extends AnterosFormField<T> {
             );
           },
         );
-
-  
 
   @override
   _FormBuilderTypeAheadState<T> createState() =>

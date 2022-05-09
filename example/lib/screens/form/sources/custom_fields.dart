@@ -23,7 +23,7 @@ class _CustomFieldsState extends State<CustomFields> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -91,8 +91,7 @@ class _CustomFieldsState extends State<CustomFields> {
                           errorText: field.errorText,
                         ),
                         child: CheckboxListTile(
-                          title:
-                              const Text('Eu aceito os termos e condições'),
+                          title: const Text('Eu aceito os termos e condições'),
                           controlAffinity: ListTileControlAffinity.leading,
                           value: false,
                           onChanged: (value) => field.didChange(value),
@@ -123,7 +122,7 @@ class _CustomFieldsState extends State<CustomFields> {
                           shape: AnterosButtonShape.standard,
                           child: const Text('Enviar',
                               style: TextStyle(color: AnterosColors.WHITE)),
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       const SizedBox(width: 20),

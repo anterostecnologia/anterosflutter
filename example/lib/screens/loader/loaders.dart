@@ -18,7 +18,7 @@ class _LoadersState extends State<Loaders> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -29,13 +29,13 @@ class _LoadersState extends State<Loaders> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Basic Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -97,13 +97,13 @@ class _LoadersState extends State<Loaders> {
                 ),
               ],
             )),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'IOS Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -137,13 +137,13 @@ class _LoadersState extends State<Loaders> {
                 ),
               ],
             )),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Circular Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -178,13 +178,13 @@ class _LoadersState extends State<Loaders> {
                 ),
               ],
             )),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Square Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(
@@ -219,13 +219,13 @@ class _LoadersState extends State<Loaders> {
                 ),
               ],
             )),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Custom Loader',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosCard(

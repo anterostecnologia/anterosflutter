@@ -92,39 +92,14 @@ class AnterosFormTouchSpin extends AnterosFormField<num> {
             final state = field as _FormBuilderTouchSpinState;
             final theme = Theme.of(state.context);
 
-            InputDecoration inputDecoration = AnterosFormHelper.getAnterosDecorationPattern(hasError, onClearValue, theme, labelText, hintText, field);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            if (identical(decoration, const InputDecoration())) {
-              return InputDecorator(
-                decoration: inputDecoration,
-                child: AnterosTouchSpin(
-                  key: ObjectKey(state.value),
-                  min: min,
-                  max: max,
-                  step: step,
-                  value: field.value ?? 0,
-                  iconSize: iconSize,
-                  onChanged: state.enabled
-                      ? (value) {
-                          if (shouldRequestFocus) {
-                            state.requestFocus();
-                          }
-                          state.didChange(value);
-                        }
-                      : null,
-                  displayFormat: displayFormat,
-                  textStyle: textStyle,
-                  addIcon: addIcon,
-                  subtractIcon: subtractIcon,
-                  iconActiveColor: iconActiveColor ?? theme.primaryColor,
-                  iconDisabledColor: iconDisabledColor ?? theme.disabledColor,
-                  iconPadding: iconPadding,
-                  enabled: state.enabled,
-                ),
-              );
-            }
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: AnterosTouchSpin(
                 key: ObjectKey(state.value),
                 min: min,

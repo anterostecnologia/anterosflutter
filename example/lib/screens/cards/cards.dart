@@ -36,7 +36,7 @@ class _CardPageState extends State<CardPage>
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -67,11 +67,11 @@ class _CardPageState extends State<CardPage>
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: AnterosColors.WHITE,
                 unselectedLabelColor: AnterosColors.DARK,
-                indicator: const BoxDecoration(
+                indicator: BoxDecoration(
                   color: Colors.black,
                   border: Border(
                     bottom: BorderSide(
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       width: 3,
                     ),
                   ),

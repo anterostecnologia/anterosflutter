@@ -43,6 +43,10 @@ class AnterosFormFilterChip<T> extends AnterosFormField<List<T>> {
     InputDecoration decoration = const InputDecoration(),
     Key? key,
     List<T> initialValue = const [],
+    bool? hasError,
+    String? labelText,
+    String? hintText,
+    VoidCallback? onClearValue,
     required String name, // From Super
     required this.options,
     this.alignment = WrapAlignment.start,
@@ -90,8 +94,15 @@ class AnterosFormFilterChip<T> extends AnterosFormField<List<T>> {
           builder: (FormFieldState<List<T>?> field) {
             final state = field as _FormBuilderFilterChipState<T>;
 
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: Wrap(
                 direction: direction,
                 alignment: alignment,

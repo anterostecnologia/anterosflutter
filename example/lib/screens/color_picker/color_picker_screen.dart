@@ -169,7 +169,7 @@ class _Column1 extends StatelessWidget {
         // Show the picker meta remote control widget.
         const MetaPickerColorIndicator(),
         // The color picker in a Card.
-        const Padding(
+        Padding(
           padding: EdgeInsets.all(6),
           child: ColorPickerCard(),
         ),
@@ -314,7 +314,7 @@ class _Column4 extends StatelessWidget {
         ),
         const AlignmentSwitch(),
         const ColumnSpacingSlider(),
-        const PaddingSlider(),
+        PaddingSlider(),
         const CloseButtonSwitch(),
         const OkButtonSwitch(),
         const CloseIsLastSwitch(),

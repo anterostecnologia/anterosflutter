@@ -20,7 +20,7 @@ class _AdvancedBadgesPageState extends State<AdvancedBadgesPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           backgroundColor: AnterosColors.DARK,

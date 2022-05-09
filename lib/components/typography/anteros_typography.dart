@@ -32,7 +32,7 @@ class AnterosTypography extends StatelessWidget {
   /// Ícone do tipo [Widget] usado para passar no ícone ou imagem
   final Widget? icon;
 
-  /// Passar [AnterosColors] ou [Color] para divisercolor
+  /// Passar [AnterosColors] ou [Color] para dividerColor
   final Color? dividerColor;
 
   /// Passar [AnterosColors] ou [Color] para textcolor
@@ -83,7 +83,7 @@ class AnterosTypography extends StatelessWidget {
     } else if (type == AnterosTypographyType.typo6) {
       fontSize = 13.0;
     }
-    
+
     var defaultTextColor = Theme.of(context).textTheme.bodyText2!.color;
 
     return Container(
@@ -105,7 +105,7 @@ class AnterosTypography extends StatelessWidget {
             children: <Widget>[
               icon ?? Container(),
               icon != null
-                  ? const Padding(padding: EdgeInsets.only(left: 10))
+                  ? Padding(padding: EdgeInsets.only(left: 10))
                   : Container(),
               text != null
                   ? Expanded(

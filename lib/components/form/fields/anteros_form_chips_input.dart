@@ -79,39 +79,13 @@ class AnterosFormChipsInput<T> extends AnterosFormField<List<T>> {
                 AnterosFormHelper.getAnterosDecorationPattern(
                     hasError, onClearValue, theme, labelText, hintText, field);
 
-            if (identical(decoration, const InputDecoration())) {
-              return AnterosChipsInput<T>(
-                key: UniqueKey(),
-                initialValue: field.value!,
-                enabled: state.enabled,
-                decoration: inputDecoration,
-                findSuggestions: findSuggestions,
-                onChanged: (data) {
-                  field.didChange(data);
-                },
-                maxChips: maxChips,
-                chipBuilder: chipBuilder,
-                suggestionBuilder: suggestionBuilder,
-                textStyle: textStyle,
-                actionLabel: actionLabel,
-                autocorrect: autocorrect,
-                inputAction: inputAction,
-                inputType: inputType,
-                keyboardAppearance: keyboardAppearance,
-                obscureText: obscureText,
-                suggestionsBoxMaxHeight: suggestionsBoxMaxHeight,
-                textCapitalization: textCapitalization,
-                allowChipEditing: allowChipEditing,
-                autofocus: autofocus,
-                focusNode: state.effectiveFocusNode,
-                textOverflow: textOverflow,
-              );
-            }
             return AnterosChipsInput<T>(
               key: UniqueKey(),
               initialValue: field.value!,
               enabled: state.enabled,
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               findSuggestions: findSuggestions,
               onChanged: (data) {
                 field.didChange(data);

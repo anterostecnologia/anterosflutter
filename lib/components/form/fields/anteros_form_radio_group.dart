@@ -76,121 +76,16 @@ class AnterosFormRadioGroup<T> extends AnterosFormField<T> {
           decoration: decoration,
           builder: (FormFieldState<T?> field) {
             final state = field as _FormBuilderRadioGroupState<T>;
+            final theme = Theme.of(state.context);
 
-            var _suffixIcon = null;
-            if (hasError != null) {
-              var _icon = hasError
-                  ? const Icon(Icons.error,
-                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
-                  : const Icon(Icons.check, color: Colors.green, size: 18);
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: <Widget>[
-                  new SizedBox(
-                      height: 22.0,
-                      width: 22.0,
-                      child: IconButton(
-                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                          icon: Icon(
-                            Icons.clear,
-                            size: 18,
-                          ),
-                          onPressed: onClearValue)),
-                  new SizedBox(
-                      height: 22.0,
-                      width: 22.0,
-                      child: IconButton(
-                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                          icon: _icon,
-                          onPressed: () => {})),
-                  new SizedBox(
-                    height: 22.0,
-                    width: 4.0,
-                  )
-                ],
-              );
-            } else {
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: <Widget>[
-                  new SizedBox(
-                      height: 22.0,
-                      width: 22.0,
-                      child: IconButton(
-                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                          icon: Icon(
-                            Icons.clear,
-                            size: 18,
-                          ),
-                          onPressed: onClearValue)),
-                  new SizedBox(
-                    height: 22.0,
-                    width: 4.0,
-                  )
-                ],
-              );
-            }
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            var inputDecoration = InputDecoration(
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                fillColor: Theme.of(context).cardColor,
-                filled: true,
-                labelText: labelText,
-                hintText: hintText,
-                errorMaxLines: 2,
-                errorText: state.errorText,
-                suffixIcon: _suffixIcon);
-            if (identical(decoration, const InputDecoration())) {
-              return InputDecorator(
-                decoration: inputDecoration,
-                child: GroupedRadio<T>(
-                  activeColor: activeColor,
-                  controlAffinity: controlAffinity,
-                  disabled: state.enabled
-                      ? disabled
-                      : options.map((option) => option.value).toList(),
-                  focusColor: focusColor,
-                  hoverColor: hoverColor,
-                  materialTapTargetSize: materialTapTargetSize,
-                  onChanged: (value) {
-                    if (shouldRadioRequestFocus) {
-                      state.requestFocus();
-                    }
-                    state.didChange(value);
-                  },
-                  options: options,
-                  orientation: orientation,
-                  separator: separator,
-                  value: state.value,
-                  wrapAlignment: wrapAlignment,
-                  wrapCrossAxisAlignment: wrapCrossAxisAlignment,
-                  wrapDirection: wrapDirection,
-                  wrapRunAlignment: wrapRunAlignment,
-                  wrapRunSpacing: wrapRunSpacing,
-                  wrapSpacing: wrapSpacing,
-                  wrapTextDirection: wrapTextDirection,
-                  wrapVerticalDirection: wrapVerticalDirection,
-                ),
-              );
-            }
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: GroupedRadio<T>(
                 activeColor: activeColor,
                 controlAffinity: controlAffinity,

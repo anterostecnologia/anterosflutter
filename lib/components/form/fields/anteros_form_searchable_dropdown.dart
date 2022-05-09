@@ -293,67 +293,6 @@ class AnterosFormSearchableDropdown<T> extends AnterosFormField<T> {
                 AnterosFormHelper.getAnterosDecorationPattern(
                     hasError, onClearValue, theme, labelText, hintText, field);
 
-            if (identical(decoration, const InputDecoration())) {
-              return dropdown_search.AnterosDropdownSearch<T>(
-                // Hack to rebuild when didChange is called
-                key: UniqueKey(),
-                items: items,
-                maxHeight: maxHeight,
-                onFind: onFind,
-                onChanged: (value) {
-                  if (shouldRequestFocus) {
-                    state.requestFocus();
-                  }
-                  state.didChange(value);
-                },
-                selectionListViewProps: selectionListViewProps,
-                showSearchBox: showSearchBox,
-                enabled: state.enabled,
-                autoValidateMode: autovalidateMode,
-                clearButtonProps: clearButtonProps,
-                compareFn: compareFn,
-                dialogMaxWidth: dialogMaxWidth,
-                dropdownBuilder: dropdownBuilder,
-                dropdownBuilderSupportsNullItem:
-                    dropdownBuilderSupportsNullItem,
-                dropdownButtonProps: dropdownButtonProps,
-                dropdownSearchDecoration: inputDecoration,
-                emptyBuilder: emptyBuilder,
-                errorBuilder: errorBuilder,
-                filterFn: filterFn,
-                isFilteredOnline: isFilteredOnline,
-                itemAsString: itemAsString,
-                loadingBuilder: loadingBuilder,
-                popupBackgroundColor: popupBackgroundColor,
-                mode: mode,
-                popupBarrierColor: popupBarrierColor,
-                popupItemBuilder: popupItemBuilder,
-                popupItemDisabled: popupItemDisabled,
-                popupShape: popupShape,
-                popupTitle: popupTitle,
-                selectedItem: state.value,
-                showClearButton: showClearButton,
-                favoriteItemBuilder: favoriteItemBuilder,
-                favoriteItems: favoriteItems,
-                onBeforeChange: onBeforeChange,
-                favoriteItemsAlignment: favoriteItemsAlignment,
-                onPopupDismissed: onPopupDismissed,
-                searchDelay: searchDelay,
-                showFavoriteItems: showFavoriteItems,
-                dropdownSearchBaseStyle: dropdownSearchBaseStyle,
-                dropdownSearchTextAlign: dropdownSearchTextAlign,
-                dropdownSearchTextAlignVertical:
-                    dropdownSearchTextAlignVertical,
-                // onSaved: onSaved,
-                popupBarrierDismissible: popupBarrierDismissible,
-                popupElevation: popupElevation,
-                popupSafeArea: popupSafeArea,
-                scrollbarProps: scrollbarProps,
-                searchFieldProps: searchFieldProps,
-                showSelectedItems: showSelectedItems,
-                positionCallback: positionCallback,
-              );
-            }
             return dropdown_search.AnterosDropdownSearch<T>(
               // Hack to rebuild when didChange is called
               key: UniqueKey(),
@@ -376,7 +315,10 @@ class AnterosFormSearchableDropdown<T> extends AnterosFormField<T> {
               dropdownBuilder: dropdownBuilder,
               dropdownBuilderSupportsNullItem: dropdownBuilderSupportsNullItem,
               dropdownButtonProps: dropdownButtonProps,
-              dropdownSearchDecoration: state.decoration,
+              dropdownSearchDecoration:
+                  identical(decoration, const InputDecoration())
+                      ? inputDecoration
+                      : state.decoration,
               emptyBuilder: emptyBuilder,
               errorBuilder: errorBuilder,
               filterFn: filterFn,

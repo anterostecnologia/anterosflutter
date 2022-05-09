@@ -20,7 +20,7 @@ class _FloatingWidgetHomeState extends State<FloatingWidgetHome> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(

@@ -20,7 +20,7 @@ class _AlertPageState extends State<AlertPage> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -35,13 +35,13 @@ class _AlertPageState extends State<AlertPage> {
           child: alertWidget,
           body: ListView(
             children: <Widget>[
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30),
                 child: AnterosTypography(
                   text: 'Basic Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               Container(
@@ -106,13 +106,13 @@ class _AlertPageState extends State<AlertPage> {
                           }),
                     ],
                   )),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30),
                 child: AnterosTypography(
                   text: 'Rounded Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               Container(
@@ -172,13 +172,13 @@ class _AlertPageState extends State<AlertPage> {
                       }),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30),
                 child: AnterosTypography(
                   text: 'Full Width Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               Container(
@@ -227,7 +227,7 @@ class _AlertPageState extends State<AlertPage> {
                                   type: AnterosButtonType.outline2x,
                                   icon: Icon(
                                     Icons.keyboard_arrow_right,
-                                    color: AnterosColors.PRIMARY,
+                                    color: Theme.of(context).primaryColor,
                                   ),
                                   position: AnterosPosition.end,
                                   text: 'Learn More',
@@ -239,13 +239,13 @@ class _AlertPageState extends State<AlertPage> {
                       }),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30),
                 child: AnterosTypography(
                   text: 'Custom Alert',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               Container(

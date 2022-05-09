@@ -28,13 +28,13 @@ class _ShimmerPageState extends State<ShimmerPage> {
         centerTitle: true,
       ),
       body: Column(children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
           child: AnterosTypography(
             text: 'Basic Shimmer Effect',
             type: AnterosTypographyType.typo5,
             dividerWidth: 25,
-            dividerColor: AnterosColors.PRIMARY,
+            dividerColor: Theme.of(context).primaryColor,
           ),
         ),
         AnterosShimmer(
@@ -49,7 +49,7 @@ class _ShimmerPageState extends State<ShimmerPage> {
                   height: 80,
                   color: Colors.white,
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 6),
                 ),
                 Expanded(
@@ -61,7 +61,7 @@ class _ShimmerPageState extends State<ShimmerPage> {
                         height: 12,
                         color: Colors.white,
                       ),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(vertical: 2),
                       ),
                       Container(
@@ -69,7 +69,7 @@ class _ShimmerPageState extends State<ShimmerPage> {
                         height: 12,
                         color: Colors.white,
                       ),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(vertical: 2),
                       ),
                       Container(
@@ -84,13 +84,13 @@ class _ShimmerPageState extends State<ShimmerPage> {
             ),
           ),
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
           child: AnterosTypography(
             text: 'Shimmer Effect on Text',
             type: AnterosTypographyType.typo5,
             dividerWidth: 25,
-            dividerColor: AnterosColors.PRIMARY,
+            dividerColor: Theme.of(context).primaryColor,
           ),
         ),
         AnterosShimmer(
@@ -108,9 +108,9 @@ class _ShimmerPageState extends State<ShimmerPage> {
             begin: Alignment.bottomRight,
             end: Alignment.centerLeft,
             stops: const <double>[0, 0.3, 0.6, 0.9, 1],
-            colors: const [
+            colors: [
               AnterosColors.DANGER,
-              AnterosColors.PRIMARY,
+              Theme.of(context).primaryColor,
               AnterosColors.WARNING,
               AnterosColors.SECONDARY,
               Colors.red,

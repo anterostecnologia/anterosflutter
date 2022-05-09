@@ -19,7 +19,7 @@ class _AccordionState extends State<Accordion> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -30,13 +30,13 @@ class _AccordionState extends State<Accordion> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Basic Accordion',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAccordion(
@@ -64,13 +64,13 @@ class _AccordionState extends State<Accordion> {
                 content:
                     'GetWidget is an open source library that comes with pre-build 1000+ UI components.'
                     ' The library is built to make flutter development faster and more enjoyable.'),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Accordion with Text',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAccordion(
@@ -103,13 +103,13 @@ class _AccordionState extends State<Accordion> {
                   'Hide',
                   style: TextStyle(color: Colors.red),
                 )),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Accordion with Icon',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAccordion(

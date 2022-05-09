@@ -18,7 +18,7 @@ class _ProgressBarState extends State<ProgressBar> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -29,13 +29,13 @@ class _ProgressBarState extends State<ProgressBar> {
         ),
         body: ListView(
           children: <Widget>[
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
               child: AnterosTypography(
                 text: 'Linear Progress Bars',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             Container(
@@ -74,7 +74,7 @@ class _ProgressBarState extends State<ProgressBar> {
                 lineHeight: 20,
                 alignment: MainAxisAlignment.spaceBetween,
 
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.only(right: 5),
                   child: Text(
                     '50%',
@@ -107,13 +107,13 @@ class _ProgressBarState extends State<ProgressBar> {
                 animationDuration: 2000,
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 50),
               child: AnterosTypography(
                 text: 'Circular Progress Bars',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             Container(

@@ -62,7 +62,7 @@ class _FabFloatingWidgetState extends State<FabFloatingWidget>
                 icon:
                     showfabFloatingWidget ? Icon(Icons.close) : Icon(Icons.add),
                 shape: AnterosIconButtonShape.circle,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
 //                  iconSize: 80,
                 size: 100,
                 onPressed: () {
@@ -84,13 +84,13 @@ class _FabFloatingWidgetState extends State<FabFloatingWidget>
           body: ListView(
 //             mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(left: 15, top: 20, bottom: 40),
                   child: AnterosTypography(
                     text: 'FAB Button as a Floating Widget',
                     type: AnterosTypographyType.typo5,
                     dividerWidth: 25,
-                    dividerColor: AnterosColors.PRIMARY,
+                    dividerColor: Theme.of(context).primaryColor,
                   ),
                 ),
                 showfabFloatingWidget

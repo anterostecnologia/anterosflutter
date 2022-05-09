@@ -35,13 +35,13 @@ class _RatingPageState extends State<RatingPage> {
       ),
       body: ListView(
         children: <Widget>[
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
             child: AnterosTypography(
               text: 'Basic Rating',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: AnterosColors.PRIMARY,
+              dividerColor: Theme.of(context).primaryColor,
             ),
           ),
           AnterosRating(
@@ -54,13 +54,13 @@ class _RatingPageState extends State<RatingPage> {
               });
             },
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
             child: AnterosTypography(
               text: 'Rating with Icons',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: AnterosColors.PRIMARY,
+              dividerColor: Theme.of(context).primaryColor,
             ),
           ),
           AnterosRating(
@@ -78,13 +78,13 @@ class _RatingPageState extends State<RatingPage> {
               });
             },
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
             child: AnterosTypography(
               text: 'Rating using Text Field',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: AnterosColors.PRIMARY,
+              dividerColor: Theme.of(context).primaryColor,
             ),
           ),
           AnterosRating(
@@ -116,13 +116,13 @@ class _RatingPageState extends State<RatingPage> {
             ),
             onChanged: (double rating) {},
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
             child: AnterosTypography(
               text: 'Custom Rating',
               type: AnterosTypographyType.typo5,
               dividerWidth: 25,
-              dividerColor: AnterosColors.PRIMARY,
+              dividerColor: Theme.of(context).primaryColor,
             ),
           ),
           AnterosRating(

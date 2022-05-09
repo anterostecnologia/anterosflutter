@@ -76,6 +76,10 @@ class AnterosFormImagePicker extends AnterosFormField<List<dynamic>> {
     VoidCallback? onReset,
     FocusNode? focusNode,
     wdg.WidgetBuilder? loadingWidget,
+    bool? hasError,
+    String? labelText,
+    String? hintText,
+    VoidCallback? onClearValue,
     this.fit = BoxFit.cover,
     this.preventPop = false,
     this.displayCustomType,
@@ -117,8 +121,14 @@ class AnterosFormImagePicker extends AnterosFormField<List<dynamic>> {
             final value = state.effectiveValue;
             final canUpload = state.enabled && !state.hasMaxImages;
 
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: SizedBox(
                 height: previewHeight,
                 child: ListView.builder(

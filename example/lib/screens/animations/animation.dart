@@ -54,7 +54,7 @@ class _AnimationPageState extends State<AnimationPage>
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
               ),
             )),
         title: const Text(
@@ -66,13 +66,13 @@ class _AnimationPageState extends State<AnimationPage>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Rotation',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             GestureDetector(
@@ -93,13 +93,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Scaling',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             GestureDetector(
@@ -119,13 +119,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Allignment',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAnimation(
@@ -140,13 +140,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Slide Transition',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             Container(
@@ -164,13 +164,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             // Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Size',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAnimation(
@@ -191,13 +191,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'TextStyle',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAnimation(
@@ -215,13 +215,13 @@ class _AnimationPageState extends State<AnimationPage>
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 15, top: 30, bottom: 20),
               child: AnterosTypography(
                 text: 'Container',
                 type: AnterosTypographyType.typo5,
                 dividerWidth: 25,
-                dividerColor: AnterosColors.PRIMARY,
+                dividerColor: Theme.of(context).primaryColor,
               ),
             ),
             AnterosAnimation(

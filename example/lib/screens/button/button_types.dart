@@ -26,7 +26,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
             child: Container(
               child: Icon(
                 CupertinoIcons.back,
-                color: AnterosColors.PRIMARY,
+                color: Theme.of(context).primaryColor,
               ),
             ),
           ),
@@ -68,7 +68,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                       )),
                 )),
             GestureDetector(
@@ -98,7 +98,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                       )),
                 )),
             GestureDetector(
@@ -128,7 +128,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                       )),
                 )),
             GestureDetector(
@@ -158,7 +158,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                       ),
                       icon: Icon(
                         CupertinoIcons.forward,
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                       )),
                 )),
             GestureDetector(
@@ -187,7 +187,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                   ),
                   icon: Icon(
                     CupertinoIcons.forward,
-                    color: AnterosColors.PRIMARY,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),
@@ -218,7 +218,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                   ),
                   icon: Icon(
                     CupertinoIcons.forward,
-                    color: AnterosColors.PRIMARY,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),
@@ -250,7 +250,7 @@ class _ButtonTypesState extends State<ButtonTypes> {
                   ),
                   icon: Icon(
                     CupertinoIcons.forward,
-                    color: AnterosColors.PRIMARY,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),

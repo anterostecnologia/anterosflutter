@@ -45,7 +45,7 @@ class _DropDownTypesState extends State<DropDownTypes>
               child: Container(
                 child: Icon(
                   CupertinoIcons.back,
-                  color: AnterosColors.PRIMARY,
+                  color: Theme.of(context).primaryColor,
                 ),
               )),
           title: const Text(
@@ -77,11 +77,11 @@ class _DropDownTypesState extends State<DropDownTypes>
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelColor: AnterosColors.WHITE,
                   unselectedLabelColor: AnterosColors.DARK,
-                  indicator: const BoxDecoration(
+                  indicator: BoxDecoration(
                     color: Colors.black,
                     border: Border(
                       bottom: BorderSide(
-                        color: AnterosColors.PRIMARY,
+                        color: Theme.of(context).primaryColor,
                         width: 3,
                       ),
                     ),

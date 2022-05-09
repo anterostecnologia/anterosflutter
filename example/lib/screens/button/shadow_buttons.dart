@@ -18,7 +18,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
             },
             child: Icon(
               CupertinoIcons.back,
-              color: AnterosColors.PRIMARY,
+              color: Theme.of(context).primaryColor,
             ),
           ),
           title: const Text(
@@ -30,13 +30,13 @@ class _ShadowButtonsState extends State<ShadowButtons> {
         body: Container(
           child: ListView(
             children: <Widget>[
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 30),
                 child: AnterosTypography(
                   text: 'Default',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -55,7 +55,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                           shape: AnterosButtonShape.standard,
                           buttonBoxShadow: true,
                           text: 'Primary',
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                         ),
                         AnterosButton(
                           onPressed: () {},
@@ -131,13 +131,13 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: AnterosTypography(
                   text: 'Button Sizes',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -156,7 +156,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                           child: const Text(
                             'Large',
                           ),
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                           size: AnterosSize.LARGE,
                           buttonBoxShadow: true,
                         ),
@@ -165,7 +165,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                           child: const Text(
                             'Normal',
                           ),
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                           size: AnterosSize.MEDIUM,
                           buttonBoxShadow: true,
                         ),
@@ -174,7 +174,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                           child: const Text(
                             'Small',
                           ),
-                          color: AnterosColors.PRIMARY,
+                          color: Theme.of(context).primaryColor,
                           size: AnterosSize.SMALL,
                           buttonBoxShadow: true,
                         ),
@@ -186,13 +186,13 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                   ],
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 15, top: 10),
                 child: AnterosTypography(
                   text: 'Block Buttons',
                   type: AnterosTypographyType.typo5,
                   dividerWidth: 25,
-                  dividerColor: AnterosColors.PRIMARY,
+                  dividerColor: Theme.of(context).primaryColor,
                 ),
               ),
               AnterosCard(
@@ -208,7 +208,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                       blockButton: true,
                       child: const Text('Large',
                           style: TextStyle(color: AnterosColors.WHITE)),
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       size: AnterosSize.LARGE,
                       buttonBoxShadow: true,
                     ),
@@ -220,7 +220,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                       blockButton: true,
                       child: const Text('Normal',
                           style: TextStyle(color: AnterosColors.WHITE)),
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       size: AnterosSize.MEDIUM,
                       buttonBoxShadow: true,
                     ),
@@ -232,7 +232,7 @@ class _ShadowButtonsState extends State<ShadowButtons> {
                       blockButton: true,
                       child: const Text('Small',
                           style: TextStyle(color: AnterosColors.WHITE)),
-                      color: AnterosColors.PRIMARY,
+                      color: Theme.of(context).primaryColor,
                       size: AnterosSize.SMALL,
                       buttonBoxShadow: true,
                     ),

@@ -87,7 +87,7 @@ class AnterosSegmentTabs extends StatefulWidget {
   /// define como o tamanho do indicador de guia selecionado é calculado.
   ///
   /// O tamanho do indicador de guia selecionado é definido em relação ao
- /// os limites gerais da guia se [indicatorSize] é [TabBarIndicatorSize.tab]
+  /// os limites gerais da guia se [indicatorSize] é [TabBarIndicatorSize.tab]
   /// (o padrão) ou em relação aos limites do widget da guia se
   /// [indicatorSize] é [TabBarIndicatorSize.label].
   ///
@@ -124,7 +124,8 @@ class AnterosSegmentTabs extends StatefulWidget {
   ///
   /// Se essa propriedade for nula, o Ktablabelpadding será usado.
   final EdgeInsetsGeometry? labelPadding;
-/// o estilo de texto das etiquetas de guias não selecionadas
+
+  /// o estilo de texto das etiquetas de guias não selecionadas
   ///
   /// Se esta propriedade for nula, então o [labelStyle] o valor é usado.Se [labelStyle]
   /// é nulo, então o estilo de texto do [ThemeData.primaryTextTheme]'s
@@ -163,8 +164,8 @@ class _AnterosSegmentTabsState extends State<AnterosSegmentTabs> {
         width: widget.width ?? 240,
         decoration: BoxDecoration(
           border: widget.border ??
-              Border.all(color: AnterosColors.PRIMARY, width: 1),
-          borderRadius: widget.borderRadius ?? BorderRadius.circular(2),
+              Border.all(color: Theme.of(context).primaryColor, width: 1),
+          borderRadius: widget.borderRadius ?? BorderRadius.circular(5),
         ),
         child: DefaultTabController(
           // initialIndex: widget.initialIndex,
@@ -177,15 +178,17 @@ class _AnterosSegmentTabsState extends State<AnterosSegmentTabs> {
               controller: widget.tabController,
               labelColor: widget.labelColor ?? AnterosColors.WHITE,
               unselectedLabelColor:
-                  widget.unselectedLabelColor ?? AnterosColors.PRIMARY,
+                  widget.unselectedLabelColor ?? Theme.of(context).primaryColor,
               labelStyle: widget.labelStyle ?? const TextStyle(fontSize: 12),
               unselectedLabelStyle:
                   widget.unselectedLabelStyle ?? const TextStyle(fontSize: 12),
-              indicatorColor: widget.indicatorColor ?? AnterosColors.PRIMARY,
+              indicatorColor:
+                  widget.indicatorColor ?? Theme.of(context).primaryColor,
               indicatorSize: widget.indicatorSize,
               indicator: widget.indicator ??
                   BoxDecoration(
-                    color: widget.indicatorColor ?? AnterosColors.PRIMARY,
+                    color:
+                        widget.indicatorColor ?? Theme.of(context).primaryColor,
                     border: Border.all(
                         color: widget.indicatorColor ?? Colors.transparent,
                         width: 2),

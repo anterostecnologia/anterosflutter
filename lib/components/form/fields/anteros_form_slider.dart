@@ -181,153 +181,16 @@ class AnterosFormSlider extends AnterosFormField<double> {
           focusNode: focusNode,
           builder: (FormFieldState<double?> field) {
             final state = field as _FormBuilderSliderState;
+            final theme = Theme.of(state.context);
             final _numberFormat = numberFormat ?? NumberFormat.compact();
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
 
-            var _suffixIcon = null;
-            if (hasError != null) {
-              var _icon = hasError
-                  ? const Icon(Icons.error,
-                      color: Color.fromARGB(255, 224, 43, 79), size: 18)
-                  : const Icon(Icons.check, color: Colors.green, size: 18);
-              var children = <Widget>[];
-              if (onClearValue != null) {
-                children.add(new SizedBox(
-                    height: 22.0,
-                    width: 22.0,
-                    child: IconButton(
-                        padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                        icon: Icon(
-                          Icons.clear,
-                          size: 18,
-                        ),
-                        onPressed: onClearValue)));
-              }
-              children.add(new SizedBox(
-                  height: 22.0,
-                  width: 22.0,
-                  child: IconButton(
-                      padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                      icon: _icon,
-                      onPressed: () => {})));
-              children.add(new SizedBox(
-                height: 22.0,
-                width: 4.0,
-              ));
-
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: children,
-              );
-            } else {
-              _suffixIcon = Row(
-                mainAxisAlignment: MainAxisAlignment.start, // added line
-                mainAxisSize: MainAxisSize.min, // added line
-                children: <Widget>[
-                  new SizedBox(
-                      height: 22.0,
-                      width: 22.0,
-                      child: IconButton(
-                          padding: EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
-                          icon: Icon(
-                            Icons.clear,
-                            size: 18,
-                          ),
-                          onPressed: onClearValue)),
-                  new SizedBox(
-                    height: 22.0,
-                    width: 4.0,
-                  )
-                ],
-              );
-            }
-
-            var inputDecoration = InputDecoration(
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0x4437474F),
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                fillColor: Theme.of(context).cardColor,
-                filled: true,
-                labelText: labelText,
-                hintText: hintText,
-                errorMaxLines: 2,
-                errorText: state.errorText,
-                suffixIcon: _suffixIcon);
-
-            if (identical(decoration, const InputDecoration())) {
-              return InputDecorator(
-                decoration: inputDecoration,
-                child: Container(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Slider(
-                        value: field.value!,
-                        min: min,
-                        max: max,
-                        divisions: divisions,
-                        activeColor: activeColor,
-                        inactiveColor: inactiveColor,
-                        onChangeEnd: onChangeEnd,
-                        onChangeStart: onChangeStart,
-                        label: label,
-                        semanticFormatterCallback: semanticFormatterCallback,
-                        onChanged: state.enabled
-                            ? (value) {
-                                if (shouldRequestFocus) {
-                                  state.requestFocus();
-                                }
-                                field.didChange(value);
-                              }
-                            : null,
-                        autofocus: autofocus,
-                        mouseCursor: mouseCursor,
-                        focusNode: state.effectiveFocusNode,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          if (displayValues != DisplayValues.none &&
-                              displayValues != DisplayValues.current)
-                            Text(
-                              _numberFormat.format(min),
-                              style: minTextStyle ?? textStyle,
-                            ),
-                          const Spacer(),
-                          if (displayValues != DisplayValues.none &&
-                              displayValues != DisplayValues.minMax)
-                            Text(
-                              _numberFormat.format(field.value),
-                              style: textStyle,
-                            ),
-                          const Spacer(),
-                          if (displayValues != DisplayValues.none &&
-                              displayValues != DisplayValues.current)
-                            Text(
-                              _numberFormat.format(max),
-                              style: maxTextStyle ?? textStyle,
-                            ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }
             return InputDecorator(
-              decoration: state.decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: Container(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Column(

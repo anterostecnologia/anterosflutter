@@ -77,6 +77,10 @@ class AnterosFormFilePicker extends AnterosFormField<List<PlatformFile>> {
     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
     VoidCallback? onReset,
     FocusNode? focusNode,
+    bool? hasError,
+    String? labelText,
+    String? hintText,
+    VoidCallback? onClearValue,
     this.maxFiles,
     this.withData = false,
     this.withReadStream = false,
@@ -104,8 +108,15 @@ class AnterosFormFilePicker extends AnterosFormField<List<PlatformFile>> {
           builder: (FormFieldState<List<PlatformFile>?> field) {
             final state = field as _FormBuilderFilePickerState;
 
+            final theme = Theme.of(state.context);
+            InputDecoration inputDecoration =
+                AnterosFormHelper.getAnterosDecorationPattern(
+                    hasError, onClearValue, theme, labelText, hintText, field);
+
             return InputDecorator(
-              decoration: decoration,
+              decoration: identical(decoration, const InputDecoration())
+                  ? inputDecoration
+                  : state.decoration,
               child: Column(
                 children: <Widget>[
                   Row(
