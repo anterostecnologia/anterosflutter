@@ -1,3 +1,4 @@
+import 'package:anteros_flutter_app/screens/chips_input/chips_input.dart';
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
 import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:flutter/material.dart';
@@ -323,6 +324,14 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Color picker',
       'route': ColorPickerPage()
+    },
+    {
+      'icon': const IconData(
+        0xe900,
+        fontFamily: 'GFIconsneww',
+      ),
+      'title': 'Chips input',
+      'route': ChipsInputPage()
     },
   ];
 
