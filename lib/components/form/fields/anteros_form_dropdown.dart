@@ -281,8 +281,7 @@ class AnterosFormDropdown<T> extends AnterosFormField<T> {
           focusNode: focusNode,
           builder: (FormFieldState<T?> field) {
             final state = field as _FormBuilderDropdownState<T>;
-            // DropdownButtonFormField
-            // TextFormField
+            final theme = Theme.of(state.context);
 
             void changeValue(T? value) {
               if (shouldRequestFocus) {
@@ -305,22 +304,22 @@ class AnterosFormDropdown<T> extends AnterosFormField<T> {
 
             return InputDecorator(
               decoration: state.decoration.copyWith(
-                border: const OutlineInputBorder(
+                border: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(0x4437474F),
+                    color: theme.cardColor,
                   ),
                 ),
-                enabledBorder: const OutlineInputBorder(
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(0x4437474F),
+                    color: theme.cardColor,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Theme.of(context).primaryColor,
+                    color: theme.primaryColor,
                   ),
                 ),
-                fillColor: Theme.of(context).cardColor,
+                fillColor: theme.cardColor,
                 filled: true,
                 errorMaxLines: 2,
                 errorText: state.errorText,

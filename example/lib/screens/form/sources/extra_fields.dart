@@ -103,7 +103,8 @@ class _ExtraFieldsState extends State<ExtraFields> {
                   name: 'photos',
                   displayCustomType: (obj) =>
                       obj is ApiImage ? obj.imageUrl : obj,
-                  decoration: const InputDecoration(labelText: 'Pick Photos'),
+                  decoration:
+                      const InputDecoration(labelText: 'Selecione as imagens'),
                   maxImages: 5,
                   initialValue: [
                     'https://images.pexels.com/photos/7078045/pexels-photo-7078045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -128,9 +129,8 @@ class _ExtraFieldsState extends State<ExtraFields> {
                     ]),
                     validator: (val) {
                       if (val == null || val.isEmpty) {
-                        return 'Field required';
+                        return 'Campo requerido';
                       }
-
                       bool _checkExt = val.every((element) {
                         if (!_allowedExtensions!.contains(element.extension)) {
                           return false;
@@ -140,7 +140,7 @@ class _ExtraFieldsState extends State<ExtraFields> {
                       });
 
                       if (_checkExt == false) {
-                        return 'File extension not allowed';
+                        return 'Extensão de arquivo não permitida';
                       }
                     }),
                 Row(
