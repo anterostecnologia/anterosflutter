@@ -89,3 +89,4 @@ export 'package:anterosflutter/components/datetime_picker/anteros_datetime_picke
 export 'package:anterosflutter/components/country_pickers/anteros_country_pickers.dart';
 export 'package:anterosflutter/components/chips_input/anteros_chips_input.dart';
 export 'package:anterosflutter/helpers/anteros_builder_helper.dart';
+export 'package:anterosflutter/components/pin_code/anteros_pin_code_fields.dart';
