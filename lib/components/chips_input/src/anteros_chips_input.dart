@@ -8,7 +8,8 @@ import 'package:flutter/services.dart';
 import 'suggestions_box_controller.dart';
 import 'text_cursor.dart';
 
-typedef AnterosChipsInputSuggestions<T> = FutureOr<List<T>> Function(String query);
+typedef AnterosChipsInputSuggestions<T> = FutureOr<List<T>> Function(
+    String query);
 typedef AnterosChipSelected<T> = void Function(T data, bool selected);
 typedef AnterosChipsBuilder<T> = Widget Function(
     BuildContext context, AnterosChipsInputState<T> state, T data);
@@ -30,6 +31,9 @@ extension on TextEditingValue {
 class AnterosChipsInput<T> extends StatefulWidget {
   const AnterosChipsInput({
     Key? key,
+    String? labelText,
+    String? hintText,
+    bool? hasError,
     this.initialValue = const [],
     this.decoration = const InputDecoration(),
     this.enabled = true,

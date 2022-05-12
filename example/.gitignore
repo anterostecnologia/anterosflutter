@@ -29,5 +29,3 @@
 .dart_tool/
 .packages
 build/
-example/.flutter-plugins
-example/.flutter-plugins-dependencies
