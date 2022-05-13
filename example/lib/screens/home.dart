@@ -1,5 +1,6 @@
 import 'package:anteros_flutter_app/screens/chips_input/chips_input.dart';
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
+import 'package:anteros_flutter_app/screens/dialogs/dialogs.dart';
 import 'package:anteros_flutter_app/screens/draggable_home/anteros_draggable_home.dart';
 import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
@@ -341,8 +342,15 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsneww',
       ),
       'title': 'Pin code',
-      'route': PinCodeVerificationScreen(phoneNumber:
-              "+554498812290")
+      'route': PinCodeVerificationScreen(phoneNumber: "+554498812290")
+    },
+    {
+      'icon': const IconData(
+        0xe900,
+        fontFamily: 'GFIconsneww',
+      ),
+      'title': 'Dialogs',
+      'route': Dialogs()
     },
   ];
 

@@ -1,20 +1,19 @@
+import 'package:anteros_flutter_app/assets/utils/dimensions.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialog/alert_dialog.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialog/bottom_sheet_dialog.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialog/listview_dialog.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialog/notice_dialog.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialog/progress_dialog.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:flutter/cupertino.dart';
 
-class Dialogs extends StatefulWidget {
-  @override
-  _DialogsState createState() => _DialogsState();
-}
+var titleTextStyle = TextStyle(fontSize: 22, color: Colors.black);
 
-class _DialogsState extends State<Dialogs> {
-  @override
-  Widget build(BuildContext context) => Scaffold(
+class Dialogs extends StatelessWidget {
+  Widget build(BuildContext context) {
+    AnterosDialog.init(context);
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: AnterosColors.DARK,
         leading: InkWell(
@@ -33,202 +32,335 @@ class _DialogsState extends State<Dialogs> {
         ),
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          Text("1、Dialog"),
-          Row(children: <Widget>[
-            makeDialog(context, "Show dialog body", () {
-              AlertDialogBody();
-            }),
-            makeDialog(context, "Show dialog head&body", () {
-              AlertDialogHeadAndBody();
-            }),
-            makeDialog(context, "Show dialog divider", () {
-              AlertDialogWithDivider();
-            }),
-            makeDialog(context, "Show dialog listTile", () {
-              ListViewDialogListTile();
-            }),
-            makeDialog(context, "Show dialog listRadio", () {
-              ListViewDialogListRadio();
-            })
-          ]),
-          Row(children: <Widget>[
-            makeDialog(context, "Show dialog bottom\nsheet", () {
-              BottomSheetDialog();
-            }),
-            makeDialog(context, "Show dialog progress", () {
-              ProgressDialogNoBody();
-            }),
-            makeDialog(context, "Show dialog progress\n&body", () {
-              ProgressDialogBody();
-            }),
-            makeDialog(context, "Show dialog pop\nmenu", () {
-              AlertDialogPopMenu();
-            }),
-            makeDialog(context, "Show dialog custom\nx&y", () {
-              AlertDialogCustomXY();
-            })
-          ]),
-          Row(children: <Widget>[
-            makeDialog(context, "Show dialog notice", () {
-              NoticeDialog();
-            }),
-            makeDialog(context, "Show dialog callback", () {
-              NoticeDialogCallback();
-            })
-          ]),
-          Text("2、Dialog property"),
-          Row(children: <Widget>[
-            makeDialog(context, "Show dialog duration", () {
-              AlertDialogWithDuration();
-            }),
-            makeDialog(context, "Show dialog barrier\ncolor", () {
-              AlertDialogWithBarrierColor(Colors.redAccent);
-            }),
-            makeDialog(context, "Show dialog transparent\ncolor", () {
-              AlertDialogWithBarrierColor(Colors.transparent);
-            }),
-            makeDialog(context, "Show dialog background\ncolor", () {
-              AlertDialogWithBackgroundColor();
-            }),
-            makeDialog(context, "Show dialog barrier\ndismiss", () {
-              AlertDialogWithBarrierDismiss();
-            })
-          ]),
-          Text("3、Dialog gravity"),
-          Row(
-            children: <Widget>[
-              makeDialog(context, "bottom", () {
-                AlertDialogWithGravity(
-                  gravity: Gravity.bottom,
-                );
-              }),
-              makeDialog(context, "top", () {
-                AlertDialogWithGravity(
-                  gravity: Gravity.top,
-                );
-              }),
-              makeDialog(context, "left", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.left,
-                );
-              }),
-              makeDialog(context, "right", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.right,
-                );
-              }),
-              makeDialog(context, "center", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.center,
-                );
-              }),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              makeDialog(context, "left\nbottom", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.leftBottom,
-                );
-              }),
-              makeDialog(context, "left\ntop", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.leftTop,
-                );
-              }),
-              makeDialog(context, "right\nbottom", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.rightBottom,
-                );
-              }),
-              makeDialog(context, "right\ntop", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  gravity: Gravity.rightTop,
-                );
-              }),
-            ],
-          ),
-          Text("4. Dialog double button gravity"),
-          Row(
-            children: <Widget>[
-              makeDialog(context, "left", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  doubleButtonGravity: Gravity.left,
-                );
-              }),
-              makeDialog(context, "right", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  doubleButtonGravity: Gravity.right,
-                );
-              }),
-              makeDialog(context, "center", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  doubleButtonGravity: Gravity.center,
-                );
-              }),
-              makeDialog(context, "space\nEvenly", () {
-                AlertDialogWithGravity(
-                  width: 250.0,
-                  doubleButtonGravity: Gravity.spaceEvenly,
-                );
-              }),
-            ],
-          ),
-          Text("5. Dialog animation"),
-          Row(
-            children: <Widget>[
-              makeDialog(context, "scaleIn", () {
-                AlertDialogWithScaleIn();
-              }),
-              makeDialog(context, "fadeIn", () {
-                AlertDialogWithFadeIn();
-              }),
-              makeDialog(context, "rotateIn", () {
-                AlertDialogWithRotateIn();
-              }),
-              makeDialog(context, "customIn", () {
-                AlertDialogWithCustomIn();
-              }),
-            ],
-          ),
-        ],
-      ));
-
-  GestureDetector makeDialog(
-      BuildContext context, String title, Function() function) {
-    return GestureDetector(
-        onTap: () => AlertDialogBody(),
-        child: Container(
-          margin: const EdgeInsets.only(left: 15, right: 15, top: 20),
-          padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(7)),
-              color: AnterosColors.DARK,
-              boxShadow: [
-                BoxShadow(color: Colors.black.withOpacity(0.40), blurRadius: 5)
-              ]),
-          child: AnterosListTile(
-              color: AnterosColors.DARK,
-              title: const Text(
-                title,
-                style: TextStyle(color: AnterosColors.WHITE),
-              ),
-              icon: Icon(
-                CupertinoIcons.forward,
-                color: Theme.of(context).primaryColor,
-              )),
-        ));
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            showAlertDialog(context),
+          ],
+        ),
+      ),
+    );
   }
+}
+
+showAwesomeDialog(BuildContext context) {
+  return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[Text("1、demo"), Row()]));
+}
+
+showAlertDialog(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Text("Basic dialogs",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: Dimensions.fontSizeExtraLarge)),
+        AnterosTypography(
+          text: 'Types',
+          type: AnterosTypographyType.typo5,
+          dividerWidth: 25,
+          dividerColor: Theme.of(context).primaryColor,
+        ),
+        Row(
+          children: makeDialogTypesOne,
+        ),
+        Row(
+          children: makeDialogTypesTwo,
+        ),
+        Row(
+          children: makeDialogTypesThree,
+        ),
+        AnterosTypography(
+          text: 'Dialog properties',
+          type: AnterosTypographyType.typo5,
+          dividerWidth: 25,
+          dividerColor: Theme.of(context).primaryColor,
+        ),
+        Row(
+          children: makeDialogPropertiesOne,
+        ),
+        Row(
+          children: makeDialogPropertiesTwo,
+        ),
+        AnterosTypography(
+          text: 'Dialog gravity',
+          type: AnterosTypographyType.typo5,
+          dividerWidth: 25,
+          dividerColor: Theme.of(context).primaryColor,
+        ),
+        Row(
+          children: makeDialogGravityOne,
+        ),
+        Row(
+          children: makeDialogGravityTwo,
+        ),
+        Row(
+          children: makeDialogGravityThree,
+        ),
+        AnterosTypography(
+          text: 'Double button gravity',
+          type: AnterosTypographyType.typo5,
+          dividerWidth: 25,
+          dividerColor: Theme.of(context).primaryColor,
+        ),
+        Row(
+          children: makeDialogDoubleGravityOne,
+        ),
+        AnterosTypography(
+          text: 'Dialog animation',
+          type: AnterosTypographyType.typo5,
+          dividerWidth: 25,
+          dividerColor: Theme.of(context).primaryColor,
+        ),
+        Row(
+          children: makeDialogAnimation,
+        ),
+      ],
+    ),
+  );
+}
+
+List<Widget> get makeDialogAnimation {
+  return <Widget>[
+    makeTextButton("scaleIn", AnterosColors.SECONDARY, () {
+      AlertDialogWithScaleIn();
+    }),
+    Gap(4),
+    makeTextButton("fadeIn", AnterosColors.SECONDARY, () {
+      AlertDialogWithFadeIn();
+    }),
+    Gap(4),
+    makeTextButton("rotateIn", AnterosColors.SECONDARY, () {
+      AlertDialogWithRotateIn();
+    }),
+    Gap(4),
+    makeTextButton("customIn", AnterosColors.SECONDARY, () {
+      AlertDialogWithCustomIn();
+    }),
+  ];
+}
+
+List<Widget> get makeDialogDoubleGravityOne {
+  return <Widget>[
+    makeTextButton("left", AnterosColors.DANGER, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.center,
+        doubleButtonGravity: AnterosDialogGravity.left,
+      );
+    }),
+    Gap(4),
+    makeTextButton("right", AnterosColors.DANGER, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.center,
+        doubleButtonGravity: AnterosDialogGravity.right,
+      );
+    }),
+    Gap(4),
+    makeTextButton("center", AnterosColors.DANGER, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.bottom,
+        doubleButtonGravity: AnterosDialogGravity.center,
+      );
+    }),
+    Gap(4),
+    makeTextButton("space\nEvenly", AnterosColors.DANGER, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.center,
+        doubleButtonGravity: AnterosDialogGravity.spaceEvenly,
+      );
+    }),
+  ];
+}
+
+List<Widget> get makeDialogGravityThree {
+  return <Widget>[
+    makeTextButton("right\ntop", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.rightTop,
+      );
+    }),
+  ];
+}
+
+List<Widget> get makeDialogGravityTwo {
+  return <Widget>[
+    makeTextButton("center", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.center,
+      );
+    }),
+    Gap(4),
+    makeTextButton("left\nbottom", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.leftBottom,
+      );
+    }),
+    Gap(4),
+    makeTextButton("left\ntop", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.leftTop,
+      );
+    }),
+    Gap(4),
+    makeTextButton("right\nbottom", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.rightBottom,
+      );
+    }),
+  ];
+}
+
+List<Widget> get makeDialogGravityOne {
+  return <Widget>[
+    makeTextButton("bottom", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        gravity: AnterosDialogGravity.bottom,
+      );
+    }),
+    Gap(4),
+    makeTextButton("top", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        gravity: AnterosDialogGravity.top,
+      );
+    }),
+    Gap(4),
+    makeTextButton("left", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.left,
+      );
+    }),
+    Gap(4),
+    makeTextButton("right", AnterosColors.WARNING, () {
+      AlertDialogWithGravity(
+        width: 250.0,
+        gravity: AnterosDialogGravity.right,
+      );
+    }),
+  ];
+}
+
+List<Widget> get makeDialogPropertiesTwo {
+  return <Widget>[
+    makeTextButton("barrier\ndismiss", AnterosColors.SUCCESS, () {
+      AlertDialogWithBarrierDismiss();
+    }),
+  ];
+}
+
+List<Widget> get makeDialogPropertiesOne {
+  return <Widget>[
+    makeTextButton("duration", AnterosColors.SUCCESS, () {
+      AlertDialogWithDuration();
+    }),
+    Gap(4),
+    makeTextButton("barrier\ncolor", AnterosColors.SUCCESS, () {
+      AlertDialogWithBarrierColor(Colors.redAccent);
+    }),
+    Gap(4),
+    makeTextButton("transparent\ncolor", AnterosColors.SUCCESS, () {
+      AlertDialogWithBarrierColor(Colors.transparent);
+    }),
+    Gap(4),
+    makeTextButton("background\ncolor", AnterosColors.SUCCESS, () {
+      AlertDialogWithBackgroundColor();
+    }),
+  ];
+}
+
+List<Widget> get makeDialogTypesThree {
+  return <Widget>[
+    makeTextButton("pop\nmenu", AnterosColors.PRIMARY, () {
+      AlertDialogPopMenu();
+    }),
+    Gap(4),
+    makeTextButton("custom\nx&y", AnterosColors.PRIMARY, () {
+      AlertDialogCustomXY();
+    }),
+    Gap(4),
+    makeTextButton("notice", AnterosColors.PRIMARY, () {
+      NoticeDialog();
+    }),
+    Gap(4),
+    makeTextButton("callback", AnterosColors.PRIMARY, () {
+      NoticeDialogCallback();
+    }),
+  ];
+}
+
+List<Widget> get makeDialogTypesTwo {
+  return <Widget>[
+    makeTextButton("listRadio", AnterosColors.PRIMARY, () {
+      ListViewDialogListRadio();
+    }),
+    Gap(4),
+    makeTextButton("bottom\nsheet", AnterosColors.PRIMARY, () {
+      BottomSheetDialog();
+    }),
+    Gap(4),
+    makeTextButton("progress", AnterosColors.PRIMARY, () {
+      ProgressDialogNoBody();
+    }),
+    Gap(4),
+    makeTextButton("progress\n&body", AnterosColors.PRIMARY, () {
+      ProgressDialogBody();
+    }),
+  ];
+}
+
+List<Widget> get makeDialogTypesOne {
+  return <Widget>[
+    makeTextButton("body", AnterosColors.PRIMARY, () {
+      AlertDialogBody();
+    }),
+    Gap(4),
+    makeTextButton("head&body", AnterosColors.PRIMARY, () {
+      AlertDialogHeadAndBody();
+    }),
+    Gap(4),
+    makeTextButton("divider", AnterosColors.PRIMARY, () {
+      AlertDialogWithDivider();
+    }),
+    Gap(4),
+    makeTextButton("listTile", AnterosColors.PRIMARY, () {
+      ListViewDialogListTile();
+    }),
+  ];
+}
+
+SizedBox Gap(double _width) {
+  return SizedBox(
+    width: _width,
+  );
+}
+
+Widget makeTextButton(title, color, Function() function) {
+  return AnterosButton(
+    size: AnterosSize.LARGE,
+    color: color,
+    onPressed: () {
+      function();
+    },
+    child: Text(
+      title,
+      textAlign: TextAlign.center,
+      style: TextStyle(fontSize: 13.0),
+    ),
+  );
 }

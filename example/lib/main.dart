@@ -1,6 +1,5 @@
 import 'package:anteros_flutter_app/screens/color_picker/pods/pods_observer.dart';
 import 'package:anteros_flutter_app/screens/color_picker/store/hive_store.dart';
-import 'package:anteros_flutter_app/theme/dark_theme.dart';
 import 'package:anteros_flutter_app/theme/light_theme.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';

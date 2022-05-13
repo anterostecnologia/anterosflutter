@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'src/anteros_dialog_widget.dart';
 
 class AnterosDialog {
@@ -12,7 +11,8 @@ class AnterosDialog {
   double? height; //Aparecer
   Duration duration =
       const Duration(milliseconds: 250); //A hora da animação Dialog aparece
-  Gravity gravity = Gravity.center; //Posição da janela instalada
+  AnterosDialogGravity gravity =
+      AnterosDialogGravity.center; //Posição da janela instalada
   bool gravityAnimationEnable =
       false; //Se a animação padrão da posição Dialog está disponível
   Color barrierColor =
@@ -269,7 +269,7 @@ class AnterosDialog {
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
     if (x != null && y != null) {
-      gravity = Gravity.leftTop;
+      gravity = AnterosDialogGravity.leftTop;
       margin = EdgeInsets.only(left: x, top: y);
     }
     AnterosCustomDialog(
@@ -329,23 +329,23 @@ class AnterosDialog {
   getColumnMainAxisAlignment(gravity) {
     var mainAxisAlignment = MainAxisAlignment.start;
     switch (gravity) {
-      case Gravity.bottom:
-      case Gravity.leftBottom:
-      case Gravity.rightBottom:
+      case AnterosDialogGravity.bottom:
+      case AnterosDialogGravity.leftBottom:
+      case AnterosDialogGravity.rightBottom:
         mainAxisAlignment = MainAxisAlignment.end;
         break;
-      case Gravity.top:
-      case Gravity.leftTop:
-      case Gravity.rightTop:
+      case AnterosDialogGravity.top:
+      case AnterosDialogGravity.leftTop:
+      case AnterosDialogGravity.rightTop:
         mainAxisAlignment = MainAxisAlignment.start;
         break;
-      case Gravity.left:
+      case AnterosDialogGravity.left:
         mainAxisAlignment = MainAxisAlignment.center;
         break;
-      case Gravity.right:
+      case AnterosDialogGravity.right:
         mainAxisAlignment = MainAxisAlignment.center;
         break;
-      case Gravity.center:
+      case AnterosDialogGravity.center:
       default:
         mainAxisAlignment = MainAxisAlignment.center;
         break;
@@ -356,18 +356,18 @@ class AnterosDialog {
   getColumnCrossAxisAlignment(gravity) {
     var crossAxisAlignment = CrossAxisAlignment.center;
     switch (gravity) {
-      case Gravity.bottom:
+      case AnterosDialogGravity.bottom:
         break;
-      case Gravity.top:
+      case AnterosDialogGravity.top:
         break;
-      case Gravity.left:
-      case Gravity.leftTop:
-      case Gravity.leftBottom:
+      case AnterosDialogGravity.left:
+      case AnterosDialogGravity.leftTop:
+      case AnterosDialogGravity.leftBottom:
         crossAxisAlignment = CrossAxisAlignment.start;
         break;
-      case Gravity.right:
-      case Gravity.rightTop:
-      case Gravity.rightBottom:
+      case AnterosDialogGravity.right:
+      case AnterosDialogGravity.rightTop:
+      case AnterosDialogGravity.rightBottom:
         crossAxisAlignment = CrossAxisAlignment.end;
         break;
       default:
@@ -379,20 +379,20 @@ class AnterosDialog {
   getRowMainAxisAlignment(gravity) {
     var mainAxisAlignment = MainAxisAlignment.start;
     switch (gravity) {
-      case Gravity.bottom:
+      case AnterosDialogGravity.bottom:
         break;
-      case Gravity.top:
+      case AnterosDialogGravity.top:
         break;
-      case Gravity.left:
+      case AnterosDialogGravity.left:
         mainAxisAlignment = MainAxisAlignment.start;
         break;
-      case Gravity.right:
+      case AnterosDialogGravity.right:
         mainAxisAlignment = MainAxisAlignment.end;
         break;
-      case Gravity.spaceEvenly:
+      case AnterosDialogGravity.spaceEvenly:
         mainAxisAlignment = MainAxisAlignment.spaceEvenly;
         break;
-      case Gravity.center:
+      case AnterosDialogGravity.center:
       default:
         mainAxisAlignment = MainAxisAlignment.center;
         break;
@@ -401,7 +401,7 @@ class AnterosDialog {
   }
 }
 
-/// O conteúdo da janela pop -up é usado como um componente variável
+/// O conteúdo da janela pop-up é usado como um componente variável
 class CustomDialogChildren extends StatefulWidget {
   final List<Widget> widgetList; //Todos os componentes dentro da janela pop -up
   final Function(bool)? isShowingChange;
@@ -440,7 +440,7 @@ class AnterosCustomDialog {
   Color? _barrierColor;
   RouteTransitionsBuilder? _transitionsBuilder;
   bool? _barrierDismissible;
-  Gravity? _gravity;
+  AnterosDialogGravity? _gravity;
   bool _gravityAnimationEnable;
   Function? _animatedFunc;
 
@@ -450,7 +450,7 @@ class AnterosCustomDialog {
     Duration? duration,
     Color? barrierColor,
     RouteTransitionsBuilder? transitionsBuilder,
-    Gravity? gravity,
+    AnterosDialogGravity? gravity,
     bool gravityAnimationEnable = false,
     Function? animatedFunc,
     bool? barrierDismissible,
@@ -497,35 +497,35 @@ class AnterosCustomDialog {
       Widget child) {
     Animation<Offset> custom;
     switch (_gravity) {
-      case Gravity.top:
-      case Gravity.leftTop:
-      case Gravity.rightTop:
+      case AnterosDialogGravity.top:
+      case AnterosDialogGravity.leftTop:
+      case AnterosDialogGravity.rightTop:
         custom = Tween<Offset>(
           begin: const Offset(0.0, -1.0),
           end: const Offset(0.0, 0.0),
         ).animate(animation);
         break;
-      case Gravity.left:
+      case AnterosDialogGravity.left:
         custom = Tween<Offset>(
           begin: const Offset(-1.0, 0.0),
           end: const Offset(0.0, 0.0),
         ).animate(animation);
         break;
-      case Gravity.right:
+      case AnterosDialogGravity.right:
         custom = Tween<Offset>(
           begin: const Offset(1.0, 0.0),
           end: const Offset(0.0, 0.0),
         ).animate(animation);
         break;
-      case Gravity.bottom:
-      case Gravity.leftBottom:
-      case Gravity.rightBottom:
+      case AnterosDialogGravity.bottom:
+      case AnterosDialogGravity.leftBottom:
+      case AnterosDialogGravity.rightBottom:
         custom = Tween<Offset>(
           begin: const Offset(0.0, 1.0),
           end: const Offset(0.0, 0.0),
         ).animate(animation);
         break;
-      case Gravity.center:
+      case AnterosDialogGravity.center:
       default:
         custom = Tween<Offset>(
           begin: const Offset(0.0, 0.0),
@@ -555,7 +555,7 @@ class AnterosCustomDialog {
 }
 
 //================================Gravidade======================================
-enum Gravity {
+enum AnterosDialogGravity {
   left,
   top,
   bottom,

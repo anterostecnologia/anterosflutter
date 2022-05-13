@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:anterosflutter/anterosflutter.dart';
 
 var listTileItems = [
   ListTileItem(
@@ -130,7 +131,7 @@ AnterosDialog ListViewDialogListTile() {
         items: listTileItems,
         onClickItemListener: (index) {
           var listTileItem = listTileItems[index];
-          print(listTileItem.text + " is on click");
+          print(listTileItem.text! + " is on click");
         })
     ..show();
 }
@@ -155,12 +156,12 @@ AnterosDialog ListViewDialogListRadio() {
         activeColor: Colors.deepPurpleAccent,
         onClickItemListener: (index) {
           var radioItem = radioItems[index];
-          print(radioItem.text + " is on click");
+          print(radioItem.text! + " is on click");
         })
     ..divider()
     ..doubleButton(
       padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-      gravity: Gravity.right,
+      gravity: AnterosDialogGravity.right,
       text1: "Cancela",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,

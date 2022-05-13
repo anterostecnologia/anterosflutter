@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:anterosflutter/anterosflutter.dart';
 
 AnterosDialog BottomSheetDialog() {
   return AnterosDialog().build()
-    ..gravity = Gravity.bottom
+    ..gravity = AnterosDialogGravity.bottom
     ..gravityAnimationEnable = true
     ..backgroundColor = Colors.transparent
     ..widget(Container(

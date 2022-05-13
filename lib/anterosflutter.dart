@@ -93,6 +93,7 @@ export 'package:anterosflutter/components/dialogs/anteros_dialog.dart';
 export 'package:anterosflutter/components/dialogs/anteros_dialog_helper.dart';
 export 'package:anterosflutter/components/dialogs/anteros_awesome_dialog.dart';
 export 'package:anterosflutter/exceptions/anteros_exceptions.dart';
-export 'package:anterosflutter/exceptions/api_erro.dart';
+export 'package:anterosflutter/exceptions/api_error.dart';
 export 'package:anterosflutter/helpers/anteros_builder_helper.dart';
 export 'package:anterosflutter/components/pin_code/anteros_pin_code_fields.dart';
+export 'package:anterosflutter/components/alert/anteros_cool_alert.dart';

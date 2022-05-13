@@ -12,7 +12,7 @@ AnterosDialog AlertDialogBody() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 10.0),
-      gravity: Gravity.right,
+      gravity: AnterosDialogGravity.right,
       text1: "CANCEL",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -45,7 +45,7 @@ AnterosDialog AlertDialogHeadAndBody() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 20.0),
-      gravity: Gravity.right,
+      gravity: AnterosDialogGravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -77,7 +77,7 @@ AnterosDialog AlertDialogWithDivider() {
     ..divider()
     ..doubleButton(
       padding: EdgeInsets.only(top: 10.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       withDivider: true,
       text1: "Cancelar",
       color1: Colors.redAccent,
@@ -102,7 +102,7 @@ AnterosDialog AlertDialogWithDuration() {
     ..width = 240
     ..borderRadius = 4.0
     ..gravityAnimationEnable = true
-    ..gravity = Gravity.left
+    ..gravity = AnterosDialogGravity.left
     ..duration = Duration(seconds: 1)
     ..text(
       padding: EdgeInsets.all(18.0),
@@ -118,7 +118,7 @@ AnterosDialog AlertDialogWithDuration() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -148,7 +148,7 @@ AnterosDialog AlertDialogWithBarrierColor(Color color) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -178,7 +178,7 @@ AnterosDialog AlertDialogWithBackgroundColor() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -208,7 +208,7 @@ AnterosDialog AlertDialogWithBarrierDismiss() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -219,7 +219,10 @@ AnterosDialog AlertDialogWithBarrierDismiss() {
     ..show();
 }
 
-AnterosDialog AlertDialogWithGravity({width, gravity, doubleButtonGravity}) {
+AnterosDialog AlertDialogWithGravity(
+    {double? width,
+    required AnterosDialogGravity gravity,
+    AnterosDialogGravity? doubleButtonGravity}) {
   return AnterosDialog().build()
     ..width = width
     ..gravity = gravity
@@ -241,7 +244,7 @@ AnterosDialog AlertDialogWithGravity({width, gravity, doubleButtonGravity}) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 20.0),
-      gravity: doubleButtonGravity ?? Gravity.right,
+      gravity: doubleButtonGravity ?? AnterosDialogGravity.right,
       text1: "Discordo",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -277,7 +280,7 @@ AnterosDialog AlertDialogWithScaleIn() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -313,7 +316,7 @@ AnterosDialog AlertDialogWithFadeIn() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -349,7 +352,7 @@ AnterosDialog AlertDialogWithRotateIn() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -401,7 +404,7 @@ AnterosDialog AlertDialogWithCustomIn() {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      gravity: Gravity.center,
+      gravity: AnterosDialogGravity.center,
       text1: "Ação 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -447,7 +450,7 @@ AnterosDialog AlertDialogPopMenu() {
   return AnterosDialog().build()
     ..width = 120
     ..borderRadius = 8.0
-    ..gravity = Gravity.rightTop
+    ..gravity = AnterosDialogGravity.rightTop
     ..barrierColor = Colors.transparent
     ..margin = EdgeInsets.only(top: 80, right: 20)
     ..text(

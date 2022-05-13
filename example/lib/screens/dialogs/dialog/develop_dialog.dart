@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:anterosflutter/anterosflutter.dart';
 
 AnterosDialog FixTextFieldDialog() {
   return AnterosDialog().build()
@@ -6,7 +7,7 @@ AnterosDialog FixTextFieldDialog() {
     ..height = 110
     ..backgroundColor = Colors.white
     ..borderRadius = 10.0
-    ..gravity = Gravity.bottom
+    ..gravity = AnterosDialogGravity.bottom
     ..widget(
       Padding(
         padding: EdgeInsets.all(24),
