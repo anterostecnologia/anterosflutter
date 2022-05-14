@@ -1,3 +1,4 @@
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anterosflutter/components/dialogs/src/anteros_awesome_base_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -35,8 +36,8 @@ class AnterosAssetAwesomeDialog extends StatelessWidget {
     this.onlyCancelButton = false,
     this.buttonOkText,
     this.buttonCancelText,
-    this.buttonOkColor = Colors.green,
-    this.buttonCancelColor = Colors.grey,
+    this.buttonOkColor = AnterosColors.SUCCESS,
+    this.buttonCancelColor = AnterosColors.DANGER,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
     this.entryAnimation = EntryAnimation.normal,

@@ -3,6 +3,9 @@ library anteros_extensions;
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:anterosflutter/anterosflutter.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:path/path.dart' as path_helper;
 
@@ -64,3 +67,4 @@ part 'package:anterosflutter/components/extensions/extension/num/num.dart';
 part 'package:anterosflutter/components/extensions/extension/misc/range.dart';
 part 'package:anterosflutter/components/extensions/extension/list/sorted_list.dart';
 part 'package:anterosflutter/components/extensions/extension/string/string.dart';
+part 'package:anterosflutter/components/extensions/extension/getx/anteros_getx_extension.dart';

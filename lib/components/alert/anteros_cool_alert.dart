@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
 
 import 'src/models/cool_alert_options.dart';
@@ -61,7 +62,10 @@ class AnterosCoolAlert {
     String cancelBtnText = 'Cancel',
 
     /// Color for confirm button
-    Color confirmBtnColor = const Color(0xFF3085D6),
+    Color confirmBtnColor = Colors.green,
+
+    /// Color for cancel button
+    Color cancelBtnColor = AnterosColors.DANGER,
 
     /// TextStyle for confirm button
     TextStyle? confirmBtnTextStyle,
@@ -75,7 +79,7 @@ class AnterosCoolAlert {
     /// Dialog Border Radius
     double borderRadius = 10.0,
 
-    /// Header background color
+    /// Cor de fundo do cabeçalho
     Color backgroundColor = const Color(0xFF515C6F),
 
     /// Flare asset path
@@ -90,12 +94,12 @@ class AnterosCoolAlert {
     /// Width of the dialog
     double? width,
 
-    /// Determines how long the dialog stays open for before closing
-    /// [default] is null
-    /// When it is null, it won't autoclose
+    /// Determina quanto tempo a caixa de diálogo permanece aberta antes de fechar
+    /// [default] é nulo
+    /// Quando for nulo, não será automático
     Duration? autoCloseDuration,
 
-    /// Detemines if the animation loops or not
+    /// Determina se os loops de animação ou não
     bool loopAnimation = false,
   }) {
     if (autoCloseDuration != null) {
@@ -121,6 +125,7 @@ class AnterosCoolAlert {
       confirmBtnText: confirmBtnText,
       cancelBtnText: cancelBtnText,
       confirmBtnColor: confirmBtnColor,
+      cancelBtnColor: cancelBtnColor,
       confirmBtnTextStyle: confirmBtnTextStyle,
       cancelBtnTextStyle: cancelBtnTextStyle,
       showCancelBtn: showCancelBtn,

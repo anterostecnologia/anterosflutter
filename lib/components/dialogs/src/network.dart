@@ -37,7 +37,8 @@ class AnterosNetworkDialog extends StatelessWidget {
   ///
   /// Passar `Image.network(src)` widget aqui.
   /// De preferência com `fit: BoxFit.cover` Propriedade para cobrir a parte superior inteira da caixa de diálogo.
-  /// Todas as propriedades do widget de imagem são passadas diretamente para a caixa de diálogo GIFF, portanto, fique à vontade para experimentar.
+  /// Todas as propriedades do widget de imagem são passadas diretamente para a caixa de diálogo, portanto,
+  /// fique à vontade para experimentar.
   final Widget image;
 
   /// Texto do título.

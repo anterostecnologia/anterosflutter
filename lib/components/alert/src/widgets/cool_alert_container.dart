@@ -24,16 +24,16 @@ class AnterosCoolAlertContainer extends StatelessWidget {
     final _widget = _buildWidget(context);
 
     final _content = Container(
-      padding: EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
           _title,
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           _text,
           _widget!,
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           _buttons
@@ -67,7 +67,7 @@ class AnterosCoolAlertContainer extends StatelessWidget {
           anim = AppAnim.warning;
           break;
         case AnterosCoolAlertType.confirm:
-          anim = AppAnim.info;
+          anim = AppAnim.question;
           break;
         case AnterosCoolAlertType.info:
           anim = AppAnim.info;

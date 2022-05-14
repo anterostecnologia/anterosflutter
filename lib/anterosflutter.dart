@@ -97,3 +97,4 @@ export 'package:anterosflutter/exceptions/api_error.dart';
 export 'package:anterosflutter/helpers/anteros_builder_helper.dart';
 export 'package:anterosflutter/components/pin_code/anteros_pin_code_fields.dart';
 export 'package:anterosflutter/components/alert/anteros_cool_alert.dart';
+export 'package:anterosflutter/components/extensions/anteros_extensions.dart';

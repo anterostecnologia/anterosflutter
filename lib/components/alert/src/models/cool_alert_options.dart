@@ -13,6 +13,7 @@ class AnterosCoolAlertOptions {
   String? confirmBtnText;
   String? cancelBtnText;
   Color? confirmBtnColor;
+  Color? cancelBtnColor;
   TextStyle? confirmBtnTextStyle;
   TextStyle? cancelBtnTextStyle;
   bool? showCancelBtn;
@@ -36,6 +37,7 @@ class AnterosCoolAlertOptions {
     this.confirmBtnText,
     this.cancelBtnText,
     this.confirmBtnColor,
+    this.cancelBtnColor,
     this.confirmBtnTextStyle,
     this.cancelBtnTextStyle,
     this.showCancelBtn,

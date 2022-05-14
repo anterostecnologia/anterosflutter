@@ -268,7 +268,8 @@ class AnterosPinCodeTextField extends StatefulWidget {
         super(key: key);
 
   @override
-  _AnterosPinCodeTextFieldState createState() => _AnterosPinCodeTextFieldState();
+  _AnterosPinCodeTextFieldState createState() =>
+      _AnterosPinCodeTextFieldState();
 }
 
 class _AnterosPinCodeTextFieldState extends State<AnterosPinCodeTextField>
@@ -659,7 +660,7 @@ class _AnterosPinCodeTextFieldState extends State<AnterosPinCodeTextField>
     return showDialog(
       context: context,
       useRootNavigator: true,
-      builder: (context) => _dialogConfig.platform == Platform.iOS
+      builder: (context) => _dialogConfig.platform == PinCodePlatform.iOS
           ? CupertinoAlertDialog(
               title: Text(_dialogConfig.dialogTitle!),
               content: RichText(
@@ -863,17 +864,20 @@ class _AnterosPinCodeTextFieldState extends State<AnterosPinCodeTextField>
                   switchOutCurve: widget.animationCurve,
                   duration: widget.animationDuration,
                   transitionBuilder: (child, animation) {
-                    if (widget.animationType == AnterosPinCodeAnimationType.scale) {
+                    if (widget.animationType ==
+                        AnterosPinCodeAnimationType.scale) {
                       return ScaleTransition(
                         scale: animation,
                         child: child,
                       );
-                    } else if (widget.animationType == AnterosPinCodeAnimationType.fade) {
+                    } else if (widget.animationType ==
+                        AnterosPinCodeAnimationType.fade) {
                       return FadeTransition(
                         opacity: animation,
                         child: child,
                       );
-                    } else if (widget.animationType == AnterosPinCodeAnimationType.none) {
+                    } else if (widget.animationType ==
+                        AnterosPinCodeAnimationType.none) {
                       return child;
                     } else {
                       return SlideTransition(
@@ -925,7 +929,7 @@ class _AnterosPinCodeTextFieldState extends State<AnterosPinCodeTextField>
 
   List<Widget> _getActionButtons(String pastedText) {
     var resultList = <Widget>[];
-    if (_dialogConfig.platform == Platform.iOS) {
+    if (_dialogConfig.platform == PinCodePlatform.iOS) {
       resultList.addAll([
         CupertinoDialogAction(
           child: Text(_dialogConfig.negativeText!),

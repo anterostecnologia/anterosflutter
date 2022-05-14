@@ -214,7 +214,7 @@ class _AnterosBaseAwesomeDialogState extends State<AnterosBaseAwesomeDialog>
                   () => Navigator.of(context).pop(),
               child: widget.buttonCancelText ??
                   const Text(
-                    'Cancel',
+                    'Cancela',
                     style: TextStyle(color: Colors.white),
                   ),
             )

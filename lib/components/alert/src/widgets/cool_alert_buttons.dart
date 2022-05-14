@@ -1,3 +1,4 @@
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anterosflutter/components/alert/anteros_cool_alert.dart';
 import 'package:anterosflutter/components/alert/src/models/cool_alert_options.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,12 @@ class AnterosCoolAlertButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10.0),
+      margin: const EdgeInsets.only(top: 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           _okayBtn(context),
+          const SizedBox(width: 8),
           _cancelBtn(context),
         ],
       ),
@@ -75,7 +77,7 @@ class AnterosCoolAlertButtons extends StatelessWidget {
 
     final okayBtn = MaterialButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       color: options!.confirmBtnColor ?? Theme.of(context!).primaryColor,
       onPressed: onTap,
@@ -86,8 +88,12 @@ class AnterosCoolAlertButtons extends StatelessWidget {
       ),
     );
 
-    final cancelBtn = GestureDetector(
-      onTap: onTap,
+    final cancelBtn = MaterialButton(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      color: options!.cancelBtnColor ?? AnterosColors.DANGER,
+      onPressed: onTap,
       child: Container(
         child: Center(
           child: _btnText,
