@@ -24,7 +24,7 @@ class ValidatorUtil {
   /// Checks if string is int or double.
   static bool isNum(String s) {
     if (isNull(s)) return false;
-    return num.tryParse(s) is num ?? false;
+    return num.tryParse(s) is num;
   }
 
   /// Checks if string consist only numeric.
