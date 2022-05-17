@@ -282,7 +282,7 @@ class _CardPageState extends State<CardPage>
                             ),
                           ),
                           content: Text(
-                            'GetWidget is an open source library that comes with pre-build 1000+ UI components',
+                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components',
                             style: TextStyle(color: Colors.grey),
                           ),
                         ),
@@ -373,7 +373,7 @@ class _CardPageState extends State<CardPage>
                             ),
                           ),
                           content: Text(
-                            'GetWidget is an open source library that comes with pre-build 1000+ UI components',
+                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components',
                             style: TextStyle(color: Colors.grey),
                           ),
                           buttonBar: AnterosButtonBar(
@@ -409,7 +409,7 @@ class _CardPageState extends State<CardPage>
                             ),
                           ),
                           content: Text(
-                            'GetWidget is an open source library that comes with pre-build 1000+ UI components',
+                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components',
                             style: TextStyle(color: Colors.grey),
                           ),
                           buttonBar: AnterosButtonBar(

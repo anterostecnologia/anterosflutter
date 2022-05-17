@@ -13,7 +13,6 @@ import 'package:anteros_flutter_app/screens/bottomsheet/bottomsheet.dart';
 import 'package:anteros_flutter_app/screens/grouped_list/grouped_list_types.dart';
 import 'package:anteros_flutter_app/screens/intro-screen/introscreen.dart';
 import 'package:anteros_flutter_app/screens/radiolisttile/radiolisttile.dart';
-import 'package:anteros_flutter_app/screens/responsive_builder/views/home/home_view.dart';
 import 'package:anteros_flutter_app/screens/sticky_header/sticky_types.dart';
 import '../screens/accordian/accordian.dart';
 import '../screens/alert/alert.dart';
@@ -79,14 +78,6 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Grouped list',
       'route': GroupedListTypes()
-    },
-    {
-      'icon': const IconData(
-        0xe902,
-        fontFamily: 'GFFontIcons',
-      ),
-      'title': 'Responsive builder',
-      'route': ResponsiveHomeView()
     },
     {
       'icon': const IconData(

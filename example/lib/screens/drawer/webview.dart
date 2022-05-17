@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class WebView extends StatelessWidget {
+class WebViewDrawer extends StatelessWidget {
   final String? url;
-  WebView({Key? key, this.url}) : super(key: key);
+  WebViewDrawer({Key? key, this.url}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
-      url: url!,
-      clearCache: true,
-      clearCookies: true,
-      initialChild: AnterosLoader(
-        type: AnterosLoaderType.ios,
-      ),
+    return Scaffold(
+      body: WebView(initialUrl: url),
       appBar: new AppBar(
         title: Image.asset(
           'lib/assets/icons/gflogo.png',

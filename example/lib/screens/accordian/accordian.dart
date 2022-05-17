@@ -60,9 +60,9 @@ class _AccordionState extends State<Accordion> {
                   right: BorderSide(
                       color: Colors.black.withOpacity(0.2), width: 0.5),
                 ),
-                title: 'GF Accordion',
+                title: 'Accordion',
                 content:
-                    'GetWidget is an open source library that comes with pre-build 1000+ UI components.'
+                    'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components.'
                     ' The library is built to make flutter development faster and more enjoyable.'),
             Padding(
               padding: EdgeInsets.only(left: 15, top: 30),
@@ -94,9 +94,9 @@ class _AccordionState extends State<Accordion> {
                   right: BorderSide(
                       color: Colors.black.withOpacity(0.2), width: 0.5),
                 ),
-                title: 'GF Accordion',
+                title: 'Accordion',
                 content:
-                    'GetWidget is an open source library that comes with pre-build 1000+ UI components.'
+                    'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components.'
                     ' The library is built to make flutter development faster and more enjoyable.',
                 collapsedIcon: const Text('Show'),
                 expandedIcon: const Text(
@@ -133,9 +133,9 @@ class _AccordionState extends State<Accordion> {
                 right: BorderSide(
                     color: Colors.black.withOpacity(0.2), width: 0.5),
               ),
-              title: 'GF Accordion',
+              title: 'Accordion',
               content:
-                  'GetWidget is an open source library that comes with pre-build 1000+ UI components.'
+                  'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components.'
                   ' The library is built to make flutter development faster and more enjoyable.',
               collapsedIcon: Icon(Icons.add_circle_outline),
               expandedIcon: Icon(

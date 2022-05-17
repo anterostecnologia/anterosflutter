@@ -9,7 +9,7 @@
     
     <application
         android:name="${applicationName}"
-        android:label="GetWidget"
+        android:label="AnterosFlutter"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

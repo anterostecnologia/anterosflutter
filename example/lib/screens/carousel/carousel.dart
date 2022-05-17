@@ -157,7 +157,7 @@ class _CarouselState extends State<Carousel>
                                           padding: EdgeInsets.only(
                                               left: 30, right: 30, top: 30),
                                           child: Text(
-                                            'GetWidget is an open source library that comes with pre-build 1000+ UI components. ',
+                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: AnterosColors.LIGHT,
@@ -211,7 +211,7 @@ class _CarouselState extends State<Carousel>
                                         padding:
                                             EdgeInsets.only(right: 5, top: 10),
                                         child: Text(
-                                          'GetWidget is an open source library that comes with pre-build 1000+ UI components ',
+                                          'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components ',
                                           style: TextStyle(
                                             fontSize: 10,
                                             color: AnterosColors.LIGHT,
@@ -272,7 +272,7 @@ class _CarouselState extends State<Carousel>
                                           padding: EdgeInsets.only(
                                               left: 30, right: 30, top: 30),
                                           child: Text(
-                                            'GetWidget is an open source library that comes with pre-build 1000+ UI components. ',
+                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 color: AnterosColors.LIGHT),
@@ -337,7 +337,7 @@ class _CarouselState extends State<Carousel>
                                           padding: EdgeInsets.only(
                                               left: 30, right: 30, top: 30),
                                           child: Text(
-                                            'GetWidget is an open source library that comes with pre-build 1000+ UI components. ',
+                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 color: AnterosColors.LIGHT),
@@ -448,7 +448,7 @@ class _CarouselState extends State<Carousel>
                                             top: 30,
                                           ),
                                           child: Text(
-                                            'GetWidget is an open source library that comes with pre-build 1000+ UI components. ',
+                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                                 color: AnterosColors.LIGHT),

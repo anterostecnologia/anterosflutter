@@ -99,7 +99,7 @@ class _DrawerPageState extends State<DrawerPage> {
                       height: 5,
                     ),
                     Text(
-                      'GetWidget',
+                      'AnterosFlutter',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
@@ -1032,8 +1032,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              WebView(url: 'https://docs.getwidget.dev'),
+                          builder: (BuildContext context) => WebViewDrawer(
+                              url: 'https://docs.AnterosFlutter.dev'),
                         ),
                       );
                     },
@@ -1051,8 +1051,8 @@ class _DrawerPageState extends State<DrawerPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              WebView(url: 'https://getwidget.dev/features/'),
+                          builder: (BuildContext context) => WebViewDrawer(
+                              url: 'https://AnterosFlutter.dev/features/'),
                         ),
                       );
                     },
