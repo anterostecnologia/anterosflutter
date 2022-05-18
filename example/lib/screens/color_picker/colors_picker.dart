@@ -54,7 +54,7 @@ class _ColorPickerPageState extends State<ColorPickerPage>
           },
           child: Icon(
             CupertinoIcons.back,
-            color: AnterosColors.SUCCESS,
+            color: AnterosColors.PRIMARY,
           ),
         ),
         title: const Text(

@@ -211,7 +211,7 @@ class _AnimationPageState extends State<AnimationPage>
               color: _color,
               fontSize: _fontSize,
               type: AnterosAnimationType.textStyle,
-              child: Center(child: Text('Get Widget')),
+              child: Center(child: Text('Anteros')),
             ),
             SizedBox(height: 5),
             Center(child: Text('Tap Me')),

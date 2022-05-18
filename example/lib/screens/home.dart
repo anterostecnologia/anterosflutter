@@ -39,6 +39,7 @@ import '../screens/checkbox/checkboxs.dart';
 import '../screens/checkboxlisttile/checkbox_list_tile_page.dart';
 import '../screens/radiobutton/radio_buttons.dart';
 import 'dropdowns/dropdown-types.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -53,7 +54,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Button',
-      'route': ButtonTypes()
+      'route': ButtonTypes(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -61,7 +63,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Badge',
-      'route': BadgesPage()
+      'route': BadgesPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -69,15 +72,14 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Advanced Badge',
-      'route': AdvancedBadgesPage()
+      'route': AdvancedBadgesPage(),
+      'newFeature': true,
     },
     {
-      'icon': const IconData(
-        0xe902,
-        fontFamily: 'GFFontIcons',
-      ),
+      'icon': FontAwesome.object_group,
       'title': 'Grouped list',
-      'route': GroupedListTypes()
+      'route': GroupedListTypes(),
+      'newFeature': true,
     },
     {
       'icon': const IconData(
@@ -85,15 +87,14 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Cards',
-      'route': CardPage()
+      'route': CardPage(),
+      'newFeature': false,
     },
     {
-      'icon': const IconData(
-        0xe905,
-        fontFamily: 'GFFontIcons',
-      ),
+      'icon': FontAwesome.wpforms,
       'title': 'Forms',
-      'route': FormPage()
+      'route': FormPage(),
+      'newFeature': true,
     },
     {
       'icon': const IconData(
@@ -101,7 +102,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Carousel',
-      'route': Carousel()
+      'route': Carousel(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -109,7 +111,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Avatar',
-      'route': Avatar()
+      'route': Avatar(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -117,7 +120,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Images',
-      'route': Images()
+      'route': Images(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -125,7 +129,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Tiles',
-      'route': TilesPage()
+      'route': TilesPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -133,7 +138,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Tabs',
-      'route': TabTypes()
+      'route': TabTypes(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -141,7 +147,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Toggle',
-      'route': Toggles()
+      'route': Toggles(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -149,7 +156,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Toast',
-      'route': Toasts()
+      'route': Toasts(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -157,7 +165,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Alert',
-      'route': AlertPage()
+      'route': AlertPage(),
+      'newFeature': true,
     },
     {
       'icon': const IconData(
@@ -165,7 +174,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Accordion',
-      'route': Accordion()
+      'route': Accordion(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -173,7 +183,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Search Bar',
-      'route': SearchbarPage()
+      'route': SearchbarPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -181,7 +192,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Appbar',
-      'route': AppHome()
+      'route': AppHome(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -189,7 +201,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons2',
       ),
       'title': 'Rating',
-      'route': RatingPage()
+      'route': RatingPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -197,7 +210,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIcons',
       ),
       'title': 'Loaders',
-      'route': Loaders()
+      'route': Loaders(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -205,7 +219,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons',
       ),
       'title': 'Typography',
-      'route': TypographyPage()
+      'route': TypographyPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -213,7 +228,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons2',
       ),
       'title': 'Floating Widget',
-      'route': FloatingWidgetHome()
+      'route': FloatingWidgetHome(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -221,7 +237,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIcons',
       ),
       'title': 'Progress Bar',
-      'route': ProgressBar()
+      'route': ProgressBar(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -229,7 +246,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFFontIcons2',
       ),
       'title': 'Shimmer',
-      'route': ShimmerPage()
+      'route': ShimmerPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -237,7 +255,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'CheckBox',
-      'route': CheckBoxPage()
+      'route': CheckBoxPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -245,7 +264,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'Checkbox List Tile',
-      'route': CheckBoxListTilePage()
+      'route': CheckBoxListTilePage(),
+      'newFeature': true,
     },
     {
       'icon': const IconData(
@@ -253,7 +273,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'RadioButton',
-      'route': RadioButtonPage()
+      'route': RadioButtonPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -261,7 +282,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'RadioListTile',
-      'route': RadioListTilePage()
+      'route': RadioListTilePage(),
+      'newFeature': true,
     },
     {
       'icon': const IconData(
@@ -269,7 +291,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'Border',
-      'route': BorderPage()
+      'route': BorderPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -277,7 +300,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'BottomSheet',
-      'route': BottomSheetPage()
+      'route': BottomSheetPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -285,7 +309,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsnew',
       ),
       'title': 'Animation',
-      'route': AnimationPage()
+      'route': AnimationPage(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -293,7 +318,8 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsneww',
       ),
       'title': 'IntroScreen',
-      'route': Introscreen()
+      'route': Introscreen(),
+      'newFeature': false,
     },
     {
       'icon': const IconData(
@@ -301,47 +327,38 @@ class _HomePageState extends State<HomePage> {
         fontFamily: 'GFIconsneww',
       ),
       'title': 'StickyHeader',
-      'route': StickyTypes()
+      'route': StickyTypes(),
+      'newFeature': false,
     },
     {
-      'icon': const IconData(
-        0xe900,
-        fontFamily: 'GFIconsneww',
-      ),
+      'icon': FontAwesome.caret_down,
       'title': 'DropDown',
-      'route': DropDown()
+      'route': DropDown(),
+      "newFeature": false
     },
     {
-      'icon': const IconData(
-        0xe900,
-        fontFamily: 'GFIconsneww',
-      ),
+      'icon': FontAwesome.tint,
       'title': 'Color picker',
-      'route': ColorPickerPage()
+      'route': ColorPickerPage(),
+      'newFeature': true,
     },
     {
-      'icon': const IconData(
-        0xe900,
-        fontFamily: 'GFIconsneww',
-      ),
+      'icon': FontAwesome.home,
       'title': 'Draggable home',
-      'route': DraggableHomePage()
+      'route': DraggableHomePage(),
+      'newFeature': true,
     },
     {
-      'icon': const IconData(
-        0xe900,
-        fontFamily: 'GFIconsneww',
-      ),
+      'icon': FontAwesome5Regular.stop_circle,
       'title': 'Pin code',
-      'route': PinCodeVerificationScreen(phoneNumber: "+554498812290")
+      'route': PinCodeVerificationScreen(phoneNumber: "+554498812290"),
+      'newFeature': true,
     },
     {
-      'icon': const IconData(
-        0xe900,
-        fontFamily: 'GFIconsneww',
-      ),
+      'icon': FontAwesome.search,
       'title': 'Dialogs',
-      'route': Dialogs()
+      'route': Dialogs(),
+      'newFeature': true,
     },
   ];
 
@@ -395,49 +412,73 @@ class _HomePageState extends State<HomePage> {
                         child: buildSquareTile(
                             anterosComponents[index]['title'],
                             anterosComponents[index]['icon'],
-                            anterosComponents[index]['route']))),
+                            anterosComponents[index]['route'],
+                            anterosComponents[index]['newFeature']))),
           )
         ],
       ),
     );
   }
 
-  Widget buildSquareTile(String title, IconData? icon, Widget? route) =>
-      InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (BuildContext context) => route!),
-          );
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: const Color(0xFF333333),
-            borderRadius: const BorderRadius.all(Radius.circular(7)),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.61),
-                  blurRadius: 6,
-                  spreadRadius: 0),
-            ],
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Icon(
+  Widget buildSquareTile(
+      String title, IconData? icon, Widget? route, bool newFeature) {
+    var iconWidget = newFeature
+        ? AnterosIconBadge(
+            child: AnterosIconButton(
+              type: AnterosButtonType.transparent,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (BuildContext context) => route!),
+                );
+              },
+              icon: Icon(
                 icon,
                 color: Theme.of(context).primaryColor,
                 size: 30,
               ),
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style:
-                    const TextStyle(color: AnterosColors.WHITE, fontSize: 14),
-              )
-            ],
-          ),
+            ),
+            counterChild: const AnterosBadge(
+              text: 'new',
+              shape: AnterosBadgeShape.pills,
+            ),
+          )
+        : Icon(
+            icon,
+            color: Theme.of(context).primaryColor,
+            size: 30,
+          );
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (BuildContext context) => route!),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xFF333333),
+          borderRadius: const BorderRadius.all(Radius.circular(7)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.61),
+                blurRadius: 6,
+                spreadRadius: 0),
+          ],
         ),
-      );
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            iconWidget,
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: AnterosColors.WHITE, fontSize: 14),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }

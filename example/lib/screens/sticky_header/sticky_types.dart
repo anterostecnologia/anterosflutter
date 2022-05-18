@@ -64,7 +64,7 @@ class _StickyTypesState extends State<StickyTypes>
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
           GestureDetector(
@@ -93,7 +93,7 @@ class _StickyTypesState extends State<StickyTypes>
                     ),
                     icon: Icon(
                       CupertinoIcons.forward,
-                      color: AnterosColors.SUCCESS,
+                      color: AnterosColors.PRIMARY,
                     )),
               )),
         ],

@@ -72,7 +72,7 @@ class _BorderPageState extends State<BorderPage>
                     color: Colors.black,
                     border: Border(
                       bottom: BorderSide(
-                        color: AnterosColors.SUCCESS,
+                        color: AnterosColors.PRIMARY,
                         width: 3,
                       ),
                     ),

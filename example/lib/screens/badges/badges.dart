@@ -217,7 +217,7 @@ class _BadgesPageState extends State<BadgesPage> {
                             type: AnterosButtonType.transparent,
                             onPressed: () {},
                             icon: Icon(
-                              IconData(
+                              const IconData(
                                 0xe917,
                                 fontFamily: 'GFIconFonts',
                               ),
@@ -233,7 +233,7 @@ class _BadgesPageState extends State<BadgesPage> {
                           type: AnterosButtonType.transparent,
                           onPressed: () {},
                           icon: const Icon(
-                            IconData(
+                            const IconData(
                               0xe91a,
                               fontFamily: 'GFIconFonts',
                             ),
@@ -250,7 +250,7 @@ class _BadgesPageState extends State<BadgesPage> {
                             type: AnterosButtonType.transparent,
                             onPressed: () {},
                             icon: const Icon(
-                              IconData(
+                              const IconData(
                                 0xe91c,
                                 fontFamily: 'GFIconFonts',
                               ),
@@ -266,7 +266,7 @@ class _BadgesPageState extends State<BadgesPage> {
                             type: AnterosButtonType.transparent,
                             onPressed: () {},
                             icon: const Icon(
-                              IconData(
+                              const IconData(
                                 0xe924,
                                 fontFamily: 'GFIconFonts',
                               ),
@@ -287,7 +287,7 @@ class _BadgesPageState extends State<BadgesPage> {
                           type: AnterosButtonType.outline,
                           onPressed: () {},
                           icon: const Icon(
-                            IconData(
+                            const IconData(
                               0xe908,
                               fontFamily: 'GFIconFonts',
                             ),
@@ -306,7 +306,7 @@ class _BadgesPageState extends State<BadgesPage> {
                           shape: AnterosIconButtonShape.circle,
                           onPressed: () {},
                           icon: const Icon(
-                            IconData(
+                            const IconData(
                               0xe911,
                               fontFamily: 'GFIconFonts',
                             ),
@@ -325,7 +325,7 @@ class _BadgesPageState extends State<BadgesPage> {
                           color: AnterosColors.SUCCESS,
                           onPressed: () {},
                           icon: const Icon(
-                            IconData(
+                            const IconData(
                               0xe912,
                               fontFamily: 'GFIconFonts',
                             ),
@@ -345,7 +345,7 @@ class _BadgesPageState extends State<BadgesPage> {
                           shape: AnterosIconButtonShape.square,
                           onPressed: () {},
                           icon: const Icon(
-                            IconData(
+                            const IconData(
                               0xe909,
                               fontFamily: 'GFIconFonts',
                             ),

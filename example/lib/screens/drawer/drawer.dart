@@ -72,13 +72,16 @@ class _DrawerPageState extends State<DrawerPage> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: const [Color(0xFFD685FF), Color(0xFF7466CC)],
+                    colors: const [
+                      AnterosColors.PRIMARY,
+                      AnterosColors.PRIMARY
+                    ],
                   ),
                 ),
                 otherAccountsPictures: <Widget>[
                   AnterosAvatar(
-                    backgroundColor: Colors.green,
-                    child: const Text('G'),
+                    backgroundColor: Colors.blue,
+                    child: const Text('A'),
                   ),
                   const AnterosAvatar(
                     backgroundColor: Colors.black,
@@ -109,7 +112,7 @@ class _DrawerPageState extends State<DrawerPage> {
                       height: 5,
                     ),
                     const Text(
-                      'info@getflutter.dev',
+                      'edson.martins@relevantsolutions.com.br',
                       style: TextStyle(color: Colors.white),
                     ),
                   ],
