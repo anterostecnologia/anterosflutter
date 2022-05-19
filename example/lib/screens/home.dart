@@ -3,6 +3,7 @@ import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialogs.dart';
 import 'package:anteros_flutter_app/screens/draggable_home/anteros_draggable_home.dart';
 import 'package:anteros_flutter_app/screens/form/form_page.dart';
+import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
@@ -358,6 +359,12 @@ class _HomePageState extends State<HomePage> {
       'icon': FontAwesome.search,
       'title': 'Dialogs',
       'route': Dialogs(),
+      'newFeature': true,
+    },
+    {
+      'icon': FontAwesome.table,
+      'title': 'Layouts',
+      'route': LayoutsTypes(),
       'newFeature': true,
     },
   ];
