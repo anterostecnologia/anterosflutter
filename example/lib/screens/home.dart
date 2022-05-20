@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Tabs',
       'route': TabTypes(),
-      'newFeature': false,
+      'newFeature': true,
     },
     {
       'icon': const IconData(
