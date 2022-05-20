@@ -1,4 +1,6 @@
+import 'package:anteros_flutter_app/screens/calendar/calendar_page.dart';
 import 'package:anteros_flutter_app/screens/chips_input/chips_input.dart';
+import 'package:anteros_flutter_app/screens/clippers/clippers_page.dart';
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
 import 'package:anteros_flutter_app/screens/containers/containers_types.dart';
 import 'package:anteros_flutter_app/screens/dialogs/dialogs.dart';
@@ -7,6 +9,7 @@ import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:anteros_flutter_app/screens/indicators/progress_indicators_types.dart';
 import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
+import 'package:anteros_flutter_app/screens/switch/switch_page.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anteros_flutter_app/screens/animations/animation.dart';
@@ -376,9 +379,27 @@ class _HomePageState extends State<HomePage> {
       'newFeature': true,
     },
     {
+      'icon': FontAwesome.circle,
+      'title': 'Clippers',
+      'route': ClippersPage(),
+      'newFeature': true,
+    },
+    {
       'icon': FontAwesome.times_rectangle,
       'title': 'Containers',
       'route': ContainersTypes(),
+      'newFeature': true,
+    },
+    {
+      'icon': FontAwesome.subway,
+      'title': 'Switchers',
+      'route': SwitchPage(),
+      'newFeature': true,
+    },
+    {
+      'icon': FontAwesome.calendar,
+      'title': 'Calendar',
+      'route': CalendarPage(),
       'newFeature': true,
     },
   ];
