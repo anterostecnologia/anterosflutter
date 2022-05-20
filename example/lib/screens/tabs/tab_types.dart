@@ -1,3 +1,4 @@
+import 'package:anteros_flutter_app/screens/tabs/advanced_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/cupertino.dart';
@@ -184,6 +185,39 @@ class _TabTypesState extends State<TabTypes> {
                   color: AnterosColors.DARK,
                   title: const Text(
                     'Bottom Labeled Tabs',
+                    style: TextStyle(color: AnterosColors.WHITE),
+                  ),
+                  icon: Icon(
+                    CupertinoIcons.forward,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => AdvancedTabPage()),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.only(left: 15, right: 15, top: 20),
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(7)),
+                    color: AnterosColors.DARK,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.40),
+                        blurRadius: 5,
+                      )
+                    ]),
+                child: AnterosListTile(
+                  color: AnterosColors.DARK,
+                  title: const Text(
+                    'Advanced Tabs',
                     style: TextStyle(color: AnterosColors.WHITE),
                   ),
                   icon: Icon(

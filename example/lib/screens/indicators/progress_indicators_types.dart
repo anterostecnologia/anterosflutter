@@ -1,22 +1,19 @@
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/container_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/expanded_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/grid_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/listview_gridview_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/row_column_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/pages/stack_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/widgets/items/row_column_items.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/widgets/items/stack_items.dart';
+import 'package:anteros_flutter_app/screens/indicators/pages/circular_animation1.dart';
+import 'package:anteros_flutter_app/screens/indicators/pages/circular_bar1.dart';
+import 'package:anteros_flutter_app/screens/indicators/pages/circular_bar2.dart';
+import 'package:anteros_flutter_app/screens/indicators/pages/horizontal_bar.dart';
+import 'package:anteros_flutter_app/screens/indicators/pages/vertical_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:anteros_flutter_app/screens/button/like_buttons.dart';
 
-class LayoutsTypes extends StatefulWidget {
+class ProgressIndicatorsTypes extends StatefulWidget {
   @override
-  _LayoutsTypesState createState() => _LayoutsTypesState();
+  _ProgressIndicatorsTypesState createState() =>
+      _ProgressIndicatorsTypesState();
 }
 
-class _LayoutsTypesState extends State<LayoutsTypes> {
+class _ProgressIndicatorsTypesState extends State<ProgressIndicatorsTypes> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
@@ -33,7 +30,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
             ),
           ),
           title: const Text(
-            'Layouts',
+            'Progress indicators',
             style: TextStyle(fontSize: 17),
           ),
           centerTitle: true,
@@ -48,7 +45,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => ContainerPage()),
+                        builder: (BuildContext context) => HorizontalBar()),
                   );
                 },
                 child: Container(
@@ -65,7 +62,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   child: AnterosListTile(
                       color: AnterosColors.DARK,
                       title: const Text(
-                        'Container',
+                        'Horizontal',
                         style: TextStyle(color: AnterosColors.WHITE),
                       ),
                       icon: Icon(
@@ -78,7 +75,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => ExpandedPage()),
+                        builder: (BuildContext context) => VerticalBar()),
                   );
                 },
                 child: Container(
@@ -95,7 +92,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   child: AnterosListTile(
                       color: AnterosColors.DARK,
                       title: const Text(
-                        'Expanded',
+                        'Vertical',
                         style: TextStyle(color: AnterosColors.WHITE),
                       ),
                       icon: Icon(
@@ -109,7 +106,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            ListViewGridViewPage()),
+                            CircularAnimation1()),
                   );
                 },
                 child: Container(
@@ -126,7 +123,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   child: AnterosListTile(
                       color: AnterosColors.DARK,
                       title: const Text(
-                        'Listview',
+                        'Circular with animation',
                         style: TextStyle(color: AnterosColors.WHITE),
                       ),
                       icon: Icon(
@@ -139,7 +136,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => RowColumnPage()),
+                        builder: (BuildContext context) => CircularBar1()),
                   );
                 },
                 child: Container(
@@ -156,7 +153,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   child: AnterosListTile(
                       color: AnterosColors.DARK,
                       title: const Text(
-                        'Row/col',
+                        'Circular 1',
                         style: TextStyle(color: AnterosColors.WHITE),
                       ),
                       icon: Icon(
@@ -169,7 +166,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => StackPage()),
+                        builder: (BuildContext context) => CircularBar2()),
                   );
                 },
                 child: Container(
@@ -186,39 +183,7 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                   child: AnterosListTile(
                       color: AnterosColors.DARK,
                       title: const Text(
-                        'Stack',
-                        style: TextStyle(color: AnterosColors.WHITE),
-                      ),
-                      icon: Icon(
-                        CupertinoIcons.forward,
-                        color: Theme.of(context).primaryColor,
-                      )),
-                )),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => GridPage(
-                              title: "Responsive Grid",
-                            )),
-                  );
-                },
-                child: Container(
-                  margin: const EdgeInsets.only(left: 15, right: 15, top: 20),
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(7)),
-                      color: AnterosColors.DARK,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black.withOpacity(0.40),
-                            blurRadius: 5)
-                      ]),
-                  child: AnterosListTile(
-                      color: AnterosColors.DARK,
-                      title: const Text(
-                        'Grid',
+                        'Circular 2',
                         style: TextStyle(color: AnterosColors.WHITE),
                       ),
                       icon: Icon(
