@@ -8,4 +8,7 @@ enum AnterosButtonShape {
 
   /// [AnterosButtonShape.square], usado para botão quadrado
   square,
+
+  /// [AnterosButtonShape.rounded_square], usado para botão quadrado com cantos arredondados
+  rounded_square,
 }

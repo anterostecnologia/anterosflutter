@@ -8,4 +8,7 @@ class AnterosSize {
 
   /// [AnterosSize.LARGE] é usado para widget de tamanho grande
   static const double LARGE = 45;
+
+  /// [AnterosSize.LARGE] é usado para widget de tamanho grande
+  static const double EXTRA_LARGE = 50;
 }

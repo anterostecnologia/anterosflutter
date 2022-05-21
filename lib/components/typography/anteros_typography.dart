@@ -71,17 +71,17 @@ class AnterosTypography extends StatelessWidget {
     double? fontSize;
 
     if (type == AnterosTypographyType.typo1) {
-      fontSize = 25.0;
+      fontSize = 28.0;
     } else if (type == AnterosTypographyType.typo2) {
-      fontSize = 22.0;
+      fontSize = 25.0;
     } else if (type == AnterosTypographyType.typo3) {
-      fontSize = 19.0;
+      fontSize = 22.0;
     } else if (type == AnterosTypographyType.typo4) {
-      fontSize = 17.0;
+      fontSize = 20.0;
     } else if (type == AnterosTypographyType.typo5) {
-      fontSize = 15.0;
+      fontSize = 18.0;
     } else if (type == AnterosTypographyType.typo6) {
-      fontSize = 13.0;
+      fontSize = 16.0;
     }
 
     var defaultTextColor = Theme.of(context).textTheme.bodyText2!.color;

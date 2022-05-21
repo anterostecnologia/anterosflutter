@@ -112,3 +112,11 @@ export 'package:anterosflutter/components/containers/anteros_easy_container.dart
 export 'package:anterosflutter/components/clippers/anteros_custom_clippers.dart';
 export 'package:anterosflutter/components/switch/anteros_switch.dart';
 export 'package:anterosflutter/components/calendar/anteros_calendar_view.dart';
+export 'package:anterosflutter/components/uiblock/anteros_uiblock.dart';
+export 'package:anterosflutter/components/uiblock/default_uiblock_loader.dart';
+export 'package:anterosflutter/components/uiblock/uiblock_modal.dart';
+export 'package:anterosflutter/components/avatar/anteros_circular_avatar.dart';
+export 'package:anterosflutter/components/avatar/anteros_avatar_stack.dart';
+export 'package:anterosflutter/components/avatar/anteros_advanced_avatar.dart';
+export 'package:anterosflutter/components/avatar/anteros_colorize_text_avatar.dart';
+export 'package:anterosflutter/components/avatar/anteros_avatar_glow.dart';

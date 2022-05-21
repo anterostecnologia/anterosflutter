@@ -480,6 +480,11 @@ class _AnterosButtonState extends State<AnterosButton> {
         borderRadius: BorderRadius.circular(3),
         side: shapeBorder,
       );
+    } else if (shape == AnterosButtonShape.rounded_square) {
+      shapeBorderType = RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+        side: shapeBorder,
+      );
     } else {
       shapeBorderType = RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50),

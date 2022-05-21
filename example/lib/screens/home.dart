@@ -10,6 +10,7 @@ import 'package:anteros_flutter_app/screens/indicators/progress_indicators_types
 import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
 import 'package:anteros_flutter_app/screens/switch/switch_page.dart';
+import 'package:anteros_flutter_app/screens/uiblock/uiblock_page.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:anteros_flutter_app/screens/animations/animation.dart';
@@ -400,6 +401,12 @@ class _HomePageState extends State<HomePage> {
       'icon': FontAwesome.calendar,
       'title': 'Calendar',
       'route': CalendarPage(),
+      'newFeature': true,
+    },
+    {
+      'icon': FontAwesome.align_right,
+      'title': 'UI Block',
+      'route': UIBlockPage(),
       'newFeature': true,
     },
   ];
