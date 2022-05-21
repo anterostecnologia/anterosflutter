@@ -51,7 +51,7 @@ class AnterosTextAvatar extends StatelessWidget {
     if (textColor == null)
       return Colors.white;
     else
-      return textColor!;
+      return textColor;
   }
 
   String _toString({String? value}) {

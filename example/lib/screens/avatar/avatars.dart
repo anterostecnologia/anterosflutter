@@ -485,7 +485,7 @@ class _AvatarState extends State<Avatar> {
       Container(
         width: double.infinity,
         color: Color(0xff686de0),
-        child: AvatarGlow(
+        child: AnterosAvatarGlow(
           startDelay: Duration(milliseconds: 1000),
           glowColor: Colors.white,
           endRadius: 100.0,
@@ -498,7 +498,7 @@ class _AvatarState extends State<Avatar> {
             shape: CircleBorder(),
             color: Colors.transparent,
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/avatar.png'),
+              backgroundImage: AssetImage('assets/images/_avatar.png'),
               radius: 50.0,
             ),
           ),
