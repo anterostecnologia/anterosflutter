@@ -37,6 +37,9 @@ class _AvatarState extends State<Avatar> {
             ...getStackAvatars(),
             ...getAdvancedAvatars(),
             ...getTextAvatars(),
+            SizedBox(
+              height: 20,
+            ),
             ...getGlowAvatars()
           ],
         ),
@@ -474,7 +477,7 @@ class _AvatarState extends State<Avatar> {
             child: CircleAvatar(
               backgroundColor: Colors.grey[100],
               child: Image.asset(
-                'assets/images/dart.png',
+                'lib/assets/images/dart.png',
                 height: 50,
               ),
               radius: 30,
@@ -498,7 +501,7 @@ class _AvatarState extends State<Avatar> {
             shape: CircleBorder(),
             color: Colors.transparent,
             child: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/_avatar.png'),
+              backgroundImage: AssetImage('lib/assets/images/_avatar.png'),
               radius: 50.0,
             ),
           ),
@@ -527,7 +530,7 @@ class _AvatarState extends State<Avatar> {
               child: CircleAvatar(
                 backgroundColor: Colors.grey[100],
                 child: Image.asset(
-                  'assets/images/flutter.png',
+                  'lib/assets/images/_flutter.png',
                   height: 60,
                 ),
                 radius: 40.0,
@@ -547,7 +550,7 @@ class _AvatarState extends State<Avatar> {
               child: CircleAvatar(
                 backgroundColor: Colors.grey[100],
                 child: Image.asset(
-                  'assets/images/love.png',
+                  'lib/assets/images/love.png',
                   height: 60,
                 ),
                 radius: 40.0,
@@ -569,7 +572,7 @@ class _AvatarState extends State<Avatar> {
           child: CircleAvatar(
             backgroundColor: Colors.grey[100],
             child: Image.asset(
-              'assets/images/dart.png',
+              'lib/assets/images/dart.png',
               height: 50,
             ),
             radius: 30.0,
