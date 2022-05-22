@@ -120,3 +120,4 @@ export 'package:anterosflutter/components/avatar/anteros_avatar_stack.dart';
 export 'package:anterosflutter/components/avatar/anteros_advanced_avatar.dart';
 export 'package:anterosflutter/components/avatar/anteros_colorize_text_avatar.dart';
 export 'package:anterosflutter/components/avatar/anteros_avatar_glow.dart';
+export 'package:anterosflutter/components/carousel/anteros_carousel_slider.dart';

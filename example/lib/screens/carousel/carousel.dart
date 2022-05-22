@@ -80,7 +80,7 @@ class _CarouselState extends State<Carousel>
                   Text('Gradient'),
                   Tab(
                     child: Text('Image'),
-                  ),
+                  )
                 ],
                 tabBarColor: AnterosColors.LIGHT,
                 indicatorSize: TabBarIndicatorSize.tab,
@@ -106,375 +106,346 @@ class _CarouselState extends State<Carousel>
                 controller: tabController,
                 height: 400,
                 children: <Widget>[
-                  Container(
-                    child: ListView(
-                      children: <Widget>[
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Full Width',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosCarousel(
-                          autoPlay: true,
-                          viewportFraction: 1.0,
-                          activeIndicator: AnterosColors.SUCCESS,
-                          passiveIndicator: AnterosColors.DARK,
-                          aspectRatio: 2,
-                          items: gradientColor
-                              .map(
-                                (url) => AnterosCard(
-                                  gradient: LinearGradient(
-                                    begin: FractionalOffset.topLeft,
-                                    end: FractionalOffset.bottomRight,
-                                    colors: gradientColor,
-                                  ),
-                                  margin: const EdgeInsets.only(
-                                    left: 15,
-                                    right: 15,
-                                    bottom: 24,
-                                  ),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  content: Padding(
-                                    padding:
-                                        const EdgeInsets.only(top: 30, left: 0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Title',
-                                          style: TextStyle(
-                                            color: AnterosColors.WHITE,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 30, right: 30, top: 30),
-                                          child: Text(
-                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: AnterosColors.LIGHT,
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Multiple Items',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosItemsCarousel(
-                          rowCount: 3,
-                          children: assetImg
-                              .map(
-                                (url) => AnterosCard(
-                                  gradient: LinearGradient(
-                                    begin: FractionalOffset.topCenter,
-                                    end: FractionalOffset.bottomCenter,
-                                    colors: gradientColors,
-                                  ),
-                                  margin:
-                                      const EdgeInsets.only(left: 15, right: 5),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  content: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: const <Widget>[
-                                      Text(
-                                        'Title',
-                                        style: TextStyle(
-                                          color: AnterosColors.WHITE,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(right: 5, top: 10),
-                                        child: Text(
-                                          'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components ',
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            color: AnterosColors.LIGHT,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Full Size',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosCarousel(
-                          autoPlay: true,
-                          viewportFraction: 1.0,
-                          activeIndicator: AnterosColors.SUCCESS,
-                          passiveIndicator: AnterosColors.WHITE,
-                          aspectRatio: 2,
-                          items: assetImg
-                              .map(
-                                (url) => AnterosCard(
-                                  gradient: LinearGradient(
-                                    begin: FractionalOffset.bottomLeft,
-                                    end: FractionalOffset.topRight,
-                                    colors: const [
-                                      Color(0xff33B5E5),
-                                      Color(0xFF39FFF8),
-                                    ],
-                                  ),
-                                  height: 200,
-                                  margin: const EdgeInsets.only(
-                                      left: 15, right: 15),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  content: Padding(
-                                    padding:
-                                        const EdgeInsets.only(top: 30, left: 0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Title',
-                                          style: TextStyle(
-                                              color: AnterosColors.WHITE),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 30, right: 30, top: 30),
-                                          child: Text(
-                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: AnterosColors.LIGHT),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: ListView(
-                      children: <Widget>[
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Full Width',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosCarousel(
-                          autoPlay: true,
-                          viewportFraction: 1.0,
-                          activeIndicator: AnterosColors.SUCCESS,
-                          passiveIndicator: AnterosColors.DARK,
-                          aspectRatio: 2,
-                          items: imageList
-                              .map(
-                                (url) => AnterosImageOverlay(
-                                  height: 200,
-                                  margin: const EdgeInsets.only(
-                                    left: 15,
-                                    right: 15,
-                                    bottom: 30,
-                                  ),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.only(top: 30, left: 0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Title',
-                                          style: TextStyle(
-                                              color: AnterosColors.WHITE),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 30, right: 30, top: 30),
-                                          child: Text(
-                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: AnterosColors.LIGHT),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  image: AssetImage(url),
-                                ),
-                              )
-                              .toList(),
-                          onPageChanged: (index) {
-                            setState(() {});
-                          },
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Multiple Items',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosItemsCarousel(
-                          rowCount: 3,
-                          children: imageList
-                              .map(
-                                (url) => AnterosImageOverlay(
-                                  height: 400,
-                                  width: 300,
-                                  margin:
-                                      const EdgeInsets.only(left: 15, right: 5),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  child: Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: const <Widget>[
-                                          Text(
-                                            'Title',
-                                            style: TextStyle(
-                                                color: AnterosColors.WHITE),
-                                          ),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                right: 5,
-                                              ),
-                                              child: Text(
-                                                'Open source UI library ',
-                                                style: TextStyle(
-                                                    fontSize: 10,
-                                                    color: AnterosColors.LIGHT),
-                                              ))
-                                        ],
-                                      )),
-                                  image: AssetImage(url),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                        Padding(
-                          padding:
-                              EdgeInsets.only(left: 15, top: 30, bottom: 10),
-                          child: AnterosTypography(
-                            text: 'Full Size',
-                            type: AnterosTypographyType.typo5,
-                            dividerWidth: 25,
-                            dividerColor: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        AnterosCarousel(
-                          autoPlay: true,
-                          viewportFraction: 1.0,
-                          activeIndicator: AnterosColors.SUCCESS,
-                          passiveIndicator: AnterosColors.WHITE,
-                          aspectRatio: 2,
-                          items: imageList
-                              .map(
-                                (url) => AnterosImageOverlay(
-                                  height: 200,
-                                  margin: const EdgeInsets.only(
-                                      left: 15, right: 15),
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(4)),
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.only(top: 30, left: 0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Title',
-                                          style: TextStyle(
-                                              color: AnterosColors.WHITE),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                            left: 30,
-                                            right: 30,
-                                            top: 30,
-                                          ),
-                                          child: Text(
-                                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: AnterosColors.LIGHT),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  image: AssetImage(url),
-                                ),
-                              )
-                              .toList(),
-                          onPageChanged: (index) {
-                            setState(() {});
-                          },
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        )
-                      ],
-                    ),
-                  )
+                  getCarouselGradient(context),
+                  getCaourselImage(context),
                 ],
               ),
             )
           ],
         ),
       );
+
+  Container getCaourselImage(BuildContext context) {
+    return Container(
+      child: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Full Width',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosCarousel(
+            autoPlay: true,
+            viewportFraction: 1.0,
+            activeIndicator: AnterosColors.SUCCESS,
+            passiveIndicator: AnterosColors.DARK,
+            aspectRatio: 2,
+            items: imageList
+                .map(
+                  (url) => AnterosImageOverlay(
+                    height: 200,
+                    margin: const EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                      bottom: 30,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30, left: 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            'Title',
+                            style: TextStyle(color: AnterosColors.WHITE),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.only(left: 30, right: 30, top: 30),
+                            child: Text(
+                              'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: AnterosColors.LIGHT),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    image: AssetImage(url),
+                  ),
+                )
+                .toList(),
+            onPageChanged: (index) {
+              setState(() {});
+            },
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Multiple Items',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosItemsCarousel(
+            rowCount: 3,
+            children: imageList
+                .map(
+                  (url) => AnterosImageOverlay(
+                    height: 400,
+                    width: 300,
+                    margin: const EdgeInsets.only(left: 15, right: 5),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: const <Widget>[
+                            Text(
+                              'Title',
+                              style: TextStyle(color: AnterosColors.WHITE),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                  right: 5,
+                                ),
+                                child: Text(
+                                  'Open source UI library ',
+                                  style: TextStyle(
+                                      fontSize: 10, color: AnterosColors.LIGHT),
+                                ))
+                          ],
+                        )),
+                    image: AssetImage(url),
+                  ),
+                )
+                .toList(),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Full Size',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosCarousel(
+            autoPlay: true,
+            viewportFraction: 1.0,
+            activeIndicator: AnterosColors.SUCCESS,
+            passiveIndicator: AnterosColors.WHITE,
+            aspectRatio: 2,
+            items: imageList
+                .map(
+                  (url) => AnterosImageOverlay(
+                    height: 200,
+                    margin: const EdgeInsets.only(left: 15, right: 15),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30, left: 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            'Title',
+                            style: TextStyle(color: AnterosColors.WHITE),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 30,
+                              right: 30,
+                              top: 30,
+                            ),
+                            child: Text(
+                              'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: AnterosColors.LIGHT),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    image: AssetImage(url),
+                  ),
+                )
+                .toList(),
+            onPageChanged: (index) {
+              setState(() {});
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
+      ),
+    );
+  }
+
+  Container getCarouselGradient(BuildContext context) {
+    return Container(
+      child: ListView(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Full Width',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosCarousel(
+            autoPlay: true,
+            viewportFraction: 1.0,
+            activeIndicator: AnterosColors.SUCCESS,
+            passiveIndicator: AnterosColors.DARK,
+            aspectRatio: 2,
+            items: gradientColor
+                .map(
+                  (url) => AnterosCard(
+                    gradient: LinearGradient(
+                      begin: FractionalOffset.topLeft,
+                      end: FractionalOffset.bottomRight,
+                      colors: gradientColor,
+                    ),
+                    margin: const EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                      bottom: 24,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    content: Padding(
+                      padding: const EdgeInsets.only(top: 30, left: 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            'Title',
+                            style: TextStyle(
+                              color: AnterosColors.WHITE,
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.only(left: 30, right: 30, top: 30),
+                            child: Text(
+                              'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AnterosColors.LIGHT,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Multiple Items',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosItemsCarousel(
+            rowCount: 3,
+            children: assetImg
+                .map(
+                  (url) => AnterosCard(
+                    gradient: LinearGradient(
+                      begin: FractionalOffset.topCenter,
+                      end: FractionalOffset.bottomCenter,
+                      colors: gradientColors,
+                    ),
+                    margin: const EdgeInsets.only(left: 15, right: 5),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const <Widget>[
+                        Text(
+                          'Title',
+                          style: TextStyle(
+                            color: AnterosColors.WHITE,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 5, top: 10),
+                          child: Text(
+                            'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components ',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: AnterosColors.LIGHT,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, top: 30, bottom: 10),
+            child: AnterosTypography(
+              text: 'Full Size',
+              type: AnterosTypographyType.typo5,
+              dividerWidth: 25,
+              dividerColor: Theme.of(context).primaryColor,
+            ),
+          ),
+          AnterosCarousel(
+            autoPlay: true,
+            viewportFraction: 1.0,
+            activeIndicator: AnterosColors.SUCCESS,
+            passiveIndicator: AnterosColors.WHITE,
+            aspectRatio: 2,
+            items: assetImg
+                .map(
+                  (url) => AnterosCard(
+                    gradient: LinearGradient(
+                      begin: FractionalOffset.bottomLeft,
+                      end: FractionalOffset.topRight,
+                      colors: const [
+                        Color(0xff33B5E5),
+                        Color(0xFF39FFF8),
+                      ],
+                    ),
+                    height: 200,
+                    margin: const EdgeInsets.only(left: 15, right: 15),
+                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                    content: Padding(
+                      padding: const EdgeInsets.only(top: 30, left: 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            'Title',
+                            style: TextStyle(color: AnterosColors.WHITE),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsets.only(left: 30, right: 30, top: 30),
+                            child: Text(
+                              'AnterosFlutter is an open source library that comes with pre-build 1000+ UI components. ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: AnterosColors.LIGHT),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
+      ),
+    );
+  }
 }

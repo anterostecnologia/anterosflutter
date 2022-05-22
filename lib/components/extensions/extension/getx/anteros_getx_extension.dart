@@ -22,7 +22,8 @@ extension AnterosGetExtension on GetInterface {
     AnterosCoolAlert.show(
         context: Get.context!,
         type: AnterosCoolAlertType.confirm,
-        text: title,
+        title: title,
+        text: text,
         confirmBtnText: 'Sim',
         cancelBtnText: 'Não',
         onConfirmBtnTap: onConfirmBtnTap,
@@ -55,7 +56,8 @@ extension AnterosGetExtension on GetInterface {
     AnterosCoolAlert.show(
         context: Get.context!,
         type: AnterosCoolAlertType.error,
-        text: title,
+        title: title,
+        text: text,
         autoCloseDuration: autoCloseDuration,
         onConfirmBtnTap: onConfirmBtnTap,
         confirmBtnText: 'Ok',
@@ -86,7 +88,8 @@ extension AnterosGetExtension on GetInterface {
     AnterosCoolAlert.show(
         context: Get.context!,
         type: AnterosCoolAlertType.warning,
-        text: title,
+        title: title,
+        text: text,
         autoCloseDuration: autoCloseDuration,
         onConfirmBtnTap: onConfirmBtnTap,
         backgroundColor: backgroundColor,
@@ -117,7 +120,8 @@ extension AnterosGetExtension on GetInterface {
     AnterosCoolAlert.show(
         context: Get.context!,
         type: AnterosCoolAlertType.success,
-        text: title,
+        title: title,
+        text: text,
         autoCloseDuration: autoCloseDuration,
         onConfirmBtnTap: onConfirmBtnTap,
         backgroundColor: backgroundColor,

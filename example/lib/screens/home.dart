@@ -1,4 +1,5 @@
 import 'package:anteros_flutter_app/screens/calendar/calendar_page.dart';
+import 'package:anteros_flutter_app/screens/carousel/advanced_carousel_types.dart';
 import 'package:anteros_flutter_app/screens/chips_input/chips_input.dart';
 import 'package:anteros_flutter_app/screens/clippers/clippers_page.dart';
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
@@ -407,6 +408,15 @@ class _HomePageState extends State<HomePage> {
       'icon': FontAwesome.align_right,
       'title': 'UI Block',
       'route': UIBlockPage(),
+      'newFeature': true,
+    },
+    {
+      'icon': const IconData(
+        0xe906,
+        fontFamily: 'GFFontIcons',
+      ),
+      'title': 'Advanced Carousel',
+      'route': AdvancedCarouselTypes(),
       'newFeature': true,
     },
   ];
