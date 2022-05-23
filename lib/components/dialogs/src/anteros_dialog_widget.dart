@@ -1,8 +1,8 @@
 import 'package:anterosflutter/components/dialogs/anteros_dialog.dart';
 import 'package:flutter/material.dart';
 
-class AnterosRadioListTile extends StatefulWidget {
-  AnterosRadioListTile({
+class AnterosRadioListTileDialog extends StatefulWidget {
+  AnterosRadioListTileDialog({
     Key? key,
     this.items,
     this.intialValue,
@@ -20,11 +20,12 @@ class AnterosRadioListTile extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return AnterosRadioListTileState();
+    return AnterosRadioListTileDialogState();
   }
 }
 
-class AnterosRadioListTileState extends State<AnterosRadioListTile> {
+class AnterosRadioListTileDialogState
+    extends State<AnterosRadioListTileDialog> {
   var groupId = -1;
 
   void intialSelectedItem() {

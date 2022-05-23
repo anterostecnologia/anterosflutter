@@ -1,5 +1,6 @@
+import 'package:anterosflutter/anterosflutter.dart';
+import 'package:anterosflutter/components/dialogs/src/anteros_dialog_widget.dart';
 import 'package:flutter/material.dart';
-import 'src/anteros_dialog_widget.dart';
 
 class AnterosDialog {
   //================================Atributo pop -up======================================
@@ -94,76 +95,150 @@ class AnterosDialog {
     );
   }
 
-  AnterosDialog doubleButton({
-    padding,
-    gravity,
-    height,
-    isClickAutoDismiss =
-        true, //Depois de clicar no botão, desligue automaticamente
-    withDivider = false, //Linha de segmentação intermediária
-    text1,
-    color1,
-    fontSize1,
-    fontWeight1,
-    fontFamily1,
-    VoidCallback? onTap1,
-    buttonPadding1 = const EdgeInsets.all(0.0),
-    text2,
-    color2,
-    fontSize2,
-    fontWeight2,
-    fontFamily2,
-    onTap2,
-    buttonPadding2 = const EdgeInsets.all(0.0),
-  }) {
+  AnterosDialog doubleButton(
+      {padding,
+      gravity,
+      height,
+      isClickAutoDismiss =
+          true, //Depois de clicar no botão, desligue automaticamente
+      withDivider = false, //Linha de segmentação intermediária
+      text1,
+      shape1 = AnterosButtonShape.rounded_square,
+      type1 = AnterosButtonType.solid,
+      size1 = AnterosSize.MEDIUM,
+      color1 = AnterosColors.PRIMARY,
+      icon1,
+      textColor1 = Colors.white,
+      fontSize1,
+      fontWeight1,
+      fontFamily1,
+      buttonWidth1,
+      VoidCallback? onTap1,
+      buttonPadding1 = const EdgeInsets.symmetric(horizontal: 8),
+      text2,
+      shape2 = AnterosButtonShape.rounded_square,
+      type2 = AnterosButtonType.solid,
+      size2 = AnterosSize.MEDIUM,
+      color2 = AnterosColors.DANGER,
+      icon2,
+      textColor2 = Colors.white,
+      fontSize2,
+      fontWeight2,
+      fontFamily2,
+      buttonWidth2 = false,
+      onTap2,
+      buttonPadding2 = const EdgeInsets.symmetric(horizontal: 8),
+      vertical = false}) {
     return this.widget(
       SizedBox(
         height: height ?? 45.0,
-        child: Row(
-          mainAxisAlignment: getRowMainAxisAlignment(gravity),
-          children: <Widget>[
-            FlatButton(
-              onPressed: () {
-                if (onTap1 != null) onTap1();
-                if (isClickAutoDismiss) {
-                  dismiss();
-                }
-              },
-              padding: buttonPadding1,
-              child: Text(
-                text1 ?? "",
-                style: TextStyle(
-                  color: color1 ?? null,
-                  fontSize: fontSize1 ?? null,
-                  fontWeight: fontWeight1,
-                  fontFamily: fontFamily1,
-                ),
+        child: !vertical
+            ? Row(
+                mainAxisAlignment: getRowMainAxisAlignment(gravity),
+                children: <Widget>[
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap1 != null) onTap1();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    shape: shape1,
+                    size: size1,
+                    padding: buttonPadding1,
+                    icon: icon1,
+                    color: color1,
+                    width: buttonWidth1,
+                    text: text1 ?? "",
+                    textColor: textColor1 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor1 ?? null,
+                      fontSize: fontSize1 ?? null,
+                      fontWeight: fontWeight1,
+                      fontFamily: fontFamily1,
+                    ),
+                  ),
+                  Visibility(
+                    visible: withDivider,
+                    child: SizedBox(width: 8),
+                  ),
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap2 != null) onTap2();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    padding: buttonPadding2,
+                    shape: shape2,
+                    size: size2,
+                    icon: icon2,
+                    width: buttonWidth2,
+                    color: color2,
+                    text: text2 ?? "",
+                    textColor: textColor2 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor2 ?? null,
+                      fontSize: fontSize2 ?? null,
+                      fontWeight: fontWeight2,
+                      fontFamily: fontFamily2,
+                    ),
+                  )
+                ],
+              )
+            : Column(
+                mainAxisAlignment: getRowMainAxisAlignment(gravity),
+                children: <Widget>[
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap1 != null) onTap1();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    shape: shape1,
+                    size: size1,
+                    padding: buttonPadding1,
+                    icon: icon1,
+                    color: color1,
+                    width: buttonWidth1,
+                    text: text1 ?? "",
+                    textColor: textColor1 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor1 ?? null,
+                      fontSize: fontSize1 ?? null,
+                      fontWeight: fontWeight1,
+                      fontFamily: fontFamily1,
+                    ),
+                  ),
+                  Visibility(
+                    visible: withDivider,
+                    child: SizedBox(height: 4),
+                  ),
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap2 != null) onTap2();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    padding: buttonPadding2,
+                    shape: shape2,
+                    width: buttonWidth2,
+                    size: size2,
+                    icon: icon2,
+                    color: color2,
+                    text: text2 ?? "",
+                    textColor: textColor2 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor2 ?? null,
+                      fontSize: fontSize2 ?? null,
+                      fontWeight: fontWeight2,
+                      fontFamily: fontFamily2,
+                    ),
+                  )
+                ],
               ),
-            ),
-            Visibility(
-              visible: withDivider,
-              child: VerticalDivider(),
-            ),
-            FlatButton(
-              onPressed: () {
-                if (onTap2 != null) onTap2();
-                if (isClickAutoDismiss) {
-                  dismiss();
-                }
-              },
-              padding: buttonPadding2,
-              child: Text(
-                text2 ?? "",
-                style: TextStyle(
-                  color: color2 ?? Colors.black,
-                  fontSize: fontSize2 ?? 14.0,
-                  fontWeight: fontWeight2,
-                  fontFamily: fontFamily2,
-                ),
-              ),
-            )
-          ],
-        ),
       ),
     );
   }
@@ -231,7 +306,7 @@ class AnterosDialog {
           minWidth: size.width * .1,
           maxHeight: size.height * .5,
         ),
-        child: AnterosRadioListTile(
+        child: AnterosRadioListTileDialog(
           items: items,
           intialValue: intialValue,
           color: color,

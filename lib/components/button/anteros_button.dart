@@ -41,6 +41,7 @@ class AnterosButton extends StatefulWidget {
     this.icon,
     this.blockButton,
     this.fullWidthButton,
+    this.width,
     this.colorScheme,
     this.enableFeedback,
     this.onLongPress,
@@ -186,6 +187,9 @@ class AnterosButton extends StatefulWidget {
   /// no estado verdadeiro, a sombra da caixa padrão aparece ao redor do botão, se AnterosButtonType for sólido
   final bool? buttonBoxShadow;
 
+  /// Tamanho do botão informado
+  final double? width;
+
   /// Um ​​conjunto de treze cores que podem ser usadas para derivar o tema do botão
   /// cores.
   ///
@@ -269,7 +273,7 @@ class _AnterosButtonState extends State<AnterosButton> {
     } else if (widget.fullWidthButton == true) {
       buttonWidth = MediaQuery.of(context).size.width;
     } else {
-      buttonWidth = null;
+      buttonWidth = widget.width;
     }
     return buttonWidth;
   }
