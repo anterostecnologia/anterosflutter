@@ -1,6 +1,6 @@
 name: anterosflutter
 description: Anteros Widgets package for Flutter.
-version: 0.0.33
+version: 0.0.36
 homepage:
 
 environment:
@@ -56,11 +56,13 @@ flutter:
   assets:
     - assets/opacity.png
     - assets/noise.png
+    - assets/lottie/question.json
     - assets/flare/error_check.flr
     - assets/flare/info_check.flr
     - assets/flare/loading.flr
     - assets/flare/success_check.flr
     - assets/flare/warning_check.flr
+    - assets/flare/question_check.flr
 
   # To add assets to your package, add an assets section, like this:
   # assets:

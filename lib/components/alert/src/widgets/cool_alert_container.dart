@@ -55,6 +55,8 @@ class AnterosCoolAlertContainer extends StatelessWidget {
       return Container();
     } else {
       String? anim = AppAnim.success;
+      double? width;
+      double? height;
 
       switch (options!.type) {
         case AnterosCoolAlertType.success:
@@ -68,6 +70,10 @@ class AnterosCoolAlertContainer extends StatelessWidget {
           break;
         case AnterosCoolAlertType.confirm:
           anim = AppAnim.question;
+          if (options!.lottieAsset == null) {
+            options!.lottieAsset = anim;
+            width = 60;
+          }
           break;
         case AnterosCoolAlertType.info:
           anim = AppAnim.info;
@@ -104,7 +110,8 @@ class AnterosCoolAlertContainer extends StatelessWidget {
                           1,
                         ),
                 )
-              : Lottie.asset(options!.lottieAsset!),
+              : Lottie.asset(options!.lottieAsset!,
+                  repeat: options!.loopAnimation, width: width, height: height),
         ),
       );
     }

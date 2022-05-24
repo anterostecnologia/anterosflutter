@@ -7,5 +7,5 @@ class AppAnim {
       'packages/anterosflutter/assets/flare/warning_check.flr';
   static const info = 'packages/anterosflutter/assets/flare/info_check.flr';
   static const question =
-      'packages/anterosflutter/assets/flare/question_check.flr';
+      'packages/anterosflutter/assets/lottie/question.json';
 }
