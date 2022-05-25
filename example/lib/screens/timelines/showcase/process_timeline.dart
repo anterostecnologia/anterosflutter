@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:math';
 
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
@@ -35,7 +36,24 @@ class _ProcessTimelinePageState extends State<ProcessTimelinePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: TitleAppBar('Process Timeline'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'Process timeline',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: AnterosTimelines.tileBuilder(
         theme: AnterosTimelineThemeData(
           direction: Axis.horizontal,

@@ -1,3 +1,4 @@
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
@@ -12,7 +13,24 @@ class ShowcasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TitleAppBar('Showcase'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'ShowCase',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: LayoutBuilder(
         builder: (context, constraints) {
           final cards = [

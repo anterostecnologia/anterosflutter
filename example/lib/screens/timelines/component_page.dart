@@ -1,4 +1,5 @@
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'widget.dart';
@@ -336,7 +337,24 @@ class ComponentPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: TitleAppBar('Components'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'Components',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Table(

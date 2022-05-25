@@ -1,4 +1,5 @@
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widget.dart';
@@ -9,7 +10,24 @@ class PackageDeliveryTrackingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TitleAppBar('Package Delivery Tracking'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'Package Delivery Tracking',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: ListView.builder(
         itemBuilder: (context, index) {
           final data = _data(index + 1);

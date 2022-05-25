@@ -1,4 +1,5 @@
 import 'package:anterosflutter/anterosflutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widget.dart';
@@ -9,7 +10,24 @@ class TimelineStatusPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TitleAppBar('Timeline Status'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'Timeline status',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),

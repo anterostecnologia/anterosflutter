@@ -38,7 +38,24 @@ class _ThemePageState extends State<ThemePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TitleAppBar('Theme'),
+      appBar: AppBar(
+        backgroundColor: AnterosColors.DARK,
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              child: Icon(
+                CupertinoIcons.back,
+                color: Theme.of(context).primaryColor,
+              ),
+            )),
+        title: const Text(
+          'Theme',
+          style: TextStyle(fontSize: 17),
+        ),
+        centerTitle: true,
+      ),
       body: Stack(
         children: [
           ListView(
