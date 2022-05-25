@@ -17,7 +17,7 @@ class ShowcasePage extends StatelessWidget {
         builder: (context, constraints) {
           final cards = [
             _ShowcaseCard(
-              image: 'assets/images/timeline_status.png',
+              image: 'lib/assets/images/timeline_status.png',
               title: 'Timeline Status',
               designer: 'Tridip Thrizu',
               url:
@@ -25,7 +25,7 @@ class ShowcasePage extends StatelessWidget {
               navigationBuilder: () => TimelineStatusPage(),
             ),
             _ShowcaseCard(
-              image: 'assets/images/package_delivery_tracking.png',
+              image: 'lib/assets/images/package_delivery_tracking.png',
               title: 'Package Delivery Tracking',
               designer: 'Series Eight',
               url:
@@ -33,7 +33,7 @@ class ShowcasePage extends StatelessWidget {
               navigationBuilder: () => PackageDeliveryTrackingPage(),
             ),
             _ShowcaseCard(
-              image: 'assets/images/process_timeline.png',
+              image: 'lib/assets/images/process_timeline.png',
               title: 'Process Timeline',
               designer: 'Eddie Lobanovskiy',
               url: 'https://dribbble.com/shots/5260798-Process',

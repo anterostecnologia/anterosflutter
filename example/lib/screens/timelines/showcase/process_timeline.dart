@@ -52,7 +52,7 @@ class _ProcessTimelinePageState extends State<ProcessTimelinePage> {
             return Padding(
               padding: const EdgeInsets.only(bottom: 15.0),
               child: Image.asset(
-                'assets/images/process_timeline/status${index + 1}.png',
+                'lib/assets/images/process_timeline/status${index + 1}.png',
                 width: 50.0,
                 color: getColor(index),
               ),
