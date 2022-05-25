@@ -48,7 +48,9 @@ class MyApp extends ConsumerWidget {
           supportedLocales: const [
             Locale('en', ''),
           ],
-          home: HomePage(),
+          home: AnterosDebugInspectView(builder: (context) {
+            return HomePage();
+          }),
         ));
   }
 }

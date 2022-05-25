@@ -10,7 +10,10 @@ import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:anteros_flutter_app/screens/indicators/progress_indicators_types.dart';
 import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
+import 'package:anteros_flutter_app/screens/select/select_screen.dart';
+import 'package:anteros_flutter_app/screens/snapping_sheet/snapping_sheet_screen.dart';
 import 'package:anteros_flutter_app/screens/switch/switch_page.dart';
+import 'package:anteros_flutter_app/screens/timelines/timelines_types.dart';
 import 'package:anteros_flutter_app/screens/uiblock/uiblock_page.dart';
 import 'package:flutter/material.dart';
 import 'package:anterosflutter/anterosflutter.dart';
@@ -63,7 +66,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Button',
       'route': ButtonTypes(),
-      'newFeature': false,
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
     },
     {
       'icon': const IconData(
@@ -72,7 +75,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Badge',
       'route': BadgesPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -81,13 +84,13 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Advanced Badge',
       'route': AdvancedBadgesPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.object_group,
       'title': 'Grouped list',
       'route': GroupedListTypes(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -96,13 +99,13 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Cards',
       'route': CardPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': FontAwesome.wpforms,
       'title': 'Forms',
       'route': FormPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -111,7 +114,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Carousel',
       'route': Carousel(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -120,7 +123,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Avatar',
       'route': Avatar(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -129,7 +132,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Images',
       'route': Images(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -138,7 +141,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Tiles',
       'route': TilesPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -147,7 +150,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Tabs',
       'route': TabTypes(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -156,7 +159,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Toggle',
       'route': Toggles(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -165,7 +168,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Toast',
       'route': Toasts(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -174,7 +177,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Alert',
       'route': AlertPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -183,7 +186,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Accordion',
       'route': Accordion(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -192,7 +195,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Search Bar',
       'route': SearchbarPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -201,7 +204,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Appbar',
       'route': AppHome(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -210,7 +213,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Rating',
       'route': RatingPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -219,7 +222,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Loaders',
       'route': Loaders(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -228,7 +231,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Typography',
       'route': TypographyPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -237,7 +240,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Floating Widget',
       'route': FloatingWidgetHome(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -246,7 +249,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Progress Bar',
       'route': ProgressBar(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -255,7 +258,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Shimmer',
       'route': ShimmerPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -264,7 +267,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'CheckBox',
       'route': CheckBoxPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -273,7 +276,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Checkbox List Tile',
       'route': CheckBoxListTilePage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -282,7 +285,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'RadioButton',
       'route': RadioButtonPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -291,7 +294,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'RadioListTile',
       'route': RadioListTilePage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': const IconData(
@@ -300,7 +303,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Border',
       'route': BorderPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -309,7 +312,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'BottomSheet',
       'route': BottomSheetPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -318,7 +321,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Animation',
       'route': AnimationPage(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -327,7 +330,7 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'IntroScreen',
       'route': Introscreen(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': const IconData(
@@ -336,79 +339,85 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'StickyHeader',
       'route': StickyTypes(),
-      'newFeature': false,
+      'newFeature': null,
     },
     {
       'icon': FontAwesome.caret_down,
       'title': 'DropDown',
       'route': DropDown(),
-      "newFeature": false
+      "newFeature": null
     },
     {
       'icon': FontAwesome.tint,
       'title': 'Color picker',
       'route': ColorPickerPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.home,
       'title': 'Draggable home',
       'route': DraggableHomePage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome5Regular.stop_circle,
       'title': 'Pin code',
       'route': PinCodeVerificationScreen(phoneNumber: "+554498812290"),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.search,
       'title': 'Dialogs',
       'route': Dialogs(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.table,
       'title': 'Layouts',
       'route': LayoutsTypes(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.angle_double_right,
       'title': 'Indicators',
       'route': ProgressIndicatorsTypes(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.circle,
       'title': 'Clippers',
       'route': ClippersPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.times_rectangle,
       'title': 'Containers',
       'route': ContainersTypes(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.subway,
       'title': 'Switchers',
       'route': SwitchPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.calendar,
       'title': 'Calendar',
       'route': CalendarPage(),
-      'newFeature': true,
+      'newFeature': Colors.red,
     },
     {
       'icon': FontAwesome.align_right,
       'title': 'UI Block',
       'route': UIBlockPage(),
-      'newFeature': true,
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
+    },
+    {
+      'icon': FontAwesome.snapchat,
+      'title': 'Snapping sheet',
+      'route': PageWrapperSnappingSheet(),
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
     },
     {
       'icon': const IconData(
@@ -417,7 +426,19 @@ class _HomePageState extends State<HomePage> {
       ),
       'title': 'Advanced Carousel',
       'route': AdvancedCarouselTypes(),
-      'newFeature': true,
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
+    },
+    {
+      'icon': FontAwesome.edit,
+      'title': 'Select',
+      'route': SelectScreen(),
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
+    },
+    {
+      'icon': FontAwesome.times_circle,
+      'title': 'Timelines',
+      'route': TimelinesTypes(),
+      'newFeature': Color.fromARGB(255, 24, 206, 11),
     },
   ];
 
@@ -480,8 +501,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildSquareTile(
-      String title, IconData? icon, Widget? route, bool newFeature) {
-    var iconWidget = newFeature
+      String title, IconData? icon, Widget? route, Color? newFeature) {
+    var iconWidget = newFeature != null
         ? AnterosIconBadge(
             child: AnterosIconButton(
               type: AnterosButtonType.transparent,
@@ -497,8 +518,9 @@ class _HomePageState extends State<HomePage> {
                 size: 30,
               ),
             ),
-            counterChild: const AnterosBadge(
+            counterChild: AnterosBadge(
               text: 'new',
+              color: newFeature,
               shape: AnterosBadgeShape.pills,
             ),
           )

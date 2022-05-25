@@ -121,3 +121,8 @@ export 'package:anterosflutter/components/avatar/anteros_advanced_avatar.dart';
 export 'package:anterosflutter/components/avatar/anteros_colorize_text_avatar.dart';
 export 'package:anterosflutter/components/avatar/anteros_avatar_glow.dart';
 export 'package:anterosflutter/components/carousel/anteros_carousel_slider.dart';
+export 'package:anterosflutter/components/snapping_sheet/anteros_snapping_sheet.dart';
+export 'package:anterosflutter/components/button/anteros_group_button.dart';
+export 'package:anterosflutter/components/select/anteros_awesome_select.dart';
+export 'package:anterosflutter/components/timelines/anteros_timelines.dart';
+export 'package:anterosflutter/components/debug_inspect/anteros_debug_inspect.dart';
