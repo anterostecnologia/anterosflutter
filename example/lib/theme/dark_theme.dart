@@ -21,8 +21,8 @@ ThemeData dark = ThemeData(
     displayColor: Colors.white,
   ),
   colorScheme: ColorScheme.dark(
-    primary: Color(0xFF8CCC0B),
-    secondary: Color(0xFF8CCC0B),
+    primary: AnterosColors.PRIMARY,
+    secondary: AnterosColors.PRIMARY,
   ),
   textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Color(0xFF8CCC0B))),

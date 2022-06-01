@@ -12,6 +12,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:anteros_flutter_app/screens/color_picker/conditionals/dart_io_conditional.dart'
     as folder;
 
+ValueNotifier<Color>? accentColor;
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Register custom Hive data adapters.
@@ -21,12 +23,21 @@ Future<void> main() async {
   Hive.init(appDataDir);
   // Open the Hive box, we just keep it open all the time in this demo app.
   await Hive.openBox<dynamic>(kHiveBox);
-  runApp(
-    ProviderScope(
-      observers: <ProviderObserver>[PodsObserver()],
-      child: const MyApp(),
-    ),
+  initSettings().then((_) {
+    runApp(
+      ProviderScope(
+        observers: <ProviderObserver>[PodsObserver()],
+        child: const MyApp(),
+      ),
+    );
+  });
+}
+
+Future<void> initSettings() async {
+  await AnterosSettings.init(
+    cacheProvider: AnterosSharePreferenceCache(),
   );
+  accentColor = ValueNotifier(Colors.blueAccent);
 }
 
 class MyApp extends ConsumerWidget {

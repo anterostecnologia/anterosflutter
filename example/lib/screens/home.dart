@@ -10,6 +10,7 @@ import 'package:anteros_flutter_app/screens/indicators/progress_indicators_types
 import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
 import 'package:anteros_flutter_app/screens/select/select_screen.dart';
+import 'package:anteros_flutter_app/screens/settings/app_settings_page.dart';
 import 'package:anteros_flutter_app/screens/snapping_sheet/snapping_sheet_screen.dart';
 import 'package:anteros_flutter_app/screens/switch/switch_page.dart';
 import 'package:anteros_flutter_app/screens/timelines/timelines_types.dart';
@@ -438,6 +439,12 @@ class _HomePageState extends State<HomePage> {
       'title': 'Timelines',
       'route': TimelinesTypes(),
       'newFeature': Color.fromARGB(255, 24, 206, 11),
+    },
+    {
+      'icon': FontAwesome.list_ol,
+      'title': 'Settings',
+      'route': AppSettingsPage(),
+      'newFeature': Color.fromARGB(255, 206, 134, 11),
     },
   ];
 

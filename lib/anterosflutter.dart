@@ -128,3 +128,5 @@ export 'package:anterosflutter/components/select/anteros_awesome_select.dart';
 export 'package:anterosflutter/components/timelines/anteros_timelines.dart';
 export 'package:anterosflutter/components/debug_inspect/anteros_debug_inspect.dart';
 export 'package:anterosflutter/components/row/anteros_row_item.dart';
+export 'package:anterosflutter/components/settings/anteros_flutter_settings.dart';
+export 'package:anterosflutter/components/flex_grid/anteros_flex_grid.dart'; 
