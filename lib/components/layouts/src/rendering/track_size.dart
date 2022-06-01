@@ -260,8 +260,8 @@ class FlexibleTrackSize extends AnterosTrackSize {
 /// Sizes the track according to the intrinsic dimensions of all its cells.
 ///
 /// This is a very expensive way to size a column.
-class IntrinsicContentTrackSize extends AnterosTrackSize {
-  const IntrinsicContentTrackSize({String? debugLabel})
+class AnterosIntrinsicTrackSize extends AnterosTrackSize {
+  const AnterosIntrinsicTrackSize({String? debugLabel})
       : super(debugLabel: debugLabel);
 
   @override

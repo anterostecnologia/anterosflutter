@@ -3,13 +3,13 @@ import 'package:flutter/widgets.dart';
 import 'rendering/track_size.dart';
 import 'widgets/placement.dart';
 
-/// An [IntrinsicContentTrackSize], mirroring CSS's name for the track sizing
+/// An [AnterosIntrinsicTrackSize], mirroring CSS's name for the track sizing
 /// function.
-const auto = IntrinsicContentTrackSize();
+const auto = AnterosIntrinsicTrackSize();
 
 /// Returns a track size that is sized based on its contents.
-IntrinsicContentTrackSize intrinsic({String? debugLabel}) =>
-    IntrinsicContentTrackSize(debugLabel: debugLabel);
+AnterosIntrinsicTrackSize intrinsic({String? debugLabel}) =>
+    AnterosIntrinsicTrackSize(debugLabel: debugLabel);
 
 /// Returns a new track size that is exactly [sizeInPx] wide.
 FixedTrackSize fixed(double sizeInPx, {String? debugLabel}) =>

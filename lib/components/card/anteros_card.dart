@@ -16,7 +16,7 @@ class AnterosCard extends StatelessWidget {
       this.elevation,
       this.shape,
       this.borderOnForeground = true,
-      this.padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      this.padding = const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       this.margin,
       this.clipBehavior,
       this.semanticContainer,
@@ -37,8 +37,8 @@ class AnterosCard extends StatelessWidget {
       : assert(elevation == null || elevation >= 0.0),
         assert(
             color == null || gradient == null,
-            'Cannot provide both a color and a decoration\n'
-            'The color argument is just a shorthand for "decoration: new BoxDecoration(color: color)".'),
+            'Não pode fornecer uma cor e uma decoração\n'
+            'O argumento de cores é apenas uma abreviação para "decoration: new BoxDecoration(color: color)".'),
         super(key: key);
 
   /// define a altura do cartão

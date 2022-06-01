@@ -108,6 +108,7 @@ export 'package:anterosflutter/components/containers/anteros_expandable_containe
 export 'package:anterosflutter/components/containers/anteros_glass_container.dart';
 export 'package:anterosflutter/components/indicators/anteros_step_progress_indicator.dart';
 export 'package:anterosflutter/components/layouts/anteros_layout_grid.dart';
+export 'package:anterosflutter/components/layouts/anteros_layout_widgets.dart';
 export 'package:anterosflutter/components/containers/anteros_easy_container.dart';
 export 'package:anterosflutter/components/clippers/anteros_custom_clippers.dart';
 export 'package:anterosflutter/components/switch/anteros_switch.dart';
@@ -126,3 +127,4 @@ export 'package:anterosflutter/components/button/anteros_group_button.dart';
 export 'package:anterosflutter/components/select/anteros_awesome_select.dart';
 export 'package:anterosflutter/components/timelines/anteros_timelines.dart';
 export 'package:anterosflutter/components/debug_inspect/anteros_debug_inspect.dart';
+export 'package:anterosflutter/components/row/anteros_row_item.dart';

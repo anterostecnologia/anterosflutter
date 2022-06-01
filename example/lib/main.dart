@@ -1,6 +1,7 @@
 import 'package:anteros_flutter_app/screens/calendar/model/event.dart';
 import 'package:anteros_flutter_app/screens/color_picker/pods/pods_observer.dart';
 import 'package:anteros_flutter_app/screens/color_picker/store/hive_store.dart';
+import 'package:anteros_flutter_app/theme/dark_theme.dart';
 import 'package:anteros_flutter_app/theme/light_theme.dart';
 import 'package:anterosflutter/anterosflutter.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class MyApp extends ConsumerWidget {
           title:
               'AnterosFlutter Demo App | Open source UI library for flutter app',
           debugShowCheckedModeBanner: false,
-          theme: light,
+          theme: dark,
           localizationsDelegates: const [
             AnterosFormLocalizations.delegate,
             ...GlobalMaterialLocalizations.delegates,

@@ -10,9 +10,7 @@ import 'package:get/get.dart';
 import 'package:path/path.dart' as path_helper;
 
 import 'dart:collection';
-import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
 
 import 'package:characters/characters.dart' as characters;
 import 'package:collection/collection.dart' as collection;
@@ -44,6 +42,7 @@ export 'package:anterosflutter/components/extensions/extension/string/parseExt.d
 export 'package:anterosflutter/components/extensions/extension/string/exceptionExt.dart';
 export 'package:anterosflutter/components/extensions/extension/string/validationExt.dart';
 export 'package:anterosflutter/components/extensions/extension/context/context.dart';
+export 'package:anterosflutter/components/extensions/extension/text_less/anteros_text_less.dart';
 
 /// export utils
 export 'package:anterosflutter/components/extensions/utils/validator_util.dart';

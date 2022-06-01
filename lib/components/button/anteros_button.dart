@@ -550,7 +550,7 @@ class _AnterosButtonState extends State<AnterosButton> {
       } else if (widget.size == AnterosSize.LARGE) {
         return TextStyle(
           color: widget.enabled ? getTextColor() : getDisabledTextColor(),
-          fontSize: 14,
+          fontSize: Theme.of(context).textTheme.button?.fontSize,
           fontWeight: FontWeight.w500,
         );
       }

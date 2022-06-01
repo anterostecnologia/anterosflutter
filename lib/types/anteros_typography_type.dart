@@ -18,3 +18,23 @@ enum AnterosTypographyType {
   /// [AnterosTypographyType.typo6] Tipo usado para widget de título com fontsize = 13.0
   typo6,
 }
+
+extension TypographyExtension on AnterosTypographyType {
+  double getValue() {
+    double value = 0.0;
+    if (this.name == AnterosTypographyType.typo1.name) {
+      value = 28.0;
+    } else if (this.name == AnterosTypographyType.typo2.name) {
+      value = 25.0;
+    } else if (this.name == AnterosTypographyType.typo3.name) {
+      value = 22.0;
+    } else if (this.name == AnterosTypographyType.typo4.name) {
+      value = 20.0;
+    } else if (this.name == AnterosTypographyType.typo5.name) {
+      value = 18.0;
+    } else if (this.name == AnterosTypographyType.typo6.name) {
+      value = 16.0;
+    }
+    return value;
+  }
+}

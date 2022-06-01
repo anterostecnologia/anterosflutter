@@ -155,7 +155,8 @@ class AnterosCupertinoTypeAheadFormField<T> extends FormField<String> {
       AnterosCupertinoTypeAheadFormFieldState<T>();
 }
 
-class AnterosCupertinoTypeAheadFormFieldState<T> extends FormFieldState<String> {
+class AnterosCupertinoTypeAheadFormFieldState<T>
+    extends FormFieldState<String> {
   TextEditingController? _controller;
 
   TextEditingController? get _effectiveController =>
@@ -519,7 +520,8 @@ class AnterosCupertinoTypeAheadField<T> extends StatefulWidget {
       _AnterosCupertinoTypeAheadFieldState<T>();
 }
 
-class _AnterosCupertinoTypeAheadFieldState<T> extends State<AnterosCupertinoTypeAheadField<T>>
+class _AnterosCupertinoTypeAheadFieldState<T>
+    extends State<AnterosCupertinoTypeAheadField<T>>
     with WidgetsBindingObserver {
   FocusNode? _focusNode;
   TextEditingController? _textEditingController;
@@ -743,7 +745,8 @@ class _AnterosCupertinoTypeAheadFieldState<T> extends State<AnterosCupertinoType
         maxLines: widget.textFieldConfiguration.maxLines,
         minLines: widget.textFieldConfiguration.minLines,
         maxLength: widget.textFieldConfiguration.maxLength,
-        maxLengthEnforcement: widget.textFieldConfiguration.maxLengthEnforcement,
+        maxLengthEnforcement:
+            widget.textFieldConfiguration.maxLengthEnforcement,
         onChanged: widget.textFieldConfiguration.onChanged,
         onEditingComplete: widget.textFieldConfiguration.onEditingComplete,
         onTap: widget.textFieldConfiguration.onTap,
@@ -1403,7 +1406,8 @@ class _CupertinoSuggestionsBox {
   // See if there's enough room in the desired direction for the overlay to display
   // correctly. If not, try the opposite direction if things look more roomy there
   void _adjustMaxHeightAndOrientation() {
-    AnterosCupertinoTypeAheadField widget = context.widget as AnterosCupertinoTypeAheadField;
+    AnterosCupertinoTypeAheadField widget =
+        context.widget as AnterosCupertinoTypeAheadField;
 
     RenderBox box = context.findRenderObject() as RenderBox;
     textBoxWidth = box.size.width;

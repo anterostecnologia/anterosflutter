@@ -1,6 +1,5 @@
 import 'package:anteros_flutter_app/screens/calendar/calendar_page.dart';
 import 'package:anteros_flutter_app/screens/carousel/advanced_carousel_types.dart';
-import 'package:anteros_flutter_app/screens/chips_input/chips_input.dart';
 import 'package:anteros_flutter_app/screens/clippers/clippers_page.dart';
 import 'package:anteros_flutter_app/screens/color_picker/colors_picker.dart';
 import 'package:anteros_flutter_app/screens/containers/containers_types.dart';
@@ -375,7 +374,7 @@ class _HomePageState extends State<HomePage> {
       'icon': FontAwesome.table,
       'title': 'Layouts',
       'route': LayoutsTypes(),
-      'newFeature': Colors.red,
+      'newFeature': Color.fromARGB(255, 206, 134, 11),
     },
     {
       'icon': FontAwesome.angle_double_right,

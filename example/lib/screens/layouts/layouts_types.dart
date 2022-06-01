@@ -1,16 +1,15 @@
+import 'package:anteros_flutter_app/screens/layouts/examples/pages/assorteds/assorted_types.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/container_page.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/expanded_page.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/grid/layouts_grid_types.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/grid_page.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/listview_gridview_page.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/row_column_page.dart';
+import 'package:anteros_flutter_app/screens/layouts/examples/pages/row_item_page.dart';
 import 'package:anteros_flutter_app/screens/layouts/examples/pages/stack_page.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/widgets/items/row_column_items.dart';
-import 'package:anteros_flutter_app/screens/layouts/examples/widgets/items/stack_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:anterosflutter/anterosflutter.dart';
-import 'package:anteros_flutter_app/screens/button/like_buttons.dart';
 
 class LayoutsTypes extends StatefulWidget {
   @override
@@ -166,6 +165,43 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                       )),
                 )),
             GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => RowItemPage()),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.only(
+                    left: 15, right: 15, top: 20, bottom: 20),
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(7)),
+                    color: AnterosColors.DARK,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.40), blurRadius: 5)
+                    ]),
+                child: AnterosListTile(
+                  avatar: AnterosBadge(
+                    text: 'new',
+                    color: Color.fromARGB(255, 206, 134, 11),
+                    shape: AnterosBadgeShape.pills,
+                  ),
+                  color: AnterosColors.DARK,
+                  title: Text(
+                    "RowItem",
+                    style: TextStyle(color: AnterosColors.WHITE),
+                  ),
+                  icon: Icon(
+                    CupertinoIcons.forward,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -256,7 +292,45 @@ class _LayoutsTypesState extends State<LayoutsTypes> {
                         CupertinoIcons.forward,
                         color: Theme.of(context).primaryColor,
                       )),
-                ))
+                )),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          AssortyedLayoutsTypes()),
+                );
+              },
+              child: Container(
+                margin: const EdgeInsets.only(
+                    left: 15, right: 15, top: 20, bottom: 20),
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(7)),
+                    color: AnterosColors.DARK,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.40), blurRadius: 5)
+                    ]),
+                child: AnterosListTile(
+                  avatar: AnterosBadge(
+                    text: 'new',
+                    color: Color.fromARGB(255, 206, 134, 11),
+                    shape: AnterosBadgeShape.pills,
+                  ),
+                  color: AnterosColors.DARK,
+                  title: Text(
+                    "Assorteds Layouts",
+                    style: TextStyle(color: AnterosColors.WHITE),
+                  ),
+                  icon: Icon(
+                    CupertinoIcons.forward,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       );
