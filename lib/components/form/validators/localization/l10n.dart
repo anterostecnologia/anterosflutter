@@ -19,7 +19,7 @@ class AnterosFormLocalizations {
 
   static AnterosFormLocalizations get current {
     assert(_current != null,
-        'No instance of AnterosFormLocalizations was loaded. Try to initialize the AnterosFormLocalizations delegate before accessing FormBuilderLocalizations.current.');
+        'Nenhuma instância de AnterosFormLocalizations foi carregada. Tente inicializar o AnterosFormLocalizations delegate antes de acessar FormBuilderLocalizations.current.');
     return _current!;
   }
 
@@ -42,7 +42,7 @@ class AnterosFormLocalizations {
   static AnterosFormLocalizations of(BuildContext context) {
     final instance = AnterosFormLocalizations.maybeOf(context);
     assert(instance != null,
-        'No instance of AnterosFormLocalizations present in the widget tree. Did you add AnterosFormLocalizations.delegate in localizationsDelegates?');
+        'Nenhuma instância de AnterosFormLocalizations presente na árvore do widget. Você acrescentou AnterosFormLocalizations.delegate em localizationsDelegates?');
     return instance!;
   }
 
@@ -54,7 +54,7 @@ class AnterosFormLocalizations {
   /// `This field cannot be empty.`
   String get requiredErrorText {
     return Intl.message(
-      'This field cannot be empty.',
+      'Este campo não pode estar vazio.',
       name: 'requiredErrorText',
       desc: 'Error Text for required field',
       args: [],
@@ -64,7 +64,7 @@ class AnterosFormLocalizations {
   /// `Value must be greater than or equal to {min}.`
   String minErrorText(Object min) {
     return Intl.message(
-      'Value must be greater than or equal to $min.',
+      'O valor deve ser maior ou igual a $min.',
       name: 'minErrorText',
       desc: 'Error Text for required field',
       args: [min],
@@ -74,7 +74,7 @@ class AnterosFormLocalizations {
   /// `Value must have a length greater than or equal to {minLength}`
   String minLengthErrorText(Object minLength) {
     return Intl.message(
-      'Value must have a length greater than or equal to $minLength',
+      'O valor deve ter um comprimento maior ou igual a $minLength',
       name: 'minLengthErrorText',
       desc: 'Error Text for required field',
       args: [minLength],
@@ -84,7 +84,7 @@ class AnterosFormLocalizations {
   /// `Value must be less than or equal to {max}`
   String maxErrorText(Object max) {
     return Intl.message(
-      'Value must be less than or equal to $max',
+      'O valor deve ser menor ou igual a $max',
       name: 'maxErrorText',
       desc: 'Error Text for required field',
       args: [max],
@@ -94,7 +94,7 @@ class AnterosFormLocalizations {
   /// `Value must have a length less than or equal to {maxLength}`
   String maxLengthErrorText(Object maxLength) {
     return Intl.message(
-      'Value must have a length less than or equal to $maxLength',
+      'O valor deve ter um comprimento menor ou igual a $maxLength',
       name: 'maxLengthErrorText',
       desc: 'Error Text for required field',
       args: [maxLength],
@@ -104,7 +104,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid email address.`
   String get emailErrorText {
     return Intl.message(
-      'This field requires a valid email address.',
+      'Este campo requer um endereço de e -mail válido.',
       name: 'emailErrorText',
       desc: 'Error Text for email field',
       args: [],
@@ -114,7 +114,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid integer.`
   String get integerErrorText {
     return Intl.message(
-      'This field requires a valid integer.',
+      'Este campo requer um número inteiro válido.',
       name: 'integerErrorText',
       desc: 'Error Text for integer validator',
       args: [],
@@ -124,7 +124,7 @@ class AnterosFormLocalizations {
   /// `This field value must be equal to {value}.`
   String equalErrorText(Object value) {
     return Intl.message(
-      'This field value must be equal to $value.',
+      'Este valor de campo deve ser igual a $value.',
       name: 'equalErrorText',
       desc: 'Error Text for equal validator',
       args: [value],
@@ -134,7 +134,7 @@ class AnterosFormLocalizations {
   /// `This field value must not be equal to {value}.`
   String notEqualErrorText(Object value) {
     return Intl.message(
-      'This field value must not be equal to $value.',
+      'Este valor de campo não deve ser igual a $value.',
       name: 'notEqualErrorText',
       desc: 'Error Text for not-equal validator',
       args: [value],
@@ -144,7 +144,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid URL address.`
   String get urlErrorText {
     return Intl.message(
-      'This field requires a valid URL address.',
+      'Este campo requer um endereço de URL válido.',
       name: 'urlErrorText',
       desc: 'Error Text for URL field',
       args: [],
@@ -154,7 +154,7 @@ class AnterosFormLocalizations {
   /// `Value does not match pattern.`
   String get matchErrorText {
     return Intl.message(
-      'Value does not match pattern.',
+      'O valor não corresponde ao padrão.',
       name: 'matchErrorText',
       desc: 'Error Text for pattern field',
       args: [],
@@ -164,7 +164,7 @@ class AnterosFormLocalizations {
   /// `Value must be numeric.`
   String get numericErrorText {
     return Intl.message(
-      'Value must be numeric.',
+      'O valor deve ser numérico.',
       name: 'numericErrorText',
       desc: 'Error Text for numeric field',
       args: [],
@@ -174,7 +174,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid credit card number.`
   String get creditCardErrorText {
     return Intl.message(
-      'This field requires a valid credit card number.',
+      'Este campo requer um número de cartão de crédito válido.',
       name: 'creditCardErrorText',
       desc: 'Error Text for credit card field',
       args: [],
@@ -184,7 +184,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid IP.`
   String get ipErrorText {
     return Intl.message(
-      'This field requires a valid IP.',
+      'Este campo requer um IP válido.',
       name: 'ipErrorText',
       desc: 'Error Text for IP address field',
       args: [],
@@ -194,7 +194,7 @@ class AnterosFormLocalizations {
   /// `This field requires a valid date string.`
   String get dateStringErrorText {
     return Intl.message(
-      'This field requires a valid date string.',
+      'Este campo requer uma string de data válida.',
       name: 'dateStringErrorText',
       desc: 'Error Text for date string field',
       args: [],
@@ -227,6 +227,7 @@ class AppLocalizationDelegate
       Locale.fromSubtags(languageCode: 'nl'),
       Locale.fromSubtags(languageCode: 'pl'),
       Locale.fromSubtags(languageCode: 'pt'),
+      Locale.fromSubtags(languageCode: 'pt-BR'),
       Locale.fromSubtags(languageCode: 'ro'),
       Locale.fromSubtags(languageCode: 'ru'),
       Locale.fromSubtags(languageCode: 'sk'),

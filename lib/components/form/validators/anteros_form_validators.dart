@@ -259,7 +259,16 @@ class AnterosFormValidators {
       (valueCandidate) => true == valueCandidate?.isNotEmpty &&
               !AnterosValidationHelper.isPlacaVeiculo(valueCandidate!)
           ? errorText ?? "Placa inválida."
-          : null;  
+          : null;
+
+  /// [FormFieldValidator] que requer que o valor do campo seja uma string de CNH válida.
+  static FormFieldValidator<String> cnh({
+    String? errorText,
+  }) =>
+      (valueCandidate) => true == valueCandidate?.isNotEmpty &&
+              !AnterosValidationHelper.validateCnh(valueCandidate!)
+          ? errorText ?? "CNH inválida."
+          : null;
 
   /// [FormFieldValidator] que requer que o valor do campo seja uma string de hora válida.
   static FormFieldValidator<String> time({
@@ -268,6 +277,5 @@ class AnterosFormValidators {
       (valueCandidate) => true == valueCandidate?.isNotEmpty &&
               !AnterosValidationHelper.isTime(valueCandidate!)
           ? errorText ?? "Hora inválida."
-          : null;                
-
+          : null;
 }

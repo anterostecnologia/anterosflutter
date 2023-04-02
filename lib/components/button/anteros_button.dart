@@ -392,6 +392,7 @@ class _AnterosButtonState extends State<AnterosButton> {
         return Colors.transparent;
       }
       final Color fillColor = color;
+
       return fillColor;
     }
 

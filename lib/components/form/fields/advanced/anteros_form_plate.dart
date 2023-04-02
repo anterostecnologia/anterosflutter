@@ -287,6 +287,8 @@ class AnterosFormPlateField extends AnterosFormField<String> {
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
 
+  final bool fieldFequired = false;
+
   /// Cria uma entrada de campo de Placa de Veículo de design de material.
   AnterosFormPlateField({
     Key? key,
@@ -306,6 +308,7 @@ class AnterosFormPlateField extends AnterosFormField<String> {
     VoidCallback? onReset,
     FocusNode? focusNode,
     bool? hasError,
+    bool fieldFequired = false,
     this.maxLines = 1,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
@@ -365,10 +368,8 @@ class AnterosFormPlateField extends AnterosFormField<String> {
           key: key,
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
-          validator: AnterosFormValidators.compose([
-            AnterosFormValidators.required(),
-            AnterosFormValidators.placaVeiculo(),
-          ]),
+          validator: AnterosFormValidators.compose(
+              fieldFequired ? [AnterosFormValidators.required()] : []),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,

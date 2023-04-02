@@ -8,6 +8,7 @@ import 'package:anteros_flutter_app/screens/draggable_home/anteros_draggable_hom
 import 'package:anteros_flutter_app/screens/form/form_page.dart';
 import 'package:anteros_flutter_app/screens/indicators/progress_indicators_types.dart';
 import 'package:anteros_flutter_app/screens/layouts/layouts_types.dart';
+import 'package:anteros_flutter_app/screens/notification/notification.dart';
 import 'package:anteros_flutter_app/screens/pin_code/pin_code.dart';
 import 'package:anteros_flutter_app/screens/select/select_screen.dart';
 import 'package:anteros_flutter_app/screens/settings/app_settings_page.dart';
@@ -370,6 +371,12 @@ class _HomePageState extends State<HomePage> {
       'title': 'Dialogs',
       'route': Dialogs(),
       'newFeature': Colors.red,
+    },
+    {
+      'icon': FontAwesome.sticky_note,
+      'title': 'Notification',
+      'route': NotificationPage(),
+      'newFeature': Color.fromARGB(255, 206, 134, 11),
     },
     {
       'icon': FontAwesome.table,

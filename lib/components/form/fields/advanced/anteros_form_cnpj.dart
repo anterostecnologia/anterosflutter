@@ -284,6 +284,8 @@ class AnterosFormCnpjField extends AnterosFormField<String> {
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
 
+  final bool fieldFequired = false;
+
   /// Cria uma entrada de campo de CNPJ de design de material.
   AnterosFormCnpjField({
     Key? key,
@@ -303,6 +305,7 @@ class AnterosFormCnpjField extends AnterosFormField<String> {
     required BuildContext context,
     bool? hasError,
     String? hintText,
+    bool fieldFequired = false,
     this.maxLines = 1,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
@@ -361,10 +364,9 @@ class AnterosFormCnpjField extends AnterosFormField<String> {
           key: key,
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
-          validator: AnterosFormValidators.compose([
-            AnterosFormValidators.required(),
-            AnterosFormValidators.cnpj(),
-          ]),
+          validator: AnterosFormValidators.compose(fieldFequired
+              ? [AnterosFormValidators.cpf(), AnterosFormValidators.required()]
+              : [AnterosFormValidators.cpf()]),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
@@ -385,7 +387,7 @@ class AnterosFormCnpjField extends AnterosFormField<String> {
             final theme = Theme.of(state.context);
             InputDecoration inputDecoration =
                 AnterosFormHelper.getAnterosDecorationPattern(
-                    hasError, onClearValue, theme, "Cnpj", hintText, field);
+                    hasError, onClearValue, theme, "CNPJ", hintText, field);
 
             return TextField(
               controller: state._effectiveController,

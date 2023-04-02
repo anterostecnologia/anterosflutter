@@ -12,6 +12,5 @@ export "src/pad.dart";
 export 'src/row.dart';
 export "src/side_by_side.dart";
 export "src/text_one_line.dart";
-export "src/text_one_line_ellipsis_with_fade.dart";
 export "src/time_builder.dart";
 export 'src/wrap.dart';

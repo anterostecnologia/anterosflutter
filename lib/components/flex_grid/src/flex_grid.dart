@@ -1,8 +1,8 @@
 import 'dart:math';
 
+import 'package:anterosflutter/anterosflutter.dart';
 import 'package:extended_sliver/extended_sliver.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
 import 'controller/scroll_controller.dart';
 import 'controller/scroll_physics.dart';
 import 'horizontal_sync_scroll_minxin.dart';
@@ -310,7 +310,7 @@ class _AnterosFlexGridState<T> extends State<AnterosFlexGrid<T>>
 
               // cell
               LoadingMoreSliverList<T>(
-                SliverListConfig<T>(
+                AnterosSliverListConfig<T>(
                   sourceList: widget.source,
                   itemExtent: widget.highPerformance ? _cellStyle.height : null,
                   itemBuilder: (BuildContext context, T data, int row) {

@@ -42,6 +42,9 @@ enum AnterosInputFormatType {
   /// [AnterosInputFormatType.cardValidate], usado para entrada de validade de cartão.
   cardValidate,
 
+  /// [AnterosInputFormatType.cnh], usado para entrada de CNH.
+  cnh,
+
   /// Predefinição forma é [AnterosInputFormatType.standard], usado para entrada padrão sem formatação.
   standard,
 }

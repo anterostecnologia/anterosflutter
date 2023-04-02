@@ -95,6 +95,89 @@ class AnterosDialog {
     );
   }
 
+  AnterosDialog singleButton(
+      {padding,
+      gravity,
+      height,
+      isClickAutoDismiss =
+          true, //Depois de clicar no botão, desligue automaticamente
+      withDivider = false, //Linha de segmentação intermediária
+      text1,
+      shape1 = AnterosButtonShape.rounded_square,
+      type1 = AnterosButtonType.solid,
+      size1 = AnterosSize.MEDIUM,
+      color1 = AnterosColors.PRIMARY,
+      icon1,
+      textColor1 = Colors.white,
+      fontSize1,
+      fontWeight1,
+      fontFamily1,
+      buttonWidth1,
+      VoidCallback? onTap1,
+      buttonPadding1 = const EdgeInsets.symmetric(horizontal: 8),
+      vertical = false}) {
+    return this.widget(
+      SizedBox(
+        height: height ?? 45.0,
+        child: !vertical
+            ? Row(
+                mainAxisAlignment: getRowMainAxisAlignment(gravity),
+                children: <Widget>[
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap1 != null) onTap1();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    shape: shape1,
+                    size: size1,
+                    padding: buttonPadding1,
+                    icon: icon1,
+                    color: color1,
+                    width: buttonWidth1,
+                    text: text1 ?? "",
+                    textColor: textColor1 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor1 ?? null,
+                      fontSize: fontSize1 ?? null,
+                      fontWeight: fontWeight1,
+                      fontFamily: fontFamily1,
+                    ),
+                  ),
+                ],
+              )
+            : Column(
+                mainAxisAlignment: getRowMainAxisAlignment(gravity),
+                children: <Widget>[
+                  AnterosButton(
+                    onPressed: () {
+                      if (onTap1 != null) onTap1();
+                      if (isClickAutoDismiss) {
+                        dismiss();
+                      }
+                    },
+                    shape: shape1,
+                    size: size1,
+                    padding: buttonPadding1,
+                    icon: icon1,
+                    color: color1,
+                    width: buttonWidth1,
+                    text: text1 ?? "",
+                    textColor: textColor1 ?? null,
+                    textStyle: TextStyle(
+                      color: textColor1 ?? null,
+                      fontSize: fontSize1 ?? null,
+                      fontWeight: fontWeight1,
+                      fontFamily: fontFamily1,
+                    ),
+                  ),
+                ],
+              ),
+      ),
+    );
+  }
+
   AnterosDialog doubleButton(
       {padding,
       gravity,

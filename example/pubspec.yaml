@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   anterosflutter: 
-    path: ../
+    path: /Users/relevantsolutions/anterosflutter
   webview_flutter: ^3.0.4
   cupertino_icons: ^1.0.3
   flutter_riverpod: ^1.0.3

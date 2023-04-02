@@ -3,26 +3,28 @@ import 'dart:convert';
 import '../helpers/constants.dart';
 import 'dart:developer' as developer;
 
-
-final RegExp _phoneRegex = RegExp(r"^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$");
-final RegExp _nameRegex =
-    RegExp(r"^([A-Z][A-Za-z.'\-]+) (?:([A-Z][A-Za-z.'\-]+) )?([A-Z][A-Za-z.'\-]+)$");
+final RegExp _phoneRegex =
+    RegExp(r"^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$");
+final RegExp _nameRegex = RegExp(
+    r"^([A-Z][A-Za-z.'\-]+) (?:([A-Z][A-Za-z.'\-]+) )?([A-Z][A-Za-z.'\-]+)$");
 final RegExp _postalCodeRegex = RegExp(r"^\d{5}(-\d{4})?$");
 final RegExp _emailRegex = RegExp(
     r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
-final RegExp _urlRegex =
-    RegExp(r"^(?:http|https):\/\/[\w\-_]+(?:\.[\w\-_]+)+[\w\-.,@?^=%&:/~\\+#]*$");
-final RegExp _currencyRegex = RegExp(r"^(\$|\u00A3|\u00A5|\uFFE5)(\d*\.\d+|\d+)$");
+final RegExp _urlRegex = RegExp(
+    r"^(?:http|https):\/\/[\w\-_]+(?:\.[\w\-_]+)+[\w\-.,@?^=%&:/~\\+#]*$");
+final RegExp _currencyRegex =
+    RegExp(r"^(\$|\u00A3|\u00A5|\uFFE5)(\d*\.\d+|\d+)$");
 final RegExp _ipRegex = RegExp(
     r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-final RegExp _dateRegex = RegExp(r"^\d{4}[-/](0?[1-9]|1[012])[-/](0?[1-9]|[12][0-9]|3[01])$");
-final RegExp _timeRegex =
-    RegExp(r"^([0-1]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?( ([A-Z]{3}|GMT [-+]([0-9]|1[0-2])))?$");
+final RegExp _dateRegex =
+    RegExp(r"^\d{4}[-/](0?[1-9]|1[012])[-/](0?[1-9]|[12][0-9]|3[01])$");
+final RegExp _timeRegex = RegExp(
+    r"^([0-1]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?( ([A-Z]{3}|GMT [-+]([0-9]|1[0-2])))?$");
 final RegExp _htmlTagsRegex = RegExp(
     r"^<(?:([A-Za-z][A-Za-z0-9]*)\b[^>]*>(?:.*?)</\1>|[A-Za-z][A-Za-z0-9]*\b[^/>]*/>)$",
     multiLine: true);
-final RegExp _passwordRegex =
-    RegExp(r"^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{8,99}$");
+final RegExp _passwordRegex = RegExp(
+    r"^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{8,99}$");
 final RegExp _mediumPasswordRegex = RegExp(
     r"^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 final RegExp _creditCardRegex = RegExp(
@@ -30,6 +32,31 @@ final RegExp _creditCardRegex = RegExp(
 
 class AnterosValidationHelper {
   AnterosValidationHelper._();
+
+  static String removeWhiteSpace(str) {
+    if (str.length <= 0) return '';
+    return str.trim().replaceAll(RegExp(r'\s+'), '');
+  }
+
+  static String removeSpecialChars(str) {
+    return str.replaceAll(RegExp(r'[^a-zA-Z 0-9]+'), '');
+  }
+
+  static bool allEqual(str) {
+    final RegExp re = RegExp(r'^(\d)\1+$');
+    return re.hasMatch(str);
+  }
+
+  static String charAt(String subject, int position) {
+    if (subject is! String ||
+        subject.length <= position ||
+        subject.length + position < 0) {
+      return '';
+    }
+
+    final _realPosition = position < 0 ? subject.length + position : position;
+    return subject[_realPosition];
+  }
 
   //Ajuda do método
   static bool hasMatch(String? value, String pattern) {
@@ -277,14 +304,42 @@ class AnterosValidationHelper {
     return true;
   }
 
+  static bool validatorLetter(value) {
+    final RegExp re = RegExp(r'^[a-zA-Z]+$');
+    final bool matches = re.hasMatch(value);
+    return matches;
+  }
+
+  static bool validatorNumber(value) {
+    final RegExp re = RegExp(r'^[0-9]+$');
+    final bool matches = re.hasMatch(value);
+    return matches;
+  }
+
   /// Verifica se a placa é válida.
   static bool isPlacaVeiculo(String placa) {
     // Testa se a placa tem 8 dígitos
     if (placa.length != 8) {
       return false;
     }
-    var regexPlaca = r'^[A-Z]{3}[0-9]{1}[A-Z]{1}[0-9]{2}$|^[A-Z]{3}[0-9]{2}[A-Z]{1}[0-9]{1}$';
-    return hasMatch(placa, regexPlaca);
+    var plate = placa.replaceAll('-', '');
+    plate = removeWhiteSpace(plate);
+
+    if (plate.length > 7 || plate.length < 7) return false;
+
+    final RegExp isLetterNumber = RegExp(r'[^A-Za-z0-9]+$');
+
+    final platePartOne = plate.substring(0, 3);
+    final platePartTwo = charAt(plate, 3);
+    final platePartThree = charAt(plate, 4);
+    final platePartFour = plate.substring(5, 7);
+
+    if (validatorLetter(platePartOne)) return false;
+    if (validatorNumber(platePartTwo)) return false;
+    if (isLetterNumber.hasMatch(platePartThree)) return false;
+    if (validatorNumber(platePartFour)) return false;
+
+    return true;
   }
 
   /// Check if the string [str] is an integer
@@ -412,6 +467,12 @@ class AnterosValidationHelper {
     return filePath.toLowerCase().endsWith(".html");
   }
 
+  static bool validateDate(value) {
+    final RegExp re = RegExp(r'^\d{2}[.//]\d{2}[.//]\d{4}$');
+    final bool matches = re.hasMatch(value);
+    return !matches;
+  }
+
   static bool isMediumPassword(String password) => hasMatch(password,
       r"^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
@@ -434,6 +495,77 @@ class AnterosValidationHelper {
   ///check if password is equal to confirm password or pharse is equal to confirm phrase
   static bool isPhraseEqual(String phase1, String phase2) {
     return phase1 == phase2;
+  }
+
+  static bool validateCnh(value) {
+    var cnh = removeSpecialChars(value);
+    cnh = removeWhiteSpace(cnh);
+
+    if (cnh.length > 11 || cnh.length <= 3) return false;
+    if (allEqual(cnh)) return true;
+    final hasLetter = validatorLetter(cnh);
+    if (hasLetter) return false;
+
+    int v = 0;
+    for (var i = 0, j = 9; i < 9; ++i, --j) {
+      if (i < cnh.length) {
+        final s = int.parse(charAt(cnh, i));
+        v += (s * j).abs();
+      }
+    }
+
+    int dsc = 0, vl1 = v % 11;
+    if (vl1 >= 10) {
+      vl1 = 0;
+      dsc = 2;
+    }
+
+    v = 0;
+
+    for (var i = 0, j = 1; i < 9; ++i, ++j) {
+      if (i < cnh.length) {
+        final s = int.parse(charAt(cnh, i));
+        v += (s * j).abs();
+      }
+    }
+
+    final x = v % 11;
+    final vl2 = x >= 10 ? 0 : x - dsc;
+    final a = '$vl1$vl2';
+    final algo = a == cnh.substring(cnh.length - 2, cnh.length);
+
+    return algo;
+  }
+
+  static bool validateRenavam(value) {
+    var renavam = removeSpecialChars(value);
+    renavam = removeWhiteSpace(renavam);
+
+    if (renavam.length > 11 || renavam.length < 11) return false;
+    if (allEqual(renavam)) return false;
+
+    final renavamList = renavam.split('');
+    var sum = 0, localValue = 0, digit = 0, x = 0;
+
+    for (var i = 5; i >= 2; i--) {
+      sum += int.parse(renavamList[x]) * i;
+      x++;
+    }
+    localValue = sum % 11;
+
+    if (localValue == 11 || localValue == 0 || localValue >= 10) {
+      digit = 0;
+    } else {
+      digit = localValue;
+    }
+    bool result;
+    if (digit == int.parse(renavamList[4])) {
+      result = false;
+    } else {
+      result = true;
+    }
+
+    return result;
   }
 
   /// Check if name not contain special character like #$%*@!

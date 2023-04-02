@@ -284,6 +284,8 @@ class AnterosFormCpfField extends AnterosFormField<String> {
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
 
+  final bool fieldFequired = false;
+
   /// Cria uma entrada de campo de CPF de design de material.
   AnterosFormCpfField({
     Key? key,
@@ -303,6 +305,7 @@ class AnterosFormCpfField extends AnterosFormField<String> {
     required BuildContext context,
     String? hintText,
     bool? hasError,
+    bool fieldFequired = false,
     this.maxLines = 1,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
@@ -361,10 +364,9 @@ class AnterosFormCpfField extends AnterosFormField<String> {
           key: key,
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
-          validator: AnterosFormValidators.compose([
-            AnterosFormValidators.required(),
-            AnterosFormValidators.cpf(),
-          ]),
+          validator: AnterosFormValidators.compose(fieldFequired
+              ? [AnterosFormValidators.cpf(), AnterosFormValidators.required()]
+              : [AnterosFormValidators.cpf()]),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
@@ -385,7 +387,7 @@ class AnterosFormCpfField extends AnterosFormField<String> {
             final theme = Theme.of(state.context);
             InputDecoration inputDecoration =
                 AnterosFormHelper.getAnterosDecorationPattern(
-                    hasError, onClearValue, theme, "Cpf", hintText, field);
+                    hasError, onClearValue, theme, "CPF", hintText, field);
 
             return TextField(
               controller: state._effectiveController,

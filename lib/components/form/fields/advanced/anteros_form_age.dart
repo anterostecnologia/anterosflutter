@@ -284,6 +284,8 @@ class AnterosFormAgeField extends AnterosFormField<String> {
   /// {@macro flutter.services.autofill.autofillHints}
   final Iterable<String>? autofillHints;
 
+  final bool fieldFequired = false;
+
   /// Cria uma entrada de campo de CPNJ de design de material.
   AnterosFormAgeField({
     Key? key,
@@ -304,6 +306,7 @@ class AnterosFormAgeField extends AnterosFormField<String> {
     FocusNode? focusNode,
     required BuildContext context,
     bool? hasError,
+    bool fieldFequired = false,
     this.maxLines = 1,
     this.obscureText = false,
     this.textCapitalization = TextCapitalization.none,
@@ -363,10 +366,12 @@ class AnterosFormAgeField extends AnterosFormField<String> {
           key: key,
           initialValue: controller != null ? controller.text : initialValue,
           name: name,
-          validator: AnterosFormValidators.compose([
-            AnterosFormValidators.required(),
-            AnterosFormValidators.maxLength(3),
-          ]),
+          validator: AnterosFormValidators.compose(fieldFequired
+              ? [
+                  AnterosFormValidators.maxLength(3),
+                  AnterosFormValidators.required()
+                ]
+              : [AnterosFormValidators.maxLength(3)]),
           valueTransformer: valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
